@@ -72,6 +72,7 @@ final class SettingsStoreTests: XCTestCase {
         let alert = AlertPlanStore(defaults: defaults)
         let settings = SettingsStore(defaults: defaults)
         let downloads = DownloadsStore(defaults: defaults)
+        let connect = ConnectStore(defaults: defaults)
         let tools = ToolsState()
 
         kit.toggle(try XCTUnwrap(kit.items.first))
@@ -79,17 +80,20 @@ final class SettingsStoreTests: XCTestCase {
         alert.updatePlan(PersonalPlan(name: "Ada"))
         settings.update(AppSettings(unitSystem: .imperial))
         downloads.setPrepared(true, for: try XCTUnwrap(downloads.packs.first { !$0.isBundled }))
+        connect.send("Hello", to: "family")
+        connect.setSOSText("Edited SOS")
         tools.stopwatch.start(at: Date())
         tools.sosSignal.start(at: Date())
 
         LocalDataReset.perform(kit: kit, alert: alert, settings: settings,
-                               downloads: downloads, tools: tools)
+                               downloads: downloads, connect: connect, tools: tools)
 
         // In memory
         XCTAssertEqual(kit.totalProgress.checked, 0)
         XCTAssertEqual(alert.data, AlertPlanData())
         XCTAssertEqual(settings.settings, AppSettings())
         XCTAssertTrue(downloads.preparedIDs.isEmpty)
+        XCTAssertEqual(connect.data, ConnectDemoContent.initialData())
         XCTAssertFalse(tools.stopwatch.isRunning)
         XCTAssertFalse(tools.sosSignal.isActive)
 

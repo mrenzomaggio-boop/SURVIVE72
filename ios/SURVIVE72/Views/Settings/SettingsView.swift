@@ -6,6 +6,7 @@ struct SettingsView: View {
     @Environment(KitChecklistStore.self) private var kitStore
     @Environment(AlertPlanStore.self) private var alertStore
     @Environment(DownloadsStore.self) private var downloadsStore
+    @Environment(ConnectStore.self) private var connectStore
     @Environment(ToolsState.self) private var toolsState
 
     @State private var isConfirmingReset = false
@@ -29,12 +30,12 @@ struct SettingsView: View {
         .alert("Erase all local data?", isPresented: $isConfirmingReset) {
             Button("Erase", role: .destructive) {
                 LocalDataReset.perform(kit: kitStore, alert: alertStore, settings: settingsStore,
-                                       downloads: downloadsStore, tools: toolsState)
+                                       downloads: downloadsStore, connect: connectStore, tools: toolsState)
                 didReset = true
             }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text("Kit checklist, emergency plan and contacts, prepared packs and preferences will be removed from this device. This cannot be undone.")
+            Text("Kit checklist, emergency plan and contacts, local chat and queue, prepared packs and preferences will be removed from this device. This cannot be undone.")
         }
     }
 
@@ -108,7 +109,7 @@ struct SettingsView: View {
             VStack(alignment: .leading, spacing: 10) {
                 PrivacyLine(text: "Everything stays on this device.")
                 PrivacyLine(text: "No account, no network, no analytics, no permissions.")
-                PrivacyLine(text: "Nothing is sent: SOS messages are only copied.")
+                PrivacyLine(text: "Nothing is sent: SOS messages are only copied or queued locally.")
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)

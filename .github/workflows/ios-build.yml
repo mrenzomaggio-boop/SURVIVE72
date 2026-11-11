@@ -11,6 +11,7 @@ on:
       - feature/ios-alert-planning
       - feature/ios-tools-core
       - feature/ios-preparedness-settings
+      - feature/ios-connect-foundation
     paths:
       - 'ios/**'
       - '.github/workflows/ios-build.yml'

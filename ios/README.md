@@ -45,7 +45,15 @@ Native SwiftUI app for SURVIVE 72.
   only be marked as prepared (`survive72.downloads.preparedPackIDs.v1`).
 - **Radio**: offline information guide with topic filters and search. No
   frequencies, no radio access, nothing is transmitted.
-- **Connect and Maps**: placeholder demo data (`SURVIVE72/Data/DemoContent.swift`).
+- **Connect (SURVIVE CONNECT)**: local demo chat with fictional conversations,
+  a message composer and history. Sent messages enter a local queue as
+  **queued**; buttons simulate **delivered** or **failed**, and failed messages
+  can be queued again. A priority SOS with editable text always goes ahead of
+  other queued messages. Every Connect screen shows
+  "LOCAL DEMO · NOT TRANSMITTED". No Bluetooth, Wi-Fi peer-to-peer, network,
+  GPS or permissions. Data is saved as JSON in `UserDefaults` under
+  `survive72.connect.data.v1` and is erased by "Erase all local data".
+- **Maps and Medical**: placeholder demo data (`SURVIVE72/Data/DemoContent.swift`).
 
 ## Structure
 
@@ -55,9 +63,9 @@ ios/
 ├── SURVIVE72/
 │   ├── App/            entry point, injects the Kit store
 │   ├── Theme/          colors and metrics
-│   ├── Models/         Home sections, Kit, Knowledge, Alert, Tools, settings, packs, radio guide
-│   ├── Data/           Kit default items, Knowledge articles, demo content
-│   ├── Storage/        Kit, Alert, Settings and Downloads stores, ToolsState (memory)
+│   ├── Models/         Home sections, Kit, Knowledge, Alert, Tools, settings, packs, radio guide, Connect messages and queue
+│   ├── Data/           Kit default items, Knowledge articles, Connect demo chats, demo content
+│   ├── Storage/        Kit, Alert, Settings, Downloads and Connect stores, ToolsState (memory)
 │   ├── Views/          Home, section tile, demo detail
 │   │   ├── Kit/        checklist, item row, progress card
 │   │   ├── Knowledge/  library list and article page
@@ -65,7 +73,8 @@ ios/
 │   │   ├── Tools/      tools list, stopwatch, SOS signal, torch placeholder
 │   │   ├── Settings/   preferences, privacy, erase local data
 │   │   ├── Downloads/  offline packs and space
-│   │   └── Radio/      offline radio guide
+│   │   ├── Radio/      offline radio guide
+│   │   └── Connect/    local chat, queue, SOS composer
 │   └── Assets.xcassets
 └── SURVIVE72Tests/     unit tests for every real module
 ```
