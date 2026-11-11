@@ -58,6 +58,12 @@
 		5A72000000000000000001A1 /* MapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001A0 /* MapsView.swift */; };
 		5A72000000000000000001A3 /* PlaceEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001A2 /* PlaceEditorView.swift */; };
 		5A72000000000000000001A5 /* SensorPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001A4 /* SensorPlaceholderView.swift */; };
+		5A72000000000000000001AC /* MedicalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001AB /* MedicalEntry.swift */; };
+		5A72000000000000000001AE /* MedicalLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001AD /* MedicalLibrary.swift */; };
+		5A72000000000000000001B0 /* MedicalLibraryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001AF /* MedicalLibraryContent.swift */; };
+		5A72000000000000000001B2 /* MedicalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001B1 /* MedicalStore.swift */; };
+		5A72000000000000000001B4 /* MedicalLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001B3 /* MedicalLibraryView.swift */; };
+		5A72000000000000000001B6 /* MedicalEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001B5 /* MedicalEntryView.swift */; };
 		5A7200000000000000000133 /* KitChecklistStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000132 /* KitChecklistStoreTests.swift */; };
 		5A7200000000000000000135 /* KitProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000134 /* KitProgressTests.swift */; };
 		5A720000000000000000014B /* KnowledgeLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000014A /* KnowledgeLibraryTests.swift */; };
@@ -72,6 +78,8 @@
 		5A7200000000000000000199 /* MessageQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000198 /* MessageQueueTests.swift */; };
 		5A72000000000000000001A8 /* CoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001A7 /* CoordinateTests.swift */; };
 		5A72000000000000000001AA /* MapsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001A9 /* MapsStoreTests.swift */; };
+		5A72000000000000000001B9 /* MedicalLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001B8 /* MedicalLibraryTests.swift */; };
+		5A72000000000000000001BB /* MedicalStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001BA /* MedicalStoreTests.swift */; };
 		5A7200000000000000000110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +145,12 @@
 		5A72000000000000000001A0 /* MapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsView.swift; sourceTree = "<group>"; };
 		5A72000000000000000001A2 /* PlaceEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEditorView.swift; sourceTree = "<group>"; };
 		5A72000000000000000001A4 /* SensorPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorPlaceholderView.swift; sourceTree = "<group>"; };
+		5A72000000000000000001AB /* MedicalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalEntry.swift; sourceTree = "<group>"; };
+		5A72000000000000000001AD /* MedicalLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalLibrary.swift; sourceTree = "<group>"; };
+		5A72000000000000000001AF /* MedicalLibraryContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalLibraryContent.swift; sourceTree = "<group>"; };
+		5A72000000000000000001B1 /* MedicalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalStore.swift; sourceTree = "<group>"; };
+		5A72000000000000000001B3 /* MedicalLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalLibraryView.swift; sourceTree = "<group>"; };
+		5A72000000000000000001B5 /* MedicalEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalEntryView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000132 /* KitChecklistStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitChecklistStoreTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000134 /* KitProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitProgressTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000014A /* KnowledgeLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeLibraryTests.swift; sourceTree = "<group>"; };
@@ -151,6 +165,8 @@
 		5A7200000000000000000198 /* MessageQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageQueueTests.swift; sourceTree = "<group>"; };
 		5A72000000000000000001A7 /* CoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTests.swift; sourceTree = "<group>"; };
 		5A72000000000000000001A9 /* MapsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsStoreTests.swift; sourceTree = "<group>"; };
+		5A72000000000000000001B8 /* MedicalLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalLibraryTests.swift; sourceTree = "<group>"; };
+		5A72000000000000000001BA /* MedicalStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalStoreTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000010F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A7200000000000000000111 /* SURVIVE72.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SURVIVE72.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7200000000000000000136 /* SURVIVE72Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SURVIVE72Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,6 +256,8 @@
 				5A7200000000000000000189 /* MessageQueue.swift */,
 				5A720000000000000000019A /* SavedPlace.swift */,
 				5A720000000000000000019C /* OfflineArea.swift */,
+				5A72000000000000000001AB /* MedicalEntry.swift */,
+				5A72000000000000000001AD /* MedicalLibrary.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -251,6 +269,7 @@
 				5A7200000000000000000125 /* KitDefaults.swift */,
 				5A7200000000000000000143 /* KnowledgeLibraryContent.swift */,
 				5A720000000000000000018B /* ConnectDemoContent.swift */,
+				5A72000000000000000001AF /* MedicalLibraryContent.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -265,6 +284,7 @@
 				5A7200000000000000000176 /* DownloadsStore.swift */,
 				5A720000000000000000018D /* ConnectStore.swift */,
 				5A720000000000000000019E /* MapsStore.swift */,
+				5A72000000000000000001B1 /* MedicalStore.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -284,6 +304,7 @@
 				5A7200000000000000000180 /* Radio */,
 				5A7200000000000000000195 /* Connect */,
 				5A72000000000000000001A6 /* Maps */,
+				5A72000000000000000001B7 /* Medical */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -371,6 +392,15 @@
 			path = Maps;
 			sourceTree = "<group>";
 		};
+		5A72000000000000000001B7 /* Medical */ = {
+			isa = PBXGroup;
+			children = (
+				5A72000000000000000001B3 /* MedicalLibraryView.swift */,
+				5A72000000000000000001B5 /* MedicalEntryView.swift */,
+			);
+			path = Medical;
+			sourceTree = "<group>";
+		};
 		5A7200000000000000000131 /* SURVIVE72Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +418,8 @@
 				5A7200000000000000000198 /* MessageQueueTests.swift */,
 				5A72000000000000000001A7 /* CoordinateTests.swift */,
 				5A72000000000000000001A9 /* MapsStoreTests.swift */,
+				5A72000000000000000001B8 /* MedicalLibraryTests.swift */,
+				5A72000000000000000001BA /* MedicalStoreTests.swift */,
 			);
 			path = SURVIVE72Tests;
 			sourceTree = "<group>";
@@ -542,6 +574,12 @@
 				5A72000000000000000001A1 /* MapsView.swift in Sources */,
 				5A72000000000000000001A3 /* PlaceEditorView.swift in Sources */,
 				5A72000000000000000001A5 /* SensorPlaceholderView.swift in Sources */,
+				5A72000000000000000001AC /* MedicalEntry.swift in Sources */,
+				5A72000000000000000001AE /* MedicalLibrary.swift in Sources */,
+				5A72000000000000000001B0 /* MedicalLibraryContent.swift in Sources */,
+				5A72000000000000000001B2 /* MedicalStore.swift in Sources */,
+				5A72000000000000000001B4 /* MedicalLibraryView.swift in Sources */,
+				5A72000000000000000001B6 /* MedicalEntryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +601,8 @@
 				5A7200000000000000000199 /* MessageQueueTests.swift in Sources */,
 				5A72000000000000000001A8 /* CoordinateTests.swift in Sources */,
 				5A72000000000000000001AA /* MapsStoreTests.swift in Sources */,
+				5A72000000000000000001B9 /* MedicalLibraryTests.swift in Sources */,
+				5A72000000000000000001BB /* MedicalStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
