@@ -1,0 +1,225 @@
+import SwiftUI
+
+/// SURVIVE MEDICAL: offline library of placeholder topics with local search
+/// and category filters. Every entry requires verified content.
+struct MedicalLibraryView: View {
+    private let library = MedicalLibrary()
+
+    @Environment(MedicalStore.self) private var store
+    @State private var query = ""
+
+    private var selectedCategory: Binding<MedicalCategory?> {
+        Binding(
+            get: { store.lastCategory },
+            set: { store.setLastCategory($0) }
+        )
+    }
+
+    private var results: [MedicalEntry] {
+        library.search(query, in: store.lastCategory)
+    }
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                MedicalEmergencyNotice()
+                PlaceholderNotice()
+
+                MedicalCategoryFilterBar(library: library, selected: selectedCategory)
+
+                Text(resultsSummary)
+                    .font(.subheadline.weight(.bold))
+                    .foregroundStyle(Theme.textSecondary)
+                    .accessibilityAddTraits(.updatesFrequently)
+
+                if results.isEmpty {
+                    EmptyMedicalResults()
+                } else {
+                    LazyVStack(spacing: Theme.spacing) {
+                        ForEach(results) { entry in
+                            NavigationLink(value: entry) {
+                                MedicalEntryRow(entry: entry, isFavorite: store.isFavorite(entry.id))
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                }
+            }
+            .padding(16)
+        }
+        .background(Theme.background.ignoresSafeArea())
+        .navigationTitle("Medical")
+        .navigationBarTitleDisplayMode(.large)
+        .searchable(
+            text: $query,
+            placement: .navigationBarDrawer(displayMode: .always),
+            prompt: "Search topics"
+        )
+        .autocorrectionDisabled()
+        .navigationDestination(for: MedicalEntry.self) { entry in
+            MedicalEntryView(entry: entry)
+        }
+    }
+
+    private var resultsSummary: String {
+        let noun = results.count == 1 ? "topic" : "topics"
+        let scope = store.lastCategory?.title ?? "all categories"
+        return "\(results.count) \(noun) in \(scope)"
+    }
+}
+
+/// Horizontal row of large filter chips: All + one per category.
+private struct MedicalCategoryFilterBar: View {
+    let library: MedicalLibrary
+    @Binding var selected: MedicalCategory?
+
+    var body: some View {
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 10) {
+                chip(title: "All", systemImage: "square.grid.2x2.fill",
+                     count: library.count(in: nil), isSelected: selected == nil) {
+                    selected = nil
+                }
+                ForEach(MedicalCategory.allCases) { category in
+                    chip(title: category.title, systemImage: category.systemImage,
+                         count: library.count(in: category), isSelected: selected == category) {
+                        selected = category
+                    }
+                }
+            }
+            .padding(.vertical, 2)
+        }
+    }
+
+    private func chip(
+        title: String,
+        systemImage: String,
+        count: Int,
+        isSelected: Bool,
+        action: @escaping () -> Void
+    ) -> some View {
+        Button(action: action) {
+            Label(title, systemImage: systemImage)
+                .font(.headline.weight(.heavy))
+                .foregroundStyle(isSelected ? Theme.background : Theme.textPrimary)
+                .padding(.horizontal, 14)
+                .frame(minHeight: 48)
+                .background(isSelected ? Theme.accent : Theme.surface, in: Capsule())
+                .overlay(Capsule().stroke(isSelected ? Theme.accent : Theme.surfaceBorder,
+                                          lineWidth: Theme.borderWidth))
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("\(title) filter")
+        .accessibilityValue("\(count) \(count == 1 ? "topic" : "topics")")
+        .accessibilityAddTraits(isSelected ? .isSelected : [])
+    }
+}
+
+/// One entry in the result list.
+private struct MedicalEntryRow: View {
+    let entry: MedicalEntry
+    let isFavorite: Bool
+
+    var body: some View {
+        HStack(alignment: .top, spacing: 14) {
+            Image(systemName: entry.category.systemImage)
+                .font(.system(size: 28, weight: .bold))
+                .foregroundStyle(Theme.accent)
+                .frame(width: 36)
+                .accessibilityHidden(true)
+
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(spacing: 6) {
+                    Text(entry.title)
+                        .font(.title3.weight(.heavy))
+                        .foregroundStyle(Theme.textPrimary)
+                    if isFavorite {
+                        Image(systemName: "star.fill")
+                            .font(.headline)
+                            .foregroundStyle(Theme.accent)
+                            .accessibilityHidden(true)
+                    }
+                }
+                Text(entry.summary)
+                    .font(.subheadline)
+                    .foregroundStyle(Theme.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
+                HStack(spacing: 8) {
+                    Text(entry.category.title.uppercased())
+                        .font(.caption.weight(.heavy))
+                        .foregroundStyle(Theme.textSecondary)
+                    MedicalVerificationBadge(status: entry.status)
+                }
+            }
+            Spacer(minLength: 0)
+            Image(systemName: "chevron.right")
+                .font(.headline.weight(.bold))
+                .foregroundStyle(Theme.textSecondary)
+                .accessibilityHidden(true)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, minHeight: 88, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
+        .overlay(
+            RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                .stroke(Theme.surfaceBorder, lineWidth: Theme.borderWidth)
+        )
+        .contentShape(RoundedRectangle(cornerRadius: Theme.cornerRadius))
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("\(entry.title)\(isFavorite ? ", bookmarked" : ""). \(entry.summary)")
+        .accessibilityValue("\(entry.category.title), \(entry.status.label.lowercased())")
+        .accessibilityAddTraits(.isButton)
+    }
+}
+
+/// Always-visible note that every entry is a placeholder.
+private struct PlaceholderNotice: View {
+    var body: some View {
+        HStack(alignment: .top, spacing: 10) {
+            Image(systemName: "exclamationmark.triangle.fill")
+                .font(.title3.weight(.bold))
+                .foregroundStyle(Theme.accent)
+                .accessibilityHidden(true)
+            Text("Every topic is a placeholder marked VERIFIED CONTENT REQUIRED. Nothing here is medical advice.")
+                .font(.subheadline.weight(.bold))
+                .foregroundStyle(Theme.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
+        .overlay(
+            RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                .stroke(Theme.accent, lineWidth: Theme.borderWidth)
+        )
+        .accessibilityElement(children: .combine)
+    }
+}
+
+private struct EmptyMedicalResults: View {
+    var body: some View {
+        VStack(spacing: 10) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 36, weight: .bold))
+                .foregroundStyle(Theme.textSecondary)
+                .accessibilityHidden(true)
+            Text("No topics found")
+                .font(.title3.weight(.heavy))
+                .foregroundStyle(Theme.textPrimary)
+            Text("Try another word or choose All.")
+                .font(.body)
+                .foregroundStyle(Theme.textSecondary)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 32)
+        .accessibilityElement(children: .combine)
+    }
+}
+
+#Preview {
+    NavigationStack {
+        MedicalLibraryView()
+    }
+    .environment(MedicalStore(defaults: UserDefaults(suiteName: "preview.medical")!))
+    .preferredColorScheme(.dark)
+}

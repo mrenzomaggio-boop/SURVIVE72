@@ -62,7 +62,16 @@ Native SwiftUI app for SURVIVE 72.
   **REQUIRES PHYSICAL-DEVICE TEST**. No MapKit, GPS, network or permissions.
   Data is saved as JSON in `UserDefaults` under `survive72.maps.data.v1` and
   is erased by "Erase all local data".
-- **Medical**: placeholder demo data (`SURVIVE72/Data/DemoContent.swift`).
+- **Medical (SURVIVE MEDICAL)**: offline library of placeholder topics in six
+  categories, with local search on title, summary and keywords (case- and
+  accent-insensitive, all words must match) combinable with a category filter,
+  and an entry page. Every entry is marked **VERIFIED CONTENT REQUIRED** and
+  contains no diagnoses, dosages, procedures or advice; every Medical screen
+  shows "For immediate danger, contact local emergency services when
+  available." No network, calls, SMS, GPS or permissions. Only bookmarked
+  entry IDs and the last selected category are saved, as JSON in
+  `UserDefaults` under `survive72.medical.preferences.v1`, and are erased by
+  "Erase all local data".
 
 ## Structure
 
@@ -72,9 +81,9 @@ ios/
 ├── SURVIVE72/
 │   ├── App/            entry point, injects the Kit store
 │   ├── Theme/          colors and metrics
-│   ├── Models/         Home sections, Kit, Knowledge, Alert, Tools, settings, packs, radio guide, Connect messages and queue, Maps places, DMS and areas
-│   ├── Data/           Kit default items, Knowledge articles, Connect demo chats, demo content
-│   ├── Storage/        Kit, Alert, Settings, Downloads, Connect and Maps stores, ToolsState (memory)
+│   ├── Models/         Home sections, Kit, Knowledge, Alert, Tools, settings, packs, radio guide, Connect messages and queue, Maps places, DMS and areas, Medical entries and search
+│   ├── Data/           Kit default items, Knowledge articles, Connect demo chats, Medical placeholder topics, demo content
+│   ├── Storage/        Kit, Alert, Settings, Downloads, Connect, Maps and Medical stores, ToolsState (memory)
 │   ├── Views/          Home, section tile, demo detail
 │   │   ├── Kit/        checklist, item row, progress card
 │   │   ├── Knowledge/  library list and article page
@@ -84,7 +93,8 @@ ios/
 │   │   ├── Downloads/  offline packs and space
 │   │   ├── Radio/      offline radio guide
 │   │   ├── Connect/    local chat, queue, SOS composer
-│   │   └── Maps/       saved places, place editor, offline areas, sensor placeholders
+│   │   ├── Maps/       saved places, place editor, offline areas, sensor placeholders
+│   │   └── Medical/    placeholder topic list, search, filters, entry page
 │   └── Assets.xcassets
 └── SURVIVE72Tests/     unit tests for every real module
 ```
@@ -108,5 +118,5 @@ available simulator automatically.
 
 ## Not implemented yet
 
-Bluetooth, maps, GPS, torch, networking, downloads and real medical content.
+Bluetooth, maps, GPS, torch, networking, downloads and verified medical content.
 No accounts, keys, certificates or TestFlight configuration are included.

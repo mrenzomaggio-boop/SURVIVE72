@@ -45,7 +45,8 @@ enum LocalDataReset {
         SettingsStore.storageKey,
         DownloadsStore.storageKey,
         ConnectStore.storageKey,
-        MapsStore.storageKey
+        MapsStore.storageKey,
+        MedicalStore.storageKey
     ]
 
     static func perform(
@@ -55,6 +56,7 @@ enum LocalDataReset {
         downloads: DownloadsStore,
         connect: ConnectStore,
         maps: MapsStore,
+        medical: MedicalStore,
         tools: ToolsState
     ) {
         kit.reset()
@@ -63,6 +65,7 @@ enum LocalDataReset {
         downloads.reset()
         connect.reset()
         maps.reset()
+        medical.reset()
         tools.stopwatch.reset()
         tools.sosSignal.stop()
     }

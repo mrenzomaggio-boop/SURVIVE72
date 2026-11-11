@@ -34,7 +34,7 @@ struct HomeView: View {
         }
     }
 
-    /// Every section except Medical opens a real module; Medical is still a demo.
+    /// Every section opens its real module.
     @ViewBuilder
     private func destination(for section: AppSection) -> some View {
         switch section {
@@ -54,10 +54,10 @@ struct HomeView: View {
             RadioGuideView()
         case .downloads:
             DownloadsView()
+        case .medical:
+            MedicalLibraryView()
         case .settings:
             SettingsView()
-        default:
-            SectionDetailView(section: section)
         }
     }
 }
@@ -97,5 +97,6 @@ private struct OfflineBanner: View {
         .environment(DownloadsStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(ConnectStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(MapsStore(defaults: UserDefaults(suiteName: "preview.home")!))
+        .environment(MedicalStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .preferredColorScheme(.dark)
 }
