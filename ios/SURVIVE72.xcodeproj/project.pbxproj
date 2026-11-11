@@ -14,8 +14,26 @@
 		5A720000000000000000010A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000109 /* HomeView.swift */; };
 		5A720000000000000000010C /* SectionTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010B /* SectionTile.swift */; };
 		5A720000000000000000010E /* SectionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010D /* SectionDetailView.swift */; };
+		5A7200000000000000000124 /* KitChecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000123 /* KitChecklist.swift */; };
+		5A7200000000000000000126 /* KitDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000125 /* KitDefaults.swift */; };
+		5A7200000000000000000128 /* KitChecklistStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000127 /* KitChecklistStore.swift */; };
+		5A720000000000000000012A /* KitChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000129 /* KitChecklistView.swift */; };
+		5A720000000000000000012C /* KitItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000012B /* KitItemRow.swift */; };
+		5A720000000000000000012E /* KitProgressCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000012D /* KitProgressCard.swift */; };
+		5A7200000000000000000133 /* KitChecklistStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000132 /* KitChecklistStoreTests.swift */; };
+		5A7200000000000000000135 /* KitProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000134 /* KitProgressTests.swift */; };
 		5A7200000000000000000110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5A720000000000000000013D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5A72000000000000000000A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A72000000000000000000A1;
+			remoteInfo = SURVIVE72;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		5A7200000000000000000101 /* SURVIVE72App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SURVIVE72App.swift; sourceTree = "<group>"; };
@@ -25,12 +43,28 @@
 		5A7200000000000000000109 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		5A720000000000000000010B /* SectionTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTile.swift; sourceTree = "<group>"; };
 		5A720000000000000000010D /* SectionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailView.swift; sourceTree = "<group>"; };
+		5A7200000000000000000123 /* KitChecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitChecklist.swift; sourceTree = "<group>"; };
+		5A7200000000000000000125 /* KitDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitDefaults.swift; sourceTree = "<group>"; };
+		5A7200000000000000000127 /* KitChecklistStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitChecklistStore.swift; sourceTree = "<group>"; };
+		5A7200000000000000000129 /* KitChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitChecklistView.swift; sourceTree = "<group>"; };
+		5A720000000000000000012B /* KitItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitItemRow.swift; sourceTree = "<group>"; };
+		5A720000000000000000012D /* KitProgressCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitProgressCard.swift; sourceTree = "<group>"; };
+		5A7200000000000000000132 /* KitChecklistStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitChecklistStoreTests.swift; sourceTree = "<group>"; };
+		5A7200000000000000000134 /* KitProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitProgressTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000010F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A7200000000000000000111 /* SURVIVE72.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SURVIVE72.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A7200000000000000000136 /* SURVIVE72Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SURVIVE72Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5A720000000000000000011B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7200000000000000000138 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -44,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7200000000000000000113 /* SURVIVE72 */,
+				5A7200000000000000000131 /* SURVIVE72Tests */,
 				5A7200000000000000000114 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -55,6 +90,7 @@
 				5A7200000000000000000116 /* Theme */,
 				5A7200000000000000000117 /* Models */,
 				5A7200000000000000000118 /* Data */,
+				5A720000000000000000012F /* Storage */,
 				5A7200000000000000000119 /* Views */,
 				5A720000000000000000010F /* Assets.xcassets */,
 			);
@@ -65,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7200000000000000000111 /* SURVIVE72.app */,
+				5A7200000000000000000136 /* SURVIVE72Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -89,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7200000000000000000105 /* AppSection.swift */,
+				5A7200000000000000000123 /* KitChecklist.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -97,8 +135,17 @@
 			isa = PBXGroup;
 			children = (
 				5A7200000000000000000107 /* DemoContent.swift */,
+				5A7200000000000000000125 /* KitDefaults.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		5A720000000000000000012F /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000127 /* KitChecklistStore.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 		5A7200000000000000000119 /* Views */ = {
@@ -107,8 +154,28 @@
 				5A7200000000000000000109 /* HomeView.swift */,
 				5A720000000000000000010B /* SectionTile.swift */,
 				5A720000000000000000010D /* SectionDetailView.swift */,
+				5A7200000000000000000130 /* Kit */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5A7200000000000000000130 /* Kit */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000129 /* KitChecklistView.swift */,
+				5A720000000000000000012B /* KitItemRow.swift */,
+				5A720000000000000000012D /* KitProgressCard.swift */,
+			);
+			path = Kit;
+			sourceTree = "<group>";
+		};
+		5A7200000000000000000131 /* SURVIVE72Tests */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000132 /* KitChecklistStoreTests.swift */,
+				5A7200000000000000000134 /* KitProgressTests.swift */,
+			);
+			path = SURVIVE72Tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +198,24 @@
 			productReference = 5A7200000000000000000111 /* SURVIVE72.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5A72000000000000000000B1 /* SURVIVE72Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A720000000000000000013A /* Build configuration list for PBXNativeTarget "SURVIVE72Tests" */;
+			buildPhases = (
+				5A7200000000000000000137 /* Sources */,
+				5A7200000000000000000138 /* Frameworks */,
+				5A7200000000000000000139 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A720000000000000000013E /* PBXTargetDependency */,
+			);
+			name = SURVIVE72Tests;
+			productName = SURVIVE72Tests;
+			productReference = 5A7200000000000000000136 /* SURVIVE72Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -143,6 +228,10 @@
 				TargetAttributes = {
 					5A72000000000000000000A1 = {
 						CreatedOnToolsVersion = 15.4;
+					};
+					5A72000000000000000000B1 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 5A72000000000000000000A1;
 					};
 				};
 			};
@@ -160,6 +249,7 @@
 			projectRoot = "";
 			targets = (
 				5A72000000000000000000A1 /* SURVIVE72 */,
+				5A72000000000000000000B1 /* SURVIVE72Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -170,6 +260,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7200000000000000000110 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7200000000000000000139 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,10 +284,33 @@
 				5A720000000000000000010A /* HomeView.swift in Sources */,
 				5A720000000000000000010C /* SectionTile.swift in Sources */,
 				5A720000000000000000010E /* SectionDetailView.swift in Sources */,
+				5A7200000000000000000124 /* KitChecklist.swift in Sources */,
+				5A7200000000000000000126 /* KitDefaults.swift in Sources */,
+				5A7200000000000000000128 /* KitChecklistStore.swift in Sources */,
+				5A720000000000000000012A /* KitChecklistView.swift in Sources */,
+				5A720000000000000000012C /* KitItemRow.swift in Sources */,
+				5A720000000000000000012E /* KitProgressCard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5A7200000000000000000137 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7200000000000000000133 /* KitChecklistStoreTests.swift in Sources */,
+				5A7200000000000000000135 /* KitProgressTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5A720000000000000000013E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5A72000000000000000000A1 /* SURVIVE72 */;
+			targetProxy = 5A720000000000000000013D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		5A720000000000000000011F /* Debug */ = {
@@ -318,6 +438,42 @@
 			};
 			name = Release;
 		};
+		5A720000000000000000013B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.survive72.appTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SURVIVE72.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SURVIVE72";
+			};
+			name = Debug;
+		};
+		5A720000000000000000013C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.survive72.appTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SURVIVE72.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SURVIVE72";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -335,6 +491,15 @@
 			buildConfigurations = (
 				5A7200000000000000000121 /* Debug */,
 				5A7200000000000000000122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A720000000000000000013A /* Build configuration list for PBXNativeTarget "SURVIVE72Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A720000000000000000013B /* Debug */,
+				5A720000000000000000013C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

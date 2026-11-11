@@ -1,47 +1,59 @@
 # SURVIVE 72 · iOS
 
-Native SwiftUI foundation for SURVIVE 72.
+Native SwiftUI app for SURVIVE 72.
 
 | Setting | Value |
 | --- | --- |
 | App / scheme | `SURVIVE72` |
+| Test target | `SURVIVE72Tests` (unit tests, hosted by the app) |
 | Bundle identifier | `com.survive72.app` |
 | Deployment target | iOS 17.0 |
 | UI | SwiftUI, dark, high contrast |
-| Data | Local demo data only (`SURVIVE72/Data/DemoContent.swift`) |
+| Data | On device only, no network |
+
+## Modules
+
+- **Kit (SURVIVE KIT)**: real 72-hour checklist with six categories (Water, Food,
+  Health, Lighting, Documents, Gear), overall and per-category progress, and a
+  "Reset checklist" button with confirmation. Checked items are saved in
+  `UserDefaults` under `survive72.kit.checkedItemIDs.v1`.
+- **All other sections**: placeholder demo data (`SURVIVE72/Data/DemoContent.swift`).
 
 ## Structure
 
 ```
 ios/
 ├── SURVIVE72.xcodeproj
-└── SURVIVE72/
-    ├── App/            entry point
-    ├── Theme/          colors and metrics
-    ├── Models/         the ten Home sections
-    ├── Data/           local demo content
-    ├── Views/          Home, section tile, section detail
-    └── Assets.xcassets
+├── SURVIVE72/
+│   ├── App/            entry point, injects the Kit store
+│   ├── Theme/          colors and metrics
+│   ├── Models/         Home sections, Kit category/item/progress
+│   ├── Data/           Kit default items, demo content
+│   ├── Storage/        KitChecklistStore (UserDefaults)
+│   ├── Views/          Home, section tile, demo detail
+│   │   └── Kit/        checklist, item row, progress card
+│   └── Assets.xcassets
+└── SURVIVE72Tests/     persistence and progress tests
 ```
 
-## Build without signing
+## Build and test without signing
 
 ```sh
 cd ios
-xcodebuild build \
+xcodebuild test \
   -project SURVIVE72.xcodeproj \
   -scheme SURVIVE72 \
   -configuration Debug \
   -sdk iphonesimulator \
-  -destination 'generic/platform=iOS Simulator' \
+  -destination 'platform=iOS Simulator,name=iPhone 16' \
   CODE_SIGNING_ALLOWED=NO
 ```
 
-The same build runs on GitHub Actions through `.github/workflows/ios-build.yml`
-(manual trigger only).
+Use any installed iPhone simulator name. The same build and tests run on
+GitHub Actions through `.github/workflows/ios-build.yml`, which picks an
+available simulator automatically.
 
 ## Not implemented yet
 
 Bluetooth, maps, GPS, torch, networking, downloads and real medical content.
-Every section currently shows placeholder demo items. No accounts, keys,
-certificates or TestFlight configuration are included.
+No accounts, keys, certificates or TestFlight configuration are included.
