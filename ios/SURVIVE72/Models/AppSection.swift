@@ -34,7 +34,7 @@ enum AppSection: String, CaseIterable, Identifiable, Hashable {
         switch self {
         case .connect: "Nearby devices"
         case .maps: "Offline maps"
-        case .knowledge: "Survival guides"
+        case .knowledge: "Offline library"
         case .medical: "First aid"
         case .kit: "72-hour checklist"
         case .radio: "Frequencies"

@@ -17,6 +17,10 @@ Native SwiftUI app for SURVIVE 72.
   Health, Lighting, Documents, Gear), overall and per-category progress, and a
   "Reset checklist" button with confirmation. Checked items are saved in
   `UserDefaults` under `survive72.kit.checkedItemIDs.v1`.
+- **Knowledge (SURVIVE KNOWLEDGE)**: offline library bundled with the app, with
+  six categories, local search on title and text (case- and accent-insensitive,
+  all words must match), category filters and an article page. Every article is
+  demo content marked **TO BE VERIFIED**: no instructions, no medical guidance.
 - **All other sections**: placeholder demo data (`SURVIVE72/Data/DemoContent.swift`).
 
 ## Structure
@@ -27,13 +31,14 @@ ios/
 ├── SURVIVE72/
 │   ├── App/            entry point, injects the Kit store
 │   ├── Theme/          colors and metrics
-│   ├── Models/         Home sections, Kit category/item/progress
-│   ├── Data/           Kit default items, demo content
+│   ├── Models/         Home sections, Kit models, Knowledge article + search
+│   ├── Data/           Kit default items, Knowledge articles, demo content
 │   ├── Storage/        KitChecklistStore (UserDefaults)
 │   ├── Views/          Home, section tile, demo detail
-│   │   └── Kit/        checklist, item row, progress card
+│   │   ├── Kit/        checklist, item row, progress card
+│   │   └── Knowledge/  library list and article page
 │   └── Assets.xcassets
-└── SURVIVE72Tests/     persistence and progress tests
+└── SURVIVE72Tests/     Kit persistence/progress, Knowledge search/filters
 ```
 
 ## Build and test without signing

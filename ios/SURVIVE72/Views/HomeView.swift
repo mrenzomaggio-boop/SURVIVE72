@@ -34,12 +34,14 @@ struct HomeView: View {
         }
     }
 
-    /// Kit opens the real SURVIVE KIT module; every other section is still a demo.
+    /// Kit and Knowledge open real modules; every other section is still a demo.
     @ViewBuilder
     private func destination(for section: AppSection) -> some View {
         switch section {
         case .kit:
             KitChecklistView()
+        case .knowledge:
+            KnowledgeLibraryView()
         default:
             SectionDetailView(section: section)
         }

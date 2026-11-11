@@ -7,6 +7,7 @@ on:
     branches:
       - feature/ios-foundation
       - feature/ios-kit-checklist
+      - feature/ios-knowledge-library
     paths:
       - 'ios/**'
       - '.github/workflows/ios-build.yml'
