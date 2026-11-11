@@ -1,0 +1,345 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5A7200000000000000000102 /* SURVIVE72App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000101 /* SURVIVE72App.swift */; };
+		5A7200000000000000000104 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000103 /* Theme.swift */; };
+		5A7200000000000000000106 /* AppSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000105 /* AppSection.swift */; };
+		5A7200000000000000000108 /* DemoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000107 /* DemoContent.swift */; };
+		5A720000000000000000010A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000109 /* HomeView.swift */; };
+		5A720000000000000000010C /* SectionTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010B /* SectionTile.swift */; };
+		5A720000000000000000010E /* SectionDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010D /* SectionDetailView.swift */; };
+		5A7200000000000000000110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010F /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5A7200000000000000000101 /* SURVIVE72App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SURVIVE72App.swift; sourceTree = "<group>"; };
+		5A7200000000000000000103 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		5A7200000000000000000105 /* AppSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSection.swift; sourceTree = "<group>"; };
+		5A7200000000000000000107 /* DemoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoContent.swift; sourceTree = "<group>"; };
+		5A7200000000000000000109 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		5A720000000000000000010B /* SectionTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTile.swift; sourceTree = "<group>"; };
+		5A720000000000000000010D /* SectionDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDetailView.swift; sourceTree = "<group>"; };
+		5A720000000000000000010F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A7200000000000000000111 /* SURVIVE72.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SURVIVE72.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A720000000000000000011B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5A7200000000000000000112 = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000113 /* SURVIVE72 */,
+				5A7200000000000000000114 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5A7200000000000000000113 /* SURVIVE72 */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000115 /* App */,
+				5A7200000000000000000116 /* Theme */,
+				5A7200000000000000000117 /* Models */,
+				5A7200000000000000000118 /* Data */,
+				5A7200000000000000000119 /* Views */,
+				5A720000000000000000010F /* Assets.xcassets */,
+			);
+			path = SURVIVE72;
+			sourceTree = "<group>";
+		};
+		5A7200000000000000000114 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000111 /* SURVIVE72.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5A7200000000000000000115 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000101 /* SURVIVE72App.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5A7200000000000000000116 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000103 /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		5A7200000000000000000117 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000105 /* AppSection.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5A7200000000000000000118 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000107 /* DemoContent.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		5A7200000000000000000119 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000109 /* HomeView.swift */,
+				5A720000000000000000010B /* SectionTile.swift */,
+				5A720000000000000000010D /* SectionDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5A72000000000000000000A1 /* SURVIVE72 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A720000000000000000011E /* Build configuration list for PBXNativeTarget "SURVIVE72" */;
+			buildPhases = (
+				5A720000000000000000011A /* Sources */,
+				5A720000000000000000011B /* Frameworks */,
+				5A720000000000000000011C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SURVIVE72;
+			productName = SURVIVE72;
+			productReference = 5A7200000000000000000111 /* SURVIVE72.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5A72000000000000000000A0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					5A72000000000000000000A1 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 5A720000000000000000011D /* Build configuration list for PBXProject "SURVIVE72" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5A7200000000000000000112;
+			productRefGroup = 5A7200000000000000000114 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5A72000000000000000000A1 /* SURVIVE72 */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5A720000000000000000011C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7200000000000000000110 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5A720000000000000000011A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A7200000000000000000102 /* SURVIVE72App.swift in Sources */,
+				5A7200000000000000000104 /* Theme.swift in Sources */,
+				5A7200000000000000000106 /* AppSection.swift in Sources */,
+				5A7200000000000000000108 /* DemoContent.swift in Sources */,
+				5A720000000000000000010A /* HomeView.swift in Sources */,
+				5A720000000000000000010C /* SectionTile.swift in Sources */,
+				5A720000000000000000010E /* SectionDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5A720000000000000000011F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5A7200000000000000000120 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5A7200000000000000000121 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "SURVIVE 72";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.survive72.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5A7200000000000000000122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "SURVIVE 72";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.survive72.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5A720000000000000000011D /* Build configuration list for PBXProject "SURVIVE72" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A720000000000000000011F /* Debug */,
+				5A7200000000000000000120 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5A720000000000000000011E /* Build configuration list for PBXNativeTarget "SURVIVE72" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A7200000000000000000121 /* Debug */,
+				5A7200000000000000000122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5A72000000000000000000A0 /* Project object */;
+}
