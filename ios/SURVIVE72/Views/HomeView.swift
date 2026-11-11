@@ -34,7 +34,7 @@ struct HomeView: View {
         }
     }
 
-    /// Kit, Knowledge and Alert open real modules; every other section is still a demo.
+    /// Kit, Knowledge, Alert and Tools open real modules; every other section is still a demo.
     @ViewBuilder
     private func destination(for section: AppSection) -> some View {
         switch section {
@@ -44,6 +44,8 @@ struct HomeView: View {
             KnowledgeLibraryView()
         case .alert:
             AlertPlanningView()
+        case .tools:
+            ToolsView()
         default:
             SectionDetailView(section: section)
         }
@@ -80,5 +82,6 @@ private struct OfflineBanner: View {
     HomeView()
         .environment(KitChecklistStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(AlertPlanStore(defaults: UserDefaults(suiteName: "preview.home")!))
+        .environment(ToolsState())
         .preferredColorScheme(.dark)
 }

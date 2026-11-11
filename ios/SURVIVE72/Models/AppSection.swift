@@ -39,7 +39,7 @@ enum AppSection: String, CaseIterable, Identifiable, Hashable {
         case .kit: "72-hour checklist"
         case .radio: "Frequencies"
         case .alert: "SOS plan"
-        case .tools: "Utilities"
+        case .tools: "Stopwatch, SOS light"
         case .downloads: "Offline packs"
         case .settings: "Preferences"
         }
