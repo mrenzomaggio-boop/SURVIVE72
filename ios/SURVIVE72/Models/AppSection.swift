@@ -32,7 +32,7 @@ enum AppSection: String, CaseIterable, Identifiable, Hashable {
 
     var subtitle: String {
         switch self {
-        case .connect: "Nearby devices"
+        case .connect: "Local demo chat"
         case .maps: "Offline maps"
         case .knowledge: "Offline library"
         case .medical: "First aid"
