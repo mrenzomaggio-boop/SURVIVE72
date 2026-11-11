@@ -29,8 +29,19 @@ struct HomeView: View {
             .toolbarBackground(Theme.background, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationDestination(for: AppSection.self) { section in
-                SectionDetailView(section: section)
+                destination(for: section)
             }
+        }
+    }
+
+    /// Kit opens the real SURVIVE KIT module; every other section is still a demo.
+    @ViewBuilder
+    private func destination(for section: AppSection) -> some View {
+        switch section {
+        case .kit:
+            KitChecklistView()
+        default:
+            SectionDetailView(section: section)
         }
     }
 }
@@ -43,7 +54,7 @@ private struct OfflineBanner: View {
                 .font(.title3.weight(.bold))
                 .foregroundStyle(Theme.ok)
                 .accessibilityHidden(true)
-            Text("OFFLINE READY · LOCAL DEMO DATA")
+            Text("OFFLINE READY · DATA STAYS ON DEVICE")
                 .font(.subheadline.weight(.heavy))
                 .foregroundStyle(Theme.textPrimary)
                 .minimumScaleFactor(0.7)
@@ -57,11 +68,12 @@ private struct OfflineBanner: View {
                 .stroke(Theme.ok, lineWidth: Theme.borderWidth)
         )
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Offline ready. Showing local demo data.")
+        .accessibilityLabel("Offline ready. All data stays on this device.")
     }
 }
 
 #Preview {
     HomeView()
+        .environment(KitChecklistStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .preferredColorScheme(.dark)
 }

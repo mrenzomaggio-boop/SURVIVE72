@@ -1,11 +1,12 @@
 name: iOS build
 
-# Manual trigger, plus automatic validation for this foundation branch.
+# Manual trigger, plus automatic validation for the iOS feature branches.
 on:
   workflow_dispatch:
   push:
     branches:
       - feature/ios-foundation
+      - feature/ios-kit-checklist
     paths:
       - 'ios/**'
       - '.github/workflows/ios-build.yml'
@@ -19,7 +20,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build SURVIVE72 (iOS Simulator, unsigned)
+    name: Build and test SURVIVE72 (iOS Simulator, unsigned)
     runs-on: macos-15-intel
     timeout-minutes: 30
 
@@ -32,17 +33,37 @@ jobs:
           xcodebuild -version
           xcrun --sdk iphonesimulator --show-sdk-version
 
-      - name: Build for iphonesimulator (no code signing)
+      - name: Pick an iPhone simulator
+        id: simulator
+        run: |
+          # Newest available iOS runtime, first iPhone on it. Avoids hard-coding
+          # a device name that may not exist on the runner image.
+          UDID="$(xcrun simctl list devices available --json | jq -r '
+            [.devices | to_entries[]
+              | select(.key | test("SimRuntime\\.iOS-"))
+              | {v: (.key | capture("iOS-(?<maj>[0-9]+)-(?<min>[0-9]+)") | [(.maj|tonumber), (.min|tonumber)]),
+                 d: [.value[] | select(.name | startswith("iPhone"))]}
+              | select(.d | length > 0)]
+            | sort_by(.v) | last | .d[0].udid')"
+          if [ -z "$UDID" ] || [ "$UDID" = "null" ]; then
+            echo "No available iPhone simulator found" >&2
+            xcrun simctl list devices available
+            exit 1
+          fi
+          xcrun simctl list devices available | grep "$UDID"
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+
+      - name: Build and run unit tests on iphonesimulator (no code signing)
         id: build
         working-directory: ios
         run: |
           set -o pipefail
-          XCODEBUILD_CMD="xcodebuild build \
+          XCODEBUILD_CMD="xcodebuild test \
             -project SURVIVE72.xcodeproj \
             -scheme SURVIVE72 \
             -configuration Debug \
             -sdk iphonesimulator \
-            -destination 'generic/platform=iOS Simulator' \
+            -destination 'platform=iOS Simulator,id=${{ steps.simulator.outputs.udid }}' \
             -derivedDataPath build/DerivedData \
             CODE_SIGNING_ALLOWED=NO \
             CODE_SIGNING_REQUIRED=NO \

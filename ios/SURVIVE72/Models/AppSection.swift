@@ -36,7 +36,7 @@ enum AppSection: String, CaseIterable, Identifiable, Hashable {
         case .maps: "Offline maps"
         case .knowledge: "Survival guides"
         case .medical: "First aid"
-        case .kit: "Supplies checklist"
+        case .kit: "72-hour checklist"
         case .radio: "Frequencies"
         case .alert: "Emergency signals"
         case .tools: "Utilities"
