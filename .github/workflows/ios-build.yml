@@ -8,6 +8,7 @@ on:
       - feature/ios-foundation
       - feature/ios-kit-checklist
       - feature/ios-knowledge-library
+      - feature/ios-alert-planning
     paths:
       - 'ios/**'
       - '.github/workflows/ios-build.yml'
