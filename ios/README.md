@@ -21,6 +21,13 @@ Native SwiftUI app for SURVIVE 72.
   six categories, local search on title and text (case- and accent-insensitive,
   all words must match), category filters and an article page. Every article is
   demo content marked **TO BE VERIFIED**: no instructions, no medical guidance.
+- **Alert (SURVIVE ALERT)**: local emergency planning. Add, edit and delete
+  emergency contacts; a personal plan (name, meeting point, note); an SOS
+  message generated from them that you can edit and copy with
+  "Copy SOS message". Nothing is ever sent: the screen always shows
+  "NOT SENT · NO EMERGENCY SERVICE CONTACTED". No network, SMS, calls, GPS or
+  permissions. Data is saved as JSON in `UserDefaults` under
+  `survive72.alert.planData.v1`.
 - **All other sections**: placeholder demo data (`SURVIVE72/Data/DemoContent.swift`).
 
 ## Structure
@@ -31,14 +38,15 @@ ios/
 ├── SURVIVE72/
 │   ├── App/            entry point, injects the Kit store
 │   ├── Theme/          colors and metrics
-│   ├── Models/         Home sections, Kit models, Knowledge article + search
+│   ├── Models/         Home sections, Kit, Knowledge and Alert models, SOS text
 │   ├── Data/           Kit default items, Knowledge articles, demo content
-│   ├── Storage/        KitChecklistStore (UserDefaults)
+│   ├── Storage/        KitChecklistStore, AlertPlanStore (UserDefaults)
 │   ├── Views/          Home, section tile, demo detail
 │   │   ├── Kit/        checklist, item row, progress card
-│   │   └── Knowledge/  library list and article page
+│   │   ├── Knowledge/  library list and article page
+│   │   └── Alert/      plan, contacts, SOS message, contact editor
 │   └── Assets.xcassets
-└── SURVIVE72Tests/     Kit persistence/progress, Knowledge search/filters
+└── SURVIVE72Tests/     Kit, Knowledge search/filters, Alert storage and SOS text
 ```
 
 ## Build and test without signing

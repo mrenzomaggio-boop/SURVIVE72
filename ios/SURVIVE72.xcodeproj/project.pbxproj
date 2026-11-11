@@ -25,9 +25,16 @@
 		5A7200000000000000000144 /* KnowledgeLibraryContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000143 /* KnowledgeLibraryContent.swift */; };
 		5A7200000000000000000146 /* KnowledgeLibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000145 /* KnowledgeLibraryView.swift */; };
 		5A7200000000000000000148 /* KnowledgeArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000147 /* KnowledgeArticleView.swift */; };
+		5A720000000000000000014D /* AlertPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000014C /* AlertPlan.swift */; };
+		5A720000000000000000014F /* SOSMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000014E /* SOSMessage.swift */; };
+		5A7200000000000000000151 /* AlertPlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000150 /* AlertPlanStore.swift */; };
+		5A7200000000000000000153 /* AlertPlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000152 /* AlertPlanningView.swift */; };
+		5A7200000000000000000155 /* ContactEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000154 /* ContactEditorView.swift */; };
 		5A7200000000000000000133 /* KitChecklistStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000132 /* KitChecklistStoreTests.swift */; };
 		5A7200000000000000000135 /* KitProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000134 /* KitProgressTests.swift */; };
 		5A720000000000000000014B /* KnowledgeLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000014A /* KnowledgeLibraryTests.swift */; };
+		5A7200000000000000000158 /* AlertPlanStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000157 /* AlertPlanStoreTests.swift */; };
+		5A720000000000000000015A /* SOSMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000159 /* SOSMessageTests.swift */; };
 		5A7200000000000000000110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -60,9 +67,16 @@
 		5A7200000000000000000143 /* KnowledgeLibraryContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeLibraryContent.swift; sourceTree = "<group>"; };
 		5A7200000000000000000145 /* KnowledgeLibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeLibraryView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000147 /* KnowledgeArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeArticleView.swift; sourceTree = "<group>"; };
+		5A720000000000000000014C /* AlertPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPlan.swift; sourceTree = "<group>"; };
+		5A720000000000000000014E /* SOSMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSMessage.swift; sourceTree = "<group>"; };
+		5A7200000000000000000150 /* AlertPlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPlanStore.swift; sourceTree = "<group>"; };
+		5A7200000000000000000152 /* AlertPlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPlanningView.swift; sourceTree = "<group>"; };
+		5A7200000000000000000154 /* ContactEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditorView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000132 /* KitChecklistStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitChecklistStoreTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000134 /* KitProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitProgressTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000014A /* KnowledgeLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeLibraryTests.swift; sourceTree = "<group>"; };
+		5A7200000000000000000157 /* AlertPlanStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPlanStoreTests.swift; sourceTree = "<group>"; };
+		5A7200000000000000000159 /* SOSMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSMessageTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000010F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A7200000000000000000111 /* SURVIVE72.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SURVIVE72.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7200000000000000000136 /* SURVIVE72Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SURVIVE72Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +155,8 @@
 				5A7200000000000000000123 /* KitChecklist.swift */,
 				5A720000000000000000013F /* KnowledgeArticle.swift */,
 				5A7200000000000000000141 /* KnowledgeLibrary.swift */,
+				5A720000000000000000014C /* AlertPlan.swift */,
+				5A720000000000000000014E /* SOSMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -159,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7200000000000000000127 /* KitChecklistStore.swift */,
+				5A7200000000000000000150 /* AlertPlanStore.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -171,6 +188,7 @@
 				5A720000000000000000010D /* SectionDetailView.swift */,
 				5A7200000000000000000130 /* Kit */,
 				5A7200000000000000000149 /* Knowledge */,
+				5A7200000000000000000156 /* Alert */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -194,12 +212,23 @@
 			path = Knowledge;
 			sourceTree = "<group>";
 		};
+		5A7200000000000000000156 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000152 /* AlertPlanningView.swift */,
+				5A7200000000000000000154 /* ContactEditorView.swift */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		5A7200000000000000000131 /* SURVIVE72Tests */ = {
 			isa = PBXGroup;
 			children = (
 				5A7200000000000000000132 /* KitChecklistStoreTests.swift */,
 				5A7200000000000000000134 /* KitProgressTests.swift */,
 				5A720000000000000000014A /* KnowledgeLibraryTests.swift */,
+				5A7200000000000000000157 /* AlertPlanStoreTests.swift */,
+				5A7200000000000000000159 /* SOSMessageTests.swift */,
 			);
 			path = SURVIVE72Tests;
 			sourceTree = "<group>";
@@ -321,6 +350,11 @@
 				5A7200000000000000000144 /* KnowledgeLibraryContent.swift in Sources */,
 				5A7200000000000000000146 /* KnowledgeLibraryView.swift in Sources */,
 				5A7200000000000000000148 /* KnowledgeArticleView.swift in Sources */,
+				5A720000000000000000014D /* AlertPlan.swift in Sources */,
+				5A720000000000000000014F /* SOSMessage.swift in Sources */,
+				5A7200000000000000000151 /* AlertPlanStore.swift in Sources */,
+				5A7200000000000000000153 /* AlertPlanningView.swift in Sources */,
+				5A7200000000000000000155 /* ContactEditorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +365,8 @@
 				5A7200000000000000000133 /* KitChecklistStoreTests.swift in Sources */,
 				5A7200000000000000000135 /* KitProgressTests.swift in Sources */,
 				5A720000000000000000014B /* KnowledgeLibraryTests.swift in Sources */,
+				5A7200000000000000000158 /* AlertPlanStoreTests.swift in Sources */,
+				5A720000000000000000015A /* SOSMessageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
