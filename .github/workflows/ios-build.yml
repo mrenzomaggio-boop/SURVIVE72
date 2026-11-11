@@ -12,6 +12,7 @@ on:
       - feature/ios-tools-core
       - feature/ios-preparedness-settings
       - feature/ios-connect-foundation
+      - feature/ios-maps-foundation
     paths:
       - 'ios/**'
       - '.github/workflows/ios-build.yml'

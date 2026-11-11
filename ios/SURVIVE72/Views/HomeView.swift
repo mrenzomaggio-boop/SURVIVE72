@@ -34,13 +34,14 @@ struct HomeView: View {
         }
     }
 
-    /// Every section except Maps and Medical opens a real module;
-    /// Maps and Medical are still demos.
+    /// Every section except Medical opens a real module; Medical is still a demo.
     @ViewBuilder
     private func destination(for section: AppSection) -> some View {
         switch section {
         case .connect:
             ConnectView()
+        case .maps:
+            MapsView()
         case .kit:
             KitChecklistView()
         case .knowledge:
@@ -95,5 +96,6 @@ private struct OfflineBanner: View {
         .environment(SettingsStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(DownloadsStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(ConnectStore(defaults: UserDefaults(suiteName: "preview.home")!))
+        .environment(MapsStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .preferredColorScheme(.dark)
 }

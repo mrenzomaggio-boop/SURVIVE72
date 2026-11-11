@@ -52,6 +52,12 @@
 		5A7200000000000000000190 /* ConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000018F /* ConnectView.swift */; };
 		5A7200000000000000000192 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000191 /* ConversationView.swift */; };
 		5A7200000000000000000194 /* SOSComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000193 /* SOSComposerView.swift */; };
+		5A720000000000000000019B /* SavedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000019A /* SavedPlace.swift */; };
+		5A720000000000000000019D /* OfflineArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000019C /* OfflineArea.swift */; };
+		5A720000000000000000019F /* MapsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000019E /* MapsStore.swift */; };
+		5A72000000000000000001A1 /* MapsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001A0 /* MapsView.swift */; };
+		5A72000000000000000001A3 /* PlaceEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001A2 /* PlaceEditorView.swift */; };
+		5A72000000000000000001A5 /* SensorPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001A4 /* SensorPlaceholderView.swift */; };
 		5A7200000000000000000133 /* KitChecklistStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000132 /* KitChecklistStoreTests.swift */; };
 		5A7200000000000000000135 /* KitProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000134 /* KitProgressTests.swift */; };
 		5A720000000000000000014B /* KnowledgeLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000014A /* KnowledgeLibraryTests.swift */; };
@@ -64,6 +70,8 @@
 		5A7200000000000000000186 /* RadioGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000185 /* RadioGuideTests.swift */; };
 		5A7200000000000000000197 /* ConnectStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000196 /* ConnectStoreTests.swift */; };
 		5A7200000000000000000199 /* MessageQueueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000198 /* MessageQueueTests.swift */; };
+		5A72000000000000000001A8 /* CoordinateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001A7 /* CoordinateTests.swift */; };
+		5A72000000000000000001AA /* MapsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001A9 /* MapsStoreTests.swift */; };
 		5A7200000000000000000110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +131,12 @@
 		5A720000000000000000018F /* ConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000191 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000193 /* SOSComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSComposerView.swift; sourceTree = "<group>"; };
+		5A720000000000000000019A /* SavedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlace.swift; sourceTree = "<group>"; };
+		5A720000000000000000019C /* OfflineArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineArea.swift; sourceTree = "<group>"; };
+		5A720000000000000000019E /* MapsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsStore.swift; sourceTree = "<group>"; };
+		5A72000000000000000001A0 /* MapsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsView.swift; sourceTree = "<group>"; };
+		5A72000000000000000001A2 /* PlaceEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceEditorView.swift; sourceTree = "<group>"; };
+		5A72000000000000000001A4 /* SensorPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorPlaceholderView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000132 /* KitChecklistStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitChecklistStoreTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000134 /* KitProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitProgressTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000014A /* KnowledgeLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeLibraryTests.swift; sourceTree = "<group>"; };
@@ -135,6 +149,8 @@
 		5A7200000000000000000185 /* RadioGuideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGuideTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000196 /* ConnectStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectStoreTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000198 /* MessageQueueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageQueueTests.swift; sourceTree = "<group>"; };
+		5A72000000000000000001A7 /* CoordinateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateTests.swift; sourceTree = "<group>"; };
+		5A72000000000000000001A9 /* MapsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapsStoreTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000010F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A7200000000000000000111 /* SURVIVE72.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SURVIVE72.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7200000000000000000136 /* SURVIVE72Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SURVIVE72Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -222,6 +238,8 @@
 				5A7200000000000000000172 /* RadioGuide.swift */,
 				5A7200000000000000000187 /* ConnectMessage.swift */,
 				5A7200000000000000000189 /* MessageQueue.swift */,
+				5A720000000000000000019A /* SavedPlace.swift */,
+				5A720000000000000000019C /* OfflineArea.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -246,6 +264,7 @@
 				5A7200000000000000000174 /* SettingsStore.swift */,
 				5A7200000000000000000176 /* DownloadsStore.swift */,
 				5A720000000000000000018D /* ConnectStore.swift */,
+				5A720000000000000000019E /* MapsStore.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -264,6 +283,7 @@
 				5A720000000000000000017F /* Downloads */,
 				5A7200000000000000000180 /* Radio */,
 				5A7200000000000000000195 /* Connect */,
+				5A72000000000000000001A6 /* Maps */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -341,6 +361,16 @@
 			path = Connect;
 			sourceTree = "<group>";
 		};
+		5A72000000000000000001A6 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				5A72000000000000000001A0 /* MapsView.swift */,
+				5A72000000000000000001A2 /* PlaceEditorView.swift */,
+				5A72000000000000000001A4 /* SensorPlaceholderView.swift */,
+			);
+			path = Maps;
+			sourceTree = "<group>";
+		};
 		5A7200000000000000000131 /* SURVIVE72Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +386,8 @@
 				5A7200000000000000000185 /* RadioGuideTests.swift */,
 				5A7200000000000000000196 /* ConnectStoreTests.swift */,
 				5A7200000000000000000198 /* MessageQueueTests.swift */,
+				5A72000000000000000001A7 /* CoordinateTests.swift */,
+				5A72000000000000000001A9 /* MapsStoreTests.swift */,
 			);
 			path = SURVIVE72Tests;
 			sourceTree = "<group>";
@@ -504,6 +536,12 @@
 				5A7200000000000000000190 /* ConnectView.swift in Sources */,
 				5A7200000000000000000192 /* ConversationView.swift in Sources */,
 				5A7200000000000000000194 /* SOSComposerView.swift in Sources */,
+				5A720000000000000000019B /* SavedPlace.swift in Sources */,
+				5A720000000000000000019D /* OfflineArea.swift in Sources */,
+				5A720000000000000000019F /* MapsStore.swift in Sources */,
+				5A72000000000000000001A1 /* MapsView.swift in Sources */,
+				5A72000000000000000001A3 /* PlaceEditorView.swift in Sources */,
+				5A72000000000000000001A5 /* SensorPlaceholderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +561,8 @@
 				5A7200000000000000000186 /* RadioGuideTests.swift in Sources */,
 				5A7200000000000000000197 /* ConnectStoreTests.swift in Sources */,
 				5A7200000000000000000199 /* MessageQueueTests.swift in Sources */,
+				5A72000000000000000001A8 /* CoordinateTests.swift in Sources */,
+				5A72000000000000000001AA /* MapsStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

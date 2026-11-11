@@ -53,7 +53,16 @@ Native SwiftUI app for SURVIVE 72.
   "LOCAL DEMO · NOT TRANSMITTED". No Bluetooth, Wi-Fi peer-to-peer, network,
   GPS or permissions. Data is saved as JSON in `UserDefaults` under
   `survive72.connect.data.v1` and is erased by "Erase all local data".
-- **Maps and Medical**: placeholder demo data (`SURVIVE72/Data/DemoContent.swift`).
+- **Maps (SURVIVE MAPS)**: saved places typed by hand (name, latitude,
+  longitude, note) that you can add, edit and delete. Latitude must be between
+  -90 and 90 and longitude between -180 and 180 ("." or "," as decimal
+  separator). Coordinates are shown in decimal degrees and DMS
+  (e.g. 45° 27′ 51.1″ N). Demo offline areas can be marked prepared or not
+  prepared; nothing is downloaded. Compass and current position are marked
+  **REQUIRES PHYSICAL-DEVICE TEST**. No MapKit, GPS, network or permissions.
+  Data is saved as JSON in `UserDefaults` under `survive72.maps.data.v1` and
+  is erased by "Erase all local data".
+- **Medical**: placeholder demo data (`SURVIVE72/Data/DemoContent.swift`).
 
 ## Structure
 
@@ -63,9 +72,9 @@ ios/
 ├── SURVIVE72/
 │   ├── App/            entry point, injects the Kit store
 │   ├── Theme/          colors and metrics
-│   ├── Models/         Home sections, Kit, Knowledge, Alert, Tools, settings, packs, radio guide, Connect messages and queue
+│   ├── Models/         Home sections, Kit, Knowledge, Alert, Tools, settings, packs, radio guide, Connect messages and queue, Maps places, DMS and areas
 │   ├── Data/           Kit default items, Knowledge articles, Connect demo chats, demo content
-│   ├── Storage/        Kit, Alert, Settings, Downloads and Connect stores, ToolsState (memory)
+│   ├── Storage/        Kit, Alert, Settings, Downloads, Connect and Maps stores, ToolsState (memory)
 │   ├── Views/          Home, section tile, demo detail
 │   │   ├── Kit/        checklist, item row, progress card
 │   │   ├── Knowledge/  library list and article page
@@ -74,7 +83,8 @@ ios/
 │   │   ├── Settings/   preferences, privacy, erase local data
 │   │   ├── Downloads/  offline packs and space
 │   │   ├── Radio/      offline radio guide
-│   │   └── Connect/    local chat, queue, SOS composer
+│   │   ├── Connect/    local chat, queue, SOS composer
+│   │   └── Maps/       saved places, place editor, offline areas, sensor placeholders
 │   └── Assets.xcassets
 └── SURVIVE72Tests/     unit tests for every real module
 ```

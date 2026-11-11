@@ -73,6 +73,7 @@ final class SettingsStoreTests: XCTestCase {
         let settings = SettingsStore(defaults: defaults)
         let downloads = DownloadsStore(defaults: defaults)
         let connect = ConnectStore(defaults: defaults)
+        let maps = MapsStore(defaults: defaults)
         let tools = ToolsState()
 
         kit.toggle(try XCTUnwrap(kit.items.first))
@@ -82,11 +83,13 @@ final class SettingsStoreTests: XCTestCase {
         downloads.setPrepared(true, for: try XCTUnwrap(downloads.packs.first { !$0.isBundled }))
         connect.send("Hello", to: "family")
         connect.setSOSText("Edited SOS")
+        maps.addPlace(name: "Shelter", latitude: 45.5, longitude: 9.2)
+        maps.setPrepared(true, for: try XCTUnwrap(maps.areas.first))
         tools.stopwatch.start(at: Date())
         tools.sosSignal.start(at: Date())
 
         LocalDataReset.perform(kit: kit, alert: alert, settings: settings,
-                               downloads: downloads, connect: connect, tools: tools)
+                               downloads: downloads, connect: connect, maps: maps, tools: tools)
 
         // In memory
         XCTAssertEqual(kit.totalProgress.checked, 0)
@@ -94,6 +97,7 @@ final class SettingsStoreTests: XCTestCase {
         XCTAssertEqual(settings.settings, AppSettings())
         XCTAssertTrue(downloads.preparedIDs.isEmpty)
         XCTAssertEqual(connect.data, ConnectDemoContent.initialData())
+        XCTAssertEqual(maps.data, MapsData())
         XCTAssertFalse(tools.stopwatch.isRunning)
         XCTAssertFalse(tools.sosSignal.isActive)
 
@@ -103,6 +107,7 @@ final class SettingsStoreTests: XCTestCase {
         }
         XCTAssertEqual(KitChecklistStore(defaults: defaults).totalProgress.checked, 0)
         XCTAssertTrue(AlertPlanStore(defaults: defaults).contacts.isEmpty)
+        XCTAssertTrue(MapsStore(defaults: defaults).places.isEmpty)
     }
 
     func testStorageKeysAreUnique() {
