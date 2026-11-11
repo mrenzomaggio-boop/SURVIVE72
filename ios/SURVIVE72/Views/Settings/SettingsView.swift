@@ -7,6 +7,7 @@ struct SettingsView: View {
     @Environment(AlertPlanStore.self) private var alertStore
     @Environment(DownloadsStore.self) private var downloadsStore
     @Environment(ConnectStore.self) private var connectStore
+    @Environment(MapsStore.self) private var mapsStore
     @Environment(ToolsState.self) private var toolsState
 
     @State private var isConfirmingReset = false
@@ -30,12 +31,12 @@ struct SettingsView: View {
         .alert("Erase all local data?", isPresented: $isConfirmingReset) {
             Button("Erase", role: .destructive) {
                 LocalDataReset.perform(kit: kitStore, alert: alertStore, settings: settingsStore,
-                                       downloads: downloadsStore, connect: connectStore, tools: toolsState)
+                                       downloads: downloadsStore, connect: connectStore, maps: mapsStore, tools: toolsState)
                 didReset = true
             }
             Button("Cancel", role: .cancel) {}
         } message: {
-            Text("Kit checklist, emergency plan and contacts, local chat and queue, prepared packs and preferences will be removed from this device. This cannot be undone.")
+            Text("Kit checklist, emergency plan and contacts, local chat and queue, saved places and map areas, prepared packs and preferences will be removed from this device. This cannot be undone.")
         }
     }
 
