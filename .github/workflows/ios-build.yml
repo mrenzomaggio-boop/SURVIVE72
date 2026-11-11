@@ -1,0 +1,63 @@
+name: iOS build
+
+# Manual trigger only, to keep macOS runner costs under control.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build SURVIVE72 (iOS Simulator, unsigned)
+    runs-on: macos-15
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: |
+          xcodebuild -version
+          xcrun --sdk iphonesimulator --show-sdk-version
+
+      - name: Build for iphonesimulator (no code signing)
+        id: build
+        working-directory: ios
+        run: |
+          set -o pipefail
+          XCODEBUILD_CMD="xcodebuild build \
+            -project SURVIVE72.xcodeproj \
+            -scheme SURVIVE72 \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination 'generic/platform=iOS Simulator' \
+            -derivedDataPath build/DerivedData \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=''"
+          echo "$XCODEBUILD_CMD" | tr -s ' ' > "$RUNNER_TEMP/xcodebuild_cmd.txt"
+          eval "$XCODEBUILD_CMD"
+
+      - name: Report xcodebuild command
+        if: always()
+        run: |
+          CMD="$(cat "$RUNNER_TEMP/xcodebuild_cmd.txt" 2>/dev/null || echo 'not executed')"
+          echo "xcodebuild command executed (from ios/):"
+          echo "$CMD"
+          {
+            echo "### xcodebuild command executed"
+            echo
+            echo "Working directory: \`ios/\`"
+            echo
+            echo '```sh'
+            echo "$CMD"
+            echo '```'
+            echo
+            echo "Result: **${{ steps.build.outcome }}**"
+          } >> "$GITHUB_STEP_SUMMARY"
