@@ -34,7 +34,8 @@ struct HomeView: View {
         }
     }
 
-    /// Kit, Knowledge, Alert and Tools open real modules; every other section is still a demo.
+    /// Kit, Knowledge, Alert, Tools, Radio, Downloads and Settings open real
+    /// modules; Connect and Maps are still demos.
     @ViewBuilder
     private func destination(for section: AppSection) -> some View {
         switch section {
@@ -46,6 +47,12 @@ struct HomeView: View {
             AlertPlanningView()
         case .tools:
             ToolsView()
+        case .radio:
+            RadioGuideView()
+        case .downloads:
+            DownloadsView()
+        case .settings:
+            SettingsView()
         default:
             SectionDetailView(section: section)
         }
@@ -83,5 +90,7 @@ private struct OfflineBanner: View {
         .environment(KitChecklistStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(AlertPlanStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(ToolsState())
+        .environment(SettingsStore(defaults: UserDefaults(suiteName: "preview.home")!))
+        .environment(DownloadsStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .preferredColorScheme(.dark)
 }

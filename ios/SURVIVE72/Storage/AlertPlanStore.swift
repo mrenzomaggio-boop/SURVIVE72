@@ -93,6 +93,12 @@ final class AlertPlanStore {
         save()
     }
 
+    /// Erases plan, contacts and SOS draft from memory and from the device.
+    func resetAll() {
+        data = AlertPlanData()
+        defaults.removeObject(forKey: key)
+    }
+
     // MARK: Persistence
 
     private func save() {

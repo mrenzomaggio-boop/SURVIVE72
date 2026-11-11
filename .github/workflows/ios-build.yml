@@ -10,6 +10,7 @@ on:
       - feature/ios-knowledge-library
       - feature/ios-alert-planning
       - feature/ios-tools-core
+      - feature/ios-preparedness-settings
     paths:
       - 'ios/**'
       - '.github/workflows/ios-build.yml'
