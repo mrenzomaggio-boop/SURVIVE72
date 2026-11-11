@@ -35,7 +35,17 @@ Native SwiftUI app for SURVIVE 72.
   screen awake while running); and a Torch screen marked **REQUIRES
   PHYSICAL-DEVICE TEST** that does not use the camera, flash or permissions.
   State is kept in memory only.
-- **All other sections**: placeholder demo data (`SURVIVE72/Data/DemoContent.swift`).
+- **Settings**: metric/imperial units, high contrast (bolder text), battery
+  saver (fewer screen refreshes), a privacy summary and "Erase all local data"
+  with confirmation. Preferences are saved as JSON in `UserDefaults` under
+  `survive72.settings.v1`.
+- **Downloads**: local offline packs with status (included, prepared, not
+  prepared), readiness of required packs and space used/missing compared with
+  the free space on the device. Nothing is downloaded: non-bundled packs can
+  only be marked as prepared (`survive72.downloads.preparedPackIDs.v1`).
+- **Radio**: offline information guide with topic filters and search. No
+  frequencies, no radio access, nothing is transmitted.
+- **Connect and Maps**: placeholder demo data (`SURVIVE72/Data/DemoContent.swift`).
 
 ## Structure
 
@@ -45,16 +55,19 @@ ios/
 ├── SURVIVE72/
 │   ├── App/            entry point, injects the Kit store
 │   ├── Theme/          colors and metrics
-│   ├── Models/         Home sections, Kit, Knowledge, Alert, stopwatch, SOS pattern
+│   ├── Models/         Home sections, Kit, Knowledge, Alert, Tools, settings, packs, radio guide
 │   ├── Data/           Kit default items, Knowledge articles, demo content
-│   ├── Storage/        KitChecklistStore, AlertPlanStore, ToolsState (memory)
+│   ├── Storage/        Kit, Alert, Settings and Downloads stores, ToolsState (memory)
 │   ├── Views/          Home, section tile, demo detail
 │   │   ├── Kit/        checklist, item row, progress card
 │   │   ├── Knowledge/  library list and article page
 │   │   ├── Alert/      plan, contacts, SOS message, contact editor
-│   │   └── Tools/      tools list, stopwatch, SOS signal, torch placeholder
+│   │   ├── Tools/      tools list, stopwatch, SOS signal, torch placeholder
+│   │   ├── Settings/   preferences, privacy, erase local data
+│   │   ├── Downloads/  offline packs and space
+│   │   └── Radio/      offline radio guide
 │   └── Assets.xcassets
-└── SURVIVE72Tests/     Kit, Knowledge, Alert, stopwatch/format and SOS signal
+└── SURVIVE72Tests/     unit tests for every real module
 ```
 
 ## Build and test without signing

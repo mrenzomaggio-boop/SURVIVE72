@@ -3,6 +3,7 @@ import SwiftUI
 /// Large, readable stopwatch with Start/Pause and Reset.
 struct StopwatchView: View {
     @Environment(ToolsState.self) private var tools
+    @Environment(\.batterySaverEnabled) private var batterySaver
 
     var body: some View {
         let stopwatch = tools.stopwatch
@@ -10,8 +11,10 @@ struct StopwatchView: View {
         VStack(spacing: 32) {
             Spacer(minLength: 0)
 
-            // Refreshes 10 times per second, and only while running.
-            TimelineView(.animation(minimumInterval: 0.1, paused: !stopwatch.isRunning)) { context in
+            // Refreshes 10 times per second (once per second in battery saver),
+            // and only while running.
+            TimelineView(.animation(minimumInterval: batterySaver ? 1.0 : 0.1,
+                                    paused: !stopwatch.isRunning)) { context in
                 let elapsed = stopwatch.elapsed(at: context.date)
                 Text(ElapsedTimeFormat.display(elapsed))
                     .font(.system(size: 76, weight: .black, design: .rounded).monospacedDigit())

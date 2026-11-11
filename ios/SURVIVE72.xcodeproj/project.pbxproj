@@ -37,6 +37,14 @@
 		5A7200000000000000000164 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000163 /* StopwatchView.swift */; };
 		5A7200000000000000000166 /* SOSSignalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000165 /* SOSSignalView.swift */; };
 		5A7200000000000000000168 /* TorchPlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000167 /* TorchPlaceholderView.swift */; };
+		5A720000000000000000016F /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000016E /* AppSettings.swift */; };
+		5A7200000000000000000171 /* OfflinePack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000170 /* OfflinePack.swift */; };
+		5A7200000000000000000173 /* RadioGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000172 /* RadioGuide.swift */; };
+		5A7200000000000000000175 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000174 /* SettingsStore.swift */; };
+		5A7200000000000000000177 /* DownloadsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000176 /* DownloadsStore.swift */; };
+		5A7200000000000000000179 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000178 /* SettingsView.swift */; };
+		5A720000000000000000017B /* DownloadsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000017A /* DownloadsView.swift */; };
+		5A720000000000000000017D /* RadioGuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000017C /* RadioGuideView.swift */; };
 		5A7200000000000000000133 /* KitChecklistStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000132 /* KitChecklistStoreTests.swift */; };
 		5A7200000000000000000135 /* KitProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000134 /* KitProgressTests.swift */; };
 		5A720000000000000000014B /* KnowledgeLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000014A /* KnowledgeLibraryTests.swift */; };
@@ -44,6 +52,9 @@
 		5A720000000000000000015A /* SOSMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000159 /* SOSMessageTests.swift */; };
 		5A720000000000000000016B /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000016A /* StopwatchTests.swift */; };
 		5A720000000000000000016D /* SOSSignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000016C /* SOSSignalTests.swift */; };
+		5A7200000000000000000182 /* SettingsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000181 /* SettingsStoreTests.swift */; };
+		5A7200000000000000000184 /* DownloadsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000183 /* DownloadsStoreTests.swift */; };
+		5A7200000000000000000186 /* RadioGuideTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000185 /* RadioGuideTests.swift */; };
 		5A7200000000000000000110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010F /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +99,14 @@
 		5A7200000000000000000163 /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000165 /* SOSSignalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSignalView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000167 /* TorchPlaceholderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchPlaceholderView.swift; sourceTree = "<group>"; };
+		5A720000000000000000016E /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		5A7200000000000000000170 /* OfflinePack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflinePack.swift; sourceTree = "<group>"; };
+		5A7200000000000000000172 /* RadioGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGuide.swift; sourceTree = "<group>"; };
+		5A7200000000000000000174 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
+		5A7200000000000000000176 /* DownloadsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsStore.swift; sourceTree = "<group>"; };
+		5A7200000000000000000178 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		5A720000000000000000017A /* DownloadsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsView.swift; sourceTree = "<group>"; };
+		5A720000000000000000017C /* RadioGuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGuideView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000132 /* KitChecklistStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitChecklistStoreTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000134 /* KitProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitProgressTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000014A /* KnowledgeLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeLibraryTests.swift; sourceTree = "<group>"; };
@@ -95,6 +114,9 @@
 		5A7200000000000000000159 /* SOSMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSMessageTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000016A /* StopwatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000016C /* SOSSignalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSignalTests.swift; sourceTree = "<group>"; };
+		5A7200000000000000000181 /* SettingsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreTests.swift; sourceTree = "<group>"; };
+		5A7200000000000000000183 /* DownloadsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsStoreTests.swift; sourceTree = "<group>"; };
+		5A7200000000000000000185 /* RadioGuideTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioGuideTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000010F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A7200000000000000000111 /* SURVIVE72.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SURVIVE72.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7200000000000000000136 /* SURVIVE72Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SURVIVE72Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -177,6 +199,9 @@
 				5A720000000000000000014E /* SOSMessage.swift */,
 				5A720000000000000000015B /* Stopwatch.swift */,
 				5A720000000000000000015D /* SOSSignal.swift */,
+				5A720000000000000000016E /* AppSettings.swift */,
+				5A7200000000000000000170 /* OfflinePack.swift */,
+				5A7200000000000000000172 /* RadioGuide.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +222,8 @@
 				5A7200000000000000000127 /* KitChecklistStore.swift */,
 				5A7200000000000000000150 /* AlertPlanStore.swift */,
 				5A720000000000000000015F /* ToolsState.swift */,
+				5A7200000000000000000174 /* SettingsStore.swift */,
+				5A7200000000000000000176 /* DownloadsStore.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -211,6 +238,9 @@
 				5A7200000000000000000149 /* Knowledge */,
 				5A7200000000000000000156 /* Alert */,
 				5A7200000000000000000169 /* Tools */,
+				5A720000000000000000017E /* Settings */,
+				5A720000000000000000017F /* Downloads */,
+				5A7200000000000000000180 /* Radio */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -254,6 +284,30 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
+		5A720000000000000000017E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5A7200000000000000000178 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		5A720000000000000000017F /* Downloads */ = {
+			isa = PBXGroup;
+			children = (
+				5A720000000000000000017A /* DownloadsView.swift */,
+			);
+			path = Downloads;
+			sourceTree = "<group>";
+		};
+		5A7200000000000000000180 /* Radio */ = {
+			isa = PBXGroup;
+			children = (
+				5A720000000000000000017C /* RadioGuideView.swift */,
+			);
+			path = Radio;
+			sourceTree = "<group>";
+		};
 		5A7200000000000000000131 /* SURVIVE72Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +318,9 @@
 				5A7200000000000000000159 /* SOSMessageTests.swift */,
 				5A720000000000000000016A /* StopwatchTests.swift */,
 				5A720000000000000000016C /* SOSSignalTests.swift */,
+				5A7200000000000000000181 /* SettingsStoreTests.swift */,
+				5A7200000000000000000183 /* DownloadsStoreTests.swift */,
+				5A7200000000000000000185 /* RadioGuideTests.swift */,
 			);
 			path = SURVIVE72Tests;
 			sourceTree = "<group>";
@@ -397,6 +454,14 @@
 				5A7200000000000000000164 /* StopwatchView.swift in Sources */,
 				5A7200000000000000000166 /* SOSSignalView.swift in Sources */,
 				5A7200000000000000000168 /* TorchPlaceholderView.swift in Sources */,
+				5A720000000000000000016F /* AppSettings.swift in Sources */,
+				5A7200000000000000000171 /* OfflinePack.swift in Sources */,
+				5A7200000000000000000173 /* RadioGuide.swift in Sources */,
+				5A7200000000000000000175 /* SettingsStore.swift in Sources */,
+				5A7200000000000000000177 /* DownloadsStore.swift in Sources */,
+				5A7200000000000000000179 /* SettingsView.swift in Sources */,
+				5A720000000000000000017B /* DownloadsView.swift in Sources */,
+				5A720000000000000000017D /* RadioGuideView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,6 +476,9 @@
 				5A720000000000000000015A /* SOSMessageTests.swift in Sources */,
 				5A720000000000000000016B /* StopwatchTests.swift in Sources */,
 				5A720000000000000000016D /* SOSSignalTests.swift in Sources */,
+				5A7200000000000000000182 /* SettingsStoreTests.swift in Sources */,
+				5A7200000000000000000184 /* DownloadsStoreTests.swift in Sources */,
+				5A7200000000000000000186 /* RadioGuideTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
