@@ -1,8 +1,14 @@
 name: iOS build
 
-# Manual trigger only, to keep macOS runner costs under control.
+# Manual trigger, plus automatic validation for this foundation branch.
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - feature/ios-foundation
+    paths:
+      - 'ios/**'
+      - '.github/workflows/ios-build.yml'
 
 permissions:
   contents: read
