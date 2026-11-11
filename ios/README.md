@@ -28,6 +28,13 @@ Native SwiftUI app for SURVIVE 72.
   "NOT SENT · NO EMERGENCY SERVICE CONTACTED". No network, SMS, calls, GPS or
   permissions. Data is saved as JSON in `UserDefaults` under
   `survive72.alert.planData.v1`.
+- **Tools (SURVIVE TOOLS)**: a stopwatch (start, pause/resume, reset; readable
+  `MM:SS.t` / `H:MM:SS` format, based on timestamps so it stays correct in the
+  background); an on-screen SOS signal (... --- ... in white on black, 0.5 s
+  per Morse unit, at most one flash per second, starts only on tap, keeps the
+  screen awake while running); and a Torch screen marked **REQUIRES
+  PHYSICAL-DEVICE TEST** that does not use the camera, flash or permissions.
+  State is kept in memory only.
 - **All other sections**: placeholder demo data (`SURVIVE72/Data/DemoContent.swift`).
 
 ## Structure
@@ -38,15 +45,16 @@ ios/
 ├── SURVIVE72/
 │   ├── App/            entry point, injects the Kit store
 │   ├── Theme/          colors and metrics
-│   ├── Models/         Home sections, Kit, Knowledge and Alert models, SOS text
+│   ├── Models/         Home sections, Kit, Knowledge, Alert, stopwatch, SOS pattern
 │   ├── Data/           Kit default items, Knowledge articles, demo content
-│   ├── Storage/        KitChecklistStore, AlertPlanStore (UserDefaults)
+│   ├── Storage/        KitChecklistStore, AlertPlanStore, ToolsState (memory)
 │   ├── Views/          Home, section tile, demo detail
 │   │   ├── Kit/        checklist, item row, progress card
 │   │   ├── Knowledge/  library list and article page
-│   │   └── Alert/      plan, contacts, SOS message, contact editor
+│   │   ├── Alert/      plan, contacts, SOS message, contact editor
+│   │   └── Tools/      tools list, stopwatch, SOS signal, torch placeholder
 │   └── Assets.xcassets
-└── SURVIVE72Tests/     Kit, Knowledge search/filters, Alert storage and SOS text
+└── SURVIVE72Tests/     Kit, Knowledge, Alert, stopwatch/format and SOS signal
 ```
 
 ## Build and test without signing
