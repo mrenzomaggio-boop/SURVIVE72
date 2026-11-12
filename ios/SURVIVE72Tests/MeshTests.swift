@@ -40,6 +40,72 @@ final class MeshTests: XCTestCase {
         XCTAssertEqual(MeshCode.normalized(ada.code), ada.code)
     }
 
+    // MARK: Phone numbers
+
+    func testPhoneNumbersAreNormalized() {
+        XCTAssertEqual(MeshPhone.normalized("333 123 4567"), "+393331234567")
+        XCTAssertEqual(MeshPhone.normalized("+39 333-123.4567"), "+393331234567")
+        XCTAssertEqual(MeshPhone.normalized("0039 (333) 1234567"), "+393331234567")
+        XCTAssertEqual(MeshPhone.normalized("06 1234567"), "+39061234567")
+        XCTAssertEqual(MeshPhone.normalized("+44 7700 900123"), "+447700900123")
+        XCTAssertNil(MeshPhone.normalized("12"))
+        XCTAssertNil(MeshPhone.normalized("hello"))
+        XCTAssertNil(MeshPhone.normalized("+39+333123456"))
+    }
+
+    func testPhoneTagHidesTheNumberAndMatchesEveryWayOfWritingIt() throws {
+        let tag = try XCTUnwrap(MeshPhone.tag(for: "333 123 4567"))
+        XCTAssertEqual(tag, MeshPhone.tag(for: "+393331234567"))
+        XCTAssertNotEqual(tag, MeshPhone.tag(for: "333 123 4568"))
+        XCTAssertFalse(tag.contains("3331234567"))
+        XCTAssertTrue(MeshPhone.isWellFormedTag(tag))
+        XCTAssertNil(MeshPhone.tag(for: "x"))
+    }
+
+    func testPersonIsFoundByPhoneNumberAcrossTheMesh() throws {
+        let dana = MeshIdentity(name: "Dana", phone: "333 123 4567")
+        var a = MeshRouter(myCode: dana.code)
+        var b = MeshRouter(myCode: bob.code)
+        var c = MeshRouter(myCode: cy.code)
+        a.submit(try MeshPacket.alert("I am fine", isSOS: false, from: dana, now: t0), now: t0)
+        meet(a, &b, now: t0)
+        meet(b, &c, now: t0)
+
+        // Cy never met Dana, but finds her by number and can write to her.
+        let found = c.cards(forPhone: "+39 333 1234567")
+        XCTAssertEqual(found.map { $0.name }, ["Dana"])
+        XCTAssertTrue(c.cards(forPhone: "333 000 0000").isEmpty)
+        XCTAssertTrue(a.cards(forPhone: "333 123 4567").isEmpty)   // not herself
+
+        let recipient = try XCTUnwrap(found.first)
+        let reply = try MeshPacket.direct("Where are you?", to: recipient, from: cy, now: t0)
+        c.submit(reply, now: t0)
+        meet(c, &b, now: t0)
+        meet(b, &a, now: t0)
+        XCTAssertEqual(a.inbox(now: t0).first?.directText(for: dana), "Where are you?")
+    }
+
+    func testTwoIdentitiesClaimingOneNumberAreBothReported() throws {
+        let real = MeshIdentity(name: "Dana", phone: "3331234567")
+        let other = MeshIdentity(name: "Not Dana", phone: "3331234567")
+        var b = MeshRouter(myCode: bob.code)
+        b.receive(try MeshPacket.alert("First", isSOS: false, from: real, now: t0).relayed(), now: at(5))
+        b.receive(try MeshPacket.alert("Second", isSOS: false, from: other, now: at(5)).relayed(), now: at(5))
+
+        XCTAssertEqual(b.cards(forPhone: "3331234567").map { $0.name }, ["Dana", "Not Dana"])
+    }
+
+    func testPhoneTagCannotBeChangedByARelay() throws {
+        let packet = try MeshPacket.alert("Hi", isSOS: false, from: ada, now: t0)
+        var card = packet.sender
+        card.phoneTag = MeshPhone.tag(for: "3331234567")
+        let altered = MeshPacket(id: packet.id, kind: .alert, sender: card, recipientCode: nil,
+                                 isSOS: false, createdAt: packet.createdAt, expiresAt: packet.expiresAt,
+                                 hopLimit: packet.hopLimit, payload: packet.payload,
+                                 signature: packet.signature, hops: 0)
+        XCTAssertFalse(altered.isValid(at: t0))
+    }
+
     // MARK: Packets
 
     func testAlertIsSignedAndReadable() throws {

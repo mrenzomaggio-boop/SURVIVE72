@@ -10,6 +10,9 @@ struct MeshCard: Codable, Hashable {
     let signingKey: Data
     /// Public key used to encrypt private messages for this identity.
     let agreementKey: Data
+    /// Fingerprint of the user's phone number, if they chose to be findable by
+    /// it. The number itself never travels. It is declared, not verified.
+    var phoneTag: String? = nil
 
     /// Short code derived from the signing key, e.g. "7K4P-2QXM".
     /// Two people compare it to be sure they are talking to each other.
@@ -18,6 +21,41 @@ struct MeshCard: Codable, Hashable {
     /// True when both keys have the expected size.
     var isWellFormed: Bool {
         signingKey.count == 32 && agreementKey.count == 32
+            && (phoneTag.map(MeshPhone.isWellFormedTag) ?? true)
+    }
+}
+
+/// Phone numbers as a way to find people on the mesh.
+///
+/// Only a fingerprint of the number is shared, so someone who already knows a
+/// number can find its owner, while the number is not shown to everyone else.
+/// The fingerprint slows down casual lookups; it is not strong secrecy, because
+/// phone numbers can be guessed one by one.
+enum MeshPhone {
+    /// Country prefix used when a number is typed without one.
+    static let defaultPrefix = "+39"
+
+    /// International form with digits only after "+", e.g. "+393331234567".
+    /// Nil if the text cannot be a phone number.
+    static func normalized(_ text: String, defaultPrefix: String = MeshPhone.defaultPrefix) -> String? {
+        var cleaned = String(text.filter { $0.isASCII && ($0.isNumber || $0 == "+") })
+        if cleaned.hasPrefix("00") { cleaned = "+" + cleaned.dropFirst(2) }
+        if !cleaned.hasPrefix("+") { cleaned = defaultPrefix + cleaned }
+        let digits = cleaned.dropFirst()
+        guard !digits.contains("+"), (8...15).contains(digits.count) else { return nil }
+        return cleaned
+    }
+
+    /// Fingerprint shared on the mesh for a phone number. Nil for an invalid number.
+    static func tag(for text: String, defaultPrefix: String = MeshPhone.defaultPrefix) -> String? {
+        guard let number = normalized(text, defaultPrefix: defaultPrefix) else { return nil }
+        let digest = SHA256.hash(data: Data(("survive72.mesh.phone.v1:" + number).utf8))
+        return digest.prefix(16).map { String(format: "%02x", $0) }.joined()
+    }
+
+    static func isWellFormedTag(_ tag: String) -> Bool {
+        let hex = Set("0123456789abcdef")
+        return tag.count == 32 && tag.allSatisfy { hex.contains($0) }
     }
 }
 
@@ -56,22 +94,26 @@ enum MeshCode {
 /// A user's mesh identity: the private keys never leave the device.
 struct MeshIdentity {
     var name: String
+    /// Set when the user chooses to be findable by phone number.
+    var phoneTag: String?
     private let signing: Curve25519.Signing.PrivateKey
     private let agreement: Curve25519.KeyAgreement.PrivateKey
 
     /// Creates a brand new identity with fresh keys.
-    init(name: String) {
+    init(name: String, phone: String? = nil) {
         self.name = name
+        phoneTag = phone.flatMap { MeshPhone.tag(for: $0) }
         signing = Curve25519.Signing.PrivateKey()
         agreement = Curve25519.KeyAgreement.PrivateKey()
     }
 
     /// Restores an identity from its saved private keys. Nil if they are damaged.
-    init?(name: String, signingKey: Data, agreementKey: Data) {
+    init?(name: String, phone: String? = nil, signingKey: Data, agreementKey: Data) {
         guard let signing = try? Curve25519.Signing.PrivateKey(rawRepresentation: signingKey),
               let agreement = try? Curve25519.KeyAgreement.PrivateKey(rawRepresentation: agreementKey)
         else { return nil }
         self.name = name
+        phoneTag = phone.flatMap { MeshPhone.tag(for: $0) }
         self.signing = signing
         self.agreement = agreement
     }
@@ -83,7 +125,8 @@ struct MeshIdentity {
     var card: MeshCard {
         MeshCard(name: name,
                  signingKey: signing.publicKey.rawRepresentation,
-                 agreementKey: agreement.publicKey.rawRepresentation)
+                 agreementKey: agreement.publicKey.rawRepresentation,
+                 phoneTag: phoneTag)
     }
 
     var code: String { card.code }

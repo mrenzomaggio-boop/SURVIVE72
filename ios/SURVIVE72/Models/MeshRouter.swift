@@ -107,6 +107,24 @@ struct MeshRouter {
         return cards
     }
 
+    /// People who declared this phone number, oldest identity first.
+    /// More than one result means someone may be using a number that is not theirs.
+    func cards(forPhone number: String, defaultPrefix: String = MeshPhone.defaultPrefix) -> [MeshCard] {
+        guard let tag = MeshPhone.tag(for: number, defaultPrefix: defaultPrefix) else { return [] }
+        var firstSeen: [String: MeshPacket] = [:]
+        for packet in packets.values where packet.sender.phoneTag == tag && packet.sender.code != myCode {
+            let code = packet.sender.code
+            if let known = firstSeen[code], known.createdAt <= packet.createdAt { continue }
+            firstSeen[code] = packet
+        }
+        return firstSeen.values
+            .sorted {
+                if $0.createdAt != $1.createdAt { return $0.createdAt < $1.createdAt }
+                return $0.sender.code < $1.sender.code
+            }
+            .map { $0.sender }
+    }
+
     // MARK: Housekeeping
 
     /// Forgets expired packets and ids.

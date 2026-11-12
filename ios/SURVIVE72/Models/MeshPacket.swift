@@ -154,6 +154,7 @@ struct MeshPacket: Codable, Hashable, Identifiable {
         append(Data(sender.name.utf8))
         append(sender.signingKey)
         append(sender.agreementKey)
+        append(Data((sender.phoneTag ?? "").utf8))
         append(Data((recipientCode ?? "").utf8))
         append(Data([isSOS ? 1 : 0]))
         append(Data(String(Int64(createdAt.timeIntervalSince1970)).utf8))
