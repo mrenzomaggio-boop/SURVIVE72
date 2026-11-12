@@ -481,6 +481,26 @@
         }
       }
     },
+    "Alert and SOS": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allerta e SOS"
+          }
+        }
+      }
+    },
+    "Alert and SOS. %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allerta e SOS. %@"
+          }
+        }
+      }
+    },
     "Alert board": {
       "localizations": {
         "it": {
@@ -2711,6 +2731,16 @@
         }
       }
     },
+    "Kit: %lld of %lld items": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kit: %1$lld di %2$lld oggetti"
+          }
+        }
+      }
+    },
     "Knife, pliers, screwdriver": {
       "localizations": {
         "it": {
@@ -3661,16 +3691,6 @@
         }
       }
     },
-    "OFFLINE READY · NO INTERNET NEEDED": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "PRONTA OFFLINE · NON SERVE INTERNET"
-          }
-        }
-      }
-    },
     "ON · %lld phones connected": {
       "localizations": {
         "it": {
@@ -4027,6 +4047,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Rete da telefono a telefono. Non è un servizio di emergenza: la consegna non è garantita."
+          }
+        }
+      }
+    },
+    "Phones nearby: %lld": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Telefoni vicini: %lld"
           }
         }
       }
@@ -4467,6 +4497,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Leggi il Piano di protezione civile del Comune: zone allagabili, vie di fuga e aree sicure."
+          }
+        }
+      }
+    },
+    "Ready for the first 72 hours": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronto per le prime 72 ore"
           }
         }
       }
@@ -6097,6 +6137,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Con il numero, chi lo conosce già può trovarti nella rete. Il numero in sé non viene inviato: viaggia solo una sua impronta. Non è verificato, e chi ha competenze tecniche potrebbe risalire al numero. Lascialo vuoto se preferisci."
+          }
+        }
+      }
+    },
+    "Works without internet": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Funziona senza internet"
           }
         }
       }

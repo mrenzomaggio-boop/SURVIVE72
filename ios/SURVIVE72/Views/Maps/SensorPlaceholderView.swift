@@ -41,7 +41,7 @@ struct SensorPlaceholderView: View {
             VStack(alignment: .leading, spacing: 18) {
                 Label(SensorPlaceholderView.requirement, systemImage: "iphone.gen3")
                     .font(.headline.weight(.black))
-                    .foregroundStyle(Theme.background)
+                    .foregroundStyle(Theme.onAccent)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 8)
                     .background(Theme.accent, in: Capsule())

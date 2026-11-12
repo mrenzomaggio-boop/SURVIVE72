@@ -50,7 +50,7 @@ private struct SummaryCard: View {
                     .foregroundStyle(Theme.textPrimary)
                 Text(summary.isReady ? String(localized: "READY") : String(localized: "NOT READY"))
                     .font(.headline.weight(.black))
-                    .foregroundStyle(Theme.background)
+                    .foregroundStyle(Theme.onAccent)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 4)
                     .background(summary.isReady ? Theme.ok : Theme.accent, in: Capsule())
@@ -114,7 +114,7 @@ private struct PackRow: View {
                 Spacer(minLength: 8)
                 Text(status.label)
                     .font(.caption.weight(.black))
-                    .foregroundStyle(Theme.background)
+                    .foregroundStyle(Theme.onAccent)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
                     .background(statusColor, in: Capsule())
@@ -130,7 +130,7 @@ private struct PackRow: View {
                     } label: {
                         Text(status == .prepared ? String(localized: "Unmark") : String(localized: "Mark prepared"))
                             .font(.headline.weight(.heavy))
-                            .foregroundStyle(status == .prepared ? Theme.textPrimary : Theme.background)
+                            .foregroundStyle(status == .prepared ? Theme.textPrimary : Theme.onAccent)
                             .padding(.horizontal, 14)
                             .frame(minHeight: 48)
                             .background(status == .prepared ? Theme.surface : Theme.accent,

@@ -84,7 +84,7 @@ struct IllustratedRow: View {
             ZStack(alignment: .topLeading) {
                 Image(systemName: SymbolCheck.safe(symbol))
                     .font(.system(size: 30, weight: .bold))
-                    .foregroundStyle(Theme.background)
+                    .foregroundStyle(Theme.onAccent)
                     .frame(width: 64, height: 64)
                     .background(Theme.accent, in: RoundedRectangle(cornerRadius: 12))
                 if let number {
@@ -151,7 +151,7 @@ struct VerificationBadge: View {
     var body: some View {
         Label(status.label, systemImage: "checkmark.seal.fill")
             .font(large ? .headline.weight(.black) : .caption.weight(.heavy))
-            .foregroundStyle(Theme.background)
+            .foregroundStyle(Theme.onAccent)
             .padding(.horizontal, large ? 12 : 8)
             .padding(.vertical, large ? 8 : 3)
             .background(Theme.accent, in: Capsule())

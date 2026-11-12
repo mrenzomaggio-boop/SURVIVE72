@@ -102,7 +102,7 @@ private struct MedicalCategoryFilterBar: View {
         Button(action: action) {
             Label(title, systemImage: systemImage)
                 .font(.headline.weight(.heavy))
-                .foregroundStyle(isSelected ? Theme.background : Theme.textPrimary)
+                .foregroundStyle(isSelected ? Theme.onAccent : Theme.textPrimary)
                 .padding(.horizontal, 14)
                 .frame(minHeight: 48)
                 .background(isSelected ? Theme.accent : Theme.surface, in: Capsule())

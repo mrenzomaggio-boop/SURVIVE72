@@ -1,37 +1,77 @@
 import SwiftUI
 
-/// Home screen: a two-column grid with the ten SURVIVE 72 sections.
+/// Home screen ("civic" look): brand header, readiness line, the big Alert
+/// banner, then the other sections in a three-column grid.
 struct HomeView: View {
+    @Environment(KitChecklistStore.self) private var kitStore
+    @Environment(MeshService.self) private var mesh
+
     private let columns = [
-        GridItem(.flexible(), spacing: Theme.spacing),
-        GridItem(.flexible(), spacing: Theme.spacing)
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10)
+    ]
+
+    /// Most used first; Alert has its own banner above the grid.
+    static let gridSections: [AppSection] = [
+        .medical, .knowledge, .connect, .radio, .maps, .kit, .tools, .downloads, .settings
     ]
 
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: Theme.spacing) {
-                    OfflineBanner()
+                VStack(alignment: .leading, spacing: 16) {
+                    header
 
-                    LazyVGrid(columns: columns, spacing: Theme.spacing) {
-                        ForEach(AppSection.allCases) { section in
+                    NavigationLink(value: AppSection.alert) {
+                        AlertBanner()
+                    }
+                    .buttonStyle(.plain)
+
+                    LazyVGrid(columns: columns, spacing: 10) {
+                        ForEach(Self.gridSections) { section in
                             NavigationLink(value: section) {
                                 SectionTile(section: section)
                             }
                             .buttonStyle(.plain)
                         }
                     }
+
+                    OfflineBanner()
                 }
                 .padding(16)
             }
             .background(Theme.background.ignoresSafeArea())
             .navigationTitle(String(localized: "SURVIVE 72"))
-            .toolbarBackground(Theme.background, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: AppSection.self) { section in
                 destination(for: section)
             }
         }
+    }
+
+    private var header: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            (Text(verbatim: "SURVIVE ").foregroundStyle(Theme.textPrimary)
+             + Text(verbatim: "72").foregroundStyle(Theme.accent))
+                .font(.system(size: 34, weight: .black, design: .rounded))
+                .accessibilityLabel("SURVIVE 72")
+                .accessibilityAddTraits(.isHeader)
+            Text(String(localized: "Ready for the first 72 hours"))
+                .font(.title3.weight(.heavy))
+                .foregroundStyle(Theme.textPrimary)
+            Text(statusLine)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.textSecondary)
+        }
+        .padding(.top, 8)
+    }
+
+    private var statusLine: String {
+        let kit = kitStore.totalProgress
+        let kitText = String(localized: "Kit: \(kit.checked) of \(kit.total) items")
+        guard mesh.profile.isEnabled else { return kitText }
+        return kitText + " · " + String(localized: "Phones nearby: \(mesh.nearbyCount)")
     }
 
     /// Every section opens its real module.
@@ -62,27 +102,18 @@ struct HomeView: View {
     }
 }
 
-/// Always-visible status line: the app works without connectivity.
+/// Small reassurance line: the app works without connectivity.
 private struct OfflineBanner: View {
     var body: some View {
-        HStack(spacing: 10) {
+        HStack(spacing: 8) {
             Image(systemName: "checkmark.shield.fill")
-                .font(.title3.weight(.bold))
                 .foregroundStyle(Theme.ok)
                 .accessibilityHidden(true)
-            Text(String(localized: "OFFLINE READY · NO INTERNET NEEDED"))
-                .font(.subheadline.weight(.heavy))
-                .foregroundStyle(Theme.textPrimary)
-                .minimumScaleFactor(0.7)
+            Text(String(localized: "Works without internet"))
+                .foregroundStyle(Theme.textSecondary)
         }
-        .padding(.vertical, 10)
-        .padding(.horizontal, 14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
-        .overlay(
-            RoundedRectangle(cornerRadius: Theme.cornerRadius)
-                .stroke(Theme.ok, lineWidth: Theme.borderWidth)
-        )
+        .font(.subheadline.weight(.bold))
+        .frame(maxWidth: .infinity)
         .accessibilityElement(children: .combine)
         .accessibilityLabel(String(localized: "Offline ready. No internet needed."))
     }
@@ -100,5 +131,4 @@ private struct OfflineBanner: View {
         .environment(MedicalStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(MeshService(keyStore: InMemoryMeshKeyStore(),
                                  defaults: UserDefaults(suiteName: "preview.home")!, stateURL: nil))
-        .preferredColorScheme(.dark)
 }

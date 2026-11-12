@@ -88,7 +88,7 @@ struct RadioGuideView: View {
         Button(action: action) {
             Label(title, systemImage: systemImage)
                 .font(.headline.weight(.heavy))
-                .foregroundStyle(selected ? Theme.background : Theme.textPrimary)
+                .foregroundStyle(selected ? Theme.onAccent : Theme.textPrimary)
                 .padding(.horizontal, 14)
                 .frame(minHeight: 48)
                 .background(selected ? Theme.accent : Theme.surface, in: Capsule())
