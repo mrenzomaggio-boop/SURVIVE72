@@ -77,14 +77,15 @@ jobs:
           echo "ASC_KEY_PATH=$KEY_PATH" >> "$GITHUB_ENV"
           echo "API_PRIVATE_KEYS_DIR=$KEY_DIR" >> "$GITHUB_ENV"
 
-      - name: Archive (Release, automatic signing)
+      - name: Archive (Release, unsigned)
         id: archive
         env:
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
-          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
-          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
         run: |
           set -euo pipefail
+          # The archive is not signed here: signing it would make Xcode create a
+          # new Apple Development certificate on every fresh runner. The export
+          # step signs the app once, with the cloud-managed distribution certificate.
           ARCHIVE_PATH="$RUNNER_TEMP/build/SURVIVE72.xcarchive"
           xcodebuild archive \
             -project "$PROJECT_PATH" \
@@ -93,13 +94,11 @@ jobs:
             -destination 'generic/platform=iOS' \
             -archivePath "$ARCHIVE_PATH" \
             -derivedDataPath "$RUNNER_TEMP/build/DerivedData" \
-            -allowProvisioningUpdates \
-            -authenticationKeyPath "$ASC_KEY_PATH" \
-            -authenticationKeyID "$ASC_KEY_ID" \
-            -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
-            CODE_SIGN_STYLE=Automatic \
             DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
-            CURRENT_PROJECT_VERSION="$BUILD_NUMBER"
+            CURRENT_PROJECT_VERSION="$BUILD_NUMBER" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY=""
 
           INFO_PLIST="$ARCHIVE_PATH/Info.plist"
           ARCHIVED_BUNDLE_ID="$(/usr/libexec/PlistBuddy -c 'Print :ApplicationProperties:CFBundleIdentifier' "$INFO_PLIST")"
