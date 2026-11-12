@@ -21,12 +21,12 @@ struct StopwatchView: View {
                     .foregroundStyle(stopwatch.isRunning ? Theme.textPrimary : Theme.accent)
                     .minimumScaleFactor(0.4)
                     .lineLimit(1)
-                    .accessibilityLabel("Elapsed time")
+                    .accessibilityLabel(String(localized: "Elapsed time"))
                     .accessibilityValue(ElapsedTimeFormat.spoken(elapsed))
             }
             .frame(maxWidth: .infinity)
 
-            Text(stopwatch.isRunning ? "RUNNING" : (stopwatch.elapsed(at: .now) > 0 ? "PAUSED" : "READY"))
+            Text(stopwatch.isRunning ? String(localized: "RUNNING") : (stopwatch.elapsed(at: .now) > 0 ? String(localized: "PAUSED") : String(localized: "READY")))
                 .font(.headline.weight(.heavy))
                 .foregroundStyle(Theme.textSecondary)
 
@@ -34,7 +34,7 @@ struct StopwatchView: View {
 
             VStack(spacing: Theme.spacing) {
                 ToolButton(
-                    title: stopwatch.isRunning ? "Pause" : (stopwatch.elapsed(at: .now) > 0 ? "Resume" : "Start"),
+                    title: stopwatch.isRunning ? String(localized: "Pause") : (stopwatch.elapsed(at: .now) > 0 ? String(localized: "Resume") : String(localized: "Start")),
                     systemImage: stopwatch.isRunning ? "pause.fill" : "play.fill",
                     style: stopwatch.isRunning ? .secondary : .primary
                 ) {
@@ -45,7 +45,7 @@ struct StopwatchView: View {
                     }
                 }
 
-                ToolButton(title: "Reset", systemImage: "arrow.counterclockwise", style: .destructive) {
+                ToolButton(title: String(localized: "Reset"), systemImage: "arrow.counterclockwise", style: .destructive) {
                     tools.stopwatch.reset()
                 }
                 .disabled(stopwatch.elapsed(at: .now) == 0 && !stopwatch.isRunning)
@@ -54,7 +54,7 @@ struct StopwatchView: View {
         }
         .padding(16)
         .background(Theme.background.ignoresSafeArea())
-        .navigationTitle("Stopwatch")
+        .navigationTitle(String(localized: "Stopwatch"))
         .navigationBarTitleDisplayMode(.inline)
         .sensoryFeedback(.impact, trigger: stopwatch.isRunning)
     }

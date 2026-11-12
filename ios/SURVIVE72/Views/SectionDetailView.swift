@@ -18,7 +18,7 @@ struct SectionDetailView: View {
                         Text(section.subtitle)
                             .font(.headline)
                             .foregroundStyle(Theme.textSecondary)
-                        Text("DEMO · NOT YET IMPLEMENTED")
+                        Text(String(localized: "DEMO · NOT YET IMPLEMENTED"))
                             .font(.caption.weight(.heavy))
                             .foregroundStyle(Theme.background)
                             .padding(.horizontal, 8)

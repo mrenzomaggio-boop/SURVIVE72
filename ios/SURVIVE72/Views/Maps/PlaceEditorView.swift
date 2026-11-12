@@ -31,17 +31,17 @@ struct PlaceEditorView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    field("Name (required)", text: $name, prompt: "e.g. Meeting point", keyboard: .default)
-                    field("Latitude (-90 to 90)", text: $latitude, prompt: "e.g. 45.4642",
+                    field(String(localized: "Name (required)"), text: $name, prompt: String(localized: "e.g. Meeting point"), keyboard: .default)
+                    field(String(localized: "Latitude (-90 to 90)"), text: $latitude, prompt: String(localized: "e.g. 45.4642"),
                           keyboard: .numbersAndPunctuation)
-                    field("Longitude (-180 to 180)", text: $longitude, prompt: "e.g. 9.1900",
+                    field(String(localized: "Longitude (-180 to 180)"), text: $longitude, prompt: String(localized: "e.g. 9.1900"),
                           keyboard: .numbersAndPunctuation)
-                    field("Note", text: $note, prompt: "Optional", keyboard: .default)
+                    field(String(localized: "Note"), text: $note, prompt: String(localized: "Optional"), keyboard: .default)
 
                     if let p = preview {
                         VStack(alignment: .leading, spacing: 4) {
-                            Text("Decimal: " + CoordinateFormat.decimal(latitude: p.lat, longitude: p.lon))
-                            Text("DMS: " + CoordinateFormat.dms(latitude: p.lat, longitude: p.lon))
+                            Text(String(localized: "Decimal: ") + CoordinateFormat.decimal(latitude: p.lat, longitude: p.lon))
+                            Text(String(localized: "DMS: ") + CoordinateFormat.dms(latitude: p.lat, longitude: p.lon))
                         }
                         .font(.body.monospacedDigit().weight(.semibold))
                         .foregroundStyle(Theme.ok)
@@ -58,24 +58,24 @@ struct PlaceEditorView: View {
                         .accessibilityElement(children: .combine)
                     }
 
-                    Text("Saved only on this device. The app does not read your location.")
+                    Text(String(localized: "Saved only on this device. The app does not read your location."))
                         .font(.subheadline)
                         .foregroundStyle(Theme.textSecondary)
                 }
                 .padding(16)
             }
             .background(Theme.background.ignoresSafeArea())
-            .navigationTitle(place == nil ? "Add place" : "Edit place")
+            .navigationTitle(place == nil ? String(localized: "Add place") : String(localized: "Edit place"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Theme.background, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                    Button(String(localized: "Cancel")) { dismiss() }
                         .font(.headline)
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") { save() }
+                    Button(String(localized: "Save")) { save() }
                         .font(.headline.weight(.heavy))
                 }
             }

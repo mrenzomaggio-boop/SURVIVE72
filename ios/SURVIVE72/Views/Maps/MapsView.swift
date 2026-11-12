@@ -12,7 +12,7 @@ struct MapsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                Label("No map, no GPS: coordinates are typed in by hand and stay on this device.",
+                Label(String(localized: "No map, no GPS: coordinates are typed in by hand and stay on this device."),
                       systemImage: "location.slash.fill")
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(Theme.textPrimary)
@@ -29,7 +29,7 @@ struct MapsView: View {
             .padding(16)
         }
         .background(Theme.background.ignoresSafeArea())
-        .navigationTitle("Maps")
+        .navigationTitle(String(localized: "Maps"))
         .navigationBarTitleDisplayMode(.large)
         .toolbarBackground(Theme.background, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
@@ -49,17 +49,17 @@ struct MapsView: View {
             }
         }
         .alert(
-            "Delete place?",
+            String(localized: "Delete place?"),
             isPresented: Binding(
                 get: { placePendingDeletion != nil },
                 set: { if !$0 { placePendingDeletion = nil } }
             ),
             presenting: placePendingDeletion
         ) { place in
-            Button("Delete", role: .destructive) { store.deletePlace(id: place.id) }
-            Button("Cancel", role: .cancel) {}
+            Button(String(localized: "Delete"), role: .destructive) { store.deletePlace(id: place.id) }
+            Button(String(localized: "Cancel"), role: .cancel) {}
         } message: { place in
-            Text("\(place.name) will be removed from this device.")
+            Text(String(localized: "\(place.name) will be removed from this device."))
         }
     }
 
@@ -67,11 +67,11 @@ struct MapsView: View {
 
     private var placesSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            MapsHeader(title: "Saved places", systemImage: "mappin.and.ellipse",
+            MapsHeader(title: String(localized: "Saved places"), systemImage: "mappin.and.ellipse",
                        trailing: "\(store.places.count)")
 
             if store.places.isEmpty {
-                Text("No places yet. Add a meeting point, shelter or water source with its coordinates.")
+                Text(String(localized: "No places yet. Add a meeting point, shelter or water source with its coordinates."))
                     .font(.body)
                     .foregroundStyle(Theme.textSecondary)
             }
@@ -82,7 +82,7 @@ struct MapsView: View {
                          onDelete: { placePendingDeletion = place })
             }
 
-            BigButton(title: "Add place", systemImage: "plus.circle.fill", color: Theme.accent) {
+            BigButton(title: String(localized: "Add place"), systemImage: "plus.circle.fill", color: Theme.accent) {
                 isAddingPlace = true
             }
         }
@@ -92,10 +92,10 @@ struct MapsView: View {
 
     private var areasSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            MapsHeader(title: "Offline areas", systemImage: "square.dashed",
+            MapsHeader(title: String(localized: "Offline areas"), systemImage: "square.dashed",
                        trailing: "\(store.preparedCount)/\(store.areas.count)")
 
-            Text("Demo areas. Nothing is downloaded: marking an area only records it on this device.")
+            Text(String(localized: "Demo areas. Nothing is downloaded: marking an area only records it on this device."))
                 .font(.subheadline)
                 .foregroundStyle(Theme.textSecondary)
 
@@ -111,7 +111,7 @@ struct MapsView: View {
 
     private var sensorsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            MapsHeader(title: "Compass and position", systemImage: "location.north.circle.fill")
+            MapsHeader(title: String(localized: "Compass and position"), systemImage: "location.north.circle.fill")
             NavigationLink {
                 SensorPlaceholderView(kind: .compass)
             } label: {
@@ -184,8 +184,8 @@ private struct PlaceRow: View {
             .accessibilityElement(children: .combine)
             Spacer(minLength: 8)
             VStack(spacing: 8) {
-                iconButton("pencil", label: "Edit \(place.name)", color: Theme.accent, action: onEdit)
-                iconButton("trash.fill", label: "Delete \(place.name)", color: Theme.danger, action: onDelete)
+                iconButton("pencil", label: String(localized: "Edit \(place.name)"), color: Theme.accent, action: onEdit)
+                iconButton("trash.fill", label: String(localized: "Delete \(place.name)"), color: Theme.danger, action: onDelete)
             }
         }
         .padding(14)
@@ -236,13 +236,13 @@ private struct AreaRow: View {
             Text(area.summary)
                 .font(.subheadline)
                 .foregroundStyle(Theme.textSecondary)
-            Text("About \(SizeFormat.megabytes(area.sizeMB)) · estimate")
+            Text(String(localized: "About \(SizeFormat.megabytes(area.sizeMB)) · estimate"))
                 .font(.subheadline.monospacedDigit())
                 .foregroundStyle(Theme.textSecondary)
             Button {
                 onChange(!isPrepared)
             } label: {
-                Label(isPrepared ? "Mark not prepared" : "Mark prepared",
+                Label(isPrepared ? String(localized: "Mark not prepared") : String(localized: "Mark prepared"),
                       systemImage: isPrepared ? "xmark.circle" : "checkmark.circle.fill")
                     .font(.headline.weight(.heavy))
                     .foregroundStyle(isPrepared ? Theme.textPrimary : Theme.accent)
@@ -252,7 +252,7 @@ private struct AreaRow: View {
                         .stroke(isPrepared ? Theme.surfaceBorder : Theme.accent, lineWidth: Theme.borderWidth))
             }
             .buttonStyle(.plain)
-            .accessibilityHint("Simulated. Nothing is downloaded.")
+            .accessibilityHint(String(localized: "Simulated. Nothing is downloaded."))
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)

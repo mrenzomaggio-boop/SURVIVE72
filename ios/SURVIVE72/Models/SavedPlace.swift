@@ -32,11 +32,11 @@ enum PlaceValidationError: Error, Equatable, CaseIterable {
 
     var message: String {
         switch self {
-        case .emptyName: "Enter a name."
-        case .invalidLatitude: "Latitude must be a decimal number, e.g. 45.4642."
-        case .latitudeOutOfRange: "Latitude must be between -90 and 90."
-        case .invalidLongitude: "Longitude must be a decimal number, e.g. 9.19."
-        case .longitudeOutOfRange: "Longitude must be between -180 and 180."
+        case .emptyName: String(localized: "Enter a name.")
+        case .invalidLatitude: String(localized: "Latitude must be a decimal number, e.g. 45.4642.")
+        case .latitudeOutOfRange: String(localized: "Latitude must be between -90 and 90.")
+        case .invalidLongitude: String(localized: "Longitude must be a decimal number, e.g. 9.19.")
+        case .longitudeOutOfRange: String(localized: "Longitude must be between -180 and 180.")
         }
     }
 }

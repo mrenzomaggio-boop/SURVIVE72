@@ -12,7 +12,7 @@ struct KitProgressCard: View {
                     .font(.headline.weight(.heavy))
                     .foregroundStyle(Theme.textSecondary)
                 Spacer()
-                Text(progress.isComplete ? "READY" : "IN PROGRESS")
+                Text(progress.isComplete ? String(localized: "READY") : String(localized: "IN PROGRESS"))
                     .font(.caption.weight(.heavy))
                     .foregroundStyle(Theme.background)
                     .padding(.horizontal, 8)
@@ -25,7 +25,7 @@ struct KitProgressCard: View {
                     .font(.system(size: 56, weight: .black).monospacedDigit())
                     .foregroundStyle(Theme.textPrimary)
                     .minimumScaleFactor(0.6)
-                Text("\(progress.checked) of \(progress.total) packed")
+                Text(String(localized: "\(progress.checked) of \(progress.total) packed"))
                     .font(.title3.weight(.bold))
                     .foregroundStyle(Theme.textSecondary)
             }
@@ -40,7 +40,7 @@ struct KitProgressCard: View {
                 .stroke(progress.isComplete ? Theme.ok : Theme.accent, lineWidth: 3)
         )
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("Overall kit progress")
+        .accessibilityLabel(String(localized: "Overall kit progress"))
         .accessibilityValue(progress.accessibilityDescription)
     }
 }

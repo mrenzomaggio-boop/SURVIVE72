@@ -4,7 +4,7 @@ import Foundation
 /// No network and no index on disk.
 struct MedicalLibrary {
     /// Shown in the Medical list and in every entry page.
-    static let emergencyNotice = "For immediate danger, contact local emergency services when available."
+    static let emergencyNotice = String(localized: "For immediate danger, contact local emergency services when available.")
 
     let entries: [MedicalEntry]
 

@@ -1,0 +1,4836 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    " Enough space.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " Spazio sufficiente."
+          }
+        }
+      }
+    },
+    " Not enough space.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": " Spazio insufficiente."
+          }
+        }
+      }
+    },
+    "%@ Missing packs need %@.%@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ I pacchetti mancanti richiedono %2$@.%3$@"
+          }
+        }
+      }
+    },
+    "%@ Nothing missing.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ Non manca nulla."
+          }
+        }
+      }
+    },
+    "%@ filter": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Filtro %@"
+          }
+        }
+      }
+    },
+    "%@ not available yet": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ non ancora disponibile"
+          }
+        }
+      }
+    },
+    "%@ will be removed from this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ verrà rimosso da questo dispositivo."
+          }
+        }
+      }
+    },
+    "%@ · required": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · obbligatorio"
+          }
+        }
+      }
+    },
+    "%@, bookmarked. %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@, nei preferiti. %2$@"
+          }
+        }
+      }
+    },
+    "%lld article": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld articolo"
+          }
+        }
+      }
+    },
+    "%lld article in %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld articolo in %2$@"
+          }
+        }
+      }
+    },
+    "%lld articles": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld articoli"
+          }
+        }
+      }
+    },
+    "%lld articles in %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld articoli in %2$@"
+          }
+        }
+      }
+    },
+    "%lld entries": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld voci"
+          }
+        }
+      }
+    },
+    "%lld entry": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld voce"
+          }
+        }
+      }
+    },
+    "%lld hour": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ora"
+          }
+        }
+      }
+    },
+    "%lld hours": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld ore"
+          }
+        }
+      }
+    },
+    "%lld minute": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld minuto"
+          }
+        }
+      }
+    },
+    "%lld minutes": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld minuti"
+          }
+        }
+      }
+    },
+    "%lld of %lld item packed, %lld percent": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld di %2$lld oggetto pronto, %3$lld per cento"
+          }
+        }
+      }
+    },
+    "%lld of %lld items packed, %lld percent": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld di %2$lld oggetti pronti, %3$lld per cento"
+          }
+        }
+      }
+    },
+    "%lld of %lld packed": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld di %2$lld pronti"
+          }
+        }
+      }
+    },
+    "%lld second": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld secondo"
+          }
+        }
+      }
+    },
+    "%lld seconds": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld secondi"
+          }
+        }
+      }
+    },
+    "%lld topic": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld argomento"
+          }
+        }
+      }
+    },
+    "%lld topic in %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld argomento in %2$@"
+          }
+        }
+      }
+    },
+    "%lld topics": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld argomenti"
+          }
+        }
+      }
+    },
+    "%lld topics in %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$lld argomenti in %2$@"
+          }
+        }
+      }
+    },
+    "72-hour checklist": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checklist 72 ore"
+          }
+        }
+      }
+    },
+    "72-hour kit": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kit 72 ore"
+          }
+        }
+      }
+    },
+    "A receiver only listens: it does not need a network or an account.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un ricevitore si limita ad ascoltare: non servono rete né account."
+          }
+        }
+      }
+    },
+    "A simple portable receiver is enough to follow official updates.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un semplice ricevitore portatile basta per seguire gli aggiornamenti ufficiali."
+          }
+        }
+      }
+    },
+    "About %@ · estimate": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Circa %@ · stima"
+          }
+        }
+      }
+    },
+    "About 4 L per person per day, for 3 days": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Circa 4 L a persona al giorno, per 3 giorni"
+          }
+        }
+      }
+    },
+    "Add contact": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiungi contatto"
+          }
+        }
+      }
+    },
+    "Add place": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiungi luogo"
+          }
+        }
+      }
+    },
+    "Add to queue": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiungi alla coda"
+          }
+        }
+      }
+    },
+    "Alert": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allerta"
+          }
+        }
+      }
+    },
+    "All": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutti"
+          }
+        }
+      }
+    },
+    "All articles are demo content marked TO BE VERIFIED. They are not instructions and not medical advice.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutti gli articoli sono contenuti demo contrassegnati DA VERIFICARE. Non sono istruzioni né consigli medici."
+          }
+        }
+      }
+    },
+    "All items will be marked as not packed. This cannot be undone.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutti gli oggetti verranno segnati come non pronti. L'operazione non si può annullare."
+          }
+        }
+      }
+    },
+    "Alternative power keeps the radio usable when batteries run out.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un'alimentazione alternativa tiene la radio utilizzabile quando le batterie finiscono."
+          }
+        }
+      }
+    },
+    "An earphone socket helps you listen quietly.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una presa per auricolari ti permette di ascoltare senza disturbare."
+          }
+        }
+      }
+    },
+    "Anything others should know": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cose che gli altri dovrebbero sapere"
+          }
+        }
+      }
+    },
+    "Applies to the first message in the queue. Nothing is transmitted.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vale per il primo messaggio in coda. Non viene trasmesso nulla."
+          }
+        }
+      }
+    },
+    "Asks for confirmation, then clears every checked item.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiede conferma, poi toglie tutte le spunte."
+          }
+        }
+      }
+    },
+    "Asks for confirmation, then removes all SURVIVE 72 data from this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiede conferma, poi rimuove tutti i dati di SURVIVE 72 da questo dispositivo."
+          }
+        }
+      }
+    },
+    "Authorities often share updates on public broadcast stations.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le autorità spesso diffondono aggiornamenti sulle emittenti pubbliche."
+          }
+        }
+      }
+    },
+    "Available: %lld of %lld · uses %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disponibili: %1$lld di %2$lld · occupano %3$@"
+          }
+        }
+      }
+    },
+    "Basics": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Basi"
+          }
+        }
+      }
+    },
+    "Batteries": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batterie"
+          }
+        }
+      }
+    },
+    "Battery or hand-crank radio": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Radio a batterie o a manovella"
+          }
+        }
+      }
+    },
+    "Battery saver": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Risparmio batteria"
+          }
+        }
+      }
+    },
+    "Bolder text across the app, on top of the dark high-contrast theme.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testo più marcato in tutta l'app, oltre al tema scuro ad alto contrasto."
+          }
+        }
+      }
+    },
+    "Bookmark": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiungi ai preferiti"
+          }
+        }
+      }
+    },
+    "Bookmarked": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nei preferiti"
+          }
+        }
+      }
+    },
+    "Broadcast radio can keep working when phone and internet networks are down.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La radio può continuare a funzionare quando le reti telefoniche e internet non vanno."
+          }
+        }
+      }
+    },
+    "Building a three-day stock of non-perishable food.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creare una scorta di tre giorni di cibo a lunga conservazione."
+          }
+        }
+      }
+    },
+    "Burns": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ustioni"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annulla"
+          }
+        }
+      }
+    },
+    "Cash": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contanti"
+          }
+        }
+      }
+    },
+    "Category: %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Categoria: %@"
+          }
+        }
+      }
+    },
+    "Check contents and expiry dates": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controlla contenuto e scadenze"
+          }
+        }
+      }
+    },
+    "Check which local stations carry emergency information before you need them.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scopri prima quali emittenti locali trasmettono informazioni di emergenza."
+          }
+        }
+      }
+    },
+    "Choosing a receiver": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scegliere un ricevitore"
+          }
+        }
+      }
+    },
+    "City centre (demo)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Centro città (demo)"
+          }
+        }
+      }
+    },
+    "Cold exposure": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esposizione al freddo"
+          }
+        }
+      }
+    },
+    "Communication": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comunicazione"
+          }
+        }
+      }
+    },
+    "Compact and long-lasting": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Compatte e a lunga conservazione"
+          }
+        }
+      }
+    },
+    "Compass": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bussola"
+          }
+        }
+      }
+    },
+    "Compass and position": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bussola e posizione"
+          }
+        }
+      }
+    },
+    "Connect": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Connetti"
+          }
+        }
+      }
+    },
+    "Conversation": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conversazione"
+          }
+        }
+      }
+    },
+    "Conversations": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conversazioni"
+          }
+        }
+      }
+    },
+    "Cooking without power": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cucinare senza corrente"
+          }
+        }
+      }
+    },
+    "Copied · not sent": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copiato · non inviato"
+          }
+        }
+      }
+    },
+    "Copies the text only. Nothing is sent and no one is contacted.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copia solo il testo. Non viene inviato nulla e nessuno viene contattato."
+          }
+        }
+      }
+    },
+    "Copy SOS message": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copia messaggio SOS"
+          }
+        }
+      }
+    },
+    "Core app": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App di base"
+          }
+        }
+      }
+    },
+    "Current position": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Posizione attuale"
+          }
+        }
+      }
+    },
+    "Cuts and wounds": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tagli e ferite"
+          }
+        }
+      }
+    },
+    "DEMO · NOT YET IMPLEMENTED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DEMO · NON ANCORA DISPONIBILE"
+          }
+        }
+      }
+    },
+    "DMS: ": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GMS: "
+          }
+        }
+      }
+    },
+    "Decimal: ": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Decimale: "
+          }
+        }
+      }
+    },
+    "Delete": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elimina"
+          }
+        }
+      }
+    },
+    "Delete %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elimina %@"
+          }
+        }
+      }
+    },
+    "Delete contact?": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminare il contatto?"
+          }
+        }
+      }
+    },
+    "Delete place?": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminare il luogo?"
+          }
+        }
+      }
+    },
+    "Delivered (simulated)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consegnato (simulato)"
+          }
+        }
+      }
+    },
+    "Demo areas. Nothing is downloaded: marking an area only records it on this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aree demo. Non viene scaricato nulla: segnare un'area la registra solo su questo dispositivo."
+          }
+        }
+      }
+    },
+    "Demo articles marked TO BE VERIFIED.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Articoli demo contrassegnati DA VERIFICARE."
+          }
+        }
+      }
+    },
+    "Demo contact": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contatto demo"
+          }
+        }
+      }
+    },
+    "Demo content. This article is a placeholder and has not been reviewed. Do not rely on it.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contenuto demo. Questo articolo è un segnaposto e non è stato revisionato. Non farci affidamento."
+          }
+        }
+      }
+    },
+    "Demo group": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gruppo demo"
+          }
+        }
+      }
+    },
+    "Demo: All fine here. Water and food ready.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo: Qui tutto bene. Acqua e cibo pronti."
+          }
+        }
+      }
+    },
+    "Demo: Check-in at the agreed time.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo: Fatevi sentire all'orario concordato."
+          }
+        }
+      }
+    },
+    "Demo: Everyone ok? Reply when you can.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo: Tutti bene? Rispondete appena potete."
+          }
+        }
+      }
+    },
+    "Demo: Meet at the usual place if needed.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo: Se serve, ci vediamo al solito posto."
+          }
+        }
+      }
+    },
+    "Demo: Power is out on our street.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo: Nella nostra via manca la corrente."
+          }
+        }
+      }
+    },
+    "Demo: We have spare blankets if anyone needs them.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo: Abbiamo coperte in più se a qualcuno servono."
+          }
+        }
+      }
+    },
+    "Display and battery": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Schermo e batteria"
+          }
+        }
+      }
+    },
+    "Do not spread unconfirmed information heard on the radio.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non diffondere informazioni non confermate sentite alla radio."
+          }
+        }
+      }
+    },
+    "Documents": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Documenti"
+          }
+        }
+      }
+    },
+    "Double tap to mark as not packed.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tocca due volte per segnare come non pronto."
+          }
+        }
+      }
+    },
+    "Double tap to mark as packed.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tocca due volte per segnare come pronto."
+          }
+        }
+      }
+    },
+    "Downloads": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download"
+          }
+        }
+      }
+    },
+    "Drinking water": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acqua potabile"
+          }
+        }
+      }
+    },
+    "Edit %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modifica %@"
+          }
+        }
+      }
+    },
+    "Edit and queue the SOS message. Nothing is transmitted.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modifica e metti in coda il messaggio SOS. Non viene trasmesso nulla."
+          }
+        }
+      }
+    },
+    "Edit contact": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modifica contatto"
+          }
+        }
+      }
+    },
+    "Edit place": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modifica luogo"
+          }
+        }
+      }
+    },
+    "Edited by you. Tap Regenerate to rebuild it from your plan and contacts.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modificato da te. Tocca Rigenera per ricrearlo dal tuo piano e dai contatti."
+          }
+        }
+      }
+    },
+    "Elapsed time": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tempo trascorso"
+          }
+        }
+      }
+    },
+    "Emergency blanket": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coperta di emergenza"
+          }
+        }
+      }
+    },
+    "Emergency contacts": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contatti di emergenza"
+          }
+        }
+      }
+    },
+    "Emergency contacts:": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contatti di emergenza:"
+          }
+        }
+      }
+    },
+    "Emergency food supplies": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scorte di cibo per le emergenze"
+          }
+        }
+      }
+    },
+    "Emergency radio": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Radio di emergenza"
+          }
+        }
+      }
+    },
+    "Energy bars": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Barrette energetiche"
+          }
+        }
+      }
+    },
+    "Enough for at least 7 days": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sufficienti per almeno 7 giorni"
+          }
+        }
+      }
+    },
+    "Enter a name.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inserisci un nome."
+          }
+        }
+      }
+    },
+    "Environment": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ambiente"
+          }
+        }
+      }
+    },
+    "Equipment": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apparecchi"
+          }
+        }
+      }
+    },
+    "Erase": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancella"
+          }
+        }
+      }
+    },
+    "Erase all local data": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancella tutti i dati locali"
+          }
+        }
+      }
+    },
+    "Erase all local data?": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancellare tutti i dati locali?"
+          }
+        }
+      }
+    },
+    "Evacuation routes (demo)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Percorsi di evacuazione (demo)"
+          }
+        }
+      }
+    },
+    "Every topic is a placeholder marked VERIFIED CONTENT REQUIRED. Nothing here is medical advice.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ogni argomento è un segnaposto contrassegnato SERVE CONTENUTO VERIFICATO. Niente di quanto è qui costituisce un consiglio medico."
+          }
+        }
+      }
+    },
+    "Everything stays on this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutto resta su questo dispositivo."
+          }
+        }
+      }
+    },
+    "Example routes only, not official. Placeholder area.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo percorsi di esempio, non ufficiali. Area segnaposto."
+          }
+        }
+      }
+    },
+    "Example: water per person per day %@, 5 km = %@.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esempio: acqua a persona al giorno %1$@, 5 km = %2$@."
+          }
+        }
+      }
+    },
+    "Extend the antenna fully and change its angle slowly.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estendi del tutto l'antenna e cambia lentamente l'angolazione."
+          }
+        }
+      }
+    },
+    "Extended guides (demo)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guide estese (demo)"
+          }
+        }
+      }
+    },
+    "Face masks": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mascherine"
+          }
+        }
+      }
+    },
+    "Failed (simulated)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non riuscito (simulato)"
+          }
+        }
+      }
+    },
+    "Family (demo)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Famiglia (demo)"
+          }
+        }
+      }
+    },
+    "Fewer screen updates: the stopwatch refreshes once per second.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meno aggiornamenti dello schermo: il cronometro si aggiorna una volta al secondo."
+          }
+        }
+      }
+    },
+    "Finding water sources": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trovare fonti d'acqua"
+          }
+        }
+      }
+    },
+    "Fire": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fuoco"
+          }
+        }
+      }
+    },
+    "Fire safety": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sicurezza antincendio"
+          }
+        }
+      }
+    },
+    "First aid kit": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kit di primo soccorso"
+          }
+        }
+      }
+    },
+    "First aid kit contents": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contenuto del kit di primo soccorso"
+          }
+        }
+      }
+    },
+    "Flashlight": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Torcia"
+          }
+        }
+      }
+    },
+    "Follow instructions from local authorities.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segui le istruzioni delle autorità locali."
+          }
+        }
+      }
+    },
+    "Follow the schedule announced by local authorities, if any.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segui gli orari annunciati dalle autorità locali, se ci sono."
+          }
+        }
+      }
+    },
+    "Food": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cibo"
+          }
+        }
+      }
+    },
+    "For dust or smoke": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per polvere o fumo"
+          }
+        }
+      }
+    },
+    "For immediate danger, contact local emergency services when available.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In caso di pericolo immediato, contatta i servizi di emergenza locali quando possibile."
+          }
+        }
+      }
+    },
+    "For light now, use the SOS screen signal or the iPhone Control Center.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per fare luce adesso, usa il segnale SOS sullo schermo o il Centro di Controllo dell'iPhone."
+          }
+        }
+      }
+    },
+    "Free on device: %@.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spazio libero sul dispositivo: %@."
+          }
+        }
+      }
+    },
+    "Free space unknown.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spazio libero sconosciuto."
+          }
+        }
+      }
+    },
+    "Full name": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome e cognome"
+          }
+        }
+      }
+    },
+    "Fully charged, with cable": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Carica, con cavo"
+          }
+        }
+      }
+    },
+    "Gear": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attrezzatura"
+          }
+        }
+      }
+    },
+    "General awareness about fire risks during emergencies.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consapevolezza generale sui rischi di incendio durante le emergenze."
+          }
+        }
+      }
+    },
+    "General information only. No frequencies, no radio access, nothing is transmitted.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo informazioni generali. Nessuna frequenza, nessun accesso alla radio, non viene trasmesso nulla."
+          }
+        }
+      }
+    },
+    "General offline radio information.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informazioni generali sulla radio, offline."
+          }
+        }
+      }
+    },
+    "Generated from your plan and contacts. You can edit it.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Creato dal tuo piano e dai contatti. Puoi modificarlo."
+          }
+        }
+      }
+    },
+    "Hand sanitizer, wipes, tissues": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gel igienizzante, salviette, fazzoletti"
+          }
+        }
+      }
+    },
+    "Hand-crank and solar": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Manovella e solare"
+          }
+        }
+      }
+    },
+    "Headlamp": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lampada frontale"
+          }
+        }
+      }
+    },
+    "Health": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salute"
+          }
+        }
+      }
+    },
+    "Health preparedness overview": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prepararsi per la salute: panoramica"
+          }
+        }
+      }
+    },
+    "Heat exposure": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esposizione al caldo"
+          }
+        }
+      }
+    },
+    "High contrast": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Contrasto elevato"
+          }
+        }
+      }
+    },
+    "Home district (demo)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quartiere di casa (demo)"
+          }
+        }
+      }
+    },
+    "Home, Kit, Alert and Tools. Already on this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home, Kit, Allerta e Strumenti. Già su questo dispositivo."
+          }
+        }
+      }
+    },
+    "How household water reserves can be organised and rotated.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come organizzare e ruotare le scorte d'acqua di casa."
+          }
+        }
+      }
+    },
+    "Hydration": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Idratazione"
+          }
+        }
+      }
+    },
+    "Hygiene and sanitation": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Igiene e servizi igienici"
+          }
+        }
+      }
+    },
+    "Hygiene supplies": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prodotti per l'igiene"
+          }
+        }
+      }
+    },
+    "ID copies": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copie dei documenti d'identità"
+          }
+        }
+      }
+    },
+    "IN PROGRESS": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IN CORSO"
+          }
+        }
+      }
+    },
+    "INCLUDED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "INCLUSO"
+          }
+        }
+      }
+    },
+    "Illness": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Malattie"
+          }
+        }
+      }
+    },
+    "Imperial": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imperiale"
+          }
+        }
+      }
+    },
+    "Improving reception": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Migliorare la ricezione"
+          }
+        }
+      }
+    },
+    "In a waterproof bag": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In una busta impermeabile"
+          }
+        }
+      }
+    },
+    "Injuries": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ferite e traumi"
+          }
+        }
+      }
+    },
+    "Insurance and medical records": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Assicurazioni e documenti sanitari"
+          }
+        }
+      }
+    },
+    "Introduction to orienting yourself without GPS.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Introduzione all'orientamento senza GPS."
+          }
+        }
+      }
+    },
+    "It stays on this device and is never transmitted.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resta su questo dispositivo e non viene mai trasmesso."
+          }
+        }
+      }
+    },
+    "Keep the radio in your kit, protected from water and knocks.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tieni la radio nel kit, al riparo da acqua e urti."
+          }
+        }
+      }
+    },
+    "Keep the user manual with the radio.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tieni il manuale d'uso insieme alla radio."
+          }
+        }
+      }
+    },
+    "Keeping warm when power and heating are unavailable.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mantenersi al caldo quando mancano corrente e riscaldamento."
+          }
+        }
+      }
+    },
+    "Keeps both hands free": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lascia libere entrambe le mani"
+          }
+        }
+      }
+    },
+    "Kit": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kit"
+          }
+        }
+      }
+    },
+    "Kit checklist, emergency plan and contacts, local chat and queue, saved places and map areas, medical bookmarks, prepared packs and preferences will be removed from this device. This cannot be undone.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checklist del kit, piano e contatti di emergenza, chat e coda locali, luoghi salvati e aree della mappa, preferiti medici, pacchetti preparati e preferenze verranno rimossi da questo dispositivo. L'operazione non si può annullare."
+          }
+        }
+      }
+    },
+    "Knife, pliers, screwdriver": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coltello, pinze, cacciavite"
+          }
+        }
+      }
+    },
+    "Knowledge": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sapere"
+          }
+        }
+      }
+    },
+    "Knowledge library": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblioteca Sapere"
+          }
+        }
+      }
+    },
+    "LOCAL DEMO · NOT TRANSMITTED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DEMO LOCALE · NON TRASMESSO"
+          }
+        }
+      }
+    },
+    "Landmarks and routes": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Punti di riferimento e percorsi"
+          }
+        }
+      }
+    },
+    "Latitude (-90 to 90)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Latitudine (da -90 a 90)"
+          }
+        }
+      }
+    },
+    "Latitude must be a decimal number, e.g. 45.4642.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La latitudine deve essere un numero decimale, es. 45.4642."
+          }
+        }
+      }
+    },
+    "Latitude must be between -90 and 90.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La latitudine deve essere compresa tra -90 e 90."
+          }
+        }
+      }
+    },
+    "Lighting": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Illuminazione"
+          }
+        }
+      }
+    },
+    "Listen at regular times instead of all day to save power.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ascolta a orari regolari invece che tutto il giorno, per risparmiare energia."
+          }
+        }
+      }
+    },
+    "Listening": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ascolto"
+          }
+        }
+      }
+    },
+    "Listening is open to everyone; transmitting usually needs a licence.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ascoltare è libero per tutti; trasmettere di solito richiede una licenza."
+          }
+        }
+      }
+    },
+    "Listening routine": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abitudini di ascolto"
+          }
+        }
+      }
+    },
+    "Local data": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dati locali"
+          }
+        }
+      }
+    },
+    "Local data erased": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dati locali cancellati"
+          }
+        }
+      }
+    },
+    "Local demo chat": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chat demo locale"
+          }
+        }
+      }
+    },
+    "Local demo. Nothing is transmitted.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Demo locale. Non viene trasmesso nulla."
+          }
+        }
+      }
+    },
+    "Local only · not transmitted": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo locale · non trasmesso"
+          }
+        }
+      }
+    },
+    "Local only. Nothing is downloaded.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo locale. Non viene scaricato nulla."
+          }
+        }
+      }
+    },
+    "Longitude (-180 to 180)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Longitudine (da -180 a 180)"
+          }
+        }
+      }
+    },
+    "Longitude must be a decimal number, e.g. 9.19.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La longitudine deve essere un numero decimale, es. 9.19."
+          }
+        }
+      }
+    },
+    "Longitude must be between -180 and 180.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La longitudine deve essere compresa tra -180 e 180."
+          }
+        }
+      }
+    },
+    "Low-detail overview of the region. Placeholder area.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panoramica a basso dettaglio della regione. Area segnaposto."
+          }
+        }
+      }
+    },
+    "Main roads and public buildings. Placeholder area.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strade principali ed edifici pubblici. Area segnaposto."
+          }
+        }
+      }
+    },
+    "Manual can opener": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apriscatole manuale"
+          }
+        }
+      }
+    },
+    "Maps": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mappe"
+          }
+        }
+      }
+    },
+    "Mark %@ as prepared": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segna %@ come pronto"
+          }
+        }
+      }
+    },
+    "Mark not prepared": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segna come non pronta"
+          }
+        }
+      }
+    },
+    "Mark prepared": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segna come pronto"
+          }
+        }
+      }
+    },
+    "Matches or lighter": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fiammiferi o accendino"
+          }
+        }
+      }
+    },
+    "Matching your devices": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Adatte ai tuoi dispositivi"
+          }
+        }
+      }
+    },
+    "Medical": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medico"
+          }
+        }
+      }
+    },
+    "Meeting point": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Punto di ritrovo"
+          }
+        }
+      }
+    },
+    "Meeting point: %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Punto di ritrovo: %@"
+          }
+        }
+      }
+    },
+    "Message (local demo)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messaggio (demo locale)"
+          }
+        }
+      }
+    },
+    "Message queue": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Coda messaggi"
+          }
+        }
+      }
+    },
+    "Message text": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testo del messaggio"
+          }
+        }
+      }
+    },
+    "Metric": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metrico"
+          }
+        }
+      }
+    },
+    "Move away from electrical devices that cause noise.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allontanati dagli apparecchi elettrici che causano disturbi."
+          }
+        }
+      }
+    },
+    "Multi-tool": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Multiattrezzo"
+          }
+        }
+      }
+    },
+    "NOT PREPARED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NON PREPARATO"
+          }
+        }
+      }
+    },
+    "NOT READY": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NON PRONTO"
+          }
+        }
+      }
+    },
+    "NOT SENT · NO EMERGENCY SERVICE CONTACTED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NON INVIATO · NESSUN SERVIZIO DI EMERGENZA CONTATTATO"
+          }
+        }
+      }
+    },
+    "Name": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome"
+          }
+        }
+      }
+    },
+    "Name (required)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome (obbligatorio)"
+          }
+        }
+      }
+    },
+    "Name: %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nome: %@"
+          }
+        }
+      }
+    },
+    "Navigation": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Orientamento"
+          }
+        }
+      }
+    },
+    "Neighbours (demo)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vicini (demo)"
+          }
+        }
+      }
+    },
+    "No account, no network, no analytics, no permissions.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun account, nessuna rete, nessuna analisi, nessun permesso."
+          }
+        }
+      }
+    },
+    "No articles found": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun articolo trovato"
+          }
+        }
+      }
+    },
+    "No contacts yet. Contacts are saved only on this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun contatto. I contatti sono salvati solo su questo dispositivo."
+          }
+        }
+      }
+    },
+    "No entries found. Try another word or choose All.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuna voce trovata. Prova un'altra parola o scegli Tutti."
+          }
+        }
+      }
+    },
+    "No map, no GPS: coordinates are typed in by hand and stay on this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niente mappa, niente GPS: le coordinate si inseriscono a mano e restano su questo dispositivo."
+          }
+        }
+      }
+    },
+    "No messages yet. Messages stay on this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun messaggio. I messaggi restano su questo dispositivo."
+          }
+        }
+      }
+    },
+    "No places yet. Add a meeting point, shelter or water source with its coordinates.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun luogo. Aggiungi un punto di ritrovo, un riparo o una fonte d'acqua con le sue coordinate."
+          }
+        }
+      }
+    },
+    "No topics found": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun argomento trovato"
+          }
+        }
+      }
+    },
+    "Non-perishable food": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cibo a lunga conservazione"
+          }
+        }
+      }
+    },
+    "Not available until tested on a physical device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non disponibile finché non è stata provata su un dispositivo reale."
+          }
+        }
+      }
+    },
+    "Not packed": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non pronto"
+          }
+        }
+      }
+    },
+    "Not prepared": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non preparata"
+          }
+        }
+      }
+    },
+    "Not sent. No emergency service contacted.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non inviato. Nessun servizio di emergenza contattato."
+          }
+        }
+      }
+    },
+    "Note": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nota"
+          }
+        }
+      }
+    },
+    "Note the date when you replace them.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annota la data quando le sostituisci."
+          }
+        }
+      }
+    },
+    "Note: %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nota: %@"
+          }
+        }
+      }
+    },
+    "Nothing is sent: SOS messages are only copied or queued locally.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non viene inviato nulla: i messaggi SOS vengono solo copiati o messi in coda sul dispositivo."
+          }
+        }
+      }
+    },
+    "OFFLINE READY · DATA STAYS ON DEVICE": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRONTA OFFLINE · I DATI RESTANO SUL DISPOSITIVO"
+          }
+        }
+      }
+    },
+    "Official information comes first.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le informazioni ufficiali vengono prima di tutto."
+          }
+        }
+      }
+    },
+    "Offline areas": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aree offline"
+          }
+        }
+      }
+    },
+    "Offline guide": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guida offline"
+          }
+        }
+      }
+    },
+    "Offline library": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Biblioteca offline"
+          }
+        }
+      }
+    },
+    "Offline packs": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pacchetti offline"
+          }
+        }
+      }
+    },
+    "Offline ready. All data stays on this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronta offline. Tutti i dati restano su questo dispositivo."
+          }
+        }
+      }
+    },
+    "Offline topics": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti offline"
+          }
+        }
+      }
+    },
+    "One change per person": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un cambio a persona"
+          }
+        }
+      }
+    },
+    "One per person if possible": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una a persona, se possibile"
+          }
+        }
+      }
+    },
+    "Optional": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Facoltativa"
+          }
+        }
+      }
+    },
+    "Options for preparing meals during a blackout.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come preparare i pasti durante un blackout."
+          }
+        }
+      }
+    },
+    "Overall kit progress": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avanzamento complessivo del kit"
+          }
+        }
+      }
+    },
+    "Overview of where water may be found in different environments.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panoramica di dove si può trovare acqua in ambienti diversi."
+          }
+        }
+      }
+    },
+    "PAUSED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IN PAUSA"
+          }
+        }
+      }
+    },
+    "PREPARED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PREPARATO"
+          }
+        }
+      }
+    },
+    "PRIORITY SOS": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SOS PRIORITARIO"
+          }
+        }
+      }
+    },
+    "Packed": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronto"
+          }
+        }
+      }
+    },
+    "Paper copies": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copie cartacee"
+          }
+        }
+      }
+    },
+    "Pause": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pausa"
+          }
+        }
+      }
+    },
+    "Personal health information": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informazioni personali sulla salute"
+          }
+        }
+      }
+    },
+    "Personal medications": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Farmaci personali"
+          }
+        }
+      }
+    },
+    "Personal plan": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Piano personale"
+          }
+        }
+      }
+    },
+    "Phone": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Telefono"
+          }
+        }
+      }
+    },
+    "Phone number": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Numero di telefono"
+          }
+        }
+      }
+    },
+    "Placeholder for an offline map of your area.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnaposto per una mappa offline della tua zona."
+          }
+        }
+      }
+    },
+    "Placeholder for spoken instructions.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnaposto per istruzioni vocali."
+          }
+        }
+      }
+    },
+    "Placeholder for verified long-form guides.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnaposto per guide approfondite verificate."
+          }
+        }
+      }
+    },
+    "Placeholder. Verified content reviewed by qualified professionals will later cover general information about %@. Nothing here is medical advice.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnaposto. In seguito, contenuti verificati e revisionati da professionisti qualificati tratteranno informazioni generali su %@. Niente di quanto è qui costituisce un consiglio medico."
+          }
+        }
+      }
+    },
+    "Places, offline areas": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luoghi, aree offline"
+          }
+        }
+      }
+    },
+    "Planned topics: choosing a location, insulation from the ground, staying dry.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: scelta del luogo, isolamento dal terreno, restare asciutti."
+          }
+        }
+      }
+    },
+    "Planned topics: compass parts, taking a bearing, paper maps.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: parti della bussola, prendere un azimut, mappe cartacee."
+          }
+        }
+      }
+    },
+    "Planned topics: container types, labelling, rotation schedule.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: tipi di contenitori, etichette, calendario di rotazione."
+          }
+        }
+      }
+    },
+    "Planned topics: hand-crank radios, broadcast channels, battery use.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: radio a manovella, canali di trasmissione, uso delle batterie."
+          }
+        }
+      }
+    },
+    "Planned topics: layered clothing, blankets, shared body heat.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: vestirsi a strati, coperte, condividere il calore corporeo."
+          }
+        }
+      }
+    },
+    "Planned topics: no-cook meals, camping stoves, ventilation.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: pasti senza cottura, fornelli da campeggio, ventilazione."
+          }
+        }
+      }
+    },
+    "Planned topics: primary and backup routes, meeting points, landmarks.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: percorsi principali e alternativi, punti di ritrovo, punti di riferimento."
+          }
+        }
+      }
+    },
+    "Planned topics: rain collection, natural sources, and storage containers.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: raccolta dell'acqua piovana, fonti naturali e contenitori."
+          }
+        }
+      }
+    },
+    "Planned topics: safe room selection, family meeting point, home supplies.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: scelta della stanza sicura, punto di ritrovo della famiglia, scorte in casa."
+          }
+        }
+      }
+    },
+    "Planned topics: shelf life, rotation, special dietary needs.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: durata, rotazione, esigenze alimentari particolari."
+          }
+        }
+      }
+    },
+    "Planned topics: smoke detectors, extinguishers, evacuation routes.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: rilevatori di fumo, estintori, vie di fuga."
+          }
+        }
+      }
+    },
+    "Planned topics: whistle signals, light signals, visible markers.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Argomenti previsti: segnali col fischietto, segnali luminosi, segni visibili."
+          }
+        }
+      }
+    },
+    "Planning evacuation routes in advance.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pianificare in anticipo i percorsi di evacuazione."
+          }
+        }
+      }
+    },
+    "Position matters more than volume.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La posizione conta più del volume."
+          }
+        }
+      }
+    },
+    "Power": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alimentazione"
+          }
+        }
+      }
+    },
+    "Power bank": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Power bank"
+          }
+        }
+      }
+    },
+    "Practise using the crank before an emergency.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Esercitati a usare la manovella prima di un'emergenza."
+          }
+        }
+      }
+    },
+    "Prefer models with more than one power option.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferisci modelli con più di un tipo di alimentazione."
+          }
+        }
+      }
+    },
+    "Preferences": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preferenze"
+          }
+        }
+      }
+    },
+    "Prepared": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparata"
+          }
+        }
+      }
+    },
+    "Preparedness": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparazione"
+          }
+        }
+      }
+    },
+    "Preparing a safe room and household plan.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Preparare una stanza sicura e un piano familiare."
+          }
+        }
+      }
+    },
+    "Priority message: it always goes ahead of other queued messages. ": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messaggio prioritario: passa sempre davanti agli altri messaggi in coda. "
+          }
+        }
+      }
+    },
+    "Priority messages · never transmitted": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messaggi prioritari · mai trasmessi"
+          }
+        }
+      }
+    },
+    "Privacy": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Privacy"
+          }
+        }
+      }
+    },
+    "Puts the message back in the local queue.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rimette il messaggio nella coda locale."
+          }
+        }
+      }
+    },
+    "Queue SOS (priority)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metti in coda SOS (priorità)"
+          }
+        }
+      }
+    },
+    "Queue is empty. %lld failed (simulated).": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La coda è vuota. Non riusciti (simulato): %lld."
+          }
+        }
+      }
+    },
+    "Queued": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In coda"
+          }
+        }
+      }
+    },
+    "Queued · not transmitted": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In coda · non trasmesso"
+          }
+        }
+      }
+    },
+    "READY": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PRONTO"
+          }
+        }
+      }
+    },
+    "REQUIRES PHYSICAL-DEVICE TEST": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RICHIEDE TEST SU DISPOSITIVO REALE"
+          }
+        }
+      }
+    },
+    "RUNNING": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "IN CORSO"
+          }
+        }
+      }
+    },
+    "Radio": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Radio"
+          }
+        }
+      }
+    },
+    "Radio guide": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guida radio"
+          }
+        }
+      }
+    },
+    "Ready to eat, for 3 days": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pronto da mangiare, per 3 giorni"
+          }
+        }
+      }
+    },
+    "Receiving official updates when phone networks are down.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ricevere gli aggiornamenti ufficiali quando le reti telefoniche non funzionano."
+          }
+        }
+      }
+    },
+    "Receiving versus transmitting": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ricevere e trasmettere"
+          }
+        }
+      }
+    },
+    "Records": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Documenti sanitari"
+          }
+        }
+      }
+    },
+    "Refillable bottle": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Borraccia riutilizzabile"
+          }
+        }
+      }
+    },
+    "Regenerate from plan": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rigenera dal piano"
+          }
+        }
+      }
+    },
+    "Region map (demo)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mappa della regione (demo)"
+          }
+        }
+      }
+    },
+    "Regional overview (demo)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Panoramica regionale (demo)"
+          }
+        }
+      }
+    },
+    "Relationship": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Relazione"
+          }
+        }
+      }
+    },
+    "Remove batteries during long storage to avoid leaks.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Togli le batterie se la radio resta ferma a lungo, per evitare perdite."
+          }
+        }
+      }
+    },
+    "Required packs: %lld of %lld": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pacchetti obbligatori: %1$lld di %2$lld"
+          }
+        }
+      }
+    },
+    "Requires physical-device test": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Richiede test su dispositivo reale"
+          }
+        }
+      }
+    },
+    "Reset": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Azzera"
+          }
+        }
+      }
+    },
+    "Reset checklist": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Azzera checklist"
+          }
+        }
+      }
+    },
+    "Reset checklist?": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Azzerare la checklist?"
+          }
+        }
+      }
+    },
+    "Respect official sources": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rispetta le fonti ufficiali"
+          }
+        }
+      }
+    },
+    "Restore default text": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ripristina testo predefinito"
+          }
+        }
+      }
+    },
+    "Resume": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Riprendi"
+          }
+        }
+      }
+    },
+    "Retry (queue again)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Riprova (rimetti in coda)"
+          }
+        }
+      }
+    },
+    "Reviewed text will be added after verification by qualified sources.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il testo revisionato verrà aggiunto dopo la verifica da parte di fonti qualificate."
+          }
+        }
+      }
+    },
+    "Rules": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regole"
+          }
+        }
+      }
+    },
+    "Rules for transmitting differ by country: check your national regulator.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le regole per trasmettere cambiano da paese a paese: verifica con l'autorità nazionale."
+          }
+        }
+      }
+    },
+    "SOS": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SOS"
+          }
+        }
+      }
+    },
+    "SOS (local)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SOS (locale)"
+          }
+        }
+      }
+    },
+    "SOS - I need help.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SOS - Ho bisogno di aiuto."
+          }
+        }
+      }
+    },
+    "SOS - I need help. Please come to our meeting point.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SOS - Ho bisogno di aiuto. Venite al nostro punto di ritrovo."
+          }
+        }
+      }
+    },
+    "SOS goes first, then oldest first. Use the buttons to simulate the result. %lld failed (simulated).": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prima l'SOS, poi i più vecchi. Usa i pulsanti per simulare l'esito. Non riusciti (simulato): %lld."
+          }
+        }
+      }
+    },
+    "SOS message": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messaggio SOS"
+          }
+        }
+      }
+    },
+    "SOS message copied. Not sent.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messaggio SOS copiato. Non inviato."
+          }
+        }
+      }
+    },
+    "SOS message text": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testo del messaggio SOS"
+          }
+        }
+      }
+    },
+    "SOS plan": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Piano SOS"
+          }
+        }
+      }
+    },
+    "SOS queued locally. Not transmitted.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SOS in coda sul dispositivo. Non trasmesso."
+          }
+        }
+      }
+    },
+    "SOS screen signal": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnale SOS sullo schermo"
+          }
+        }
+      }
+    },
+    "SOS signal": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnale SOS"
+          }
+        }
+      }
+    },
+    "SOS signal running": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnale SOS attivo"
+          }
+        }
+      }
+    },
+    "SOS · PRIORITY": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SOS · PRIORITÀ"
+          }
+        }
+      }
+    },
+    "SURVIVE 72": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SURVIVE 72"
+          }
+        }
+      }
+    },
+    "Save": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salva"
+          }
+        }
+      }
+    },
+    "Saved only on this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvato solo su questo dispositivo."
+          }
+        }
+      }
+    },
+    "Saved only on this device. The app does not read your location.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvato solo su questo dispositivo. L'app non legge la tua posizione."
+          }
+        }
+      }
+    },
+    "Saved only on this device. The app never calls or texts this number.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvato solo su questo dispositivo. L'app non chiama e non manda messaggi a questo numero."
+          }
+        }
+      }
+    },
+    "Saved places": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luoghi salvati"
+          }
+        }
+      }
+    },
+    "Search the radio guide": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca nella guida radio"
+          }
+        }
+      }
+    },
+    "Search titles and text": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca nei titoli e nel testo"
+          }
+        }
+      }
+    },
+    "Search topics": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca argomenti"
+          }
+        }
+      }
+    },
+    "Settings": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impostazioni"
+          }
+        }
+      }
+    },
+    "Share updates with your group at the meeting point.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Condividi gli aggiornamenti con il tuo gruppo al punto di ritrovo."
+          }
+        }
+      }
+    },
+    "Shelter": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Riparo"
+          }
+        }
+      }
+    },
+    "Shelter basics": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Riparo: le basi"
+          }
+        }
+      }
+    },
+    "Sheltering at home": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rifugiarsi in casa"
+          }
+        }
+      }
+    },
+    "Shows ... --- ... on the screen in white and black. Slow pattern: at most one flash per second, never starts by itself.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostra ... --- ... sullo schermo in bianco e nero. Sequenza lenta: al massimo un lampo al secondo, non parte mai da sola."
+          }
+        }
+      }
+    },
+    "Shows a slow SOS light pattern on this screen. Nothing is sent.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostra su questo schermo una lenta sequenza luminosa SOS. Non viene inviato nulla."
+          }
+        }
+      }
+    },
+    "Signalling %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnale %@"
+          }
+        }
+      }
+    },
+    "Signalling for help": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnalare per chiedere aiuto"
+          }
+        }
+      }
+    },
+    "Simulate delivered": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simula consegnato"
+          }
+        }
+      }
+    },
+    "Simulate failed": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simula non riuscito"
+          }
+        }
+      }
+    },
+    "Simulated. Nothing is downloaded.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulazione. Non viene scaricato nulla."
+          }
+        }
+      }
+    },
+    "Simulated: no data is downloaded. Marking a pack only records it on this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulazione: non viene scaricato nulla. Segnare un pacchetto lo registra solo su questo dispositivo."
+          }
+        }
+      }
+    },
+    "Slow light pattern, dot dot dot, dash dash dash, dot dot dot": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sequenza luminosa lenta, punto punto punto, linea linea linea, punto punto punto"
+          }
+        }
+      }
+    },
+    "Slow on-screen SOS light": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Luce SOS lenta sullo schermo"
+          }
+        }
+      }
+    },
+    "Small bills and coins": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Banconote di piccolo taglio e monete"
+          }
+        }
+      }
+    },
+    "Solar panels charge slowly: leave them in direct light.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I pannelli solari caricano lentamente: lasciali alla luce diretta."
+          }
+        }
+      }
+    },
+    "Spare batteries": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Batterie di ricambio"
+          }
+        }
+      }
+    },
+    "Spare batteries are part of your emergency kit.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le batterie di ricambio fanno parte del kit di emergenza."
+          }
+        }
+      }
+    },
+    "Sprains and fractures": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Distorsioni e fratture"
+          }
+        }
+      }
+    },
+    "Start": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avvia"
+          }
+        }
+      }
+    },
+    "Start SOS signal": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avvia segnale SOS"
+          }
+        }
+      }
+    },
+    "Start, pause and reset": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avvia, metti in pausa e azzera"
+          }
+        }
+      }
+    },
+    "Staying warm": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Restare al caldo"
+          }
+        }
+      }
+    },
+    "Stop SOS signal": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ferma segnale SOS"
+          }
+        }
+      }
+    },
+    "Stops the light pattern.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ferma la sequenza luminosa."
+          }
+        }
+      }
+    },
+    "Stopwatch": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cronometro"
+          }
+        }
+      }
+    },
+    "Stopwatch, SOS light": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cronometro, luce SOS"
+          }
+        }
+      }
+    },
+    "Store spares matching your radio.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tieni batterie di ricambio adatte alla tua radio."
+          }
+        }
+      }
+    },
+    "Stored in a waterproof container": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In un contenitore impermeabile"
+          }
+        }
+      }
+    },
+    "Stored now: %lld kit items checked, %lld emergency contacts, %lld packs marked prepared.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvati ora: %1$lld oggetti del kit spuntati, %2$lld contatti di emergenza, %3$lld pacchetti segnati come pronti."
+          }
+        }
+      }
+    },
+    "Storing drinking water": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conservare l'acqua potabile"
+          }
+        }
+      }
+    },
+    "Storing medical supplies": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conservare il materiale sanitario"
+          }
+        }
+      }
+    },
+    "Storing the radio": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Conservare la radio"
+          }
+        }
+      }
+    },
+    "Streets around home. Placeholder area.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le vie intorno a casa. Area segnaposto."
+          }
+        }
+      }
+    },
+    "Sturdy, with a sealed cap": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Robusta, con tappo ermetico"
+          }
+        }
+      }
+    },
+    "Supplies": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Materiale"
+          }
+        }
+      }
+    },
+    "TO BE VERIFIED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DA VERIFICARE"
+          }
+        }
+      }
+    },
+    "Tablets or a portable filter": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pastiglie o un filtro portatile"
+          }
+        }
+      }
+    },
+    "Team leader (demo)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Capogruppo (demo)"
+          }
+        }
+      }
+    },
+    "Test it every few months together with your kit.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Provala ogni pochi mesi insieme al kit."
+          }
+        }
+      }
+    },
+    "The compass uses the magnetometer. It will be enabled after it has been tested on a real iPhone. This version reads no sensor.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La bussola usa il magnetometro. Verrà attivata dopo essere stata provata su un iPhone reale. Questa versione non legge alcun sensore."
+          }
+        }
+      }
+    },
+    "The message is queued on this device. Nothing is transmitted.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il messaggio è in coda su questo dispositivo. Non viene trasmesso nulla."
+          }
+        }
+      }
+    },
+    "The torch uses the camera flash. It will be enabled after it has been tested on a real iPhone. This version does not use the camera, the flash or any permission.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La torcia usa il flash della fotocamera. Verrà attivata dopo essere stata provata su un iPhone reale. Questa versione non usa la fotocamera, il flash né alcun permesso."
+          }
+        }
+      }
+    },
+    "Thermal, compact": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Isotermica, compatta"
+          }
+        }
+      }
+    },
+    "This app never transmits and never accesses radio hardware.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Questa app non trasmette mai e non accede mai a hardware radio."
+          }
+        }
+      }
+    },
+    "To receive official updates": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per ricevere gli aggiornamenti ufficiali"
+          }
+        }
+      }
+    },
+    "To signal for help": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per chiedere aiuto"
+          }
+        }
+      }
+    },
+    "Tools": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Strumenti"
+          }
+        }
+      }
+    },
+    "Torch": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Torcia"
+          }
+        }
+      }
+    },
+    "Torch disabled": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Torcia disattivata"
+          }
+        }
+      }
+    },
+    "Torch not available yet": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Torcia non ancora disponibile"
+          }
+        }
+      }
+    },
+    "Training and courses": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Formazione e corsi"
+          }
+        }
+      }
+    },
+    "Try another word or choose All.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prova un'altra parola o scegli Tutti."
+          }
+        }
+      }
+    },
+    "Try near a window or outdoors.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prova vicino a una finestra o all'aperto."
+          }
+        }
+      }
+    },
+    "Units": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unità di misura"
+          }
+        }
+      }
+    },
+    "Unmark": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Togli"
+          }
+        }
+      }
+    },
+    "Unmark %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Togli %@ dai pronti"
+          }
+        }
+      }
+    },
+    "Use a sealed bag or box.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa una busta o una scatola sigillata."
+          }
+        }
+      }
+    },
+    "Uses the screen only. No torch, no sound, nothing is sent.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa solo lo schermo. Niente torcia, niente suoni, non viene inviato nulla."
+          }
+        }
+      }
+    },
+    "Using a compass": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usare una bussola"
+          }
+        }
+      }
+    },
+    "VERIFIED CONTENT REQUIRED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SERVE CONTENUTO VERIFICATO"
+          }
+        }
+      }
+    },
+    "Visual SOS": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SOS visivo"
+          }
+        }
+      }
+    },
+    "Voice prompts (demo)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Istruzioni vocali (demo)"
+          }
+        }
+      }
+    },
+    "Warm clothes and rain gear": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vestiti caldi e antipioggia"
+          }
+        }
+      }
+    },
+    "Water": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Acqua"
+          }
+        }
+      }
+    },
+    "Water purification": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Potabilizzazione dell'acqua"
+          }
+        }
+      }
+    },
+    "Ways to attract attention when you cannot call.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modi per attirare l'attenzione quando non puoi chiamare."
+          }
+        }
+      }
+    },
+    "Where your group meets": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dove si ritrova il tuo gruppo"
+          }
+        }
+      }
+    },
+    "Whistle": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fischietto"
+          }
+        }
+      }
+    },
+    "Why a radio matters": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perché una radio è importante"
+          }
+        }
+      }
+    },
+    "Why protection from wind, rain and cold matters in the first hours.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perché proteggersi da vento, pioggia e freddo conta nelle prime ore."
+          }
+        }
+      }
+    },
+    "Works without power": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Funziona senza corrente"
+          }
+        }
+      }
+    },
+    "Write down key information on paper.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Annota su carta le informazioni importanti."
+          }
+        }
+      }
+    },
+    "Written on paper": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scritti su carta"
+          }
+        }
+      }
+    },
+    "Your name": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il tuo nome"
+          }
+        }
+      }
+    },
+    "Your position needs GPS and location permission. It will be enabled after it has been tested on a real iPhone. This version never reads your location: type coordinates in Saved places instead.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La posizione richiede il GPS e il permesso di localizzazione. Verrà attivata dopo essere stata provata su un iPhone reale. Questa versione non legge mai la tua posizione: inserisci invece le coordinate in Luoghi salvati."
+          }
+        }
+      }
+    },
+    "all categories": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "tutte le categorie"
+          }
+        }
+      }
+    },
+    "bone": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "osso"
+          }
+        }
+      }
+    },
+    "box": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "scatola"
+          }
+        }
+      }
+    },
+    "burn": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ustione"
+          }
+        }
+      }
+    },
+    "certification": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "certificazione"
+          }
+        }
+      }
+    },
+    "cleanliness": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pulizia"
+          }
+        }
+      }
+    },
+    "cold weather": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "freddo"
+          }
+        }
+      }
+    },
+    "course": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "corso"
+          }
+        }
+      }
+    },
+    "cut": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "taglio"
+          }
+        }
+      }
+    },
+    "documents": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "documenti"
+          }
+        }
+      }
+    },
+    "e.g. 45.4642": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "es. 45.4642"
+          }
+        }
+      }
+    },
+    "e.g. 9.1900": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "es. 9.1900"
+          }
+        }
+      }
+    },
+    "e.g. Meeting point": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "es. Punto di ritrovo"
+          }
+        }
+      }
+    },
+    "e.g. Sister, Neighbour": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "es. Sorella, Vicino"
+          }
+        }
+      }
+    },
+    "expiry": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "scadenza"
+          }
+        }
+      }
+    },
+    "finding recognised first aid training": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "come trovare corsi di primo soccorso riconosciuti"
+          }
+        }
+      }
+    },
+    "fluids": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "liquidi"
+          }
+        }
+      }
+    },
+    "fracture": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "frattura"
+          }
+        }
+      }
+    },
+    "hands": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mani"
+          }
+        }
+      }
+    },
+    "hot weather": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "caldo"
+          }
+        }
+      }
+    },
+    "household": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "famiglia"
+          }
+        }
+      }
+    },
+    "joint": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "articolazione"
+          }
+        }
+      }
+    },
+    "keeping supplies organised and checking expiry dates": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "come tenere in ordine il materiale e controllare le scadenze"
+          }
+        }
+      }
+    },
+    "keeping your own health information ready on paper": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "come tenere pronte su carta le proprie informazioni sanitarie"
+          }
+        }
+      }
+    },
+    "kit": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "kit"
+          }
+        }
+      }
+    },
+    "learning": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "apprendimento"
+          }
+        }
+      }
+    },
+    "organisation": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "organizzazione"
+          }
+        }
+      }
+    },
+    "paper": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "carta"
+          }
+        }
+      }
+    },
+    "planning": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pianificazione"
+          }
+        }
+      }
+    },
+    "planning ahead for health needs in an emergency": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "come pianificare in anticipo le esigenze di salute in un'emergenza"
+          }
+        }
+      }
+    },
+    "readiness": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "preparazione"
+          }
+        }
+      }
+    },
+    "records": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cartelle"
+          }
+        }
+      }
+    },
+    "sanitation": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "igiene"
+          }
+        }
+      }
+    },
+    "skin": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "pelle"
+          }
+        }
+      }
+    },
+    "storage": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "conservazione"
+          }
+        }
+      }
+    },
+    "sun": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sole"
+          }
+        }
+      }
+    },
+    "supplies": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "scorte"
+          }
+        }
+      }
+    },
+    "temperature": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "temperatura"
+          }
+        }
+      }
+    },
+    "this topic": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "questo argomento"
+          }
+        }
+      }
+    },
+    "water": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "acqua"
+          }
+        }
+      }
+    },
+    "what a household first aid kit may include": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cosa può contenere un kit di primo soccorso domestico"
+          }
+        }
+      }
+    },
+    "winter": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "inverno"
+          }
+        }
+      }
+    },
+    "wound": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ferita"
+          }
+        }
+      }
+    }
+  },
+  "version": "1.0"
+}

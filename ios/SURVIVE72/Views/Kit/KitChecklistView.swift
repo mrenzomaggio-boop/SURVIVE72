@@ -9,7 +9,7 @@ struct KitChecklistView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
                 KitProgressCard(
-                    title: "72-hour kit",
+                    title: String(localized: "72-hour kit"),
                     progress: store.totalProgress
                 )
 
@@ -23,15 +23,15 @@ struct KitChecklistView: View {
             .padding(16)
         }
         .background(Theme.background.ignoresSafeArea())
-        .navigationTitle("Kit")
+        .navigationTitle(String(localized: "Kit"))
         .navigationBarTitleDisplayMode(.large)
-        .alert("Reset checklist?", isPresented: $isConfirmingReset) {
-            Button("Reset", role: .destructive) {
+        .alert(String(localized: "Reset checklist?"), isPresented: $isConfirmingReset) {
+            Button(String(localized: "Reset"), role: .destructive) {
                 store.reset()
             }
-            Button("Cancel", role: .cancel) {}
+            Button(String(localized: "Cancel"), role: .cancel) {}
         } message: {
-            Text("All items will be marked as not packed. This cannot be undone.")
+            Text(String(localized: "All items will be marked as not packed. This cannot be undone."))
         }
     }
 
@@ -56,7 +56,7 @@ struct KitChecklistView: View {
         Button(role: .destructive) {
             isConfirmingReset = true
         } label: {
-            Label("Reset checklist", systemImage: "arrow.counterclockwise")
+            Label(String(localized: "Reset checklist"), systemImage: "arrow.counterclockwise")
                 .font(.title3.weight(.heavy))
                 .frame(maxWidth: .infinity, minHeight: 60)
         }
@@ -69,7 +69,7 @@ struct KitChecklistView: View {
         )
         .disabled(store.totalProgress.checked == 0)
         .opacity(store.totalProgress.checked == 0 ? 0.5 : 1)
-        .accessibilityHint("Asks for confirmation, then clears every checked item.")
+        .accessibilityHint(String(localized: "Asks for confirmation, then clears every checked item."))
     }
 }
 

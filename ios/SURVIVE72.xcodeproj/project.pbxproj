@@ -67,6 +67,7 @@
 		5A7200000000000000000133 /* KitChecklistStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000132 /* KitChecklistStoreTests.swift */; };
 		5A7200000000000000000135 /* KitProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000134 /* KitProgressTests.swift */; };
 		5A720000000000000000014B /* KnowledgeLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000014A /* KnowledgeLibraryTests.swift */; };
+		5A72000000000000000001C7 /* LocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001C6 /* LocalizationTests.swift */; };
 		5A7200000000000000000158 /* AlertPlanStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000157 /* AlertPlanStoreTests.swift */; };
 		5A720000000000000000015A /* SOSMessageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000159 /* SOSMessageTests.swift */; };
 		5A720000000000000000016B /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000016A /* StopwatchTests.swift */; };
@@ -83,6 +84,7 @@
 		5A7200000000000000000110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010F /* Assets.xcassets */; };
 		5A72000000000000000001C1 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001C0 /* LocalStorage.swift */; };
 		5A72000000000000000001C3 /* PersistenceSafetyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001C2 /* PersistenceSafetyTests.swift */; };
+		5A72000000000000000001C5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001C4 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -156,6 +158,7 @@
 		5A7200000000000000000132 /* KitChecklistStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitChecklistStoreTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000134 /* KitProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KitProgressTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000014A /* KnowledgeLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KnowledgeLibraryTests.swift; sourceTree = "<group>"; };
+		5A72000000000000000001C6 /* LocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000157 /* AlertPlanStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPlanStoreTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000159 /* SOSMessageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSMessageTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000016A /* StopwatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTests.swift; sourceTree = "<group>"; };
@@ -170,6 +173,7 @@
 		5A72000000000000000001B8 /* MedicalLibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalLibraryTests.swift; sourceTree = "<group>"; };
 		5A72000000000000000001BA /* MedicalStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalStoreTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000010F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5A72000000000000000001C4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		5A7200000000000000000111 /* SURVIVE72.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SURVIVE72.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7200000000000000000136 /* SURVIVE72Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SURVIVE72Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A72000000000000000001C0 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
@@ -213,6 +217,7 @@
 				5A720000000000000000012F /* Storage */,
 				5A7200000000000000000119 /* Views */,
 				5A720000000000000000010F /* Assets.xcassets */,
+				5A72000000000000000001C4 /* Localizable.xcstrings */,
 			);
 			path = SURVIVE72;
 			sourceTree = "<group>";
@@ -412,6 +417,7 @@
 				5A7200000000000000000132 /* KitChecklistStoreTests.swift */,
 				5A7200000000000000000134 /* KitProgressTests.swift */,
 				5A720000000000000000014A /* KnowledgeLibraryTests.swift */,
+				5A72000000000000000001C6 /* LocalizationTests.swift */,
 				5A7200000000000000000157 /* AlertPlanStoreTests.swift */,
 				5A7200000000000000000159 /* SOSMessageTests.swift */,
 				5A720000000000000000016A /* StopwatchTests.swift */,
@@ -493,6 +499,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				it,
 				Base,
 			);
 			mainGroup = 5A7200000000000000000112;
@@ -512,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7200000000000000000110 /* Assets.xcassets in Resources */,
+				5A72000000000000000001C5 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -597,6 +605,7 @@
 				5A7200000000000000000133 /* KitChecklistStoreTests.swift in Sources */,
 				5A7200000000000000000135 /* KitProgressTests.swift in Sources */,
 				5A720000000000000000014B /* KnowledgeLibraryTests.swift in Sources */,
+				5A72000000000000000001C7 /* LocalizationTests.swift in Sources */,
 				5A7200000000000000000158 /* AlertPlanStoreTests.swift in Sources */,
 				5A720000000000000000015A /* SOSMessageTests.swift in Sources */,
 				5A720000000000000000016B /* StopwatchTests.swift in Sources */,

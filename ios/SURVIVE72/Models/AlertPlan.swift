@@ -57,5 +57,5 @@ extension AlertPlanData {
 
 /// Fixed status line shown on every Alert screen.
 enum AlertStatus {
-    static let notSent = "NOT SENT · NO EMERGENCY SERVICE CONTACTED"
+    static let notSent = String(localized: "NOT SENT · NO EMERGENCY SERVICE CONTACTED")
 }

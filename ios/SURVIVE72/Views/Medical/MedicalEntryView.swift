@@ -21,7 +21,7 @@ struct MedicalEntryView: View {
                         .foregroundStyle(Theme.textSecondary)
                 }
                 .accessibilityElement(children: .combine)
-                .accessibilityLabel("Category: \(entry.category.title)")
+                .accessibilityLabel(String(localized: "Category: \(entry.category.title)"))
 
                 Text(entry.title)
                     .font(.largeTitle.weight(.black))
@@ -51,7 +51,7 @@ struct MedicalEntryView: View {
         return Button {
             store.toggleFavorite(entry.id)
         } label: {
-            Label(isFavorite ? "Bookmarked" : "Bookmark",
+            Label(isFavorite ? String(localized: "Bookmarked") : String(localized: "Bookmark"),
                   systemImage: isFavorite ? "star.fill" : "star")
                 .font(.title3.weight(.heavy))
                 .foregroundStyle(isFavorite ? Theme.background : Theme.textPrimary)
@@ -64,7 +64,7 @@ struct MedicalEntryView: View {
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(isFavorite ? .isSelected : [])
-        .accessibilityHint("Saved only on this device.")
+        .accessibilityHint(String(localized: "Saved only on this device."))
     }
 }
 

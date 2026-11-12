@@ -26,7 +26,7 @@ struct AlertPlanningView: View {
         .safeAreaInset(edge: .top, spacing: 0) {
             NotSentBanner()
         }
-        .navigationTitle("Alert")
+        .navigationTitle(String(localized: "Alert"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Theme.background, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
@@ -45,19 +45,19 @@ struct AlertPlanningView: View {
             }
         }
         .alert(
-            "Delete contact?",
+            String(localized: "Delete contact?"),
             isPresented: Binding(
                 get: { contactPendingDeletion != nil },
                 set: { if !$0 { contactPendingDeletion = nil } }
             ),
             presenting: contactPendingDeletion
         ) { contact in
-            Button("Delete", role: .destructive) {
+            Button(String(localized: "Delete"), role: .destructive) {
                 store.deleteContact(id: contact.id)
             }
-            Button("Cancel", role: .cancel) {}
+            Button(String(localized: "Cancel"), role: .cancel) {}
         } message: { contact in
-            Text("\(contact.name) will be removed from this device.")
+            Text(String(localized: "\(contact.name) will be removed from this device."))
         }
     }
 
@@ -65,12 +65,12 @@ struct AlertPlanningView: View {
 
     private var planSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SectionHeader(title: "Personal plan", systemImage: "person.text.rectangle.fill")
-            LabeledField(label: "Your name", text: planBinding(\.name), prompt: "Name")
-            LabeledField(label: "Meeting point", text: planBinding(\.meetingPoint),
-                         prompt: "Where your group meets")
-            LabeledField(label: "Note", text: planBinding(\.note),
-                         prompt: "Anything others should know", multiline: true)
+            SectionHeader(title: String(localized: "Personal plan"), systemImage: "person.text.rectangle.fill")
+            LabeledField(label: String(localized: "Your name"), text: planBinding(\.name), prompt: String(localized: "Name"))
+            LabeledField(label: String(localized: "Meeting point"), text: planBinding(\.meetingPoint),
+                         prompt: String(localized: "Where your group meets"))
+            LabeledField(label: String(localized: "Note"), text: planBinding(\.note),
+                         prompt: String(localized: "Anything others should know"), multiline: true)
         }
     }
 
@@ -89,11 +89,11 @@ struct AlertPlanningView: View {
 
     private var contactsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SectionHeader(title: "Emergency contacts", systemImage: "person.2.fill",
+            SectionHeader(title: String(localized: "Emergency contacts"), systemImage: "person.2.fill",
                           trailing: "\(store.contacts.count)")
 
             if store.contacts.isEmpty {
-                Text("No contacts yet. Contacts are saved only on this device.")
+                Text(String(localized: "No contacts yet. Contacts are saved only on this device."))
                     .font(.body)
                     .foregroundStyle(Theme.textSecondary)
             }
@@ -106,7 +106,7 @@ struct AlertPlanningView: View {
                 )
             }
 
-            BigButton(title: "Add contact", systemImage: "plus.circle.fill", color: Theme.accent) {
+            BigButton(title: String(localized: "Add contact"), systemImage: "plus.circle.fill", color: Theme.accent) {
                 isAddingContact = true
             }
         }
@@ -116,11 +116,11 @@ struct AlertPlanningView: View {
 
     private var messageSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SectionHeader(title: "SOS message", systemImage: "text.bubble.fill")
+            SectionHeader(title: String(localized: "SOS message"), systemImage: "text.bubble.fill")
 
             Text(store.isMessageEdited
-                 ? "Edited by you. Tap Regenerate to rebuild it from your plan and contacts."
-                 : "Generated from your plan and contacts. You can edit it.")
+                 ? String(localized: "Edited by you. Tap Regenerate to rebuild it from your plan and contacts.")
+                 : String(localized: "Generated from your plan and contacts. You can edit it."))
                 .font(.subheadline)
                 .foregroundStyle(Theme.textSecondary)
 
@@ -138,21 +138,21 @@ struct AlertPlanningView: View {
                 RoundedRectangle(cornerRadius: Theme.cornerRadius)
                     .stroke(Theme.surfaceBorder, lineWidth: Theme.borderWidth)
             )
-            .accessibilityLabel("SOS message text")
+            .accessibilityLabel(String(localized: "SOS message text"))
 
-            BigButton(title: didCopy ? "Copied · not sent" : "Copy SOS message",
+            BigButton(title: didCopy ? String(localized: "Copied · not sent") : String(localized: "Copy SOS message"),
                       systemImage: didCopy ? "checkmark.circle.fill" : "doc.on.doc.fill",
                       color: didCopy ? Theme.ok : Theme.accent) {
                 UIPasteboard.general.string = store.message
                 didCopy = true
                 UIAccessibility.post(notification: .announcement,
-                                     argument: "SOS message copied. Not sent.")
+                                     argument: String(localized: "SOS message copied. Not sent."))
             }
-            .accessibilityHint("Copies the text only. Nothing is sent and no one is contacted.")
+            .accessibilityHint(String(localized: "Copies the text only. Nothing is sent and no one is contacted."))
             .sensoryFeedback(.success, trigger: didCopy)
 
             if store.isMessageEdited {
-                BigButton(title: "Regenerate from plan", systemImage: "arrow.clockwise",
+                BigButton(title: String(localized: "Regenerate from plan"), systemImage: "arrow.clockwise",
                           color: Theme.textPrimary) {
                     store.regenerateMessage()
                 }
@@ -186,7 +186,7 @@ struct NotSentBanner: View {
         }
         .background(Theme.background)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("Not sent. No emergency service contacted.")
+        .accessibilityLabel(String(localized: "Not sent. No emergency service contacted."))
         .accessibilityAddTraits(.isStaticText)
     }
 }
@@ -268,8 +268,8 @@ private struct ContactRow: View {
             }
             .accessibilityElement(children: .combine)
             Spacer(minLength: 8)
-            iconButton("pencil", label: "Edit \(contact.name)", color: Theme.accent, action: onEdit)
-            iconButton("trash.fill", label: "Delete \(contact.name)", color: Theme.danger, action: onDelete)
+            iconButton("pencil", label: String(localized: "Edit \(contact.name)"), color: Theme.accent, action: onEdit)
+            iconButton("trash.fill", label: String(localized: "Delete \(contact.name)"), color: Theme.danger, action: onDelete)
         }
         .padding(14)
         .frame(maxWidth: .infinity, minHeight: 72, alignment: .leading)

@@ -21,7 +21,7 @@ struct SOSSignalView: View {
             }
 
             ToolButton(
-                title: signal.isActive ? "Stop SOS signal" : "Start SOS signal",
+                title: signal.isActive ? String(localized: "Stop SOS signal") : String(localized: "Start SOS signal"),
                 systemImage: signal.isActive ? "stop.fill" : "play.fill",
                 style: signal.isActive ? .destructive : .primary
             ) {
@@ -32,12 +32,12 @@ struct SOSSignalView: View {
                 }
             }
             .accessibilityHint(signal.isActive
-                ? "Stops the light pattern."
-                : "Shows a slow SOS light pattern on this screen. Nothing is sent.")
+                ? String(localized: "Stops the light pattern.")
+                : String(localized: "Shows a slow SOS light pattern on this screen. Nothing is sent."))
         }
         .padding(16)
         .background(Theme.background.ignoresSafeArea())
-        .navigationTitle("SOS signal")
+        .navigationTitle(String(localized: "SOS signal"))
         .navigationBarTitleDisplayMode(.inline)
         // Keep the screen awake only while the signal is running.
         .onChange(of: signal.isActive, initial: true) { _, isActive in
@@ -63,9 +63,9 @@ private struct SignalPanel: View {
                         .stroke(Theme.textPrimary, lineWidth: 3)
                 )
             VStack(spacing: 8) {
-                Text("SOS")
+                Text(String(localized: "SOS"))
                     .font(.system(size: 96, weight: .black))
-                Text(letter.map { "Signalling \($0)" } ?? "Pause")
+                Text(letter.map { String(localized: "Signalling \(String($0))") } ?? String(localized: "Pause"))
                     .font(.title3.weight(.heavy))
             }
             .foregroundStyle(isOn ? Color.black : Color(white: 0.55))
@@ -73,8 +73,8 @@ private struct SignalPanel: View {
         // Short fade instead of a hard cut: softer on the eyes.
         .animation(.easeInOut(duration: 0.12), value: isOn)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("SOS signal running")
-        .accessibilityValue("Slow light pattern, dot dot dot, dash dash dash, dot dot dot")
+        .accessibilityLabel(String(localized: "SOS signal running"))
+        .accessibilityValue(String(localized: "Slow light pattern, dot dot dot, dash dash dash, dot dot dot"))
     }
 }
 
@@ -85,14 +85,14 @@ private struct IdlePanel: View {
                 .font(.system(size: 48, weight: .bold))
                 .foregroundStyle(Theme.accent)
                 .accessibilityHidden(true)
-            Text("Visual SOS")
+            Text(String(localized: "Visual SOS"))
                 .font(.largeTitle.weight(.black))
                 .foregroundStyle(Theme.textPrimary)
-            Text("Shows ... --- ... on the screen in white and black. Slow pattern: at most one flash per second, never starts by itself.")
+            Text(String(localized: "Shows ... --- ... on the screen in white and black. Slow pattern: at most one flash per second, never starts by itself."))
                 .font(.title3.weight(.semibold))
                 .foregroundStyle(Theme.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)
-            Text("Uses the screen only. No torch, no sound, nothing is sent.")
+            Text(String(localized: "Uses the screen only. No torch, no sound, nothing is sent."))
                 .font(.body.weight(.semibold))
                 .foregroundStyle(Theme.textSecondary)
                 .fixedSize(horizontal: false, vertical: true)

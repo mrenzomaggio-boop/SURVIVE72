@@ -13,12 +13,12 @@ enum KnowledgeCategory: String, CaseIterable, Identifiable, Hashable {
 
     var title: String {
         switch self {
-        case .water: "Water"
-        case .shelter: "Shelter"
-        case .fire: "Fire"
-        case .food: "Food"
-        case .navigation: "Navigation"
-        case .communication: "Communication"
+        case .water: String(localized: "Water")
+        case .shelter: String(localized: "Shelter")
+        case .fire: String(localized: "Fire")
+        case .food: String(localized: "Food")
+        case .navigation: String(localized: "Navigation")
+        case .communication: String(localized: "Communication")
         }
     }
 
@@ -41,7 +41,7 @@ enum VerificationStatus: String, Hashable {
 
     var label: String {
         switch self {
-        case .toBeVerified: "TO BE VERIFIED"
+        case .toBeVerified: String(localized: "TO BE VERIFIED")
         }
     }
 }

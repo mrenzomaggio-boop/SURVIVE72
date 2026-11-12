@@ -16,7 +16,7 @@ struct ConversationView: View {
             ScrollView {
                 LazyVStack(spacing: 10) {
                     if messages.isEmpty {
-                        Text("No messages yet. Messages stay on this device.")
+                        Text(String(localized: "No messages yet. Messages stay on this device."))
                             .font(.body)
                             .foregroundStyle(Theme.textSecondary)
                             .frame(maxWidth: .infinity, alignment: .leading)
@@ -41,7 +41,7 @@ struct ConversationView: View {
         .safeAreaInset(edge: .bottom, spacing: 0) {
             composer
         }
-        .navigationTitle(store.conversation(conversationID)?.title ?? "Conversation")
+        .navigationTitle(store.conversation(conversationID)?.title ?? String(localized: "Conversation"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Theme.background, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
@@ -49,7 +49,7 @@ struct ConversationView: View {
 
     private var composer: some View {
         HStack(alignment: .bottom, spacing: 10) {
-            TextField("Message (local demo)", text: $draft, axis: .vertical)
+            TextField(String(localized: "Message (local demo)"), text: $draft, axis: .vertical)
                 .lineLimit(1...4)
                 .font(.title3)
                 .foregroundStyle(Theme.textPrimary)
@@ -61,7 +61,7 @@ struct ConversationView: View {
                     RoundedRectangle(cornerRadius: Theme.cornerRadius)
                         .stroke(Theme.surfaceBorder, lineWidth: Theme.borderWidth)
                 )
-                .accessibilityLabel("Message text")
+                .accessibilityLabel(String(localized: "Message text"))
 
             Button {
                 if store.send(draft, to: conversationID) != nil {
@@ -76,8 +76,8 @@ struct ConversationView: View {
             }
             .buttonStyle(.plain)
             .disabled(draft.trimmed.isEmpty)
-            .accessibilityLabel("Add to queue")
-            .accessibilityHint("The message is queued on this device. Nothing is transmitted.")
+            .accessibilityLabel(String(localized: "Add to queue"))
+            .accessibilityHint(String(localized: "The message is queued on this device. Nothing is transmitted."))
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
@@ -99,7 +99,7 @@ private struct MessageBubble: View {
             if message.isOutgoing { Spacer(minLength: 40) }
             VStack(alignment: message.isOutgoing ? .trailing : .leading, spacing: 6) {
                 if message.isSOS {
-                    Text("SOS · PRIORITY")
+                    Text(String(localized: "SOS · PRIORITY"))
                         .font(.caption.weight(.black))
                         .foregroundStyle(Theme.danger)
                 }
@@ -116,11 +116,11 @@ private struct MessageBubble: View {
                     }
                 }
                 if message.isOutgoing && message.state == .failed {
-                    Button("Retry (queue again)", action: onRetry)
+                    Button(String(localized: "Retry (queue again)"), action: onRetry)
                         .font(.subheadline.weight(.heavy))
                         .foregroundStyle(Theme.accent)
                         .frame(minHeight: 44)
-                        .accessibilityHint("Puts the message back in the local queue.")
+                        .accessibilityHint(String(localized: "Puts the message back in the local queue."))
                 }
             }
             .padding(12)

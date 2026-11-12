@@ -21,9 +21,9 @@ enum OfflinePackStatus: Equatable {
 
     var label: String {
         switch self {
-        case .bundled: "INCLUDED"
-        case .prepared: "PREPARED"
-        case .notPrepared: "NOT PREPARED"
+        case .bundled: String(localized: "INCLUDED")
+        case .prepared: String(localized: "PREPARED")
+        case .notPrepared: String(localized: "NOT PREPARED")
         }
     }
 
@@ -72,23 +72,23 @@ enum SizeFormat {
 /// Built-in list of packs. Sizes are estimates for planning.
 enum OfflinePackCatalog {
     static let packs: [OfflinePack] = [
-        OfflinePack(id: "core.app", title: "Core app",
-                    summary: "Home, Kit, Alert and Tools. Already on this device.",
+        OfflinePack(id: "core.app", title: String(localized: "Core app"),
+                    summary: String(localized: "Home, Kit, Alert and Tools. Already on this device."),
                     sizeMB: 12, isBundled: true, isRequired: true),
-        OfflinePack(id: "core.knowledge", title: "Knowledge library",
-                    summary: "Demo articles marked TO BE VERIFIED.",
+        OfflinePack(id: "core.knowledge", title: String(localized: "Knowledge library"),
+                    summary: String(localized: "Demo articles marked TO BE VERIFIED."),
                     sizeMB: 2, isBundled: true, isRequired: true),
-        OfflinePack(id: "core.radio", title: "Radio guide",
-                    summary: "General offline radio information.",
+        OfflinePack(id: "core.radio", title: String(localized: "Radio guide"),
+                    summary: String(localized: "General offline radio information."),
                     sizeMB: 1, isBundled: true, isRequired: false),
-        OfflinePack(id: "region.map", title: "Region map (demo)",
-                    summary: "Placeholder for an offline map of your area.",
+        OfflinePack(id: "region.map", title: String(localized: "Region map (demo)"),
+                    summary: String(localized: "Placeholder for an offline map of your area."),
                     sizeMB: 850, isBundled: false, isRequired: true),
-        OfflinePack(id: "guides.extended", title: "Extended guides (demo)",
-                    summary: "Placeholder for verified long-form guides.",
+        OfflinePack(id: "guides.extended", title: String(localized: "Extended guides (demo)"),
+                    summary: String(localized: "Placeholder for verified long-form guides."),
                     sizeMB: 120, isBundled: false, isRequired: false),
-        OfflinePack(id: "audio.prompts", title: "Voice prompts (demo)",
-                    summary: "Placeholder for spoken instructions.",
+        OfflinePack(id: "audio.prompts", title: String(localized: "Voice prompts (demo)"),
+                    summary: String(localized: "Placeholder for spoken instructions."),
                     sizeMB: 300, isBundled: false, isRequired: false)
     ]
 }

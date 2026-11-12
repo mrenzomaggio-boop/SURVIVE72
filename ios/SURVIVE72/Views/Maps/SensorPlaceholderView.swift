@@ -10,8 +10,8 @@ struct SensorPlaceholderView: View {
 
         var title: String {
             switch self {
-            case .compass: "Compass"
-            case .position: "Current position"
+            case .compass: String(localized: "Compass")
+            case .position: String(localized: "Current position")
             }
         }
 
@@ -25,14 +25,14 @@ struct SensorPlaceholderView: View {
         var explanation: String {
             switch self {
             case .compass:
-                "The compass uses the magnetometer. It will be enabled after it has been tested on a real iPhone. This version reads no sensor."
+                String(localized: "The compass uses the magnetometer. It will be enabled after it has been tested on a real iPhone. This version reads no sensor.")
             case .position:
-                "Your position needs GPS and location permission. It will be enabled after it has been tested on a real iPhone. This version never reads your location: type coordinates in Saved places instead."
+                String(localized: "Your position needs GPS and location permission. It will be enabled after it has been tested on a real iPhone. This version never reads your location: type coordinates in Saved places instead.")
             }
         }
     }
 
-    static let requirement = "REQUIRES PHYSICAL-DEVICE TEST"
+    static let requirement = String(localized: "REQUIRES PHYSICAL-DEVICE TEST")
 
     let kind: Kind
 
@@ -53,7 +53,7 @@ struct SensorPlaceholderView: View {
                     .padding(.vertical, 12)
                     .accessibilityHidden(true)
 
-                Text("\(kind.title) not available yet")
+                Text(String(localized: "\(kind.title) not available yet"))
                     .font(.largeTitle.weight(.black))
                     .foregroundStyle(Theme.textPrimary)
                     .fixedSize(horizontal: false, vertical: true)

@@ -17,31 +17,31 @@ enum AppSection: String, CaseIterable, Identifiable, Hashable {
 
     var title: String {
         switch self {
-        case .connect: "Connect"
-        case .maps: "Maps"
-        case .knowledge: "Knowledge"
-        case .medical: "Medical"
-        case .kit: "Kit"
-        case .radio: "Radio"
-        case .alert: "Alert"
-        case .tools: "Tools"
-        case .downloads: "Downloads"
-        case .settings: "Settings"
+        case .connect: String(localized: "Connect")
+        case .maps: String(localized: "Maps")
+        case .knowledge: String(localized: "Knowledge")
+        case .medical: String(localized: "Medical")
+        case .kit: String(localized: "Kit")
+        case .radio: String(localized: "Radio")
+        case .alert: String(localized: "Alert")
+        case .tools: String(localized: "Tools")
+        case .downloads: String(localized: "Downloads")
+        case .settings: String(localized: "Settings")
         }
     }
 
     var subtitle: String {
         switch self {
-        case .connect: "Local demo chat"
-        case .maps: "Places, offline areas"
-        case .knowledge: "Offline library"
-        case .medical: "Offline topics"
-        case .kit: "72-hour checklist"
-        case .radio: "Offline guide"
-        case .alert: "SOS plan"
-        case .tools: "Stopwatch, SOS light"
-        case .downloads: "Offline packs"
-        case .settings: "Preferences"
+        case .connect: String(localized: "Local demo chat")
+        case .maps: String(localized: "Places, offline areas")
+        case .knowledge: String(localized: "Offline library")
+        case .medical: String(localized: "Offline topics")
+        case .kit: String(localized: "72-hour checklist")
+        case .radio: String(localized: "Offline guide")
+        case .alert: String(localized: "SOS plan")
+        case .tools: String(localized: "Stopwatch, SOS light")
+        case .downloads: String(localized: "Offline packs")
+        case .settings: String(localized: "Preferences")
         }
     }
 

@@ -5,86 +5,86 @@ import Foundation
 /// Every article is marked TO BE VERIFIED until reviewed content replaces it.
 enum KnowledgeLibraryContent {
     private static let notice =
-        "Demo content. This article is a placeholder and has not been reviewed. Do not rely on it."
+        String(localized: "Demo content. This article is a placeholder and has not been reviewed. Do not rely on it.")
 
     static let articles: [KnowledgeArticle] = [
         KnowledgeArticle(
             id: "water.sources", category: .water,
-            title: "Finding water sources",
-            summary: "Overview of where water may be found in different environments.",
+            title: String(localized: "Finding water sources"),
+            summary: String(localized: "Overview of where water may be found in different environments."),
             paragraphs: [notice,
-                         "Planned topics: rain collection, natural sources, and storage containers.",
-                         "Reviewed text will be added after verification by qualified sources."]),
+                         String(localized: "Planned topics: rain collection, natural sources, and storage containers."),
+                         String(localized: "Reviewed text will be added after verification by qualified sources.")]),
         KnowledgeArticle(
             id: "water.storage", category: .water,
-            title: "Storing drinking water",
-            summary: "How household water reserves can be organised and rotated.",
+            title: String(localized: "Storing drinking water"),
+            summary: String(localized: "How household water reserves can be organised and rotated."),
             paragraphs: [notice,
-                         "Planned topics: container types, labelling, rotation schedule."]),
+                         String(localized: "Planned topics: container types, labelling, rotation schedule.")]),
 
         KnowledgeArticle(
             id: "shelter.basics", category: .shelter,
-            title: "Shelter basics",
-            summary: "Why protection from wind, rain and cold matters in the first hours.",
+            title: String(localized: "Shelter basics"),
+            summary: String(localized: "Why protection from wind, rain and cold matters in the first hours."),
             paragraphs: [notice,
-                         "Planned topics: choosing a location, insulation from the ground, staying dry."]),
+                         String(localized: "Planned topics: choosing a location, insulation from the ground, staying dry.")]),
         KnowledgeArticle(
             id: "shelter.home", category: .shelter,
-            title: "Sheltering at home",
-            summary: "Preparing a safe room and household plan.",
+            title: String(localized: "Sheltering at home"),
+            summary: String(localized: "Preparing a safe room and household plan."),
             paragraphs: [notice,
-                         "Planned topics: safe room selection, family meeting point, home supplies."]),
+                         String(localized: "Planned topics: safe room selection, family meeting point, home supplies.")]),
 
         KnowledgeArticle(
             id: "fire.safety", category: .fire,
-            title: "Fire safety",
-            summary: "General awareness about fire risks during emergencies.",
+            title: String(localized: "Fire safety"),
+            summary: String(localized: "General awareness about fire risks during emergencies."),
             paragraphs: [notice,
-                         "Planned topics: smoke detectors, extinguishers, evacuation routes."]),
+                         String(localized: "Planned topics: smoke detectors, extinguishers, evacuation routes.")]),
         KnowledgeArticle(
             id: "fire.warmth", category: .fire,
-            title: "Staying warm",
-            summary: "Keeping warm when power and heating are unavailable.",
+            title: String(localized: "Staying warm"),
+            summary: String(localized: "Keeping warm when power and heating are unavailable."),
             paragraphs: [notice,
-                         "Planned topics: layered clothing, blankets, shared body heat."]),
+                         String(localized: "Planned topics: layered clothing, blankets, shared body heat.")]),
 
         KnowledgeArticle(
             id: "food.supplies", category: .food,
-            title: "Emergency food supplies",
-            summary: "Building a three-day stock of non-perishable food.",
+            title: String(localized: "Emergency food supplies"),
+            summary: String(localized: "Building a three-day stock of non-perishable food."),
             paragraphs: [notice,
-                         "Planned topics: shelf life, rotation, special dietary needs."]),
+                         String(localized: "Planned topics: shelf life, rotation, special dietary needs.")]),
         KnowledgeArticle(
             id: "food.cooking", category: .food,
-            title: "Cooking without power",
-            summary: "Options for preparing meals during a blackout.",
+            title: String(localized: "Cooking without power"),
+            summary: String(localized: "Options for preparing meals during a blackout."),
             paragraphs: [notice,
-                         "Planned topics: no-cook meals, camping stoves, ventilation."]),
+                         String(localized: "Planned topics: no-cook meals, camping stoves, ventilation.")]),
 
         KnowledgeArticle(
             id: "navigation.compass", category: .navigation,
-            title: "Using a compass",
-            summary: "Introduction to orienting yourself without GPS.",
+            title: String(localized: "Using a compass"),
+            summary: String(localized: "Introduction to orienting yourself without GPS."),
             paragraphs: [notice,
-                         "Planned topics: compass parts, taking a bearing, paper maps."]),
+                         String(localized: "Planned topics: compass parts, taking a bearing, paper maps.")]),
         KnowledgeArticle(
             id: "navigation.landmarks", category: .navigation,
-            title: "Landmarks and routes",
-            summary: "Planning evacuation routes in advance.",
+            title: String(localized: "Landmarks and routes"),
+            summary: String(localized: "Planning evacuation routes in advance."),
             paragraphs: [notice,
-                         "Planned topics: primary and backup routes, meeting points, landmarks."]),
+                         String(localized: "Planned topics: primary and backup routes, meeting points, landmarks.")]),
 
         KnowledgeArticle(
             id: "communication.radio", category: .communication,
-            title: "Emergency radio",
-            summary: "Receiving official updates when phone networks are down.",
+            title: String(localized: "Emergency radio"),
+            summary: String(localized: "Receiving official updates when phone networks are down."),
             paragraphs: [notice,
-                         "Planned topics: hand-crank radios, broadcast channels, battery use."]),
+                         String(localized: "Planned topics: hand-crank radios, broadcast channels, battery use.")]),
         KnowledgeArticle(
             id: "communication.signals", category: .communication,
-            title: "Signalling for help",
-            summary: "Ways to attract attention when you cannot call.",
+            title: String(localized: "Signalling for help"),
+            summary: String(localized: "Ways to attract attention when you cannot call."),
             paragraphs: [notice,
-                         "Planned topics: whistle signals, light signals, visible markers."])
+                         String(localized: "Planned topics: whistle signals, light signals, visible markers.")])
     ]
 }

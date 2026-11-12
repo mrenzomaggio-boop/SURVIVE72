@@ -10,17 +10,17 @@ enum ToolKind: String, CaseIterable, Identifiable, Hashable {
 
     var title: String {
         switch self {
-        case .stopwatch: "Stopwatch"
-        case .sosSignal: "SOS screen signal"
-        case .torch: "Torch"
+        case .stopwatch: String(localized: "Stopwatch")
+        case .sosSignal: String(localized: "SOS screen signal")
+        case .torch: String(localized: "Torch")
         }
     }
 
     var subtitle: String {
         switch self {
-        case .stopwatch: "Start, pause and reset"
-        case .sosSignal: "Slow on-screen SOS light"
-        case .torch: "Requires physical-device test"
+        case .stopwatch: String(localized: "Start, pause and reset")
+        case .sosSignal: String(localized: "Slow on-screen SOS light")
+        case .torch: String(localized: "Requires physical-device test")
         }
     }
 
@@ -48,7 +48,7 @@ struct ToolsView: View {
             .padding(16)
         }
         .background(Theme.background.ignoresSafeArea())
-        .navigationTitle("Tools")
+        .navigationTitle(String(localized: "Tools"))
         .navigationBarTitleDisplayMode(.large)
         .navigationDestination(for: ToolKind.self) { tool in
             switch tool {

@@ -63,9 +63,15 @@ enum ElapsedTimeFormat {
         let seconds = totalSeconds % 60
 
         var parts: [String] = []
-        if hours > 0 { parts.append(unit(hours, "hour")) }
-        if minutes > 0 { parts.append(unit(minutes, "minute")) }
-        if seconds > 0 || parts.isEmpty { parts.append(unit(seconds, "second")) }
+        if hours > 0 {
+            parts.append(hours == 1 ? String(localized: "\(hours) hour") : String(localized: "\(hours) hours"))
+        }
+        if minutes > 0 {
+            parts.append(minutes == 1 ? String(localized: "\(minutes) minute") : String(localized: "\(minutes) minutes"))
+        }
+        if seconds > 0 || parts.isEmpty {
+            parts.append(seconds == 1 ? String(localized: "\(seconds) second") : String(localized: "\(seconds) seconds"))
+        }
         return parts.joined(separator: " ")
     }
 
@@ -75,9 +81,5 @@ enum ElapsedTimeFormat {
 
     private static func twoDigits(_ value: Int) -> String {
         value < 10 ? "0\(value)" : "\(value)"
-    }
-
-    private static func unit(_ value: Int, _ name: String) -> String {
-        "\(value) \(name)\(value == 1 ? "" : "s")"
     }
 }

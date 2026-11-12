@@ -17,7 +17,7 @@ struct KnowledgeArticleView: View {
                         .foregroundStyle(Theme.textSecondary)
                 }
                 .accessibilityElement(children: .combine)
-                .accessibilityLabel("Category: \(article.category.title)")
+                .accessibilityLabel(String(localized: "Category: \(article.category.title)"))
 
                 Text(article.title)
                     .font(.largeTitle.weight(.black))
