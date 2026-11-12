@@ -47,6 +47,13 @@ enum MedicalVerificationStatus: String, Hashable {
     }
 }
 
+/// One numbered step of a card, with an SF Symbol drawn next to the text so
+/// the action can be understood at a glance.
+struct MedicalStep: Hashable {
+    let symbol: String
+    let text: String
+}
+
 /// One first aid card, bundled with the app. Written by SURVIVE 72 in plain
 /// words following the ERC 2025 guidelines; it never replaces a doctor or a
 /// first aid course, and every screen tells the reader to call 112.
@@ -55,14 +62,16 @@ struct MedicalEntry: Identifiable, Hashable {
     let category: MedicalCategory
     let title: String
     let summary: String
-    let steps: [String]
+    let steps: [MedicalStep]
     let keywords: [String]
+    /// Shows the animated chest-compression rhythm (100-120 per minute).
+    var showsCompressionRhythm = false
     var status: MedicalVerificationStatus = .notReviewedByDoctor
 
     var requiresVerification: Bool { status.requiresVerification }
 
     /// Text used by local search: title, summary, steps and keywords.
     var searchableText: String {
-        ([title, summary] + steps + keywords).joined(separator: " ")
+        ([title, summary] + steps.map(\.text) + keywords).joined(separator: " ")
     }
 }

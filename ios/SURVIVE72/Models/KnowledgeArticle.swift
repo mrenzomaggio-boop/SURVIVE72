@@ -55,10 +55,18 @@ struct ContentSource: Hashable {
         url: URL(string: "https://iononrischio.protezionecivile.gov.it")!)
 }
 
+/// One instruction of a section, with an SF Symbol drawn next to the text so
+/// it can be understood at a glance.
+struct KnowledgePoint: Hashable {
+    let symbol: String
+    let text: String
+}
+
 /// One titled block of an article, such as "During" with its points.
 struct KnowledgeSection: Hashable {
     let heading: String
-    let points: [String]
+    let symbol: String
+    let points: [KnowledgePoint]
 }
 
 /// One article of the library, bundled with the app.
@@ -73,6 +81,6 @@ struct KnowledgeArticle: Identifiable, Hashable {
 
     /// All searchable text, in one string.
     var searchableText: String {
-        ([title, summary] + sections.flatMap { [$0.heading] + $0.points }).joined(separator: " ")
+        ([title, summary] + sections.flatMap { [$0.heading] + $0.points.map(\.text) }).joined(separator: " ")
     }
 }

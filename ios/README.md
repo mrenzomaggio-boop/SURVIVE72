@@ -23,7 +23,8 @@ Native SwiftUI app for SURVIVE 72.
   Every article is marked **OFFICIAL SOURCE** and shows the credit required by
   the licence, with a link to the site. Local search on title and text (case-
   and accent-insensitive, all words must match), category filters and an
-  article page with "before / during / after" sections.
+  article page with "before / during / after" sections, each instruction
+  next to a large pictogram.
 - **Alert (SURVIVE ALERT)**: local emergency planning. Add, edit and delete
   emergency contacts; a personal plan (name, meeting point, note); an SOS
   message generated from them that you can edit and copy with
@@ -72,7 +73,9 @@ Native SwiftUI app for SURVIVE 72.
   (cardiac arrest, choking, recovery position, bleeding, burns, heatstroke,
   hypothermia, stroke, anaphylaxis), written in plain words by SURVIVE 72
   following the ERC 2025 guidelines (Italian edition by IRC), with numbered
-  steps. Every card is marked **NOT YET REVIEWED BY A DOCTOR**; every Medical
+  steps, each next to a large pictogram, a full-screen "step by step" mode
+  (one step per page, very large text) and, for cardiac arrest, an animated
+  compression rhythm at 110 per minute with optional vibration. Every card is marked **NOT YET REVIEWED BY A DOCTOR**; every Medical
   screen shows "In an emergency, call 112 straight away." and a disclaimer
   (not a substitute for a doctor or a course, not written or endorsed by ERC or
   IRC, no liability). Local search on title, summary, steps and keywords,

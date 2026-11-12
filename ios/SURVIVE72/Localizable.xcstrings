@@ -741,6 +741,16 @@
         }
       }
     },
+    "Back": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Indietro"
+          }
+        }
+      }
+    },
     "Basics": {
       "localizations": {
         "it": {
@@ -1011,6 +1021,16 @@
         }
       }
     },
+    "Close": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiudi"
+          }
+        }
+      }
+    },
     "Compact and long-lasting": {
       "localizations": {
         "it": {
@@ -1037,6 +1057,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Bussola e posizione"
+          }
+        }
+      }
+    },
+    "Compression rhythm: 110 per minute": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ritmo delle compressioni: 110 al minuto"
           }
         }
       }
@@ -3351,6 +3381,16 @@
         }
       }
     },
+    "Next": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avanti"
+          }
+        }
+      }
+    },
     "Nickname": {
       "localizations": {
         "it": {
@@ -3857,6 +3897,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "SOS PRIORITARIO"
+          }
+        }
+      }
+    },
+    "PUSH": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SPINGI"
           }
         }
       }
@@ -4971,6 +5021,16 @@
         }
       }
     },
+    "Shows one step at a time in very large text.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostra un passo alla volta con testo molto grande."
+          }
+        }
+      }
+    },
     "Shut off the gas and the electricity. Do not touch electrical devices if you are wet.": {
       "localizations": {
         "it": {
@@ -5161,6 +5221,16 @@
         }
       }
     },
+    "Start rhythm": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avvia il ritmo"
+          }
+        }
+      }
+    },
     "Start, pause and reset": {
       "localizations": {
         "it": {
@@ -5191,6 +5261,16 @@
         }
       }
     },
+    "Step %lld of %lld": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passo %1$lld di %2$lld"
+          }
+        }
+      }
+    },
     "Step %lld: %@": {
       "localizations": {
         "it": {
@@ -5201,12 +5281,32 @@
         }
       }
     },
+    "Step by step, full screen": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passo passo, a schermo intero"
+          }
+        }
+      }
+    },
     "Stop SOS signal": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Ferma segnale SOS"
+          }
+        }
+      }
+    },
+    "Stop rhythm": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ferma il ritmo"
           }
         }
       }
@@ -5817,6 +5917,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Usa solo lo schermo. Niente torcia, niente suoni, non viene inviato nulla."
+          }
+        }
+      }
+    },
+    "Vibrates at the pace of chest compressions.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vibra al ritmo delle compressioni sul petto."
           }
         }
       }
