@@ -31,8 +31,93 @@ enum RadioTopic: String, CaseIterable, Identifiable, Hashable {
     }
 }
 
+/// Whether and how a frequency may be used to transmit in Italy.
+enum TransmitRule: String, Hashable {
+    case listenOnly
+    case licenceFree
+    case cbAuthorisation
+    case amateurLicence
+    case marineCertificate
+
+    var label: String {
+        switch self {
+        case .listenOnly: String(localized: "Listen only")
+        case .licenceFree: String(localized: "Transmitting allowed without a licence")
+        case .cbAuthorisation: String(localized: "Transmitting needs the CB general authorisation")
+        case .amateurLicence: String(localized: "Transmitting needs an amateur radio licence")
+        case .marineCertificate: String(localized: "Transmitting needs a marine radio certificate")
+        }
+    }
+
+    var canTransmitFreely: Bool { self == .licenceFree }
+}
+
+/// One frequency worth listening to in an emergency in Italy. The app only
+/// shows the list: it never tunes, receives or transmits anything.
+struct RadioFrequency: Identifiable, Hashable {
+    let id: String
+    let name: String
+    /// Written exactly as on a radio display, e.g. "103.3 MHz FM".
+    let frequency: String
+    let use: String
+    let rule: TransmitRule
+}
+
+/// Official live stream, opened in the browser or the broadcaster's app.
+/// The app never plays audio itself.
+struct RadioStream: Identifiable, Hashable {
+    let id: String
+    let name: String
+    let detail: String
+    let url: URL
+}
+
+enum RadioFrequencyContent {
+    static let notice = String(localized: "Listening is always allowed. Transmitting needs a licence or authorisation, except with PMR446 walkie-talkies. This app never transmits.")
+
+    static let frequencies: [RadioFrequency] = [
+        RadioFrequency(id: "rai.isoradio", name: "Rai Isoradio", frequency: "103.3 MHz FM",
+                       use: String(localized: "Traffic and emergency information, covers the motorway network."),
+                       rule: .listenOnly),
+        RadioFrequency(id: "rai.radio1", name: "Rai Radio 1", frequency: String(localized: "FM, varies by area"),
+                       use: String(localized: "National news and official announcements during emergencies. Look up your local frequency now and write it in your kit."),
+                       rule: .listenOnly),
+        RadioFrequency(id: "cb.9", name: String(localized: "CB channel 9"), frequency: "27.065 MHz",
+                       use: String(localized: "Emergency channel for CB radios."),
+                       rule: .cbAuthorisation),
+        RadioFrequency(id: "pmr.8-16", name: String(localized: "PMR446 channel 8, tone 16"), frequency: "446.09375 MHz",
+                       use: String(localized: "Informal European convention for calls for help between walkie-talkies. Not an official channel."),
+                       rule: .licenceFree),
+        RadioFrequency(id: "pmr.1", name: String(localized: "PMR446 channel 1"), frequency: "446.00625 MHz",
+                       use: String(localized: "The channel most used by low-cost walkie-talkies."),
+                       rule: .licenceFree),
+        RadioFrequency(id: "ham.vhf", name: String(localized: "Amateur radio VHF"), frequency: "145.500 MHz FM",
+                       use: String(localized: "Amateur radio calling frequency, also used by emergency networks."),
+                       rule: .amateurLicence),
+        RadioFrequency(id: "ham.uhf", name: String(localized: "Amateur radio UHF"), frequency: "433.500 MHz FM",
+                       use: String(localized: "Amateur radio UHF calling frequency."),
+                       rule: .amateurLicence),
+        RadioFrequency(id: "marine.16", name: String(localized: "Marine VHF channel 16"), frequency: "156.800 MHz",
+                       use: String(localized: "Distress and calling at sea, monitored by the Coast Guard."),
+                       rule: .marineCertificate)
+    ]
+
+    static let streams: [RadioStream] = [
+        RadioStream(id: "stream.radio1", name: "Rai Radio 1",
+                    detail: String(localized: "Live on RaiPlay Sound"),
+                    url: URL(string: "https://www.raiplaysound.it/radio1")!),
+        RadioStream(id: "stream.isoradio", name: "Rai Isoradio",
+                    detail: String(localized: "Live on RaiPlay Sound"),
+                    url: URL(string: "https://www.raiplaysound.it/isoradio")!),
+        RadioStream(id: "stream.protezionecivile", name: String(localized: "Civil Protection"),
+                    detail: String(localized: "Official news and alerts"),
+                    url: URL(string: "https://www.protezionecivile.gov.it")!)
+    ]
+}
+
 /// One informational entry. General guidance only: no frequencies, no
-/// transmitting procedures, and the app never accesses a radio.
+/// transmitting procedures, and the app never accesses a radio. Frequencies
+/// live in `RadioFrequencyContent`.
 struct RadioGuideEntry: Identifiable, Hashable {
     let id: String
     let topic: RadioTopic

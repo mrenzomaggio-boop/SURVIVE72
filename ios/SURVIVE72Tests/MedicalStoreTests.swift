@@ -7,8 +7,8 @@ final class MedicalStoreTests: XCTestCase {
     private var suiteName: String!
     private var defaults: UserDefaults!
 
-    private let burns = "medical.injuries.burns"
-    private let hydration = "medical.illness.hydration"
+    private let burns = "medical.burns"
+    private let hydration = "medical.stroke"
 
     override func setUp() {
         super.setUp()
@@ -54,7 +54,7 @@ final class MedicalStoreTests: XCTestCase {
     func testRemovingFavoriteAndClearingCategoryPersist() {
         let store = makeStore()
         store.setFavorite(true, for: burns)
-        store.setLastCategory(.records)
+        store.setLastCategory(.environment)
         store.toggleFavorite(burns)
         store.setLastCategory(nil)
 
@@ -90,7 +90,7 @@ final class MedicalStoreTests: XCTestCase {
     func testResetClearsMemoryAndStorage() {
         let store = makeStore()
         store.setFavorite(true, for: burns)
-        store.setLastCategory(.supplies)
+        store.setLastCategory(.lifeThreatening)
         store.reset()
 
         XCTAssertEqual(store.preferences, MedicalPreferences())

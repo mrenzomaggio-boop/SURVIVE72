@@ -69,4 +69,40 @@ final class RadioGuideTests: XCTestCase {
                          "\(entry.id) contains a number")
         }
     }
+
+    // MARK: Frequencies and streams
+
+    func testFrequencyIDsAreUniqueAndFieldsFilled() {
+        let items = RadioFrequencyContent.frequencies
+        XCTAssertEqual(Set(items.map(\.id)).count, items.count)
+        for item in items {
+            XCTAssertFalse(item.name.isEmpty, item.id)
+            XCTAssertFalse(item.frequency.isEmpty, item.id)
+            XCTAssertFalse(item.use.isEmpty, item.id)
+        }
+    }
+
+    func testKeyFrequencies() {
+        let byID = Dictionary(uniqueKeysWithValues: RadioFrequencyContent.frequencies.map { ($0.id, $0) })
+        XCTAssertEqual(byID["rai.isoradio"]?.frequency, "103.3 MHz FM")
+        XCTAssertEqual(byID["cb.9"]?.frequency, "27.065 MHz")
+        XCTAssertEqual(byID["ham.vhf"]?.frequency, "145.500 MHz FM")
+        XCTAssertEqual(byID["marine.16"]?.frequency, "156.800 MHz")
+    }
+
+    func testOnlyPMR446IsLicenceFree() {
+        for item in RadioFrequencyContent.frequencies {
+            XCTAssertEqual(item.rule.canTransmitFreely, item.id.hasPrefix("pmr."), item.id)
+        }
+        XCTAssertTrue(RadioFrequencyContent.notice.contains("This app never transmits"))
+    }
+
+    func testStreamsUseOfficialHTTPSSites() {
+        let allowedHosts: Set<String> = ["www.raiplaysound.it", "www.protezionecivile.gov.it"]
+        XCTAssertFalse(RadioFrequencyContent.streams.isEmpty)
+        for stream in RadioFrequencyContent.streams {
+            XCTAssertEqual(stream.url.scheme, "https", stream.id)
+            XCTAssertTrue(allowedHosts.contains(stream.url.host ?? ""), stream.id)
+        }
+    }
 }

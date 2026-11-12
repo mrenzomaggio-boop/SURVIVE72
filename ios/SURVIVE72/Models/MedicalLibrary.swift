@@ -4,7 +4,10 @@ import Foundation
 /// No network and no index on disk.
 struct MedicalLibrary {
     /// Shown in the Medical list and in every entry page.
-    static let emergencyNotice = String(localized: "For immediate danger, contact local emergency services when available.")
+    static let emergencyNotice = String(localized: "In an emergency, call 112 straight away.")
+
+    /// Shown in the Medical list and in every entry page, under the emergency line.
+    static let disclaimer = String(localized: "These cards do not replace a doctor or a first aid course. They are written by SURVIVE 72 following the European Resuscitation Council 2025 guidelines (Italian edition by Italian Resuscitation Council) and are not written or endorsed by ERC or IRC. SURVIVE 72 accepts no liability for how this information is used.")
 
     let entries: [MedicalEntry]
 
@@ -15,7 +18,7 @@ struct MedicalLibrary {
     /// Returns the entries that match both the category (nil = all) and the query.
     ///
     /// - The query is split into words; every word must appear in the title,
-    ///   summary or keywords (AND search).
+    ///   summary, steps or keywords (AND search).
     /// - Matching ignores case and accents.
     /// - An empty or whitespace-only query matches everything.
     /// - The original order of the entries is preserved.

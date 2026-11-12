@@ -25,9 +25,23 @@ final class LocalizationTests: XCTestCase {
         XCTAssertEqual(try italian("NOT SENT · NO EMERGENCY SERVICE CONTACTED"),
                        "NON INVIATO · NESSUN SERVIZIO DI EMERGENZA CONTATTATO")
         XCTAssertEqual(try italian("LOCAL DEMO · NOT TRANSMITTED"), "DEMO LOCALE · NON TRASMESSO")
-        XCTAssertEqual(try italian("VERIFIED CONTENT REQUIRED"), "SERVE CONTENUTO VERIFICATO")
-        XCTAssertEqual(try italian("TO BE VERIFIED"), "DA VERIFICARE")
+        XCTAssertEqual(try italian("NOT YET REVIEWED BY A DOCTOR"), "NON ANCORA RIVISTO DA UN MEDICO")
+        XCTAssertEqual(try italian("OFFICIAL SOURCE"), "FONTE UFFICIALE")
+        XCTAssertEqual(try italian("In an emergency, call 112 straight away."),
+                       "In caso di emergenza chiama subito il 112.")
         XCTAssertEqual(try italian("SOS - I need help."), "SOS - Ho bisogno di aiuto.")
+    }
+
+    func testSourceCreditKeepsTheWordingRequiredByTheLicence() throws {
+        XCTAssertEqual(
+            try italian("Source: Io non rischio. Dipartimento della Protezione Civile - Presidenza del Consiglio dei Ministri."),
+            "Fonte: Io non rischio. Dipartimento della Protezione Civile - Presidenza del Consiglio dei Ministri.")
+    }
+
+    func testContentSectionsAreTranslated() throws {
+        XCTAssertEqual(try italian("Earthquake: what to do"), "Terremoto: cosa fare")
+        XCTAssertEqual(try italian("Severe bleeding"), "Emorragia grave")
+        XCTAssertEqual(try italian("Emergency frequencies (Italy)"), "Frequenze di emergenza (Italia)")
     }
 
     func testFormattedStringsKeepTheirArguments() throws {

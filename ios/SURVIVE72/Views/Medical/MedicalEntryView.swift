@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// Detail page of one medical placeholder entry.
+/// Detail page of one first aid card.
 struct MedicalEntryView: View {
     let entry: MedicalEntry
 
@@ -36,7 +36,26 @@ struct MedicalEntryView: View {
                     .foregroundStyle(Theme.textPrimary)
                     .fixedSize(horizontal: false, vertical: true)
 
+                ForEach(Array(entry.steps.enumerated()), id: \.offset) { index, step in
+                    HStack(alignment: .top, spacing: 12) {
+                        Text("\(index + 1)")
+                            .font(.title3.weight(.black))
+                            .foregroundStyle(Theme.background)
+                            .frame(width: 36, height: 36)
+                            .background(Theme.accent, in: Circle())
+                            .accessibilityHidden(true)
+                        Text(step)
+                            .font(.body.weight(.semibold))
+                            .foregroundStyle(Theme.textPrimary)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel(String(localized: "Step \(index + 1): \(step)"))
+                }
+
                 favoriteButton
+
+                MedicalDisclaimer()
             }
             .padding(16)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -68,7 +87,31 @@ struct MedicalEntryView: View {
     }
 }
 
-/// High-contrast "VERIFIED CONTENT REQUIRED" marker.
+/// Fixed disclaimer: sources, no liability, not a substitute for a doctor.
+struct MedicalDisclaimer: View {
+    var body: some View {
+        HStack(alignment: .top, spacing: 10) {
+            Image(systemName: "info.circle.fill")
+                .font(.title3.weight(.bold))
+                .foregroundStyle(Theme.accent)
+                .accessibilityHidden(true)
+            Text(MedicalLibrary.disclaimer)
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(Theme.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
+        .overlay(
+            RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                .stroke(Theme.accent, lineWidth: Theme.borderWidth)
+        )
+        .accessibilityElement(children: .combine)
+    }
+}
+
+/// High-contrast "NOT YET REVIEWED BY A DOCTOR" marker.
 struct MedicalVerificationBadge: View {
     let status: MedicalVerificationStatus
     var large = false

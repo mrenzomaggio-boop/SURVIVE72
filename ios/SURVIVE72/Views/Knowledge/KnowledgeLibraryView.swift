@@ -14,7 +14,7 @@ struct KnowledgeLibraryView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                DemoNotice()
+                SourceNotice()
 
                 CategoryFilterBar(
                     library: library,
@@ -158,15 +158,15 @@ private struct KnowledgeArticleRow: View {
     }
 }
 
-/// Always-visible warning that the library is unreviewed demo content.
-private struct DemoNotice: View {
+/// Always-visible note on where the articles come from.
+private struct SourceNotice: View {
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
-            Image(systemName: "exclamationmark.triangle.fill")
+            Image(systemName: "checkmark.seal.fill")
                 .font(.title3.weight(.bold))
                 .foregroundStyle(Theme.accent)
                 .accessibilityHidden(true)
-            Text(String(localized: "All articles are demo content marked TO BE VERIFIED. They are not instructions and not medical advice."))
+            Text(String(localized: "Articles adapted from Io non rischio, the campaign of the Italian Civil Protection Department. Not written by SURVIVE 72. Always follow the instructions of the authorities."))
                 .font(.subheadline.weight(.bold))
                 .foregroundStyle(Theme.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
