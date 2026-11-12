@@ -54,7 +54,8 @@ enum LocalDataReset {
         connect: ConnectStore,
         maps: MapsStore,
         medical: MedicalStore,
-        tools: ToolsState
+        tools: ToolsState,
+        mesh: MeshService? = nil
     ) {
         kit.reset()
         alert.resetAll()
@@ -63,6 +64,7 @@ enum LocalDataReset {
         connect.reset()
         maps.reset()
         medical.reset()
+        mesh?.reset()
         tools.stopwatch.reset()
         tools.sosSignal.stop()
         if tools.torch.isOn { tools.torch.set(on: false) }
