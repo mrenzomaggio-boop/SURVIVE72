@@ -10,6 +10,7 @@ struct SettingsView: View {
     @Environment(MapsStore.self) private var mapsStore
     @Environment(MedicalStore.self) private var medicalStore
     @Environment(ToolsState.self) private var toolsState
+    @Environment(MeshService.self) private var meshService
 
     @State private var isConfirmingReset = false
     @State private var didReset = false
@@ -33,12 +34,12 @@ struct SettingsView: View {
             Button(String(localized: "Erase"), role: .destructive) {
                 LocalDataReset.perform(kit: kitStore, alert: alertStore, settings: settingsStore,
                                        downloads: downloadsStore, connect: connectStore, maps: mapsStore,
-                                       medical: medicalStore, tools: toolsState)
+                                       medical: medicalStore, tools: toolsState, mesh: meshService)
                 didReset = true
             }
             Button(String(localized: "Cancel"), role: .cancel) {}
         } message: {
-            Text(String(localized: "Kit checklist, emergency plan and contacts, local chat and queue, saved places and map areas, medical bookmarks, prepared packs and preferences will be removed from this device. This cannot be undone."))
+            Text(String(localized: "Kit checklist, emergency plan and contacts, network profile, alerts and private messages, saved places and map areas, medical bookmarks, prepared packs and preferences will be removed from this device. Alerts and messages already passed to other phones cannot be recalled. This cannot be undone."))
         }
     }
 
@@ -110,9 +111,9 @@ struct SettingsView: View {
         VStack(alignment: .leading, spacing: 12) {
             SettingsHeader(title: String(localized: "Privacy"), systemImage: "lock.fill")
             VStack(alignment: .leading, spacing: 10) {
-                PrivacyLine(text: String(localized: "Everything stays on this device."))
-                PrivacyLine(text: String(localized: "No account, no network, no analytics, no permissions."))
-                PrivacyLine(text: String(localized: "Nothing is sent: SOS messages are only copied or queued locally."))
+                PrivacyLine(text: String(localized: "Your data stays on this device, except the alerts and messages you choose to send."))
+                PrivacyLine(text: String(localized: "No account, no internet, no server, no analytics."))
+                PrivacyLine(text: String(localized: "The network between phones is off until you switch it on. Alerts are public; private messages are encrypted."))
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)

@@ -32,13 +32,13 @@ enum AppSection: String, CaseIterable, Identifiable, Hashable {
 
     var subtitle: String {
         switch self {
-        case .connect: String(localized: "Local demo chat")
+        case .connect: String(localized: "Phone-to-phone messages")
         case .maps: String(localized: "Places, offline areas")
         case .knowledge: String(localized: "Offline library")
         case .medical: String(localized: "Offline topics")
         case .kit: String(localized: "72-hour checklist")
         case .radio: String(localized: "Offline guide")
-        case .alert: String(localized: "SOS plan")
+        case .alert: String(localized: "Alert board, SOS plan")
         case .tools: String(localized: "Stopwatch, SOS light")
         case .downloads: String(localized: "Offline packs")
         case .settings: String(localized: "Preferences")

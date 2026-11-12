@@ -30,6 +30,7 @@
 		5A7200000000000000000151 /* AlertPlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000150 /* AlertPlanStore.swift */; };
 		5A7200000000000000000153 /* AlertPlanningView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000152 /* AlertPlanningView.swift */; };
 		5A7200000000000000000155 /* ContactEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000154 /* ContactEditorView.swift */; };
+		5A72000000000000000001DD /* AlertBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001DC /* AlertBoardView.swift */; };
 		5A720000000000000000015C /* Stopwatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000015B /* Stopwatch.swift */; };
 		5A72000000000000000001C9 /* Torch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001C8 /* Torch.swift */; };
 		5A72000000000000000001CD /* MeshIdentity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001CC /* MeshIdentity.swift */; };
@@ -57,6 +58,8 @@
 		5A720000000000000000018C /* ConnectDemoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000018B /* ConnectDemoContent.swift */; };
 		5A720000000000000000018E /* ConnectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000018D /* ConnectStore.swift */; };
 		5A7200000000000000000190 /* ConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000018F /* ConnectView.swift */; };
+		5A72000000000000000001DF /* MeshConnectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001DE /* MeshConnectView.swift */; };
+		5A72000000000000000001E1 /* MeshConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001E0 /* MeshConversationView.swift */; };
 		5A7200000000000000000192 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000191 /* ConversationView.swift */; };
 		5A7200000000000000000194 /* SOSComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000193 /* SOSComposerView.swift */; };
 		5A720000000000000000019B /* SavedPlace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000019A /* SavedPlace.swift */; };
@@ -131,6 +134,7 @@
 		5A7200000000000000000150 /* AlertPlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPlanStore.swift; sourceTree = "<group>"; };
 		5A7200000000000000000152 /* AlertPlanningView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertPlanningView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000154 /* ContactEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactEditorView.swift; sourceTree = "<group>"; };
+		5A72000000000000000001DC /* AlertBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBoardView.swift; sourceTree = "<group>"; };
 		5A720000000000000000015B /* Stopwatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stopwatch.swift; sourceTree = "<group>"; };
 		5A72000000000000000001C8 /* Torch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Torch.swift; sourceTree = "<group>"; };
 		5A72000000000000000001CC /* MeshIdentity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshIdentity.swift; sourceTree = "<group>"; };
@@ -158,6 +162,8 @@
 		5A720000000000000000018B /* ConnectDemoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectDemoContent.swift; sourceTree = "<group>"; };
 		5A720000000000000000018D /* ConnectStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectStore.swift; sourceTree = "<group>"; };
 		5A720000000000000000018F /* ConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectView.swift; sourceTree = "<group>"; };
+		5A72000000000000000001DE /* MeshConnectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshConnectView.swift; sourceTree = "<group>"; };
+		5A72000000000000000001E0 /* MeshConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshConversationView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000191 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000193 /* SOSComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSComposerView.swift; sourceTree = "<group>"; };
 		5A720000000000000000019A /* SavedPlace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedPlace.swift; sourceTree = "<group>"; };
@@ -370,6 +376,7 @@
 			children = (
 				5A7200000000000000000152 /* AlertPlanningView.swift */,
 				5A7200000000000000000154 /* ContactEditorView.swift */,
+				5A72000000000000000001DC /* AlertBoardView.swift */,
 			);
 			path = Alert;
 			sourceTree = "<group>";
@@ -413,6 +420,8 @@
 			isa = PBXGroup;
 			children = (
 				5A720000000000000000018F /* ConnectView.swift */,
+				5A72000000000000000001DE /* MeshConnectView.swift */,
+				5A72000000000000000001E0 /* MeshConversationView.swift */,
 				5A7200000000000000000191 /* ConversationView.swift */,
 				5A7200000000000000000193 /* SOSComposerView.swift */,
 			);
@@ -590,6 +599,7 @@
 				5A7200000000000000000151 /* AlertPlanStore.swift in Sources */,
 				5A7200000000000000000153 /* AlertPlanningView.swift in Sources */,
 				5A7200000000000000000155 /* ContactEditorView.swift in Sources */,
+				5A72000000000000000001DD /* AlertBoardView.swift in Sources */,
 				5A720000000000000000015C /* Stopwatch.swift in Sources */,
 				5A72000000000000000001C9 /* Torch.swift in Sources */,
 				5A72000000000000000001CD /* MeshIdentity.swift in Sources */,
@@ -617,6 +627,8 @@
 				5A720000000000000000018C /* ConnectDemoContent.swift in Sources */,
 				5A720000000000000000018E /* ConnectStore.swift in Sources */,
 				5A7200000000000000000190 /* ConnectView.swift in Sources */,
+				5A72000000000000000001DF /* MeshConnectView.swift in Sources */,
+				5A72000000000000000001E1 /* MeshConversationView.swift in Sources */,
 				5A7200000000000000000192 /* ConversationView.swift in Sources */,
 				5A7200000000000000000194 /* SOSComposerView.swift in Sources */,
 				5A720000000000000000019B /* SavedPlace.swift in Sources */,
@@ -747,7 +759,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "SURVIVE 72";
+				INFOPLIST_FILE = SURVIVE72/Info.plist;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "SURVIVE 72 scambia allerte e messaggi con i telefoni vicini, senza internet. / SURVIVE 72 exchanges alerts and messages with nearby phones, without internet.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "SURVIVE 72 scambia allerte e messaggi con i telefoni vicini, senza internet. / SURVIVE 72 exchanges alerts and messages with nearby phones, without internet.";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -779,7 +794,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "SURVIVE 72";
+				INFOPLIST_FILE = SURVIVE72/Info.plist;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "SURVIVE 72 scambia allerte e messaggi con i telefoni vicini, senza internet. / SURVIVE 72 exchanges alerts and messages with nearby phones, without internet.";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "SURVIVE 72 scambia allerte e messaggi con i telefoni vicini, senza internet. / SURVIVE 72 exchanges alerts and messages with nearby phones, without internet.";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
