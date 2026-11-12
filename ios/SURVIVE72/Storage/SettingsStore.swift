@@ -14,8 +14,7 @@ final class SettingsStore {
     init(defaults: UserDefaults = .standard, key: String = SettingsStore.storageKey) {
         self.defaults = defaults
         self.key = key
-        if let saved = defaults.data(forKey: key),
-           let decoded = try? JSONDecoder().decode(AppSettings.self, from: saved) {
+        if let decoded = LocalStorage.load(AppSettings.self, key: key, from: defaults) {
             settings = decoded
         } else {
             settings = AppSettings()
@@ -24,15 +23,13 @@ final class SettingsStore {
 
     func update(_ newValue: AppSettings) {
         settings = newValue
-        if let encoded = try? JSONEncoder().encode(newValue) {
-            defaults.set(encoded, forKey: key)
-        }
+        LocalStorage.save(newValue, key: key, to: defaults)
     }
 
     /// Back to default preferences and nothing saved.
     func reset() {
         settings = AppSettings()
-        defaults.removeObject(forKey: key)
+        LocalStorage.remove(key: key, from: defaults)
     }
 }
 

@@ -81,6 +81,8 @@
 		5A72000000000000000001B9 /* MedicalLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001B8 /* MedicalLibraryTests.swift */; };
 		5A72000000000000000001BB /* MedicalStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001BA /* MedicalStoreTests.swift */; };
 		5A7200000000000000000110 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000010F /* Assets.xcassets */; };
+		5A72000000000000000001C1 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001C0 /* LocalStorage.swift */; };
+		5A72000000000000000001C3 /* PersistenceSafetyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001C2 /* PersistenceSafetyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,8 @@
 		5A720000000000000000010F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A7200000000000000000111 /* SURVIVE72.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SURVIVE72.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7200000000000000000136 /* SURVIVE72Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SURVIVE72Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A72000000000000000001C0 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
+		5A72000000000000000001C2 /* PersistenceSafetyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceSafetyTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +289,7 @@
 				5A720000000000000000018D /* ConnectStore.swift */,
 				5A720000000000000000019E /* MapsStore.swift */,
 				5A72000000000000000001B1 /* MedicalStore.swift */,
+				5A72000000000000000001C0 /* LocalStorage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 				5A72000000000000000001A9 /* MapsStoreTests.swift */,
 				5A72000000000000000001B8 /* MedicalLibraryTests.swift */,
 				5A72000000000000000001BA /* MedicalStoreTests.swift */,
+				5A72000000000000000001C2 /* PersistenceSafetyTests.swift */,
 			);
 			path = SURVIVE72Tests;
 			sourceTree = "<group>";
@@ -578,6 +584,7 @@
 				5A72000000000000000001AE /* MedicalLibrary.swift in Sources */,
 				5A72000000000000000001B0 /* MedicalLibraryContent.swift in Sources */,
 				5A72000000000000000001B2 /* MedicalStore.swift in Sources */,
+				5A72000000000000000001C1 /* LocalStorage.swift in Sources */,
 				5A72000000000000000001B4 /* MedicalLibraryView.swift in Sources */,
 				5A72000000000000000001B6 /* MedicalEntryView.swift in Sources */,
 			);
@@ -603,6 +610,7 @@
 				5A72000000000000000001AA /* MapsStoreTests.swift in Sources */,
 				5A72000000000000000001B9 /* MedicalLibraryTests.swift in Sources */,
 				5A72000000000000000001BB /* MedicalStoreTests.swift in Sources */,
+				5A72000000000000000001C3 /* PersistenceSafetyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -24,6 +24,18 @@ struct AppSettings: Codable, Equatable {
     var batterySaver: Bool = false
 }
 
+extension AppSettings {
+    /// Tolerant decoding: an unknown or missing value falls back to its default
+    /// without resetting the other preferences.
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        let fallback = AppSettings()
+        unitSystem = c.value(UnitSystem.self, forKey: .unitSystem, default: fallback.unitSystem)
+        highContrast = c.value(Bool.self, forKey: .highContrast, default: fallback.highContrast)
+        batterySaver = c.value(Bool.self, forKey: .batterySaver, default: fallback.batterySaver)
+    }
+}
+
 /// Unit conversions used to show values in the chosen system.
 enum UnitFormat {
     static func volume(liters: Double, in system: UnitSystem) -> String {

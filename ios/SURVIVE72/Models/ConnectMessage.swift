@@ -48,6 +48,48 @@ struct ConnectData: Codable, Equatable {
     var nextOrder: Int
 }
 
+// MARK: - Tolerant decoding
+// Hand-written so a missing or damaged field never loses the message history.
+
+extension ConnectConversation {
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        id = try c.decode(String.self, forKey: .id)
+        title = c.value(String.self, forKey: .title, default: "")
+        subtitle = c.value(String.self, forKey: .subtitle, default: "")
+    }
+}
+
+extension ConnectMessage {
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        id = c.value(UUID.self, forKey: .id, default: UUID())
+        conversationID = try c.decode(String.self, forKey: .conversationID)
+        text = try c.decode(String.self, forKey: .text)
+        isOutgoing = c.value(Bool.self, forKey: .isOutgoing, default: true)
+        isSOS = c.value(Bool.self, forKey: .isSOS, default: false)
+        createdAt = c.value(Date.self, forKey: .createdAt, default: Date(timeIntervalSince1970: 0))
+        let savedSequence = c.value(Int.self, forKey: .sequence, default: 0)
+        sequence = savedSequence
+        queueOrder = c.value(Int.self, forKey: .queueOrder, default: savedSequence)
+        state = c.value(MessageDeliveryState.self, forKey: .state, default: .queued)
+    }
+}
+
+extension ConnectData {
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        let decodedConversations = c.lossyArray(ConnectConversation.self, forKey: .conversations)
+        conversations = decodedConversations.isEmpty ? ConnectDemoContent.conversations : decodedConversations
+        let savedMessages = c.lossyArray(ConnectMessage.self, forKey: .messages)
+        messages = savedMessages
+        sosDraft = c.optionalValue(String.self, forKey: .sosDraft)
+        // Never reuse an order already taken by a saved message.
+        let highestUsed = savedMessages.map { max($0.sequence, $0.queueOrder) }.max() ?? -1
+        nextOrder = max(c.value(Int.self, forKey: .nextOrder, default: 0), highestUsed + 1)
+    }
+}
+
 /// Outcome chosen by the user when simulating the queue.
 enum SimulatedOutcome {
     case delivered

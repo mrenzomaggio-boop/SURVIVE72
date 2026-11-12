@@ -7,6 +7,15 @@ struct MapsData: Codable, Equatable {
     var preparedAreaIDs: [String] = []
 }
 
+extension MapsData {
+    /// Tolerant decoding: one damaged place does not lose the others.
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        places = c.lossyArray(SavedPlace.self, forKey: .places)
+        preparedAreaIDs = c.lossyArray(String.self, forKey: .preparedAreaIDs)
+    }
+}
+
 /// SURVIVE MAPS state: saved places and prepared demo areas.
 /// Saved as JSON in `UserDefaults` on every change. No MapKit, GPS,
 /// network or permissions.
@@ -22,8 +31,7 @@ final class MapsStore {
     init(defaults: UserDefaults = .standard, key: String = MapsStore.storageKey) {
         self.defaults = defaults
         self.key = key
-        if let saved = defaults.data(forKey: key),
-           let decoded = try? JSONDecoder().decode(MapsData.self, from: saved) {
+        if let decoded = LocalStorage.load(MapsData.self, key: key, from: defaults) {
             // Drop anything that is no longer valid instead of crashing.
             var cleaned = decoded
             cleaned.places = decoded.places.filter(MapsStore.isValid)
@@ -101,11 +109,10 @@ final class MapsStore {
     /// Erases places and prepared areas from memory and from the device.
     func reset() {
         data = MapsData()
-        defaults.removeObject(forKey: key)
+        LocalStorage.remove(key: key, from: defaults)
     }
 
     private func save() {
-        guard let encoded = try? JSONEncoder().encode(data) else { return }
-        defaults.set(encoded, forKey: key)
+        LocalStorage.save(data, key: key, to: defaults)
     }
 }
