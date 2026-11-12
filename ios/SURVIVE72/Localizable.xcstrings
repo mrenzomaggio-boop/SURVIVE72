@@ -71,6 +71,26 @@
         }
       }
     },
+    "%@ · on its way, delivery not confirmed": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · in viaggio, consegna non confermata"
+          }
+        }
+      }
+    },
+    "%@ · received directly": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · ricevuto direttamente"
+          }
+        }
+      }
+    },
     "%@ · required": {
       "localizations": {
         "it": {
@@ -377,6 +397,66 @@
           "stringUnit": {
             "state": "translated",
             "value": "Allerta"
+          }
+        }
+      }
+    },
+    "Alert board": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bacheca allerte"
+          }
+        }
+      }
+    },
+    "Alert board, SOS plan": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bacheca allerte, piano SOS"
+          }
+        }
+      }
+    },
+    "Alert published.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allerta pubblicata."
+          }
+        }
+      }
+    },
+    "Alert text": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testo dell'allerta"
+          }
+        }
+      }
+    },
+    "Alerts": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allerte"
+          }
+        }
+      }
+    },
+    "Alerts are written by people, not by authorities, and are not verified. They disappear after 24 hours.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le allerte sono scritte dalle persone, non dalle autorità, e non sono verificate. Spariscono dopo 24 ore."
           }
         }
       }
@@ -761,6 +841,16 @@
         }
       }
     },
+    "Copies the SOS message from your plan into the text. Everyone who receives the alert can read it.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copia nel testo il messaggio SOS del tuo piano. Chiunque riceva l'allerta potrà leggerlo."
+          }
+        }
+      }
+    },
     "Copies the text only. Nothing is sent and no one is contacted.": {
       "localizations": {
         "it": {
@@ -1111,6 +1201,16 @@
         }
       }
     },
+    "Edit profile": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Modifica profilo"
+          }
+        }
+      }
+    },
     "Edited by you. Tap Regenerate to rebuild it from your plan and contacts.": {
       "localizations": {
         "it": {
@@ -1281,16 +1381,6 @@
         }
       }
     },
-    "Everything stays on this device.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tutto resta su questo dispositivo."
-          }
-        }
-      }
-    },
     "Example routes only, not official. Placeholder area.": {
       "localizations": {
         "it": {
@@ -1367,6 +1457,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Meno aggiornamenti dello schermo: il cronometro si aggiorna una volta al secondo."
+          }
+        }
+      }
+    },
+    "Find by phone number": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca per numero di telefono"
+          }
+        }
+      }
+    },
+    "Findable by number: %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trovabile con il numero: %@"
           }
         }
       }
@@ -1497,6 +1607,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Spazio libero sconosciuto."
+          }
+        }
+      }
+    },
+    "From %@ · %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Da %1$@ · %2$@"
           }
         }
       }
@@ -1667,6 +1787,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Come organizzare e ruotare le scorte d'acqua di casa."
+          }
+        }
+      }
+    },
+    "How others see you": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Come ti vedono gli altri"
           }
         }
       }
@@ -1861,12 +1991,12 @@
         }
       }
     },
-    "Kit checklist, emergency plan and contacts, local chat and queue, saved places and map areas, medical bookmarks, prepared packs and preferences will be removed from this device. This cannot be undone.": {
+    "Kit checklist, emergency plan and contacts, network profile, alerts and private messages, saved places and map areas, medical bookmarks, prepared packs and preferences will be removed from this device. Alerts and messages already passed to other phones cannot be recalled. This cannot be undone.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Checklist del kit, piano e contatti di emergenza, chat e coda locali, luoghi salvati e aree della mappa, preferiti medici, pacchetti preparati e preferenze verranno rimossi da questo dispositivo. L'operazione non si può annullare."
+            "value": "Checklist del kit, piano e contatti di emergenza, profilo di rete, allerte e messaggi privati, luoghi salvati e aree della mappa, preferiti medici, pacchetti preparati e preferenze verranno rimossi da questo dispositivo. Le allerte e i messaggi già passati ad altri telefoni non si possono ritirare. L'operazione non si può annullare."
           }
         }
       }
@@ -2017,16 +2147,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Dati locali cancellati"
-          }
-        }
-      }
-    },
-    "Local demo chat": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Chat demo locale"
           }
         }
       }
@@ -2211,6 +2331,16 @@
         }
       }
     },
+    "Message": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messaggio"
+          }
+        }
+      }
+    },
     "Message (local demo)": {
       "localizations": {
         "it": {
@@ -2247,6 +2377,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Metrico"
+          }
+        }
+      }
+    },
+    "More than one person declares this number. Numbers are not verified: check the security code with the person.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Più persone dichiarano questo numero. I numeri non sono verificati: controlla il codice di sicurezza con la persona."
           }
         }
       }
@@ -2301,6 +2441,16 @@
         }
       }
     },
+    "NOT VERIFIED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NON VERIFICATA"
+          }
+        }
+      }
+    },
     "Name": {
       "localizations": {
         "it": {
@@ -2351,12 +2501,42 @@
         }
       }
     },
-    "No account, no network, no analytics, no permissions.": {
+    "Network between nearby phones": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nessun account, nessuna rete, nessuna analisi, nessun permesso."
+            "value": "Rete tra telefoni vicini"
+          }
+        }
+      }
+    },
+    "Nickname": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nickname"
+          }
+        }
+      }
+    },
+    "No account, no internet, no server, no analytics.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun account, niente internet, nessun server, nessuna analisi."
+          }
+        }
+      }
+    },
+    "No alerts on this phone yet.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuna allerta su questo telefono."
           }
         }
       }
@@ -2411,6 +2591,46 @@
         }
       }
     },
+    "No messages yet. Your message leaves when another phone with the app is in range, and is passed on from phone to phone.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun messaggio. Il tuo messaggio parte quando un altro telefono con l'app è nel raggio, e viene passato da telefono a telefono."
+          }
+        }
+      }
+    },
+    "No nickname": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senza nickname"
+          }
+        }
+      }
+    },
+    "No nickname yet": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun nickname"
+          }
+        }
+      }
+    },
+    "No phone number: people cannot find you by number.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun numero di telefono: gli altri non possono trovarti tramite il numero."
+          }
+        }
+      }
+    },
     "No places yet. Add a meeting point, shelter or water source with its coordinates.": {
       "localizations": {
         "it": {
@@ -2421,12 +2641,42 @@
         }
       }
     },
+    "No private messages yet.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun messaggio privato."
+          }
+        }
+      }
+    },
     "No topics found": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Nessun argomento trovato"
+          }
+        }
+      }
+    },
+    "Nobody with this number has been seen on the network yet. They must have the app, a profile with this number, and have been in range of the network at least once.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuno con questo numero è ancora comparso nella rete. La persona deve avere l'app, un profilo con questo numero, ed essere stata nel raggio della rete almeno una volta."
+          }
+        }
+      }
+    },
+    "Nobody yet. People appear here when their alerts or messages reach this phone.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ancora nessuno. Le persone compaiono qui quando le loro allerte o i loro messaggi raggiungono questo telefono."
           }
         }
       }
@@ -2501,22 +2751,52 @@
         }
       }
     },
-    "Nothing is sent: SOS messages are only copied or queued locally.": {
+    "OFF": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Non viene inviato nulla: i messaggi SOS vengono solo copiati o messi in coda sul dispositivo."
+            "value": "SPENTA"
           }
         }
       }
     },
-    "OFFLINE READY · DATA STAYS ON DEVICE": {
+    "OFFLINE READY · NO INTERNET NEEDED": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "PRONTA OFFLINE · I DATI RESTANO SUL DISPOSITIVO"
+            "value": "PRONTA OFFLINE · NON SERVE INTERNET"
+          }
+        }
+      }
+    },
+    "ON · %lld phones connected": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ACCESA · %lld telefoni collegati"
+          }
+        }
+      }
+    },
+    "ON · 1 phone connected": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ACCESA · 1 telefono collegato"
+          }
+        }
+      }
+    },
+    "ON · no phone in range": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ACCESA · nessun telefono nel raggio"
           }
         }
       }
@@ -2571,12 +2851,12 @@
         }
       }
     },
-    "Offline ready. All data stays on this device.": {
+    "Offline ready. No internet needed.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pronta offline. Tutti i dati restano su questo dispositivo."
+            "value": "Pronta offline. Non serve internet."
           }
         }
       }
@@ -2607,6 +2887,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Una a persona, se possibile"
+          }
+        }
+      }
+    },
+    "Only this person can read your messages. Identity is not verified: if in doubt, compare the security code in person.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo questa persona può leggere i tuoi messaggi. L'identità non è verificata: nel dubbio, confrontate di persona il codice di sicurezza."
           }
         }
       }
@@ -2661,6 +2951,16 @@
         }
       }
     },
+    "PHONE-TO-PHONE NETWORK · NOT AN EMERGENCY SERVICE": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RETE DA TELEFONO A TELEFONO · NON È UN SERVIZIO DI EMERGENZA"
+          }
+        }
+      }
+    },
     "PREPARED": {
       "localizations": {
         "it": {
@@ -2711,6 +3011,16 @@
         }
       }
     },
+    "People seen on the network": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Persone viste nella rete"
+          }
+        }
+      }
+    },
     "Personal health information": {
       "localizations": {
         "it": {
@@ -2757,6 +3067,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Numero di telefono"
+          }
+        }
+      }
+    },
+    "Phone number (optional)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Numero di telefono (facoltativo)"
+          }
+        }
+      }
+    },
+    "Phone number to find": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Numero di telefono da cercare"
+          }
+        }
+      }
+    },
+    "Phone-to-phone messages": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messaggi da telefono a telefono"
+          }
+        }
+      }
+    },
+    "Phone-to-phone network. It is not an emergency service: delivery is not guaranteed.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rete da telefono a telefono. Non è un servizio di emergenza: la consegna non è garantita."
           }
         }
       }
@@ -3061,6 +3411,56 @@
         }
       }
     },
+    "Publish SOS": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pubblica SOS"
+          }
+        }
+      }
+    },
+    "Publish SOS?": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pubblicare l'SOS?"
+          }
+        }
+      }
+    },
+    "Publish alert": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pubblica allerta"
+          }
+        }
+      }
+    },
+    "Publish as SOS": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pubblica come SOS"
+          }
+        }
+      }
+    },
+    "Published. It spreads as phones with the app come in range.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pubblicata. Si diffonde man mano che altri telefoni con l'app entrano nel raggio."
+          }
+        }
+      }
+    },
     "Puts the message back in the local queue.": {
       "localizations": {
         "it": {
@@ -3157,6 +3557,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Guida radio"
+          }
+        }
+      }
+    },
+    "Read and publish alerts that spread from phone to phone": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leggi e pubblica allerte che si diffondono da telefono a telefono"
           }
         }
       }
@@ -3451,16 +3861,6 @@
         }
       }
     },
-    "SOS plan": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Piano SOS"
-          }
-        }
-      }
-    },
     "SOS queued locally. Not transmitted.": {
       "localizations": {
         "it": {
@@ -3531,6 +3931,16 @@
         }
       }
     },
+    "Saved on this phone. Switch the network on to spread it.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Salvata su questo telefono. Attiva la rete per diffonderla."
+          }
+        }
+      }
+    },
     "Saved only on this device.": {
       "localizations": {
         "it": {
@@ -3571,6 +3981,16 @@
         }
       }
     },
+    "Search": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cerca"
+          }
+        }
+      }
+    },
     "Search the radio guide": {
       "localizations": {
         "it": {
@@ -3597,6 +4017,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cerca argomenti"
+          }
+        }
+      }
+    },
+    "Security code: %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Codice di sicurezza: %@"
+          }
+        }
+      }
+    },
+    "Send message": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Invia messaggio"
           }
         }
       }
@@ -4031,6 +4471,16 @@
         }
       }
     },
+    "The alert could not be published. It may be too long.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non è stato possibile pubblicare l'allerta. Forse è troppo lunga."
+          }
+        }
+      }
+    },
     "The compass uses the magnetometer. It will be enabled after it has been tested on a real iPhone. This version reads no sensor.": {
       "localizations": {
         "it": {
@@ -4041,12 +4491,42 @@
         }
       }
     },
+    "The message could not be sent. It may be too long.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non è stato possibile inviare il messaggio. Forse è troppo lungo."
+          }
+        }
+      }
+    },
+    "The message is passed from phone to phone until it reaches this person. Delivery is not guaranteed.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il messaggio passa da telefono a telefono finché raggiunge questa persona. La consegna non è garantita."
+          }
+        }
+      }
+    },
     "The message is queued on this device. Nothing is transmitted.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Il messaggio è in coda su questo dispositivo. Non viene trasmesso nulla."
+          }
+        }
+      }
+    },
+    "The network between phones is off until you switch it on. Alerts are public; private messages are encrypted.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La rete tra telefoni è spenta finché non la accendi. Le allerte sono pubbliche; i messaggi privati sono cifrati."
           }
         }
       }
@@ -4087,6 +4567,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Questo dispositivo non ha il flash, oppure al momento non si può usare."
+          }
+        }
+      }
+    },
+    "This does not look like a phone number.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non sembra un numero di telefono."
           }
         }
       }
@@ -4231,6 +4721,26 @@
         }
       }
     },
+    "Use my SOS message": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa il mio messaggio SOS"
+          }
+        }
+      }
+    },
+    "Uses Bluetooth and Wi-Fi between phones, without internet. It works while the app is open, with phones a few tens of metres away. iOS will ask for permission the first time.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa Bluetooth e Wi-Fi tra telefoni, senza internet. Funziona con l'app aperta e con telefoni a qualche decina di metri. La prima volta iOS chiederà il permesso."
+          }
+        }
+      }
+    },
     "Uses the iPhone flash": {
       "localizations": {
         "it": {
@@ -4341,6 +4851,16 @@
         }
       }
     },
+    "What is happening and where": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa sta succedendo e dove"
+          }
+        }
+      }
+    },
     "Where your group meets": {
       "localizations": {
         "it": {
@@ -4381,12 +4901,32 @@
         }
       }
     },
+    "With a number, people who already know it can find you on the network. The number itself is not sent: only a fingerprint of it travels. It is not verified, and someone with technical skills could work it out. Leave it empty if you prefer.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Con il numero, chi lo conosce già può trovarti nella rete. Il numero in sé non viene inviato: viaggia solo una sua impronta. Non è verificato, e chi ha competenze tecniche potrebbe risalire al numero. Lascialo vuoto se preferisci."
+          }
+        }
+      }
+    },
     "Works without power": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Funziona senza corrente"
+          }
+        }
+      }
+    },
+    "Write an alert": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scrivi un'allerta"
           }
         }
       }
@@ -4401,12 +4941,42 @@
         }
       }
     },
+    "Written by you": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scritta da te"
+          }
+        }
+      }
+    },
     "Written on paper": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Scritti su carta"
+          }
+        }
+      }
+    },
+    "Your SOS will be shown first on every phone it reaches. It does not call emergency services. Use it only for a real emergency.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il tuo SOS comparirà per primo su ogni telefono che raggiunge. Non chiama i servizi di emergenza. Usalo solo per un'emergenza vera."
+          }
+        }
+      }
+    },
+    "Your data stays on this device, except the alerts and messages you choose to send.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I tuoi dati restano su questo dispositivo, tranne le allerte e i messaggi che scegli di inviare."
           }
         }
       }
@@ -4427,6 +4997,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "La posizione richiede il GPS e il permesso di localizzazione. Verrà attivata dopo essere stata provata su un iPhone reale. Questa versione non legge mai la tua posizione: inserisci invece le coordinate in Luoghi salvati."
+          }
+        }
+      }
+    },
+    "Your profile": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il tuo profilo"
           }
         }
       }
@@ -4527,6 +5107,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "documenti"
+          }
+        }
+      }
+    },
+    "e.g. 333 123 4567": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "es. 333 123 4567"
           }
         }
       }
@@ -4707,6 +5297,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "carta"
+          }
+        }
+      }
+    },
+    "passed through %lld phones": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "attraverso %lld telefoni"
+          }
+        }
+      }
+    },
+    "passed through 1 phone": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "attraverso 1 telefono"
           }
         }
       }

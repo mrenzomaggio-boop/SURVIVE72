@@ -1,8 +1,8 @@
 import SwiftUI
 import UIKit
 
-/// SURVIVE ALERT: local emergency plan, contacts and an SOS message to copy.
-/// Nothing is ever sent: no network, SMS, calls or location.
+/// SURVIVE ALERT: link to the alert board, plus the local emergency plan,
+/// contacts and an SOS message to copy. The plan itself is never sent.
 struct AlertPlanningView: View {
     @Environment(AlertPlanStore.self) private var store
 
@@ -14,6 +14,7 @@ struct AlertPlanningView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
+                boardLink
                 planSection
                 contactsSection
                 messageSection
@@ -59,6 +60,45 @@ struct AlertPlanningView: View {
         } message: { contact in
             Text(String(localized: "\(contact.name) will be removed from this device."))
         }
+    }
+
+    // MARK: Alert board
+
+    private var boardLink: some View {
+        NavigationLink {
+            AlertBoardView()
+        } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "megaphone.fill")
+                    .font(.system(size: 30, weight: .bold))
+                    .foregroundStyle(Theme.danger)
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(String(localized: "Alert board"))
+                        .font(.title3.weight(.heavy))
+                        .foregroundStyle(Theme.textPrimary)
+                    Text(String(localized: "Read and publish alerts that spread from phone to phone"))
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(Theme.textSecondary)
+                        .multilineTextAlignment(.leading)
+                }
+                Spacer(minLength: 0)
+                Image(systemName: "chevron.right")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(Theme.textSecondary)
+                    .accessibilityHidden(true)
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity, minHeight: 84, alignment: .leading)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
+            .overlay(
+                RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                    .stroke(Theme.danger, lineWidth: 3)
+            )
+            .contentShape(RoundedRectangle(cornerRadius: Theme.cornerRadius))
+            .accessibilityElement(children: .combine)
+        }
+        .buttonStyle(.plain)
     }
 
     // MARK: Plan

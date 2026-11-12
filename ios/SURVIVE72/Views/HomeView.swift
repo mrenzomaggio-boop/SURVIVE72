@@ -39,7 +39,7 @@ struct HomeView: View {
     private func destination(for section: AppSection) -> some View {
         switch section {
         case .connect:
-            ConnectView()
+            MeshConnectView()
         case .maps:
             MapsView()
         case .kit:
@@ -70,7 +70,7 @@ private struct OfflineBanner: View {
                 .font(.title3.weight(.bold))
                 .foregroundStyle(Theme.ok)
                 .accessibilityHidden(true)
-            Text(String(localized: "OFFLINE READY · DATA STAYS ON DEVICE"))
+            Text(String(localized: "OFFLINE READY · NO INTERNET NEEDED"))
                 .font(.subheadline.weight(.heavy))
                 .foregroundStyle(Theme.textPrimary)
                 .minimumScaleFactor(0.7)
@@ -84,7 +84,7 @@ private struct OfflineBanner: View {
                 .stroke(Theme.ok, lineWidth: Theme.borderWidth)
         )
         .accessibilityElement(children: .combine)
-        .accessibilityLabel(String(localized: "Offline ready. All data stays on this device."))
+        .accessibilityLabel(String(localized: "Offline ready. No internet needed."))
     }
 }
 
@@ -98,5 +98,7 @@ private struct OfflineBanner: View {
         .environment(ConnectStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(MapsStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(MedicalStore(defaults: UserDefaults(suiteName: "preview.home")!))
+        .environment(MeshService(keyStore: InMemoryMeshKeyStore(),
+                                 defaults: UserDefaults(suiteName: "preview.home")!, stateURL: nil))
         .preferredColorScheme(.dark)
 }
