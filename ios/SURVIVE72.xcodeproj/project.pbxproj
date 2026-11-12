@@ -37,6 +37,9 @@
 		5A72000000000000000001D1 /* MeshRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001D0 /* MeshRouter.swift */; };
 		5A720000000000000000015E /* SOSSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000015D /* SOSSignal.swift */; };
 		5A7200000000000000000160 /* ToolsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000015F /* ToolsState.swift */; };
+		5A72000000000000000001D5 /* MeshTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001D4 /* MeshTransport.swift */; };
+		5A72000000000000000001D7 /* MeshKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001D6 /* MeshKeyStore.swift */; };
+		5A72000000000000000001D9 /* MeshService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001D8 /* MeshService.swift */; };
 		5A7200000000000000000162 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000161 /* ToolsView.swift */; };
 		5A7200000000000000000164 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000163 /* StopwatchView.swift */; };
 		5A7200000000000000000166 /* SOSSignalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000165 /* SOSSignalView.swift */; };
@@ -77,6 +80,7 @@
 		5A720000000000000000016B /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000016A /* StopwatchTests.swift */; };
 		5A72000000000000000001CB /* TorchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001CA /* TorchTests.swift */; };
 		5A72000000000000000001D3 /* MeshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001D2 /* MeshTests.swift */; };
+		5A72000000000000000001DB /* MeshServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001DA /* MeshServiceTests.swift */; };
 		5A720000000000000000016D /* SOSSignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000016C /* SOSSignalTests.swift */; };
 		5A7200000000000000000182 /* SettingsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000181 /* SettingsStoreTests.swift */; };
 		5A7200000000000000000184 /* DownloadsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000183 /* DownloadsStoreTests.swift */; };
@@ -134,6 +138,9 @@
 		5A72000000000000000001D0 /* MeshRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshRouter.swift; sourceTree = "<group>"; };
 		5A720000000000000000015D /* SOSSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSignal.swift; sourceTree = "<group>"; };
 		5A720000000000000000015F /* ToolsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsState.swift; sourceTree = "<group>"; };
+		5A72000000000000000001D4 /* MeshTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshTransport.swift; sourceTree = "<group>"; };
+		5A72000000000000000001D6 /* MeshKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshKeyStore.swift; sourceTree = "<group>"; };
+		5A72000000000000000001D8 /* MeshService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshService.swift; sourceTree = "<group>"; };
 		5A7200000000000000000161 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000163 /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000165 /* SOSSignalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSignalView.swift; sourceTree = "<group>"; };
@@ -174,6 +181,7 @@
 		5A720000000000000000016A /* StopwatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTests.swift; sourceTree = "<group>"; };
 		5A72000000000000000001CA /* TorchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchTests.swift; sourceTree = "<group>"; };
 		5A72000000000000000001D2 /* MeshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshTests.swift; sourceTree = "<group>"; };
+		5A72000000000000000001DA /* MeshServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshServiceTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000016C /* SOSSignalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSignalTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000181 /* SettingsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000183 /* DownloadsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsStoreTests.swift; sourceTree = "<group>"; };
@@ -305,6 +313,9 @@
 				5A7200000000000000000127 /* KitChecklistStore.swift */,
 				5A7200000000000000000150 /* AlertPlanStore.swift */,
 				5A720000000000000000015F /* ToolsState.swift */,
+				5A72000000000000000001D4 /* MeshTransport.swift */,
+				5A72000000000000000001D6 /* MeshKeyStore.swift */,
+				5A72000000000000000001D8 /* MeshService.swift */,
 				5A7200000000000000000174 /* SettingsStore.swift */,
 				5A7200000000000000000176 /* DownloadsStore.swift */,
 				5A720000000000000000018D /* ConnectStore.swift */,
@@ -439,6 +450,7 @@
 				5A720000000000000000016A /* StopwatchTests.swift */,
 				5A72000000000000000001CA /* TorchTests.swift */,
 				5A72000000000000000001D2 /* MeshTests.swift */,
+				5A72000000000000000001DA /* MeshServiceTests.swift */,
 				5A720000000000000000016C /* SOSSignalTests.swift */,
 				5A7200000000000000000181 /* SettingsStoreTests.swift */,
 				5A7200000000000000000183 /* DownloadsStoreTests.swift */,
@@ -585,6 +597,9 @@
 				5A72000000000000000001D1 /* MeshRouter.swift in Sources */,
 				5A720000000000000000015E /* SOSSignal.swift in Sources */,
 				5A7200000000000000000160 /* ToolsState.swift in Sources */,
+				5A72000000000000000001D5 /* MeshTransport.swift in Sources */,
+				5A72000000000000000001D7 /* MeshKeyStore.swift in Sources */,
+				5A72000000000000000001D9 /* MeshService.swift in Sources */,
 				5A7200000000000000000162 /* ToolsView.swift in Sources */,
 				5A7200000000000000000164 /* StopwatchView.swift in Sources */,
 				5A7200000000000000000166 /* SOSSignalView.swift in Sources */,
@@ -633,6 +648,7 @@
 				5A720000000000000000016B /* StopwatchTests.swift in Sources */,
 				5A72000000000000000001CB /* TorchTests.swift in Sources */,
 				5A72000000000000000001D3 /* MeshTests.swift in Sources */,
+				5A72000000000000000001DB /* MeshServiceTests.swift in Sources */,
 				5A720000000000000000016D /* SOSSignalTests.swift in Sources */,
 				5A7200000000000000000182 /* SettingsStoreTests.swift in Sources */,
 				5A7200000000000000000184 /* DownloadsStoreTests.swift in Sources */,
