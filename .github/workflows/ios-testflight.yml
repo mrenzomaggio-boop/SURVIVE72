@@ -14,7 +14,7 @@ concurrency:
 jobs:
   testflight:
     name: Archive and upload SURVIVE72 to TestFlight
-    runs-on: macos-26
+    runs-on: macos-26-intel  # standard Intel runner; ARM macos-26 often had no capacity
     timeout-minutes: 60
 
     env:
