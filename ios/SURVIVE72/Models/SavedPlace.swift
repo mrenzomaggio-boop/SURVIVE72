@@ -10,6 +10,18 @@ struct SavedPlace: Identifiable, Codable, Hashable {
     var note: String = ""
 }
 
+extension SavedPlace {
+    /// Tolerant decoding: only name and coordinates are required.
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        id = c.value(UUID.self, forKey: .id, default: UUID())
+        name = try c.decode(String.self, forKey: .name)
+        latitude = try c.decode(Double.self, forKey: .latitude)
+        longitude = try c.decode(Double.self, forKey: .longitude)
+        note = c.value(String.self, forKey: .note, default: "")
+    }
+}
+
 /// Why a place cannot be saved.
 enum PlaceValidationError: Error, Equatable, CaseIterable {
     case emptyName

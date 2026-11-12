@@ -16,8 +16,7 @@ final class AlertPlanStore {
     init(defaults: UserDefaults = .standard, key: String = AlertPlanStore.storageKey) {
         self.defaults = defaults
         self.key = key
-        if let saved = defaults.data(forKey: key),
-           let decoded = try? JSONDecoder().decode(AlertPlanData.self, from: saved) {
+        if let decoded = LocalStorage.load(AlertPlanData.self, key: key, from: defaults) {
             self.data = decoded
         } else {
             // Missing or unreadable data: start empty instead of crashing.
@@ -96,13 +95,12 @@ final class AlertPlanStore {
     /// Erases plan, contacts and SOS draft from memory and from the device.
     func resetAll() {
         data = AlertPlanData()
-        defaults.removeObject(forKey: key)
+        LocalStorage.remove(key: key, from: defaults)
     }
 
     // MARK: Persistence
 
     private func save() {
-        guard let encoded = try? JSONEncoder().encode(data) else { return }
-        defaults.set(encoded, forKey: key)
+        LocalStorage.save(data, key: key, to: defaults)
     }
 }

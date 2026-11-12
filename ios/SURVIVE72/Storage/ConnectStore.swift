@@ -19,8 +19,7 @@ final class ConnectStore {
         self.defaults = defaults
         self.key = key
         self.now = now
-        if let saved = defaults.data(forKey: key),
-           let decoded = try? JSONDecoder().decode(ConnectData.self, from: saved) {
+        if let decoded = LocalStorage.load(ConnectData.self, key: key, from: defaults) {
             data = decoded
         } else {
             // Missing or unreadable data: start from the demo conversations.
@@ -113,7 +112,7 @@ final class ConnectStore {
     /// Back to the demo conversations, nothing saved.
     func reset() {
         data = ConnectDemoContent.initialData()
-        defaults.removeObject(forKey: key)
+        LocalStorage.remove(key: key, from: defaults)
     }
 
     // MARK: Private
@@ -139,7 +138,6 @@ final class ConnectStore {
     }
 
     private func save() {
-        guard let encoded = try? JSONEncoder().encode(data) else { return }
-        defaults.set(encoded, forKey: key)
+        LocalStorage.save(data, key: key, to: defaults)
     }
 }

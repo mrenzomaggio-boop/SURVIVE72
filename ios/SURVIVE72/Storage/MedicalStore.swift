@@ -7,6 +7,15 @@ struct MedicalPreferences: Codable, Equatable {
     var lastCategory: String?
 }
 
+extension MedicalPreferences {
+    /// Tolerant decoding: a damaged field does not lose the favorites.
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        favoriteIDs = c.lossyArray(String.self, forKey: .favoriteIDs)
+        lastCategory = c.optionalValue(String.self, forKey: .lastCategory)
+    }
+}
+
 /// SURVIVE MEDICAL preferences: bookmarked entries and last selected category.
 /// Saved as JSON in `UserDefaults` on every change. No network, location or
 /// permissions; no health data is stored.
@@ -28,8 +37,7 @@ final class MedicalStore {
         self.defaults = defaults
         self.key = key
         self.validIDs = validIDs
-        if let saved = defaults.data(forKey: key),
-           let decoded = try? JSONDecoder().decode(MedicalPreferences.self, from: saved) {
+        if let decoded = LocalStorage.load(MedicalPreferences.self, key: key, from: defaults) {
             // Drop anything that is no longer valid instead of crashing.
             var cleaned = MedicalPreferences()
             var seen = Set<String>()
@@ -84,11 +92,10 @@ final class MedicalStore {
     /// Erases the Medical preferences from memory and from the device.
     func reset() {
         preferences = MedicalPreferences()
-        defaults.removeObject(forKey: key)
+        LocalStorage.remove(key: key, from: defaults)
     }
 
     private func save() {
-        guard let encoded = try? JSONEncoder().encode(preferences) else { return }
-        defaults.set(encoded, forKey: key)
+        LocalStorage.save(preferences, key: key, to: defaults)
     }
 }
