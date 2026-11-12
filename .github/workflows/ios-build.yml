@@ -1,22 +1,15 @@
 name: iOS build
 
-# Manual trigger, plus automatic validation for the iOS feature branches.
+# Manual trigger and every pull request to main. Pushes alone do not run it,
+# so each change is built once (macOS minutes are expensive on private repos).
 on:
   workflow_dispatch:
-  push:
+  pull_request:
     branches:
-      - feature/ios-foundation
-      - feature/ios-kit-checklist
-      - feature/ios-knowledge-library
-      - feature/ios-alert-planning
-      - feature/ios-tools-core
-      - feature/ios-preparedness-settings
-      - feature/ios-connect-foundation
-      - feature/ios-maps-foundation
-      - feature/ios-medical-library
+      - main
     paths:
       - 'ios/**'
-      - '.github/workflows/ios-build.yml'
+      - '.github/workflows/**'
 
 permissions:
   contents: read
