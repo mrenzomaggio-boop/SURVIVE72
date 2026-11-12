@@ -3,15 +3,17 @@ import XCTest
 
 /// Search and filter tests for SURVIVE KNOWLEDGE.
 final class KnowledgeLibraryTests: XCTestCase {
+    private static func article(_ id: String, _ category: KnowledgeCategory, _ title: String,
+                                _ summary: String, _ point: String) -> KnowledgeArticle {
+        KnowledgeArticle(id: id, category: category, title: title, summary: summary,
+                         sections: [KnowledgeSection(heading: "Before", points: [point])])
+    }
+
     private let sample = [
-        KnowledgeArticle(id: "a", category: .water, title: "Rain Collection",
-                         summary: "Gathering rainwater.", paragraphs: ["Use clean containers."]),
-        KnowledgeArticle(id: "b", category: .water, title: "Storing water",
-                         summary: "Household reserves.", paragraphs: ["Label every bottle."]),
-        KnowledgeArticle(id: "c", category: .fire, title: "Staying warm",
-                         summary: "Blankets and layers.", paragraphs: ["Café break by the stove."]),
-        KnowledgeArticle(id: "d", category: .navigation, title: "Compass basics",
-                         summary: "Orientation without GPS.", paragraphs: ["Paper maps and bearings."])
+        KnowledgeLibraryTests.article("a", .flood, "Rain Collection", "Gathering rainwater.", "Use clean containers."),
+        KnowledgeLibraryTests.article("b", .flood, "Storing water", "Household reserves.", "Label every bottle."),
+        KnowledgeLibraryTests.article("c", .earthquake, "Staying warm", "Blankets and layers.", "Café break by the stove."),
+        KnowledgeLibraryTests.article("d", .tsunami, "Compass basics", "Orientation without GPS.", "Paper maps and bearings.")
     ]
 
     private var library: KnowledgeLibrary { KnowledgeLibrary(articles: sample) }
@@ -35,6 +37,7 @@ final class KnowledgeLibraryTests: XCTestCase {
     func testMatchesSummaryAndBodyText() {
         XCTAssertEqual(ids(library.search("household")), ["b"])   // summary
         XCTAssertEqual(ids(library.search("bearings")), ["d"])    // body
+        XCTAssertEqual(library.search("before").count, 4)          // section heading
     }
 
     func testMatchesPartialWords() {
@@ -62,8 +65,8 @@ final class KnowledgeLibraryTests: XCTestCase {
     // MARK: Category filter
 
     func testCategoryFilterWithoutQuery() {
-        XCTAssertEqual(ids(library.search("", in: .water)), ["a", "b"])
-        XCTAssertEqual(ids(library.search("", in: .fire)), ["c"])
+        XCTAssertEqual(ids(library.search("", in: .flood)), ["a", "b"])
+        XCTAssertEqual(ids(library.search("", in: .earthquake)), ["c"])
     }
 
     func testNilCategoryMeansAll() {
@@ -71,19 +74,19 @@ final class KnowledgeLibraryTests: XCTestCase {
     }
 
     func testCategoryWithNoArticlesIsEmpty() {
-        XCTAssertTrue(library.search("", in: .shelter).isEmpty)
+        XCTAssertTrue(library.search("", in: .preparedness).isEmpty)
     }
 
     func testCategoryAndQueryCombined() {
-        XCTAssertEqual(ids(library.search("water", in: .water)), ["a", "b"])
-        XCTAssertEqual(ids(library.search("warm", in: .water)), [])
-        XCTAssertEqual(ids(library.search("warm", in: .fire)), ["c"])
+        XCTAssertEqual(ids(library.search("water", in: .flood)), ["a", "b"])
+        XCTAssertEqual(ids(library.search("warm", in: .flood)), [])
+        XCTAssertEqual(ids(library.search("warm", in: .earthquake)), ["c"])
     }
 
     func testCountsPerCategory() {
         XCTAssertEqual(library.count(in: nil), 4)
-        XCTAssertEqual(library.count(in: .water), 2)
-        XCTAssertEqual(library.count(in: .communication), 0)
+        XCTAssertEqual(library.count(in: .flood), 2)
+        XCTAssertEqual(library.count(in: .preparedness), 0)
     }
 
     // MARK: Bundled content
@@ -97,10 +100,29 @@ final class KnowledgeLibraryTests: XCTestCase {
         }
     }
 
-    func testBundledContentIsAllMarkedToBeVerified() {
+    func testBundledContentCreditsTheOfficialSource() {
         for article in KnowledgeLibraryContent.articles {
-            XCTAssertEqual(article.status, .toBeVerified, article.id)
-            XCTAssertEqual(article.status.label, "TO BE VERIFIED")
+            XCTAssertEqual(article.status, .officialSource, article.id)
+            XCTAssertEqual(article.status.label, "OFFICIAL SOURCE")
+            XCTAssertEqual(article.source, .ioNonRischio, article.id)
+            XCTAssertFalse(article.sections.isEmpty, article.id)
+            for section in article.sections {
+                XCTAssertFalse(section.points.isEmpty, "\(article.id) / \(section.heading)")
+            }
         }
+    }
+
+    func testCreditUsesTheWordingRequiredByTheLicence() {
+        let source = ContentSource.ioNonRischio
+        XCTAssertEqual(source.credit,
+                       "Source: Io non rischio. Dipartimento della Protezione Civile - Presidenza del Consiglio dei Ministri.")
+        XCTAssertTrue(source.licence.contains("CC BY 4.0"))
+        XCTAssertTrue(source.licence.contains("Not written by SURVIVE 72"))
+        XCTAssertEqual(source.url.host, "iononrischio.protezionecivile.gov.it")
+    }
+
+    func testBundledContentIsSearchable() {
+        XCTAssertEqual(KnowledgeLibrary().search("tsunami").map(\.id), ["tsunami.what-to-do"])
+        XCTAssertTrue(KnowledgeLibrary().search("load-bearing").map(\.id).contains("earthquake.what-to-do"))
     }
 }

@@ -6,18 +6,18 @@ final class MedicalLibraryTests: XCTestCase {
     private let library = MedicalLibrary()
 
     private let sample = MedicalLibrary(entries: [
-        MedicalEntry(id: "a", category: .injuries, title: "Brûlures", summary: "Placeholder one.",
-                     keywords: ["alpha"]),
-        MedicalEntry(id: "b", category: .environment, title: "Heat", summary: "Placeholder two.",
-                     keywords: ["Café", "beta"]),
-        MedicalEntry(id: "c", category: .injuries, title: "Wounds", summary: "Placeholder three.",
-                     keywords: ["beta"])
+        MedicalEntry(id: "a", category: .injuries, title: "Brûlures", summary: "Card one.",
+                     steps: ["Press firmly."], keywords: ["alpha"]),
+        MedicalEntry(id: "b", category: .environment, title: "Heat", summary: "Card two.",
+                     steps: ["Move to shade."], keywords: ["Café", "beta"]),
+        MedicalEntry(id: "c", category: .injuries, title: "Wounds", summary: "Card three.",
+                     steps: ["Cover the wound."], keywords: ["beta"])
     ])
 
     // MARK: Search
 
     func testSearchMatchesTitle() {
-        XCTAssertEqual(library.search("burns").map(\.id), ["medical.injuries.burns"])
+        XCTAssertEqual(library.search("burns").map(\.id), ["medical.burns"])
     }
 
     func testSearchMatchesKeywords() {
@@ -29,6 +29,11 @@ final class MedicalLibraryTests: XCTestCase {
         XCTAssertEqual(sample.search("three").map(\.id), ["c"])
     }
 
+    func testSearchMatchesSteps() {
+        XCTAssertEqual(sample.search("shade").map(\.id), ["b"])
+        XCTAssertEqual(library.search("tourniquet").map(\.id), ["medical.bleeding"])
+    }
+
     func testSearchWithNoMatchIsEmpty() {
         XCTAssertTrue(library.search("zzzz-no-such-topic").isEmpty)
         XCTAssertTrue(sample.search("gamma").isEmpty)
@@ -36,7 +41,7 @@ final class MedicalLibraryTests: XCTestCase {
 
     func testSearchIgnoresCase() {
         XCTAssertEqual(sample.search("WOUNDS").map(\.id), ["c"])
-        XCTAssertEqual(library.search("HYDRATION").map(\.id), ["medical.illness.hydration"])
+        XCTAssertEqual(library.search("HEATSTROKE").map(\.id), ["medical.heatstroke"])
     }
 
     func testSearchIgnoresDiacritics() {
@@ -68,7 +73,7 @@ final class MedicalLibraryTests: XCTestCase {
         XCTAssertEqual(sample.search("beta", in: .injuries).map(\.id), ["c"])
         XCTAssertEqual(sample.search("beta", in: .environment).map(\.id), ["b"])
         XCTAssertTrue(sample.search("alpha", in: .environment).isEmpty)
-        XCTAssertEqual(library.search("exposure", in: .environment).count, 2)
+        XCTAssertEqual(library.search("temperature", in: .environment).count, 2)
         XCTAssertTrue(library.search("burns", in: .environment).isEmpty)
     }
 
@@ -87,19 +92,19 @@ final class MedicalLibraryTests: XCTestCase {
 
     // MARK: Content
 
-    func testEveryEntryRequiresVerification() {
+    func testEveryEntryIsMarkedNotReviewedByADoctor() {
         XCTAssertFalse(MedicalLibraryContent.entries.isEmpty)
         for entry in MedicalLibraryContent.entries {
             XCTAssertTrue(entry.requiresVerification, entry.id)
-            XCTAssertEqual(entry.status, .verifiedContentRequired, entry.id)
-            XCTAssertEqual(entry.status.label, "VERIFIED CONTENT REQUIRED")
+            XCTAssertEqual(entry.status, .notReviewedByDoctor, entry.id)
+            XCTAssertEqual(entry.status.label, "NOT YET REVIEWED BY A DOCTOR")
         }
     }
 
-    func testEveryEntryIsAPlaceholder() {
+    func testEveryEntryHasStepsAndPointsTo112() {
         for entry in MedicalLibraryContent.entries {
-            XCTAssertTrue(entry.summary.hasPrefix("Placeholder."), entry.id)
-            XCTAssertTrue(entry.summary.contains("Nothing here is medical advice."), entry.id)
+            XCTAssertFalse(entry.steps.isEmpty, entry.id)
+            XCTAssertTrue(entry.steps.contains { $0.contains("112") }, "\(entry.id) never mentions 112")
         }
     }
 
@@ -107,8 +112,10 @@ final class MedicalLibraryTests: XCTestCase {
         XCTAssertEqual(MedicalLibraryContent.ids.count, MedicalLibraryContent.entries.count)
     }
 
-    func testEmergencyNoticeText() {
-        XCTAssertEqual(MedicalLibrary.emergencyNotice,
-                       "For immediate danger, contact local emergency services when available.")
+    func testEmergencyNoticeAndDisclaimer() {
+        XCTAssertEqual(MedicalLibrary.emergencyNotice, "In an emergency, call 112 straight away.")
+        XCTAssertTrue(MedicalLibrary.disclaimer.contains("do not replace a doctor"))
+        XCTAssertTrue(MedicalLibrary.disclaimer.contains("European Resuscitation Council 2025"))
+        XCTAssertTrue(MedicalLibrary.disclaimer.contains("accepts no liability"))
     }
 }

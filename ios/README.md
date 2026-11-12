@@ -17,10 +17,13 @@ Native SwiftUI app for SURVIVE 72.
   Health, Lighting, Documents, Gear), overall and per-category progress, and a
   "Reset checklist" button with confirmation. Checked items are saved in
   `UserDefaults` under `survive72.kit.checkedItemIDs.v1`.
-- **Knowledge (SURVIVE KNOWLEDGE)**: offline library bundled with the app, with
-  six categories, local search on title and text (case- and accent-insensitive,
-  all words must match), category filters and an article page. Every article is
-  demo content marked **TO BE VERIFIED**: no instructions, no medical guidance.
+- **Knowledge (SURVIVE KNOWLEDGE)**: offline library bundled with the app:
+  earthquake, flood, tsunami and emergency kit, adapted and summarised from
+  "Io non rischio" of the Italian Civil Protection Department (CC BY 4.0).
+  Every article is marked **OFFICIAL SOURCE** and shows the credit required by
+  the licence, with a link to the site. Local search on title and text (case-
+  and accent-insensitive, all words must match), category filters and an
+  article page with "before / during / after" sections.
 - **Alert (SURVIVE ALERT)**: local emergency planning. Add, edit and delete
   emergency contacts; a personal plan (name, meeting point, note); an SOS
   message generated from them that you can edit and copy with
@@ -43,8 +46,11 @@ Native SwiftUI app for SURVIVE 72.
   prepared), readiness of required packs and space used/missing compared with
   the free space on the device. Nothing is downloaded: non-bundled packs can
   only be marked as prepared (`survive72.downloads.preparedPackIDs.v1`).
-- **Radio**: offline information guide with topic filters and search. No
-  frequencies, no radio access, nothing is transmitted.
+- **Radio**: list of emergency frequencies to listen to in Italy (Isoradio,
+  Rai Radio 1, CB 9, PMR446, amateur calling frequencies, marine channel 16),
+  each with whether transmitting needs a licence; links that open the official
+  live streams outside the app; offline guide with topic filters and search.
+  No radio access, nothing is transmitted, no audio is played in the app.
 - **Connect (SURVIVE CONNECT)**: local demo chat with fictional conversations,
   a message composer and history. Sent messages enter a local queue as
   **queued**; buttons simulate **delivered** or **failed**, and failed messages
@@ -62,13 +68,16 @@ Native SwiftUI app for SURVIVE 72.
   **REQUIRES PHYSICAL-DEVICE TEST**. No MapKit, GPS, network or permissions.
   Data is saved as JSON in `UserDefaults` under `survive72.maps.data.v1` and
   is erased by "Erase all local data".
-- **Medical (SURVIVE MEDICAL)**: offline library of placeholder topics in six
-  categories, with local search on title, summary and keywords (case- and
-  accent-insensitive, all words must match) combinable with a category filter,
-  and an entry page. Every entry is marked **VERIFIED CONTENT REQUIRED** and
-  contains no diagnoses, dosages, procedures or advice; every Medical screen
-  shows "For immediate danger, contact local emergency services when
-  available." No network, calls, SMS, GPS or permissions. Only bookmarked
+- **Medical (SURVIVE MEDICAL)**: nine first aid cards in four categories
+  (cardiac arrest, choking, recovery position, bleeding, burns, heatstroke,
+  hypothermia, stroke, anaphylaxis), written in plain words by SURVIVE 72
+  following the ERC 2025 guidelines (Italian edition by IRC), with numbered
+  steps. Every card is marked **NOT YET REVIEWED BY A DOCTOR**; every Medical
+  screen shows "In an emergency, call 112 straight away." and a disclaimer
+  (not a substitute for a doctor or a course, not written or endorsed by ERC or
+  IRC, no liability). Local search on title, summary, steps and keywords,
+  combinable with a category filter. No network, calls, SMS, GPS or
+  permissions. Only bookmarked
   entry IDs and the last selected category are saved, as JSON in
   `UserDefaults` under `survive72.medical.preferences.v1`, and are erased by
   "Erase all local data".
@@ -82,7 +91,7 @@ ios/
 │   ├── App/            entry point, injects the Kit store
 │   ├── Theme/          colors and metrics
 │   ├── Models/         Home sections, Kit, Knowledge, Alert, Tools, settings, packs, radio guide, Connect messages and queue, Maps places, DMS and areas, Medical entries and search
-│   ├── Data/           Kit default items, Knowledge articles, Connect demo chats, Medical placeholder topics, demo content
+│   ├── Data/           Kit default items, Knowledge articles, Connect demo chats, Medical first aid cards, demo content
 │   ├── Storage/        Kit, Alert, Settings, Downloads, Connect, Maps and Medical stores, ToolsState (memory)
 │   ├── Views/          Home, section tile, demo detail
 │   │   ├── Kit/        checklist, item row, progress card
@@ -91,10 +100,10 @@ ios/
 │   │   ├── Tools/      tools list, stopwatch, SOS signal, torch placeholder
 │   │   ├── Settings/   preferences, privacy, erase local data
 │   │   ├── Downloads/  offline packs and space
-│   │   ├── Radio/      offline radio guide
+│   │   ├── Radio/      emergency frequencies, stream links, offline radio guide
 │   │   ├── Connect/    local chat, queue, SOS composer
 │   │   ├── Maps/       saved places, place editor, offline areas, sensor placeholders
-│   │   └── Medical/    placeholder topic list, search, filters, entry page
+│   │   └── Medical/    first aid card list, search, filters, card page
 │   └── Assets.xcassets
 └── SURVIVE72Tests/     unit tests for every real module
 ```
@@ -118,5 +127,5 @@ available simulator automatically.
 
 ## Not implemented yet
 
-Bluetooth, maps, GPS, torch, networking, downloads and verified medical content.
+Maps, GPS, downloads, and review of the medical cards by a doctor.
 No accounts, keys, certificates or TestFlight configuration are included.

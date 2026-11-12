@@ -2,71 +2,67 @@ import Foundation
 
 /// Topics of the SURVIVE MEDICAL offline library.
 enum MedicalCategory: String, CaseIterable, Identifiable, Hashable {
-    case preparedness
+    case lifeThreatening
     case injuries
     case environment
     case illness
-    case supplies
-    case records
 
     var id: String { rawValue }
 
     var title: String {
         switch self {
-        case .preparedness: String(localized: "Preparedness")
+        case .lifeThreatening: String(localized: "Life-threatening")
         case .injuries: String(localized: "Injuries")
-        case .environment: String(localized: "Environment")
-        case .illness: String(localized: "Illness")
-        case .supplies: String(localized: "Supplies")
-        case .records: String(localized: "Records")
+        case .environment: String(localized: "Heat and cold")
+        case .illness: String(localized: "Sudden illness")
         }
     }
 
     /// SF Symbols available on iOS 17.
     var systemImage: String {
         switch self {
-        case .preparedness: "checklist"
+        case .lifeThreatening: "heart.fill"
         case .injuries: "bandage.fill"
         case .environment: "thermometer.medium"
         case .illness: "heart.text.square.fill"
-        case .supplies: "cross.case.fill"
-        case .records: "doc.text.fill"
         }
     }
 }
 
-/// Review state of a medical entry. Nothing shipped today is verified.
+/// Review state of a medical card. The cards follow published guidelines but
+/// have not yet been reviewed by a doctor, so they keep a visible warning.
 enum MedicalVerificationStatus: String, Hashable {
-    case verifiedContentRequired
+    case notReviewedByDoctor
 
     var label: String {
         switch self {
-        case .verifiedContentRequired: String(localized: "VERIFIED CONTENT REQUIRED")
+        case .notReviewedByDoctor: String(localized: "NOT YET REVIEWED BY A DOCTOR")
         }
     }
 
     var requiresVerification: Bool {
         switch self {
-        case .verifiedContentRequired: true
+        case .notReviewedByDoctor: true
         }
     }
 }
 
-/// One placeholder entry of the medical library, bundled with the app.
-/// It holds a neutral topic title and a description of what verified content
-/// will later cover: no diagnoses, dosages, procedures or advice.
+/// One first aid card, bundled with the app. Written by SURVIVE 72 in plain
+/// words following the ERC 2025 guidelines; it never replaces a doctor or a
+/// first aid course, and every screen tells the reader to call 112.
 struct MedicalEntry: Identifiable, Hashable {
     let id: String
     let category: MedicalCategory
     let title: String
     let summary: String
+    let steps: [String]
     let keywords: [String]
-    var status: MedicalVerificationStatus = .verifiedContentRequired
+    var status: MedicalVerificationStatus = .notReviewedByDoctor
 
     var requiresVerification: Bool { status.requiresVerification }
 
-    /// Text used by local search: title, summary and keywords.
+    /// Text used by local search: title, summary, steps and keywords.
     var searchableText: String {
-        ([title, summary] + keywords).joined(separator: " ")
+        ([title, summary] + steps + keywords).joined(separator: " ")
     }
 }

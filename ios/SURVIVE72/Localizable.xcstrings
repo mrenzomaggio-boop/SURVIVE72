@@ -321,6 +321,16 @@
         }
       }
     },
+    "A first aid kit and your personal medicines.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cassetta di pronto soccorso e i tuoi medicinali personali."
+          }
+        }
+      }
+    },
     "A receiver only listens: it does not need a network or an account.": {
       "localizations": {
         "it": {
@@ -341,6 +351,36 @@
         }
       }
     },
+    "A strong earthquake felt on the coast.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un forte terremoto avvertito sulla costa."
+          }
+        }
+      }
+    },
+    "A torch and a battery radio.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Torcia e radio a pile."
+          }
+        }
+      }
+    },
+    "AED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "DAE"
+          }
+        }
+      }
+    },
     "About %@ · estimate": {
       "localizations": {
         "it": {
@@ -357,6 +397,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Circa 4 L a persona al giorno, per 3 giorni"
+          }
+        }
+      }
+    },
+    "Adapted and summarised under the CC BY 4.0 licence. Not written by SURVIVE 72.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testo adattato e riassunto con licenza CC BY 4.0. Non è stato scritto da SURVIVE 72."
           }
         }
       }
@@ -387,6 +437,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Aggiungi alla coda"
+          }
+        }
+      }
+    },
+    "After": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dopo"
+          }
+        }
+      }
+    },
+    "Agree with your family on a plan to reach escape routes and waiting areas.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concorda con la famiglia un piano per raggiungere vie di fuga e aree di attesa."
+          }
+        }
+      }
+    },
+    "Agree with your family where to meet.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Concorda con la famiglia dove ritrovarvi."
           }
         }
       }
@@ -471,16 +551,6 @@
         }
       }
     },
-    "All articles are demo content marked TO BE VERIFIED. They are not instructions and not medical advice.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tutti gli articoli sono contenuti demo contrassegnati DA VERIFICARE. Non sono istruzioni né consigli medici."
-          }
-        }
-      }
-    },
     "All items will be marked as not packed. This cannot be undone.": {
       "localizations": {
         "it": {
@@ -501,12 +571,72 @@
         }
       }
     },
+    "Amateur radio UHF": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Radioamatori UHF"
+          }
+        }
+      }
+    },
+    "Amateur radio UHF calling frequency.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frequenza di chiamata UHF dei radioamatori."
+          }
+        }
+      }
+    },
+    "Amateur radio VHF": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Radioamatori VHF"
+          }
+        }
+      }
+    },
+    "Amateur radio calling frequency, also used by emergency networks.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frequenza di chiamata dei radioamatori, usata anche dalle reti di emergenza."
+          }
+        }
+      }
+    },
     "An earphone socket helps you listen quietly.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Una presa per auricolari ti permette di ascoltare senza disturbare."
+          }
+        }
+      }
+    },
+    "An official alert message.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un messaggio di allerta ufficiale."
+          }
+        }
+      }
+    },
+    "Anaphylaxis: call 112 and help the person use their adrenaline pen.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anafilassi: chiama il 112 e aiuta la persona a usare la sua penna di adrenalina."
           }
         }
       }
@@ -527,6 +657,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Vale per il primo messaggio in coda. Non viene trasmesso nulla."
+          }
+        }
+      }
+    },
+    "Arm: one arm is weak or cannot be lifted.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Braccio: un braccio è debole o non si alza."
+          }
+        }
+      }
+    },
+    "Articles adapted from Io non rischio, the campaign of the Italian Civil Protection Department. Not written by SURVIVE 72. Always follow the instructions of the authorities.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Articoli adattati da Io non rischio, la campagna del Dipartimento della Protezione Civile. Non sono stati scritti da SURVIVE 72. Segui sempre le indicazioni delle autorità."
+          }
+        }
+      }
+    },
+    "Ask a qualified technician whether your home needs strengthening.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fatti consigliare da un tecnico su eventuali rinforzi della tua casa."
+          }
+        }
+      }
+    },
+    "Ask someone to bring a defibrillator (AED).": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fai cercare un defibrillatore (DAE) da qualcuno."
           }
         }
       }
@@ -611,6 +781,36 @@
         }
       }
     },
+    "Before": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prima"
+          }
+        }
+      }
+    },
+    "Before going out, shut off gas, water and electricity and put on shoes.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prima di uscire chiudi gas, acqua e luce e mettiti le scarpe."
+          }
+        }
+      }
+    },
+    "Before moving, check your route and avoid flood-prone areas.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prima di spostarti controlla il percorso ed evita le zone allagabili."
+          }
+        }
+      }
+    },
     "Bookmark": {
       "localizations": {
         "it": {
@@ -651,16 +851,6 @@
         }
       }
     },
-    "Building a three-day stock of non-perishable food.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Creare una scorta di tre giorni di cibo a lunga conservazione."
-          }
-        }
-      }
-    },
     "Burns": {
       "localizations": {
         "it": {
@@ -671,12 +861,62 @@
         }
       }
     },
+    "CB channel 9": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CB canale 9"
+          }
+        }
+      }
+    },
+    "CPR": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "RCP"
+          }
+        }
+      }
+    },
+    "Call 112 if they are confused or not responding well.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiama il 112 se è confusa o non risponde bene."
+          }
+        }
+      }
+    },
+    "Call 112.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiama il 112."
+          }
+        }
+      }
+    },
     "Cancel": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Annulla"
+          }
+        }
+      }
+    },
+    "Cardiac arrest: call 112, push hard and fast on the chest, use a defibrillator.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arresto cardiaco: chiama il 112, spingi forte e veloce sul petto, usa un defibrillatore."
           }
         }
       }
@@ -711,12 +951,32 @@
         }
       }
     },
+    "Check on the people around you and give first aid if needed.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controlla come stanno le persone vicine a te e presta i primi soccorsi se serve."
+          }
+        }
+      }
+    },
     "Check which local stations carry emergency information before you need them.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Scopri prima quali emittenti locali trasmettono informazioni di emergenza."
+          }
+        }
+      }
+    },
+    "Choking (adult)": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soffocamento (adulto)"
           }
         }
       }
@@ -741,22 +1001,12 @@
         }
       }
     },
-    "Cold exposure": {
+    "Civil Protection": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esposizione al freddo"
-          }
-        }
-      }
-    },
-    "Communication": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Comunicazione"
+            "value": "Protezione Civile"
           }
         }
       }
@@ -821,12 +1071,32 @@
         }
       }
     },
-    "Cooking without power": {
+    "Cool the area straight away with cool running water (not ice) for at least 20 minutes.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cucinare senza corrente"
+            "value": "Raffredda subito la zona con acqua corrente fresca (non ghiaccio) per almeno 20 minuti."
+          }
+        }
+      }
+    },
+    "Cool the burn with running water and cover it with something clean.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Raffredda l'ustione con acqua corrente e coprila con qualcosa di pulito."
+          }
+        }
+      }
+    },
+    "Cool them down at once: if possible, immerse them in cool or cold water up to the neck. Otherwise wet their skin and fan them.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Raffreddala subito: se possibile immergila in acqua fresca o fredda fino al collo. Altrimenti bagnale la pelle e falle vento."
           }
         }
       }
@@ -837,6 +1107,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Copiato · non inviato"
+          }
+        }
+      }
+    },
+    "Copies of your documents.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copia dei documenti."
           }
         }
       }
@@ -881,22 +1161,22 @@
         }
       }
     },
+    "Cover with cling film or a clean cloth. Do not apply creams, oil or butter.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copri con pellicola trasparente o un panno pulito. Non mettere creme, olio o burro."
+          }
+        }
+      }
+    },
     "Current position": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Posizione attuale"
-          }
-        }
-      }
-    },
-    "Cuts and wounds": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tagli e ferite"
           }
         }
       }
@@ -1011,16 +1291,6 @@
         }
       }
     },
-    "Demo content. This article is a placeholder and has not been reviewed. Do not rely on it.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Contenuto demo. Questo articolo è un segnaposto e non è stato revisionato. Non farci affidamento."
-          }
-        }
-      }
-    },
     "Demo group": {
       "localizations": {
         "it": {
@@ -1101,12 +1371,132 @@
         }
       }
     },
+    "Distress and calling at sea, monitored by the Coast Guard.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Soccorso e chiamata in mare, ascoltato dalla Guardia Costiera."
+          }
+        }
+      }
+    },
+    "Do not drink tap water and do not eat food touched by sea water.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non bere l'acqua del rubinetto e non mangiare cibi bagnati dal mare."
+          }
+        }
+      }
+    },
+    "Do not drink tap water until your municipality allows it. Throw away food that touched the flood water.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non bere l'acqua del rubinetto finché il Comune non lo permette. Butta i cibi venuti a contatto con l'acqua dell'alluvione."
+          }
+        }
+      }
+    },
+    "Do not drink tap water: it may be contaminated.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non bere l'acqua del rubinetto: potrebbe essere contaminata."
+          }
+        }
+      }
+    },
+    "Do not drive. Avoid underpasses, riverbanks and bridges.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non usare l'auto. Evita sottopassi, argini e ponti."
+          }
+        }
+      }
+    },
+    "Do not go back into your home until you are allowed to.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non rientrare in casa finché non sei autorizzato."
+          }
+        }
+      }
+    },
+    "Do not go down to cellars or garages and do not go out to move the car.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non scendere in cantina o in garage e non uscire per spostare l'auto."
+          }
+        }
+      }
+    },
+    "Do not rush outside: wait until the shaking stops.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non precipitarti fuori: aspetta che la scossa finisca."
+          }
+        }
+      }
+    },
+    "Do not sleep or stay in basements.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non dormire e non restare nei piani seminterrati."
+          }
+        }
+      }
+    },
     "Do not spread unconfirmed information heard on the radio.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Non diffondere informazioni non confermate sentite alla radio."
+          }
+        }
+      }
+    },
+    "Do not use the car: it can become a trap.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non usare l'auto: può diventare una trappola."
+          }
+        }
+      }
+    },
+    "Do not use the lift and be careful on the stairs, which may be damaged.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non usare l'ascensore e fai attenzione alle scale, che potrebbero essere danneggiate."
+          }
+        }
+      }
+    },
+    "Do not walk or drive on flooded roads.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non percorrere strade allagate, né a piedi né in auto."
           }
         }
       }
@@ -1157,6 +1547,86 @@
           "stringUnit": {
             "state": "translated",
             "value": "Acqua potabile"
+          }
+        }
+      }
+    },
+    "During": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durante"
+          }
+        }
+      }
+    },
+    "During an alert": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durante l'allerta"
+          }
+        }
+      }
+    },
+    "During the flood: indoors": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durante l'alluvione: al chiuso"
+          }
+        }
+      }
+    },
+    "During the flood: outdoors": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durante l'alluvione: all'aperto"
+          }
+        }
+      }
+    },
+    "During: indoors": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durante: al chiuso"
+          }
+        }
+      }
+    },
+    "During: outdoors": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durante: all'aperto"
+          }
+        }
+      }
+    },
+    "Earthquake": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terremoto"
+          }
+        }
+      }
+    },
+    "Earthquake: what to do": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terremoto: cosa fare"
           }
         }
       }
@@ -1241,6 +1711,16 @@
         }
       }
     },
+    "Emergency channel for CB radios.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Canale di emergenza per i baracchini CB."
+          }
+        }
+      }
+    },
     "Emergency contacts": {
       "localizations": {
         "it": {
@@ -1261,22 +1741,22 @@
         }
       }
     },
-    "Emergency food supplies": {
+    "Emergency frequencies (Italy)": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Scorte di cibo per le emergenze"
+            "value": "Frequenze di emergenza (Italia)"
           }
         }
       }
     },
-    "Emergency radio": {
+    "Emergency kit": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Radio di emergenza"
+            "value": "Kit di emergenza"
           }
         }
       }
@@ -1307,16 +1787,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Inserisci un nome."
-          }
-        }
-      }
-    },
-    "Environment": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ambiente"
           }
         }
       }
@@ -1371,12 +1841,12 @@
         }
       }
     },
-    "Every topic is a placeholder marked VERIFIED CONTENT REQUIRED. Nothing here is medical advice.": {
+    "Even if it clears, have the person checked by a doctor.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ogni argomento è un segnaposto contrassegnato SERVE CONTENUTO VERIFICATO. Niente di quanto è qui costituisce un consiglio medico."
+            "value": "Anche se si risolve, fai controllare la persona da un medico."
           }
         }
       }
@@ -1421,12 +1891,42 @@
         }
       }
     },
+    "FAST": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FAST"
+          }
+        }
+      }
+    },
+    "FM, varies by area": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FM, cambia in base alla zona"
+          }
+        }
+      }
+    },
     "Face masks": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Mascherine"
+          }
+        }
+      }
+    },
+    "Face: one side of the face droops.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Faccia: un lato del viso è storto o cadente."
           }
         }
       }
@@ -1471,6 +1971,16 @@
         }
       }
     },
+    "Find the safe spots in your home and read your municipality's civil protection plan.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Individua i punti sicuri della casa e leggi il Piano di protezione civile del tuo Comune."
+          }
+        }
+      }
+    },
     "Findable by number: %@": {
       "localizations": {
         "it": {
@@ -1481,32 +1991,12 @@
         }
       }
     },
-    "Finding water sources": {
+    "First aid cards": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Trovare fonti d'acqua"
-          }
-        }
-      }
-    },
-    "Fire": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Fuoco"
-          }
-        }
-      }
-    },
-    "Fire safety": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Sicurezza antincendio"
+            "value": "Schede di primo soccorso"
           }
         }
       }
@@ -1521,16 +2011,6 @@
         }
       }
     },
-    "First aid kit contents": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Contenuto del kit di primo soccorso"
-          }
-        }
-      }
-    },
     "Flashlight": {
       "localizations": {
         "it": {
@@ -1541,12 +2021,52 @@
         }
       }
     },
+    "Flood": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alluvione"
+          }
+        }
+      }
+    },
+    "Flood: what to do": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alluvione: cosa fare"
+          }
+        }
+      }
+    },
     "Follow instructions from local authorities.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Segui le istruzioni delle autorità locali."
+          }
+        }
+      }
+    },
+    "Follow the alerts of your region and the measures taken by your municipality.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segui le allerte della Regione e le misure decise dal tuo Comune."
+          }
+        }
+      }
+    },
+    "Follow the instructions of the authorities.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segui le indicazioni delle autorità."
           }
         }
       }
@@ -1581,12 +2101,12 @@
         }
       }
     },
-    "For immediate danger, contact local emergency services when available.": {
+    "For large burns, burns on the face or burns on children, call 112.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "In caso di pericolo immediato, contatta i servizi di emergenza locali quando possibile."
+            "value": "Per ustioni estese, al viso o su bambini, chiama il 112."
           }
         }
       }
@@ -1607,6 +2127,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Spazio libero sconosciuto."
+          }
+        }
+      }
+    },
+    "Frequencies, guide": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Frequenze, guida"
           }
         }
       }
@@ -1651,26 +2181,6 @@
         }
       }
     },
-    "General awareness about fire risks during emergencies.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Consapevolezza generale sui rischi di incendio durante le emergenze."
-          }
-        }
-      }
-    },
-    "General information only. No frequencies, no radio access, nothing is transmitted.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Solo informazioni generali. Nessuna frequenza, nessun accesso alla radio, non viene trasmesso nulla."
-          }
-        }
-      }
-    },
     "General offline radio information.": {
       "localizations": {
         "it": {
@@ -1687,6 +2197,46 @@
           "stringUnit": {
             "state": "translated",
             "value": "Creato dal tuo piano e dai contatti. Puoi modificarlo."
+          }
+        }
+      }
+    },
+    "Gently shake the person and call them loudly.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scuoti delicatamente la persona e chiamala ad alta voce."
+          }
+        }
+      }
+    },
+    "Go back home only when the authorities say so.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rientra in casa solo quando lo dicono le autorità."
+          }
+        }
+      }
+    },
+    "Go to the upper floors and do not use the lift.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sali ai piani superiori e non usare l'ascensore."
+          }
+        }
+      }
+    },
+    "Go to the waiting areas listed in your municipality's civil protection plan.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Raggiungi le aree di attesa previste dal Piano di protezione civile del Comune."
           }
         }
       }
@@ -1711,6 +2261,16 @@
         }
       }
     },
+    "Have gas and electricity checked before switching them back on.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fai controllare gas e impianto elettrico prima di riattivarli."
+          }
+        }
+      }
+    },
     "Headlamp": {
       "localizations": {
         "it": {
@@ -1731,22 +2291,42 @@
         }
       }
     },
-    "Health preparedness overview": {
+    "Heat and cold": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Prepararsi per la salute: panoramica"
+            "value": "Caldo e freddo"
           }
         }
       }
     },
-    "Heat exposure": {
+    "Heatstroke": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Esposizione al caldo"
+            "value": "Colpo di calore"
+          }
+        }
+      }
+    },
+    "Heimlich": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heimlich"
+          }
+        }
+      }
+    },
+    "Help elderly people and people with disabilities in the building.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aiuta gli anziani e le persone con disabilità presenti nell'edificio."
           }
         }
       }
@@ -1781,16 +2361,6 @@
         }
       }
     },
-    "How household water reserves can be organised and rotated.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Come organizzare e ruotare le scorte d'acqua di casa."
-          }
-        }
-      }
-    },
     "How others see you": {
       "localizations": {
         "it": {
@@ -1801,22 +2371,22 @@
         }
       }
     },
-    "Hydration": {
+    "How to prepare your home, where to shelter during the shaking and what to do afterwards.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Idratazione"
+            "value": "Come preparare la casa, dove ripararsi durante la scossa e cosa fare dopo."
           }
         }
       }
     },
-    "Hygiene and sanitation": {
+    "How to prepare, what to do during a weather alert and how to stay safe when water rises.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Igiene e servizi igienici"
+            "value": "Come prepararsi, cosa fare durante un'allerta meteo e come restare al sicuro quando l'acqua sale."
           }
         }
       }
@@ -1827,6 +2397,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prodotti per l'igiene"
+          }
+        }
+      }
+    },
+    "Hypothermia": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ipotermia"
           }
         }
       }
@@ -1861,12 +2441,92 @@
         }
       }
     },
-    "Illness": {
+    "If the bleeding does not stop and the wound is on an arm or leg, apply a tourniquet as soon as possible, above the wound, and write down the time.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Malattie"
+            "value": "Se il sangue non si ferma e la ferita è su un braccio o una gamba, applica il prima possibile un laccio emostatico (tourniquet) sopra la ferita e scrivi l'ora."
+          }
+        }
+      }
+    },
+    "If the person can cough, encourage them to keep coughing.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se la persona riesce a tossire, incoraggiala a continuare."
+          }
+        }
+      }
+    },
+    "If the person has their own adrenaline pen, help them use it.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se la persona ha la sua penna di adrenalina, aiutala a usarla."
+          }
+        }
+      }
+    },
+    "If they become unconscious, call 112 and start resuscitation.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se perde i sensi, chiama il 112 e inizia la rianimazione."
+          }
+        }
+      }
+    },
+    "If they can no longer cough or breathe, give 5 blows between the shoulder blades, then 5 abdominal thrusts (Heimlich manoeuvre). Keep alternating.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se non riesce più a tossire o a respirare, dai 5 colpi tra le scapole, poi 5 compressioni addominali (manovra di Heimlich). Continua alternando."
+          }
+        }
+      }
+    },
+    "If they do not respond and are not breathing normally, call 112 with the speaker on.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se non risponde e non respira normalmente, chiama il 112 con il vivavoce acceso."
+          }
+        }
+      }
+    },
+    "If you are near the sea, move away from the beach to higher ground.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se sei vicino al mare, allontanati dalla spiaggia e raggiungi un luogo elevato."
+          }
+        }
+      }
+    },
+    "If you are trained, give 30 compressions and 2 rescue breaths. Otherwise give compressions only, without stopping.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se sei addestrato, alterna 30 compressioni e 2 ventilazioni. Altrimenti fai solo compressioni, senza fermarti."
+          }
+        }
+      }
+    },
+    "If you live or stay in an area at risk, learn the escape routes and waiting areas of the municipality.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Se vivi o soggiorni in una zona a rischio, informati sulle vie di fuga e sulle aree di attesa del Comune."
           }
         }
       }
@@ -1901,6 +2561,26 @@
         }
       }
     },
+    "In an emergency, call 112 straight away.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In caso di emergenza chiama subito il 112."
+          }
+        }
+      }
+    },
+    "Informal European convention for calls for help between walkie-talkies. Not an official channel.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Convenzione europea informale per chiedere aiuto tra walkie-talkie. Non è un canale ufficiale."
+          }
+        }
+      }
+    },
     "Injuries": {
       "localizations": {
         "it": {
@@ -1921,22 +2601,32 @@
         }
       }
     },
-    "Introduction to orienting yourself without GPS.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Introduzione all'orientamento senza GPS."
-          }
-        }
-      }
-    },
     "It stays on this device and is never transmitted.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Resta su questo dispositivo e non viene mai trasmesso."
+          }
+        }
+      }
+    },
+    "Keep checking that they are breathing until help arrives.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controlla che continui a respirare finché arrivano i soccorsi."
+          }
+        }
+      }
+    },
+    "Keep heavy objects on low shelves.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metti gli oggetti pesanti sui ripiani bassi."
           }
         }
       }
@@ -1957,16 +2647,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tieni il manuale d'uso insieme alla radio."
-          }
-        }
-      }
-    },
-    "Keeping warm when power and heating are unavailable.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mantenersi al caldo quando mancano corrente e riscaldamento."
           }
         }
       }
@@ -2041,16 +2721,6 @@
         }
       }
     },
-    "Landmarks and routes": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Punti di riferimento e percorsi"
-          }
-        }
-      }
-    },
     "Latitude (-90 to 90)": {
       "localizations": {
         "it": {
@@ -2081,6 +2751,26 @@
         }
       }
     },
+    "Learn where and how to shut off gas, water and the main electricity switch.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impara dove si trovano e come si chiudono i rubinetti di gas e acqua e l'interruttore generale della luce."
+          }
+        }
+      }
+    },
+    "Life-threatening": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pericolo di vita"
+          }
+        }
+      }
+    },
     "Lighting": {
       "localizations": {
         "it": {
@@ -2101,12 +2791,42 @@
         }
       }
     },
+    "Listen online": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ascolta online"
+          }
+        }
+      }
+    },
+    "Listen only": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solo ascolto"
+          }
+        }
+      }
+    },
     "Listening": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Ascolto"
+          }
+        }
+      }
+    },
+    "Listening is always allowed. Transmitting needs a licence or authorisation, except with PMR446 walkie-talkies. This app never transmits.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ascoltare è sempre consentito. Per trasmettere serve una licenza o un'autorizzazione, tranne che con i walkie-talkie PMR446. Questa app non trasmette mai."
           }
         }
       }
@@ -2127,6 +2847,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Abitudini di ascolto"
+          }
+        }
+      }
+    },
+    "Live on RaiPlay Sound": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In diretta su RaiPlay Sound"
           }
         }
       }
@@ -2231,6 +2961,26 @@
         }
       }
     },
+    "Make sure the place is safe for you.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controlla che il posto sia sicuro per te."
+          }
+        }
+      }
+    },
+    "Make sure your children's school knows about the alert.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verifica che la scuola dei tuoi figli sia informata dell'allerta."
+          }
+        }
+      }
+    },
     "Manual can opener": {
       "localizations": {
         "it": {
@@ -2247,6 +2997,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Mappe"
+          }
+        }
+      }
+    },
+    "Marine VHF channel 16": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "VHF marino canale 16"
           }
         }
       }
@@ -2391,12 +3151,82 @@
         }
       }
     },
+    "Move away from buildings, trees, street lights and power lines.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allontanati da edifici, alberi, lampioni e linee elettriche."
+          }
+        }
+      }
+    },
     "Move away from electrical devices that cause noise.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Allontanati dagli apparecchi elettrici che causano disturbi."
+          }
+        }
+      }
+    },
+    "Move away from the water: even a few centimetres of flowing water can knock you over.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allontanati dall'acqua: anche pochi centimetri di acqua che scorre possono farti cadere."
+          }
+        }
+      }
+    },
+    "Move heavy furniture away from beds and sofas. Fix shelves, bookcases and tall furniture to the wall.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allontana i mobili pesanti da letti e divani. Fissa al muro scaffali, librerie e mobili alti."
+          }
+        }
+      }
+    },
+    "Move straight away to the nearest high place: a hill or the upper floors of a building.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allontanati subito verso il luogo elevato più vicino: una collina o i piani alti di un edificio."
+          }
+        }
+      }
+    },
+    "Move the person into the shade or somewhere cool and remove excess clothing.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Porta la persona all'ombra o al fresco e togli i vestiti in eccesso."
+          }
+        }
+      }
+    },
+    "Move the person out of the wind.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Porta la persona al riparo dal vento."
+          }
+        }
+      }
+    },
+    "Move the person somewhere cool and cool them down quickly.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Porta la persona al fresco e raffreddala in fretta."
           }
         }
       }
@@ -2451,6 +3281,16 @@
         }
       }
     },
+    "NOT YET REVIEWED BY A DOCTOR": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NON ANCORA RIVISTO DA UN MEDICO"
+          }
+        }
+      }
+    },
     "Name": {
       "localizations": {
         "it": {
@@ -2481,12 +3321,12 @@
         }
       }
     },
-    "Navigation": {
+    "National news and official announcements during emergencies. Look up your local frequency now and write it in your kit.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Orientamento"
+            "value": "Notiziari nazionali e comunicati ufficiali durante le emergenze. Cerca adesso la frequenza della tua zona e scrivila nel kit."
           }
         }
       }
@@ -2711,6 +3551,16 @@
         }
       }
     },
+    "Not responding and not breathing": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non risponde e non respira"
+          }
+        }
+      }
+    },
     "Not sent. No emergency service contacted.": {
       "localizations": {
         "it": {
@@ -2757,6 +3607,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "SPENTA"
+          }
+        }
+      }
+    },
+    "OFFICIAL SOURCE": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "FONTE UFFICIALE"
           }
         }
       }
@@ -2811,22 +3671,22 @@
         }
       }
     },
+    "Official news and alerts": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notizie e allerte ufficiali"
+          }
+        }
+      }
+    },
     "Offline areas": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Aree offline"
-          }
-        }
-      }
-    },
-    "Offline guide": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Guida offline"
           }
         }
       }
@@ -2861,12 +3721,12 @@
         }
       }
     },
-    "Offline topics": {
+    "On a boat, keep listening to the radio. If you are at sea, head out to open water. If you are in port, leave the boat and go to high ground.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Argomenti offline"
+            "value": "In barca ascolta sempre la radio. Se sei in mare, allontanati verso il largo. Se sei in porto, lascia la barca e raggiungi un luogo elevato."
           }
         }
       }
@@ -2901,6 +3761,26 @@
         }
       }
     },
+    "Open the official site": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apri il sito ufficiale"
+          }
+        }
+      }
+    },
+    "Opens outside the app. Needs internet.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si apre fuori dall'app. Serve internet."
+          }
+        }
+      }
+    },
     "Optional": {
       "localizations": {
         "it": {
@@ -2911,32 +3791,12 @@
         }
       }
     },
-    "Options for preparing meals during a blackout.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Come preparare i pasti durante un blackout."
-          }
-        }
-      }
-    },
     "Overall kit progress": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Avanzamento complessivo del kit"
-          }
-        }
-      }
-    },
-    "Overview of where water may be found in different environments.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Panoramica di dove si può trovare acqua in ambienti diversi."
           }
         }
       }
@@ -2957,6 +3817,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "RETE DA TELEFONO A TELEFONO · NON È UN SERVIZIO DI EMERGENZA"
+          }
+        }
+      }
+    },
+    "PMR446 channel 1": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PMR446 canale 1"
+          }
+        }
+      }
+    },
+    "PMR446 channel 8, tone 16": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PMR446 canale 8, tono 16"
           }
         }
       }
@@ -3017,16 +3897,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Persone viste nella rete"
-          }
-        }
-      }
-    },
-    "Personal health information": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Informazioni personali sulla salute"
           }
         }
       }
@@ -3141,16 +4011,6 @@
         }
       }
     },
-    "Placeholder. Verified content reviewed by qualified professionals will later cover general information about %@. Nothing here is medical advice.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Segnaposto. In seguito, contenuti verificati e revisionati da professionisti qualificati tratteranno informazioni generali su %@. Niente di quanto è qui costituisce un consiglio medico."
-          }
-        }
-      }
-    },
     "Places, offline areas": {
       "localizations": {
         "it": {
@@ -3161,132 +4021,12 @@
         }
       }
     },
-    "Planned topics: choosing a location, insulation from the ground, staying dry.": {
+    "Plan ahead": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Argomenti previsti: scelta del luogo, isolamento dal terreno, restare asciutti."
-          }
-        }
-      }
-    },
-    "Planned topics: compass parts, taking a bearing, paper maps.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Argomenti previsti: parti della bussola, prendere un azimut, mappe cartacee."
-          }
-        }
-      }
-    },
-    "Planned topics: container types, labelling, rotation schedule.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Argomenti previsti: tipi di contenitori, etichette, calendario di rotazione."
-          }
-        }
-      }
-    },
-    "Planned topics: hand-crank radios, broadcast channels, battery use.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Argomenti previsti: radio a manovella, canali di trasmissione, uso delle batterie."
-          }
-        }
-      }
-    },
-    "Planned topics: layered clothing, blankets, shared body heat.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Argomenti previsti: vestirsi a strati, coperte, condividere il calore corporeo."
-          }
-        }
-      }
-    },
-    "Planned topics: no-cook meals, camping stoves, ventilation.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Argomenti previsti: pasti senza cottura, fornelli da campeggio, ventilazione."
-          }
-        }
-      }
-    },
-    "Planned topics: primary and backup routes, meeting points, landmarks.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Argomenti previsti: percorsi principali e alternativi, punti di ritrovo, punti di riferimento."
-          }
-        }
-      }
-    },
-    "Planned topics: rain collection, natural sources, and storage containers.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Argomenti previsti: raccolta dell'acqua piovana, fonti naturali e contenitori."
-          }
-        }
-      }
-    },
-    "Planned topics: safe room selection, family meeting point, home supplies.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Argomenti previsti: scelta della stanza sicura, punto di ritrovo della famiglia, scorte in casa."
-          }
-        }
-      }
-    },
-    "Planned topics: shelf life, rotation, special dietary needs.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Argomenti previsti: durata, rotazione, esigenze alimentari particolari."
-          }
-        }
-      }
-    },
-    "Planned topics: smoke detectors, extinguishers, evacuation routes.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Argomenti previsti: rilevatori di fumo, estintori, vie di fuga."
-          }
-        }
-      }
-    },
-    "Planned topics: whistle signals, light signals, visible markers.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Argomenti previsti: segnali col fischietto, segnali luminosi, segni visibili."
-          }
-        }
-      }
-    },
-    "Planning evacuation routes in advance.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Pianificare in anticipo i percorsi di evacuazione."
+            "value": "Organizzati prima"
           }
         }
       }
@@ -3351,6 +4091,26 @@
         }
       }
     },
+    "Prepare an emergency kit and do not keep valuables in cellars or basements.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prepara un kit di emergenza e non tenere oggetti di valore in cantina o nei seminterrati."
+          }
+        }
+      }
+    },
+    "Prepare an emergency kit with documents, a first aid kit, a torch and a battery radio.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prepara un kit di emergenza con documenti, cassetta di pronto soccorso, torcia e radio a pile."
+          }
+        }
+      }
+    },
     "Prepared": {
       "localizations": {
         "it": {
@@ -3371,12 +4131,22 @@
         }
       }
     },
-    "Preparing a safe room and household plan.": {
+    "Press hard and directly on the wound with your hands or a clean cloth.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Preparare una stanza sicura e un piano familiare."
+            "value": "Premi forte e direttamente sulla ferita con le mani o con un panno pulito."
+          }
+        }
+      }
+    },
+    "Press hard on the wound. On an arm or leg, use a tourniquet if the bleeding does not stop.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Premi forte sulla ferita. Su braccia o gambe usa un laccio emostatico se il sangue non si ferma."
           }
         }
       }
@@ -3407,6 +4177,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Privacy"
+          }
+        }
+      }
+    },
+    "Protect ground-floor rooms, but only if it does not put you in danger.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proteggi i locali al piano strada, ma solo se non ti metti in pericolo."
+          }
+        }
+      }
+    },
+    "Protect the person from wind and cold and replace wet clothes with dry ones.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Proteggi la persona da vento e freddo e sostituisci i vestiti bagnati con vestiti asciutti."
           }
         }
       }
@@ -3457,6 +4247,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Pubblicata. Si diffonde man mano che altri telefoni con l'app entrano nel raggio."
+          }
+        }
+      }
+    },
+    "Put a dressing or cloth on it and keep pressing.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metti una garza o un panno e continua a premere."
+          }
+        }
+      }
+    },
+    "Put the person in the recovery position: on their side, head slightly tilted back.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metti la persona in posizione laterale di sicurezza: sul fianco, con la testa leggermente reclinata indietro."
+          }
+        }
+      }
+    },
+    "Put the person on their side in the recovery position and keep checking their breathing.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Metti la persona sul fianco in posizione laterale di sicurezza e controlla che continui a respirare."
           }
         }
       }
@@ -3561,12 +4381,42 @@
         }
       }
     },
+    "Reach the nearest high ground, away from slopes and embankments that could collapse.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Raggiungi il punto elevato più vicino, lontano da pendii e scarpate che potrebbero franare."
+          }
+        }
+      }
+    },
     "Read and publish alerts that spread from phone to phone": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Leggi e pubblica allerte che si diffondono da telefono a telefono"
+          }
+        }
+      }
+    },
+    "Read your municipality's civil protection plan and find the nearest waiting area.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leggi il Piano di protezione civile del tuo Comune e individua l'area di attesa più vicina."
+          }
+        }
+      }
+    },
+    "Read your municipality's civil protection plan: flood-prone areas, escape routes and safe areas.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leggi il Piano di protezione civile del Comune: zone allagabili, vie di fuga e aree sicure."
           }
         }
       }
@@ -3581,16 +4431,6 @@
         }
       }
     },
-    "Receiving official updates when phone networks are down.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ricevere gli aggiornamenti ufficiali quando le reti telefoniche non funzionano."
-          }
-        }
-      }
-    },
     "Receiving versus transmitting": {
       "localizations": {
         "it": {
@@ -3601,12 +4441,12 @@
         }
       }
     },
-    "Records": {
+    "Recognise it with FAST and call 112 at once.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Documenti sanitari"
+            "value": "Riconoscilo con FAST e chiama subito il 112."
           }
         }
       }
@@ -3667,6 +4507,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "Togli le batterie se la radio resta ferma a lungo, per evitare perdite."
+          }
+        }
+      }
+    },
+    "Remove rings and watches before it swells.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Togli anelli e orologi prima che la zona si gonfi."
+          }
+        }
+      }
+    },
+    "Remove wet clothes and cover them with dry blankets, insulating them from the ground too.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Togli i vestiti bagnati e coprila con coperte asciutte, isolandola anche dal terreno."
+          }
+        }
+      }
+    },
+    "Report blocked drains, abandoned waste and obstructed streams to your municipality.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnala al Comune tombini intasati, rifiuti abbandonati e corsi d'acqua ostruiti."
           }
         }
       }
@@ -3747,16 +4617,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Riprova (rimetti in coda)"
-          }
-        }
-      }
-    },
-    "Reviewed text will be added after verification by qualified sources.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Il testo revisionato verrà aggiunto dopo la verifica da parte di fonti qualificate."
           }
         }
       }
@@ -4051,6 +4911,26 @@
         }
       }
     },
+    "Severe allergic reaction": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reazione allergica grave"
+          }
+        }
+      }
+    },
+    "Severe bleeding": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emorragia grave"
+          }
+        }
+      }
+    },
     "Share updates with your group at the meeting point.": {
       "localizations": {
         "it": {
@@ -4061,32 +4941,12 @@
         }
       }
     },
-    "Shelter": {
+    "Shelter under a sturdy table, in a doorway in a load-bearing wall or next to a load-bearing wall.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Riparo"
-          }
-        }
-      }
-    },
-    "Shelter basics": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Riparo: le basi"
-          }
-        }
-      }
-    },
-    "Sheltering at home": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rifugiarsi in casa"
+            "value": "Riparati sotto un tavolo robusto, nel vano di una porta in un muro portante o vicino a una parete portante."
           }
         }
       }
@@ -4111,6 +4971,16 @@
         }
       }
     },
+    "Shut off the gas and the electricity. Do not touch electrical devices if you are wet.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chiudi il gas e stacca la corrente. Non toccare apparecchi elettrici se sei bagnato."
+          }
+        }
+      }
+    },
     "Signalling %@": {
       "localizations": {
         "it": {
@@ -4121,12 +4991,12 @@
         }
       }
     },
-    "Signalling for help": {
+    "Signs: swollen lips or throat, difficulty breathing, widespread hives, hoarse voice.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Segnalare per chiedere aiuto"
+            "value": "Segni: labbra o gola gonfie, difficoltà a respirare, orticaria diffusa, voce rauca."
           }
         }
       }
@@ -4211,6 +5081,26 @@
         }
       }
     },
+    "Something is blocking the airway: back blows and abdominal thrusts.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualcosa blocca le vie aeree: colpi sulla schiena e compressioni addominali."
+          }
+        }
+      }
+    },
+    "Source: Io non rischio. Dipartimento della Protezione Civile - Presidenza del Consiglio dei Ministri.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fonte: Io non rischio. Dipartimento della Protezione Civile - Presidenza del Consiglio dei Ministri."
+          }
+        }
+      }
+    },
     "Spare batteries": {
       "localizations": {
         "it": {
@@ -4231,12 +5121,12 @@
         }
       }
     },
-    "Sprains and fractures": {
+    "Speech: words are slurred or confused.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Distorsioni e fratture"
+            "value": "Sintomi nel parlare: parole biascicate o confuse."
           }
         }
       }
@@ -4261,6 +5151,16 @@
         }
       }
     },
+    "Start chest compressions at once: in the centre of the chest, push hard (5-6 cm) and fast (100-120 per minute).": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inizia subito le compressioni: al centro del petto, spingi forte (5-6 cm) e veloce (100-120 al minuto)."
+          }
+        }
+      }
+    },
     "Start, pause and reset": {
       "localizations": {
         "it": {
@@ -4271,12 +5171,32 @@
         }
       }
     },
-    "Staying warm": {
+    "Stay away from the middle of the room, where objects and furniture can fall on you.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Restare al caldo"
+            "value": "Non stare al centro della stanza, dove possono caderti addosso oggetti e mobili."
+          }
+        }
+      }
+    },
+    "Stay where you are: more waves, even stronger ones, may arrive.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Resta dove sei: possono arrivare altre onde, anche più forti."
+          }
+        }
+      }
+    },
+    "Step %lld: %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Passo %1$lld: %2$@"
           }
         }
       }
@@ -4351,26 +5271,6 @@
         }
       }
     },
-    "Storing drinking water": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Conservare l'acqua potabile"
-          }
-        }
-      }
-    },
-    "Storing medical supplies": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Conservare il materiale sanitario"
-          }
-        }
-      }
-    },
     "Storing the radio": {
       "localizations": {
         "it": {
@@ -4391,6 +5291,16 @@
         }
       }
     },
+    "Stroke": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ictus"
+          }
+        }
+      }
+    },
     "Sturdy, with a sealed cap": {
       "localizations": {
         "it": {
@@ -4401,22 +5311,22 @@
         }
       }
     },
-    "Supplies": {
+    "Sudden illness": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Materiale"
+            "value": "Malori improvvisi"
           }
         }
       }
     },
-    "TO BE VERIFIED": {
+    "Supplies of water and food.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "DA VERIFICARE"
+            "value": "Scorte di acqua e cibo."
           }
         }
       }
@@ -4461,6 +5371,16 @@
         }
       }
     },
+    "Tell your municipality if someone in your family needs special assistance.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnala al Comune se in famiglia ci sono persone che hanno bisogno di particolare assistenza."
+          }
+        }
+      }
+    },
     "Test it every few months together with your kit.": {
       "localizations": {
         "it": {
@@ -4477,6 +5397,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Non è stato possibile pubblicare l'allerta. Forse è troppo lunga."
+          }
+        }
+      }
+    },
+    "The channel most used by low-cost walkie-talkies.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il canale più usato dai walkie-talkie economici."
           }
         }
       }
@@ -4531,6 +5461,16 @@
         }
       }
     },
+    "The sea suddenly drawing back, a large wave or a deep, growing roar from the sea.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il mare che si ritira all'improvviso, una grande onda o un rumore cupo e crescente dal mare."
+          }
+        }
+      }
+    },
     "The torch could not be switched. Close other apps using the camera and try again.": {
       "localizations": {
         "it": {
@@ -4541,12 +5481,32 @@
         }
       }
     },
+    "The warning signs of a tsunami and how to reach safety on the coast or at sea.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I segnali di un maremoto e come mettersi al sicuro sulla costa o in mare."
+          }
+        }
+      }
+    },
     "Thermal, compact": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Isotermica, compatta"
+          }
+        }
+      }
+    },
+    "These cards do not replace a doctor or a first aid course. They are written by SURVIVE 72 following the European Resuscitation Council 2025 guidelines (Italian edition by Italian Resuscitation Council) and are not written or endorsed by ERC or IRC. SURVIVE 72 accepts no liability for how this information is used.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Queste schede non sostituiscono un medico né un corso di primo soccorso. Sono scritte da SURVIVE 72 seguendo le Linee guida 2025 dell'European Resuscitation Council (edizione italiana a cura di Italian Resuscitation Council) e non sono state scritte né approvate da ERC o IRC. SURVIVE 72 non si assume alcuna responsabilità per l'uso di queste informazioni."
           }
         }
       }
@@ -4577,6 +5537,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Non sembra un numero di telefono."
+          }
+        }
+      }
+    },
+    "Time: call 112 at once and note the time the symptoms started.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tempo: chiama subito il 112 e annota l'ora in cui sono iniziati i sintomi."
           }
         }
       }
@@ -4631,12 +5601,52 @@
         }
       }
     },
-    "Training and courses": {
+    "Traffic and emergency information, covers the motorway network.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Formazione e corsi"
+            "value": "Informazioni su traffico ed emergenze, copre la rete autostradale."
+          }
+        }
+      }
+    },
+    "Transmitting allowed without a licence": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Si può trasmettere senza licenza"
+          }
+        }
+      }
+    },
+    "Transmitting needs a marine radio certificate": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per trasmettere serve il certificato radio marino"
+          }
+        }
+      }
+    },
+    "Transmitting needs an amateur radio licence": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per trasmettere serve la patente di radioamatore"
+          }
+        }
+      }
+    },
+    "Transmitting needs the CB general authorisation": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Per trasmettere serve l'autorizzazione generale CB"
           }
         }
       }
@@ -4661,6 +5671,26 @@
         }
       }
     },
+    "Tsunami": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maremoto"
+          }
+        }
+      }
+    },
+    "Tsunami: what to do": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maremoto: cosa fare"
+          }
+        }
+      }
+    },
     "Turn torch off": {
       "localizations": {
         "it": {
@@ -4677,6 +5707,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Accendi torcia"
+          }
+        }
+      }
+    },
+    "Unconscious but breathing": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Incosciente ma respira"
           }
         }
       }
@@ -4731,6 +5771,16 @@
         }
       }
     },
+    "Use the phone as little as possible and the car only if necessary, to keep the way clear for rescuers.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa il telefono il meno possibile e l'auto solo se necessario, per non ostacolare i soccorsi."
+          }
+        }
+      }
+    },
     "Uses Bluetooth and Wi-Fi between phones, without internet. It works while the app is open, with phones a few tens of metres away. iOS will ask for permission the first time.": {
       "localizations": {
         "it": {
@@ -4771,26 +5821,6 @@
         }
       }
     },
-    "Using a compass": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Usare una bussola"
-          }
-        }
-      }
-    },
-    "VERIFIED CONTENT REQUIRED": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "SERVE CONTENUTO VERIFICATO"
-          }
-        }
-      }
-    },
     "Visual SOS": {
       "localizations": {
         "it": {
@@ -4821,6 +5851,46 @@
         }
       }
     },
+    "Warn the people around you.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avvisa le persone intorno a te."
+          }
+        }
+      }
+    },
+    "Warning signs": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnali di pericolo"
+          }
+        }
+      }
+    },
+    "Watch out for damaged bridges, landslides and gas leaks.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fai attenzione a ponti danneggiati, frane e perdite di gas."
+          }
+        }
+      }
+    },
+    "Watch where you step: there may be holes and open manholes.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Guarda dove metti i piedi: potrebbero esserci buche e tombini aperti."
+          }
+        }
+      }
+    },
     "Water": {
       "localizations": {
         "it": {
@@ -4841,22 +5911,42 @@
         }
       }
     },
-    "Ways to attract attention when you cannot call.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Modi per attirare l'attenzione quando non puoi chiamare."
-          }
-        }
-      }
-    },
     "What is happening and where": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Cosa sta succedendo e dove"
+          }
+        }
+      }
+    },
+    "What to keep ready": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa tenere pronto"
+          }
+        }
+      }
+    },
+    "What to keep ready at home for any emergency.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cosa tenere pronto in casa per qualsiasi emergenza."
+          }
+        }
+      }
+    },
+    "When the AED arrives, switch it on and follow the voice.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quando arriva il DAE, accendilo e segui le istruzioni vocali."
           }
         }
       }
@@ -4887,16 +5977,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Perché una radio è importante"
-          }
-        }
-      }
-    },
-    "Why protection from wind, rain and cold matters in the first hours.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Perché proteggersi da vento, pioggia e freddo conta nelle prime ore."
           }
         }
       }
@@ -5011,6 +6091,26 @@
         }
       }
     },
+    "adrenaline": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "adrenalina"
+          }
+        }
+      }
+    },
+    "airway": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "vie aeree"
+          }
+        }
+      }
+    },
     "all categories": {
       "localizations": {
         "it": {
@@ -5021,22 +6121,42 @@
         }
       }
     },
-    "bone": {
+    "allergy": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "osso"
+            "value": "allergia"
           }
         }
       }
     },
-    "box": {
+    "anaphylaxis": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "scatola"
+            "value": "anafilassi"
+          }
+        }
+      }
+    },
+    "blood": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "sangue"
+          }
+        }
+      }
+    },
+    "brain": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "cervello"
           }
         }
       }
@@ -5051,62 +6171,12 @@
         }
       }
     },
-    "certification": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "certificazione"
-          }
-        }
-      }
-    },
-    "cleanliness": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "pulizia"
-          }
-        }
-      }
-    },
-    "cold weather": {
+    "cold": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "freddo"
-          }
-        }
-      }
-    },
-    "course": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "corso"
-          }
-        }
-      }
-    },
-    "cut": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "taglio"
-          }
-        }
-      }
-    },
-    "documents": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "documenti"
           }
         }
       }
@@ -5161,142 +6231,52 @@
         }
       }
     },
-    "expiry": {
+    "fainted": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "scadenza"
+            "value": "svenuto"
           }
         }
       }
     },
-    "finding recognised first aid training": {
+    "fire": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "come trovare corsi di primo soccorso riconosciuti"
+            "value": "fuoco"
           }
         }
       }
     },
-    "fluids": {
+    "food": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "liquidi"
+            "value": "cibo"
           }
         }
       }
     },
-    "fracture": {
+    "heart": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "frattura"
+            "value": "cuore"
           }
         }
       }
     },
-    "hands": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "mani"
-          }
-        }
-      }
-    },
-    "hot weather": {
+    "heat": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "caldo"
-          }
-        }
-      }
-    },
-    "household": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "famiglia"
-          }
-        }
-      }
-    },
-    "joint": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "articolazione"
-          }
-        }
-      }
-    },
-    "keeping supplies organised and checking expiry dates": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "come tenere in ordine il materiale e controllare le scadenze"
-          }
-        }
-      }
-    },
-    "keeping your own health information ready on paper": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "come tenere pronte su carta le proprie informazioni sanitarie"
-          }
-        }
-      }
-    },
-    "kit": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "kit"
-          }
-        }
-      }
-    },
-    "learning": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "apprendimento"
-          }
-        }
-      }
-    },
-    "organisation": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "organizzazione"
-          }
-        }
-      }
-    },
-    "paper": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "carta"
           }
         }
       }
@@ -5321,52 +6301,22 @@
         }
       }
     },
-    "planning": {
+    "recovery position": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "pianificazione"
+            "value": "posizione laterale di sicurezza"
           }
         }
       }
     },
-    "planning ahead for health needs in an emergency": {
+    "resuscitation": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "come pianificare in anticipo le esigenze di salute in un'emergenza"
-          }
-        }
-      }
-    },
-    "readiness": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "preparazione"
-          }
-        }
-      }
-    },
-    "records": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "cartelle"
-          }
-        }
-      }
-    },
-    "sanitation": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "igiene"
+            "value": "rianimazione"
           }
         }
       }
@@ -5381,12 +6331,12 @@
         }
       }
     },
-    "storage": {
+    "speech": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "conservazione"
+            "value": "parola"
           }
         }
       }
@@ -5401,16 +6351,6 @@
         }
       }
     },
-    "supplies": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "scorte"
-          }
-        }
-      }
-    },
     "temperature": {
       "localizations": {
         "it": {
@@ -5421,32 +6361,22 @@
         }
       }
     },
-    "this topic": {
+    "tourniquet": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "questo argomento"
+            "value": "laccio emostatico"
           }
         }
       }
     },
-    "water": {
+    "unconscious": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "acqua"
-          }
-        }
-      }
-    },
-    "what a household first aid kit may include": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "cosa può contenere un kit di primo soccorso domestico"
+            "value": "incosciente"
           }
         }
       }

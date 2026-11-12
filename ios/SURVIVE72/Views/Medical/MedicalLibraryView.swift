@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// SURVIVE MEDICAL: offline library of placeholder topics with local search
-/// and category filters. Every entry requires verified content.
+/// SURVIVE MEDICAL: offline first aid cards with local search and category
+/// filters. Every card shows the 112 line, the disclaimer and its review state.
 struct MedicalLibraryView: View {
     private let library = MedicalLibrary()
 
@@ -23,7 +23,7 @@ struct MedicalLibraryView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 MedicalEmergencyNotice()
-                PlaceholderNotice()
+                MedicalDisclaimer()
 
                 MedicalCategoryFilterBar(library: library, selected: selectedCategory)
 
@@ -170,30 +170,6 @@ private struct MedicalEntryRow: View {
         .accessibilityLabel(isFavorite ? String(localized: "\(entry.title), bookmarked. \(entry.summary)") : "\(entry.title). \(entry.summary)")
         .accessibilityValue("\(entry.category.title), \(entry.status.label.lowercased())")
         .accessibilityAddTraits(.isButton)
-    }
-}
-
-/// Always-visible note that every entry is a placeholder.
-private struct PlaceholderNotice: View {
-    var body: some View {
-        HStack(alignment: .top, spacing: 10) {
-            Image(systemName: "exclamationmark.triangle.fill")
-                .font(.title3.weight(.bold))
-                .foregroundStyle(Theme.accent)
-                .accessibilityHidden(true)
-            Text(String(localized: "Every topic is a placeholder marked VERIFIED CONTENT REQUIRED. Nothing here is medical advice."))
-                .font(.subheadline.weight(.bold))
-                .foregroundStyle(Theme.textPrimary)
-                .fixedSize(horizontal: false, vertical: true)
-        }
-        .padding(12)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
-        .overlay(
-            RoundedRectangle(cornerRadius: Theme.cornerRadius)
-                .stroke(Theme.accent, lineWidth: Theme.borderWidth)
-        )
-        .accessibilityElement(children: .combine)
     }
 }
 
