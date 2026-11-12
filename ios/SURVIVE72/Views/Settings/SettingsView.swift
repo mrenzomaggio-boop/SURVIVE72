@@ -82,7 +82,7 @@ struct SettingsView: View {
             SettingsHeader(title: String(localized: "Display and battery"), systemImage: "circle.lefthalf.filled")
             SettingsToggle(
                 title: String(localized: "High contrast"),
-                detail: String(localized: "Bolder text across the app, on top of the dark high-contrast theme."),
+                detail: String(localized: "Brighter secondary text and thicker, lighter borders across the app."),
                 isOn: binding(\.highContrast)
             )
             SettingsToggle(

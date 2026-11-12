@@ -20,7 +20,7 @@ enum ToolKind: String, CaseIterable, Identifiable, Hashable {
         switch self {
         case .stopwatch: String(localized: "Start, pause and reset")
         case .sosSignal: String(localized: "Slow on-screen SOS light")
-        case .torch: String(localized: "Requires physical-device test")
+        case .torch: String(localized: "Uses the iPhone flash")
         }
     }
 
@@ -28,12 +28,13 @@ enum ToolKind: String, CaseIterable, Identifiable, Hashable {
         switch self {
         case .stopwatch: "stopwatch.fill"
         case .sosSignal: "light.beacon.max.fill"
-        case .torch: "flashlight.off.fill"
+        case .torch: "flashlight.on.fill"
         }
     }
 }
 
 /// SURVIVE TOOLS: list of offline tools. No network, no permissions.
+/// The torch only switches the flash LED.
 struct ToolsView: View {
     var body: some View {
         ScrollView {
@@ -54,7 +55,7 @@ struct ToolsView: View {
             switch tool {
             case .stopwatch: StopwatchView()
             case .sosSignal: SOSSignalView()
-            case .torch: TorchPlaceholderView()
+            case .torch: TorchView()
             }
         }
     }
@@ -63,13 +64,11 @@ struct ToolsView: View {
 private struct ToolRow: View {
     let tool: ToolKind
 
-    private var isPending: Bool { tool == .torch }
-
     var body: some View {
         HStack(spacing: 14) {
             Image(systemName: tool.systemImage)
                 .font(.system(size: 30, weight: .bold))
-                .foregroundStyle(isPending ? Theme.textSecondary : Theme.accent)
+                .foregroundStyle(Theme.accent)
                 .frame(width: 44)
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 4) {
@@ -78,7 +77,7 @@ private struct ToolRow: View {
                     .foregroundStyle(Theme.textPrimary)
                 Text(tool.subtitle)
                     .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(isPending ? Theme.accent : Theme.textSecondary)
+                    .foregroundStyle(Theme.textSecondary)
             }
             Spacer(minLength: 0)
             Image(systemName: "chevron.right")

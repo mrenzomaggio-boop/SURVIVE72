@@ -65,5 +65,6 @@ enum LocalDataReset {
         medical.reset()
         tools.stopwatch.reset()
         tools.sosSignal.stop()
+        if tools.torch.isOn { tools.torch.set(on: false) }
     }
 }

@@ -4,7 +4,7 @@ import SwiftUI
 ///
 /// The app is offline-first. SURVIVE KIT, ALERT, CONNECT, MAPS, MEDICAL, DOWNLOADS and SETTINGS keep
 /// their data on the device with `UserDefaults`; RADIO is a bundled guide; SURVIVE KNOWLEDGE ships its articles in the
-/// app bundle; SURVIVE TOOLS keeps its stopwatch and SOS signal in memory;
+/// app bundle; SURVIVE TOOLS keeps its stopwatch and SOS signal in memory and can switch the flash LED as a torch;
 /// CONNECT is a local demo chat whose queue is only simulated; MAPS stores
 /// places typed by hand; MEDICAL ships placeholder topics and saves only bookmarks and the
 /// last category. No networking, Bluetooth,
@@ -31,8 +31,11 @@ struct SURVIVE72App: App {
                 .environment(connectStore)
                 .environment(mapsStore)
                 .environment(medicalStore)
-                // Settings: bolder text in high-contrast mode, fewer refreshes in battery saver.
+                // Settings: brighter text and stronger borders in high-contrast mode, fewer refreshes in battery saver.
                 .environment(\.legibilityWeight, settingsStore.settings.highContrast ? .bold : .regular)
+                .onChange(of: settingsStore.settings.highContrast, initial: true) { _, isOn in
+                    ThemeOptions.shared.highContrast = isOn
+                }
                 .environment(\.batterySaverEnabled, settingsStore.settings.batterySaver)
                 // High-contrast dark UI: readable at night, saves battery on OLED.
                 .preferredColorScheme(.dark)
