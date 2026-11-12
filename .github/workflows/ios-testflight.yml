@@ -14,7 +14,7 @@ concurrency:
 jobs:
   testflight:
     name: Archive and upload SURVIVE72 to TestFlight
-    runs-on: macos-15-intel
+    runs-on: macos-26
     timeout-minutes: 60
 
     env:
