@@ -9,9 +9,9 @@ enum MessageDeliveryState: String, Codable, CaseIterable {
 
     var label: String {
         switch self {
-        case .queued: "Queued"
-        case .delivered: "Delivered (simulated)"
-        case .failed: "Failed (simulated)"
+        case .queued: String(localized: "Queued")
+        case .delivered: String(localized: "Delivered (simulated)")
+        case .failed: String(localized: "Failed (simulated)")
         }
     }
 }
@@ -105,6 +105,6 @@ enum SimulatedOutcome {
 
 /// Fixed texts shown on every Connect screen.
 enum ConnectStatus {
-    static let banner = "LOCAL DEMO · NOT TRANSMITTED"
-    static let defaultSOSText = "SOS - I need help. Please come to our meeting point."
+    static let banner = String(localized: "LOCAL DEMO · NOT TRANSMITTED")
+    static let defaultSOSText = String(localized: "SOS - I need help. Please come to our meeting point.")
 }

@@ -13,7 +13,7 @@ struct DownloadsView: View {
             VStack(alignment: .leading, spacing: 16) {
                 SummaryCard(summary: summary, freeBytes: freeBytes)
 
-                Label("Simulated: no data is downloaded. Marking a pack only records it on this device.",
+                Label(String(localized: "Simulated: no data is downloaded. Marking a pack only records it on this device."),
                       systemImage: "wifi.slash")
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(Theme.textPrimary)
@@ -32,7 +32,7 @@ struct DownloadsView: View {
             .padding(16)
         }
         .background(Theme.background.ignoresSafeArea())
-        .navigationTitle("Downloads")
+        .navigationTitle(String(localized: "Downloads"))
         .navigationBarTitleDisplayMode(.large)
         .onAppear { freeBytes = DownloadsStore.deviceFreeBytes() }
     }
@@ -48,17 +48,17 @@ private struct SummaryCard: View {
                 Text("\(summary.readinessPercent)%")
                     .font(.system(size: 52, weight: .black).monospacedDigit())
                     .foregroundStyle(Theme.textPrimary)
-                Text(summary.isReady ? "READY" : "NOT READY")
+                Text(summary.isReady ? String(localized: "READY") : String(localized: "NOT READY"))
                     .font(.headline.weight(.black))
                     .foregroundStyle(Theme.background)
                     .padding(.horizontal, 10)
                     .padding(.vertical, 4)
                     .background(summary.isReady ? Theme.ok : Theme.accent, in: Capsule())
             }
-            Text("Required packs: \(summary.requiredReady) of \(summary.requiredTotal)")
+            Text(String(localized: "Required packs: \(summary.requiredReady) of \(summary.requiredTotal)"))
                 .font(.title3.weight(.bold))
                 .foregroundStyle(Theme.textPrimary)
-            Text("Available: \(summary.availableCount) of \(summary.totalCount) · uses \(SizeFormat.megabytes(summary.usedMB))")
+            Text(String(localized: "Available: \(summary.availableCount) of \(summary.totalCount) · uses \(SizeFormat.megabytes(summary.usedMB))"))
                 .font(.body.weight(.semibold))
                 .foregroundStyle(Theme.textSecondary)
             Text(spaceLine)
@@ -75,11 +75,11 @@ private struct SummaryCard: View {
     }
 
     private var spaceLine: String {
-        let free = freeBytes.map { "Free on device: \(SizeFormat.bytes($0))." } ?? "Free space unknown."
-        guard summary.missingMB > 0 else { return "\(free) Nothing missing." }
+        let free = freeBytes.map { String(localized: "Free on device: \(SizeFormat.bytes($0)).") } ?? String(localized: "Free space unknown.")
+        guard summary.missingMB > 0 else { return String(localized: "\(free) Nothing missing.") }
         let fits = summary.missingFits(freeBytes: freeBytes)
-        let verdict = fits == false ? " Not enough space." : (fits == true ? " Enough space." : "")
-        return "\(free) Missing packs need \(SizeFormat.megabytes(summary.missingMB)).\(verdict)"
+        let verdict = fits == false ? String(localized: " Not enough space.") : (fits == true ? String(localized: " Enough space.") : "")
+        return String(localized: "\(free) Missing packs need \(SizeFormat.megabytes(summary.missingMB)).\(verdict)")
     }
 
     private var spaceColor: Color {
@@ -120,7 +120,7 @@ private struct PackRow: View {
                     .background(statusColor, in: Capsule())
             }
             HStack {
-                Text("\(SizeFormat.megabytes(pack.sizeMB))\(pack.isRequired ? " · required" : "")")
+                Text(pack.isRequired ? String(localized: "\(SizeFormat.megabytes(pack.sizeMB)) · required") : SizeFormat.megabytes(pack.sizeMB))
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(Theme.textSecondary)
                 Spacer()
@@ -128,7 +128,7 @@ private struct PackRow: View {
                     Button {
                         onToggle(status != .prepared)
                     } label: {
-                        Text(status == .prepared ? "Unmark" : "Mark prepared")
+                        Text(status == .prepared ? String(localized: "Unmark") : String(localized: "Mark prepared"))
                             .font(.headline.weight(.heavy))
                             .foregroundStyle(status == .prepared ? Theme.textPrimary : Theme.background)
                             .padding(.horizontal, 14)
@@ -140,8 +140,8 @@ private struct PackRow: View {
                     }
                     .buttonStyle(.plain)
                     .accessibilityLabel(status == .prepared
-                        ? "Unmark \(pack.title)" : "Mark \(pack.title) as prepared")
-                    .accessibilityHint("Local only. Nothing is downloaded.")
+                        ? String(localized: "Unmark \(pack.title)") : String(localized: "Mark \(pack.title) as prepared"))
+                    .accessibilityHint(String(localized: "Local only. Nothing is downloaded."))
                 }
             }
         }

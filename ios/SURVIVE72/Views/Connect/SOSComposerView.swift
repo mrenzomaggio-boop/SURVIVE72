@@ -10,10 +10,10 @@ struct SOSComposerView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                ConnectHeader(title: "SOS message", systemImage: "sos.circle.fill")
+                ConnectHeader(title: String(localized: "SOS message"), systemImage: "sos.circle.fill")
 
-                Text("Priority message: it always goes ahead of other queued messages. "
-                     + "It stays on this device and is never transmitted.")
+                Text(String(localized: "Priority message: it always goes ahead of other queued messages. ")
+                     + String(localized: "It stays on this device and is never transmitted."))
                     .font(.subheadline)
                     .foregroundStyle(Theme.textSecondary)
 
@@ -31,22 +31,22 @@ struct SOSComposerView: View {
                     RoundedRectangle(cornerRadius: Theme.cornerRadius)
                         .stroke(Theme.danger, lineWidth: Theme.borderWidth)
                 )
-                .accessibilityLabel("SOS message text")
+                .accessibilityLabel(String(localized: "SOS message text"))
 
-                BigButton(title: didQueue ? "Queued · not transmitted" : "Queue SOS (priority)",
+                BigButton(title: didQueue ? String(localized: "Queued · not transmitted") : String(localized: "Queue SOS (priority)"),
                           systemImage: didQueue ? "checkmark.circle.fill" : "sos",
                           color: didQueue ? Theme.ok : Theme.danger) {
                     if store.queueSOS() != nil {
                         didQueue = true
                         UIAccessibility.post(notification: .announcement,
-                                             argument: "SOS queued locally. Not transmitted.")
+                                             argument: String(localized: "SOS queued locally. Not transmitted."))
                     }
                 }
                 .disabled(store.sosText.trimmed.isEmpty)
                 .sensoryFeedback(.warning, trigger: didQueue)
 
                 if store.isSOSTextEdited {
-                    BigButton(title: "Restore default text", systemImage: "arrow.uturn.backward",
+                    BigButton(title: String(localized: "Restore default text"), systemImage: "arrow.uturn.backward",
                               color: Theme.textPrimary) {
                         store.restoreDefaultSOSText()
                         didQueue = false
@@ -60,7 +60,7 @@ struct SOSComposerView: View {
         .safeAreaInset(edge: .top, spacing: 0) {
             LocalDemoBanner()
         }
-        .navigationTitle("SOS")
+        .navigationTitle(String(localized: "SOS"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Theme.background, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)

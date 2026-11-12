@@ -42,12 +42,12 @@ struct KnowledgeLibraryView: View {
             .padding(16)
         }
         .background(Theme.background.ignoresSafeArea())
-        .navigationTitle("Knowledge")
+        .navigationTitle(String(localized: "Knowledge"))
         .navigationBarTitleDisplayMode(.large)
         .searchable(
             text: $query,
             placement: .navigationBarDrawer(displayMode: .always),
-            prompt: "Search titles and text"
+            prompt: String(localized: "Search titles and text")
         )
         .autocorrectionDisabled()
         .navigationDestination(for: KnowledgeArticle.self) { article in
@@ -56,9 +56,10 @@ struct KnowledgeLibraryView: View {
     }
 
     private var resultsSummary: String {
-        let noun = results.count == 1 ? "article" : "articles"
-        let scope = selectedCategory?.title ?? "all categories"
-        return "\(results.count) \(noun) in \(scope)"
+        let scope = selectedCategory?.title ?? String(localized: "all categories")
+        return results.count == 1
+            ? String(localized: "\(results.count) article in \(scope)")
+            : String(localized: "\(results.count) articles in \(scope)")
     }
 }
 
@@ -70,7 +71,7 @@ private struct CategoryFilterBar: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                chip(title: "All", systemImage: "square.grid.2x2.fill",
+                chip(title: String(localized: "All"), systemImage: "square.grid.2x2.fill",
                      count: library.count(in: nil), isSelected: selected == nil) {
                     selected = nil
                 }
@@ -103,8 +104,8 @@ private struct CategoryFilterBar: View {
                                           lineWidth: Theme.borderWidth))
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("\(title) filter")
-        .accessibilityValue("\(count) \(count == 1 ? "article" : "articles")")
+        .accessibilityLabel(String(localized: "\(title) filter"))
+        .accessibilityValue(count == 1 ? String(localized: "\(count) article") : String(localized: "\(count) articles"))
         .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }
@@ -165,7 +166,7 @@ private struct DemoNotice: View {
                 .font(.title3.weight(.bold))
                 .foregroundStyle(Theme.accent)
                 .accessibilityHidden(true)
-            Text("All articles are demo content marked TO BE VERIFIED. They are not instructions and not medical advice.")
+            Text(String(localized: "All articles are demo content marked TO BE VERIFIED. They are not instructions and not medical advice."))
                 .font(.subheadline.weight(.bold))
                 .foregroundStyle(Theme.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
@@ -188,10 +189,10 @@ private struct EmptyResults: View {
                 .font(.system(size: 36, weight: .bold))
                 .foregroundStyle(Theme.textSecondary)
                 .accessibilityHidden(true)
-            Text("No articles found")
+            Text(String(localized: "No articles found"))
                 .font(.title3.weight(.heavy))
                 .foregroundStyle(Theme.textPrimary)
-            Text("Try another word or choose All.")
+            Text(String(localized: "Try another word or choose All."))
                 .font(.body)
                 .foregroundStyle(Theme.textSecondary)
         }

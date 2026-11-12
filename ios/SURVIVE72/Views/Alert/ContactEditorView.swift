@@ -18,28 +18,28 @@ struct ContactEditorView: View {
         NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    field("Name (required)", text: $name, prompt: "Full name")
-                    field("Phone", text: $phone, prompt: "Phone number", keyboard: .phonePad)
-                    field("Relationship", text: $relationship, prompt: "e.g. Sister, Neighbour")
+                    field(String(localized: "Name (required)"), text: $name, prompt: String(localized: "Full name"))
+                    field(String(localized: "Phone"), text: $phone, prompt: String(localized: "Phone number"), keyboard: .phonePad)
+                    field(String(localized: "Relationship"), text: $relationship, prompt: String(localized: "e.g. Sister, Neighbour"))
 
-                    Text("Saved only on this device. The app never calls or texts this number.")
+                    Text(String(localized: "Saved only on this device. The app never calls or texts this number."))
                         .font(.subheadline)
                         .foregroundStyle(Theme.textSecondary)
                 }
                 .padding(16)
             }
             .background(Theme.background.ignoresSafeArea())
-            .navigationTitle(contact == nil ? "Add contact" : "Edit contact")
+            .navigationTitle(contact == nil ? String(localized: "Add contact") : String(localized: "Edit contact"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Theme.background, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                    Button(String(localized: "Cancel")) { dismiss() }
                         .font(.headline)
                 }
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Save") {
+                    Button(String(localized: "Save")) {
                         onSave(name, phone, relationship)
                         dismiss()
                     }

@@ -40,8 +40,8 @@ struct KitItemRow: View {
         .sensoryFeedback(.selection, trigger: isChecked)
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("\(item.title). \(item.detail)")
-        .accessibilityValue(isChecked ? "Packed" : "Not packed")
-        .accessibilityHint(isChecked ? "Double tap to mark as not packed." : "Double tap to mark as packed.")
+        .accessibilityValue(isChecked ? String(localized: "Packed") : String(localized: "Not packed"))
+        .accessibilityHint(isChecked ? String(localized: "Double tap to mark as not packed.") : String(localized: "Double tap to mark as packed."))
         .accessibilityAddTraits(.isButton)
         .accessibilityAddTraits(isChecked ? .isSelected : [])
     }

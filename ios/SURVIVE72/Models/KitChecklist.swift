@@ -13,12 +13,12 @@ enum KitCategory: String, CaseIterable, Identifiable, Codable, Hashable {
 
     var title: String {
         switch self {
-        case .water: "Water"
-        case .food: "Food"
-        case .health: "Health"
-        case .lighting: "Lighting"
-        case .documents: "Documents"
-        case .gear: "Gear"
+        case .water: String(localized: "Water")
+        case .food: String(localized: "Food")
+        case .health: String(localized: "Health")
+        case .lighting: String(localized: "Lighting")
+        case .documents: String(localized: "Documents")
+        case .gear: String(localized: "Gear")
         }
     }
 
@@ -68,7 +68,8 @@ struct KitProgress: Equatable {
 
     /// Full sentence for VoiceOver, e.g. "5 of 24 items packed, 20 percent".
     var accessibilityDescription: String {
-        let noun = total == 1 ? "item" : "items"
-        return "\(checked) of \(total) \(noun) packed, \(percent) percent"
+        total == 1
+            ? String(localized: "\(checked) of \(total) item packed, \(percent) percent")
+            : String(localized: "\(checked) of \(total) items packed, \(percent) percent")
     }
 }

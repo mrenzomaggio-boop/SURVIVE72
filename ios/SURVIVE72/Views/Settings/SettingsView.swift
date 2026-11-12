@@ -27,18 +27,18 @@ struct SettingsView: View {
             .padding(16)
         }
         .background(Theme.background.ignoresSafeArea())
-        .navigationTitle("Settings")
+        .navigationTitle(String(localized: "Settings"))
         .navigationBarTitleDisplayMode(.large)
-        .alert("Erase all local data?", isPresented: $isConfirmingReset) {
-            Button("Erase", role: .destructive) {
+        .alert(String(localized: "Erase all local data?"), isPresented: $isConfirmingReset) {
+            Button(String(localized: "Erase"), role: .destructive) {
                 LocalDataReset.perform(kit: kitStore, alert: alertStore, settings: settingsStore,
                                        downloads: downloadsStore, connect: connectStore, maps: mapsStore,
                                        medical: medicalStore, tools: toolsState)
                 didReset = true
             }
-            Button("Cancel", role: .cancel) {}
+            Button(String(localized: "Cancel"), role: .cancel) {}
         } message: {
-            Text("Kit checklist, emergency plan and contacts, local chat and queue, saved places and map areas, medical bookmarks, prepared packs and preferences will be removed from this device. This cannot be undone.")
+            Text(String(localized: "Kit checklist, emergency plan and contacts, local chat and queue, saved places and map areas, medical bookmarks, prepared packs and preferences will be removed from this device. This cannot be undone."))
         }
     }
 
@@ -46,7 +46,7 @@ struct SettingsView: View {
 
     private var unitsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SettingsHeader(title: "Units", systemImage: "ruler.fill")
+            SettingsHeader(title: String(localized: "Units"), systemImage: "ruler.fill")
             HStack(spacing: 10) {
                 ForEach(UnitSystem.allCases) { system in
                     let isSelected = settings.unitSystem == system
@@ -69,7 +69,7 @@ struct SettingsView: View {
                     .accessibilityAddTraits(isSelected ? .isSelected : [])
                 }
             }
-            Text("Example: water per person per day \(UnitFormat.volume(liters: 4, in: settings.unitSystem)), 5 km = \(UnitFormat.distance(kilometers: 5, in: settings.unitSystem)).")
+            Text(String(localized: "Example: water per person per day \(UnitFormat.volume(liters: 4, in: settings.unitSystem)), 5 km = \(UnitFormat.distance(kilometers: 5, in: settings.unitSystem))."))
                 .font(.subheadline)
                 .foregroundStyle(Theme.textSecondary)
         }
@@ -79,15 +79,15 @@ struct SettingsView: View {
 
     private var displaySection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SettingsHeader(title: "Display and battery", systemImage: "circle.lefthalf.filled")
+            SettingsHeader(title: String(localized: "Display and battery"), systemImage: "circle.lefthalf.filled")
             SettingsToggle(
-                title: "High contrast",
-                detail: "Bolder text across the app, on top of the dark high-contrast theme.",
+                title: String(localized: "High contrast"),
+                detail: String(localized: "Bolder text across the app, on top of the dark high-contrast theme."),
                 isOn: binding(\.highContrast)
             )
             SettingsToggle(
-                title: "Battery saver",
-                detail: "Fewer screen updates: the stopwatch refreshes once per second.",
+                title: String(localized: "Battery saver"),
+                detail: String(localized: "Fewer screen updates: the stopwatch refreshes once per second."),
                 isOn: binding(\.batterySaver)
             )
         }
@@ -108,11 +108,11 @@ struct SettingsView: View {
 
     private var privacySection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SettingsHeader(title: "Privacy", systemImage: "lock.fill")
+            SettingsHeader(title: String(localized: "Privacy"), systemImage: "lock.fill")
             VStack(alignment: .leading, spacing: 10) {
-                PrivacyLine(text: "Everything stays on this device.")
-                PrivacyLine(text: "No account, no network, no analytics, no permissions.")
-                PrivacyLine(text: "Nothing is sent: SOS messages are only copied or queued locally.")
+                PrivacyLine(text: String(localized: "Everything stays on this device."))
+                PrivacyLine(text: String(localized: "No account, no network, no analytics, no permissions."))
+                PrivacyLine(text: String(localized: "Nothing is sent: SOS messages are only copied or queued locally."))
             }
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -120,7 +120,7 @@ struct SettingsView: View {
             .overlay(RoundedRectangle(cornerRadius: Theme.cornerRadius)
                 .stroke(Theme.surfaceBorder, lineWidth: Theme.borderWidth))
 
-            Text("Stored now: \(kitStore.totalProgress.checked) kit items checked, \(alertStore.contacts.count) emergency contacts, \(downloadsStore.preparedIDs.count) packs marked prepared.")
+            Text(String(localized: "Stored now: \(kitStore.totalProgress.checked) kit items checked, \(alertStore.contacts.count) emergency contacts, \(downloadsStore.preparedIDs.count) packs marked prepared."))
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(Theme.textSecondary)
         }
@@ -130,11 +130,11 @@ struct SettingsView: View {
 
     private var resetSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            SettingsHeader(title: "Local data", systemImage: "trash.fill")
+            SettingsHeader(title: String(localized: "Local data"), systemImage: "trash.fill")
             Button(role: .destructive) {
                 isConfirmingReset = true
             } label: {
-                Label(didReset ? "Local data erased" : "Erase all local data",
+                Label(didReset ? String(localized: "Local data erased") : String(localized: "Erase all local data"),
                       systemImage: didReset ? "checkmark.circle.fill" : "trash.fill")
                     .font(.title3.weight(.heavy))
                     .foregroundStyle(didReset ? Theme.ok : Theme.danger)
@@ -144,7 +144,7 @@ struct SettingsView: View {
                         .stroke(didReset ? Theme.ok : Theme.danger, lineWidth: Theme.borderWidth))
             }
             .buttonStyle(.plain)
-            .accessibilityHint("Asks for confirmation, then removes all SURVIVE 72 data from this device.")
+            .accessibilityHint(String(localized: "Asks for confirmation, then removes all SURVIVE 72 data from this device."))
         }
     }
 }

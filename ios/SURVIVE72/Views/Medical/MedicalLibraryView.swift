@@ -48,12 +48,12 @@ struct MedicalLibraryView: View {
             .padding(16)
         }
         .background(Theme.background.ignoresSafeArea())
-        .navigationTitle("Medical")
+        .navigationTitle(String(localized: "Medical"))
         .navigationBarTitleDisplayMode(.large)
         .searchable(
             text: $query,
             placement: .navigationBarDrawer(displayMode: .always),
-            prompt: "Search topics"
+            prompt: String(localized: "Search topics")
         )
         .autocorrectionDisabled()
         .navigationDestination(for: MedicalEntry.self) { entry in
@@ -62,9 +62,10 @@ struct MedicalLibraryView: View {
     }
 
     private var resultsSummary: String {
-        let noun = results.count == 1 ? "topic" : "topics"
-        let scope = store.lastCategory?.title ?? "all categories"
-        return "\(results.count) \(noun) in \(scope)"
+        let scope = store.lastCategory?.title ?? String(localized: "all categories")
+        return results.count == 1
+            ? String(localized: "\(results.count) topic in \(scope)")
+            : String(localized: "\(results.count) topics in \(scope)")
     }
 }
 
@@ -76,7 +77,7 @@ private struct MedicalCategoryFilterBar: View {
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 10) {
-                chip(title: "All", systemImage: "square.grid.2x2.fill",
+                chip(title: String(localized: "All"), systemImage: "square.grid.2x2.fill",
                      count: library.count(in: nil), isSelected: selected == nil) {
                     selected = nil
                 }
@@ -109,8 +110,8 @@ private struct MedicalCategoryFilterBar: View {
                                           lineWidth: Theme.borderWidth))
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("\(title) filter")
-        .accessibilityValue("\(count) \(count == 1 ? "topic" : "topics")")
+        .accessibilityLabel(String(localized: "\(title) filter"))
+        .accessibilityValue(count == 1 ? String(localized: "\(count) topic") : String(localized: "\(count) topics"))
         .accessibilityAddTraits(isSelected ? .isSelected : [])
     }
 }
@@ -166,7 +167,7 @@ private struct MedicalEntryRow: View {
         )
         .contentShape(RoundedRectangle(cornerRadius: Theme.cornerRadius))
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("\(entry.title)\(isFavorite ? ", bookmarked" : ""). \(entry.summary)")
+        .accessibilityLabel(isFavorite ? String(localized: "\(entry.title), bookmarked. \(entry.summary)") : "\(entry.title). \(entry.summary)")
         .accessibilityValue("\(entry.category.title), \(entry.status.label.lowercased())")
         .accessibilityAddTraits(.isButton)
     }
@@ -180,7 +181,7 @@ private struct PlaceholderNotice: View {
                 .font(.title3.weight(.bold))
                 .foregroundStyle(Theme.accent)
                 .accessibilityHidden(true)
-            Text("Every topic is a placeholder marked VERIFIED CONTENT REQUIRED. Nothing here is medical advice.")
+            Text(String(localized: "Every topic is a placeholder marked VERIFIED CONTENT REQUIRED. Nothing here is medical advice."))
                 .font(.subheadline.weight(.bold))
                 .foregroundStyle(Theme.textPrimary)
                 .fixedSize(horizontal: false, vertical: true)
@@ -203,10 +204,10 @@ private struct EmptyMedicalResults: View {
                 .font(.system(size: 36, weight: .bold))
                 .foregroundStyle(Theme.textSecondary)
                 .accessibilityHidden(true)
-            Text("No topics found")
+            Text(String(localized: "No topics found"))
                 .font(.title3.weight(.heavy))
                 .foregroundStyle(Theme.textPrimary)
-            Text("Try another word or choose All.")
+            Text(String(localized: "Try another word or choose All."))
                 .font(.body)
                 .foregroundStyle(Theme.textSecondary)
         }

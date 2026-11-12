@@ -24,7 +24,7 @@ struct ConnectView: View {
         .safeAreaInset(edge: .top, spacing: 0) {
             LocalDemoBanner()
         }
-        .navigationTitle("Connect")
+        .navigationTitle(String(localized: "Connect"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Theme.background, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
@@ -34,12 +34,12 @@ struct ConnectView: View {
 
     private var queueSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            ConnectHeader(title: "Message queue", systemImage: "tray.full.fill",
+            ConnectHeader(title: String(localized: "Message queue"), systemImage: "tray.full.fill",
                           trailing: "\(store.queue.count)")
 
             Text(store.queue.isEmpty
-                 ? "Queue is empty. \(store.failedCount) failed (simulated)."
-                 : "SOS goes first, then oldest first. Use the buttons to simulate the result. \(store.failedCount) failed (simulated).")
+                 ? String(localized: "Queue is empty. \(store.failedCount) failed (simulated).")
+                 : String(localized: "SOS goes first, then oldest first. Use the buttons to simulate the result. \(store.failedCount) failed (simulated)."))
                 .font(.subheadline)
                 .foregroundStyle(Theme.textSecondary)
 
@@ -50,16 +50,16 @@ struct ConnectView: View {
 
             if !store.queue.isEmpty {
                 HStack(spacing: 12) {
-                    SmallActionButton(title: "Simulate delivered", systemImage: "checkmark.circle.fill",
+                    SmallActionButton(title: String(localized: "Simulate delivered"), systemImage: "checkmark.circle.fill",
                                       color: Theme.ok) {
                         store.simulateNext(.delivered)
                     }
-                    SmallActionButton(title: "Simulate failed", systemImage: "xmark.circle.fill",
+                    SmallActionButton(title: String(localized: "Simulate failed"), systemImage: "xmark.circle.fill",
                                       color: Theme.danger) {
                         store.simulateNext(.failed)
                     }
                 }
-                .accessibilityHint("Applies to the first message in the queue. Nothing is transmitted.")
+                .accessibilityHint(String(localized: "Applies to the first message in the queue. Nothing is transmitted."))
             }
         }
     }
@@ -68,7 +68,7 @@ struct ConnectView: View {
 
     private var conversationsSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            ConnectHeader(title: "Conversations", systemImage: "bubble.left.and.bubble.right.fill",
+            ConnectHeader(title: String(localized: "Conversations"), systemImage: "bubble.left.and.bubble.right.fill",
                           trailing: "\(store.conversations.count)")
             ForEach(store.conversations) { conversation in
                 NavigationLink {
@@ -107,7 +107,7 @@ struct LocalDemoBanner: View {
         }
         .background(Theme.background)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel("Local demo. Nothing is transmitted.")
+        .accessibilityLabel(String(localized: "Local demo. Nothing is transmitted."))
         .accessibilityAddTraits(.isStaticText)
     }
 }
@@ -200,14 +200,14 @@ private struct SOSEntryCard: View {
                 .foregroundStyle(Theme.danger)
                 .accessibilityHidden(true)
             VStack(alignment: .leading, spacing: 4) {
-                Text("PRIORITY SOS")
+                Text(String(localized: "PRIORITY SOS"))
                     .font(.title3.weight(.black))
                     .foregroundStyle(Theme.textPrimary)
                 Text(text)
                     .font(.subheadline)
                     .foregroundStyle(Theme.textSecondary)
                     .lineLimit(2)
-                Text("Local only · not transmitted")
+                Text(String(localized: "Local only · not transmitted"))
                     .font(.caption.weight(.heavy))
                     .foregroundStyle(Theme.danger)
             }
@@ -225,7 +225,7 @@ private struct SOSEntryCard: View {
                 .stroke(Theme.danger, lineWidth: 3)
         )
         .accessibilityElement(children: .combine)
-        .accessibilityHint("Edit and queue the SOS message. Nothing is transmitted.")
+        .accessibilityHint(String(localized: "Edit and queue the SOS message. Nothing is transmitted."))
     }
 }
 
@@ -237,7 +237,7 @@ private struct QueueRow: View {
         VStack(alignment: .leading, spacing: 6) {
             HStack {
                 if message.isSOS {
-                    Text("SOS")
+                    Text(String(localized: "SOS"))
                         .font(.caption.weight(.black))
                         .foregroundStyle(Theme.background)
                         .padding(.horizontal, 8)

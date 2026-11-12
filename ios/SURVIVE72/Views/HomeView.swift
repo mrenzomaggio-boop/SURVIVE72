@@ -25,7 +25,7 @@ struct HomeView: View {
                 .padding(16)
             }
             .background(Theme.background.ignoresSafeArea())
-            .navigationTitle("SURVIVE 72")
+            .navigationTitle(String(localized: "SURVIVE 72"))
             .toolbarBackground(Theme.background, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .navigationDestination(for: AppSection.self) { section in
@@ -70,7 +70,7 @@ private struct OfflineBanner: View {
                 .font(.title3.weight(.bold))
                 .foregroundStyle(Theme.ok)
                 .accessibilityHidden(true)
-            Text("OFFLINE READY · DATA STAYS ON DEVICE")
+            Text(String(localized: "OFFLINE READY · DATA STAYS ON DEVICE"))
                 .font(.subheadline.weight(.heavy))
                 .foregroundStyle(Theme.textPrimary)
                 .minimumScaleFactor(0.7)
@@ -84,7 +84,7 @@ private struct OfflineBanner: View {
                 .stroke(Theme.ok, lineWidth: Theme.borderWidth)
         )
         .accessibilityElement(children: .combine)
-        .accessibilityLabel("Offline ready. All data stays on this device.")
+        .accessibilityLabel(String(localized: "Offline ready. All data stays on this device."))
     }
 }
 

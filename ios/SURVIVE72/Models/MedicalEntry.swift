@@ -13,12 +13,12 @@ enum MedicalCategory: String, CaseIterable, Identifiable, Hashable {
 
     var title: String {
         switch self {
-        case .preparedness: "Preparedness"
-        case .injuries: "Injuries"
-        case .environment: "Environment"
-        case .illness: "Illness"
-        case .supplies: "Supplies"
-        case .records: "Records"
+        case .preparedness: String(localized: "Preparedness")
+        case .injuries: String(localized: "Injuries")
+        case .environment: String(localized: "Environment")
+        case .illness: String(localized: "Illness")
+        case .supplies: String(localized: "Supplies")
+        case .records: String(localized: "Records")
         }
     }
 
@@ -41,7 +41,7 @@ enum MedicalVerificationStatus: String, Hashable {
 
     var label: String {
         switch self {
-        case .verifiedContentRequired: "VERIFIED CONTENT REQUIRED"
+        case .verifiedContentRequired: String(localized: "VERIFIED CONTENT REQUIRED")
         }
     }
 

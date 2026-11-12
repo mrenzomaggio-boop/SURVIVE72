@@ -13,7 +13,7 @@ struct RadioGuideView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Label("General information only. No frequencies, no radio access, nothing is transmitted.",
+                Label(String(localized: "General information only. No frequencies, no radio access, nothing is transmitted."),
                       systemImage: "antenna.radiowaves.left.and.right.slash")
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(Theme.textPrimary)
@@ -25,7 +25,7 @@ struct RadioGuideView: View {
 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 10) {
-                        chip("All", systemImage: "square.grid.2x2.fill",
+                        chip(String(localized: "All"), systemImage: "square.grid.2x2.fill",
                              count: guide.count(in: nil), selected: topic == nil) { topic = nil }
                         ForEach(RadioTopic.allCases) { item in
                             chip(item.title, systemImage: item.systemImage,
@@ -35,12 +35,12 @@ struct RadioGuideView: View {
                     .padding(.vertical, 2)
                 }
 
-                Text("\(results.count) \(results.count == 1 ? "entry" : "entries")")
+                Text(results.count == 1 ? String(localized: "\(results.count) entry") : String(localized: "\(results.count) entries"))
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(Theme.textSecondary)
 
                 if results.isEmpty {
-                    Text("No entries found. Try another word or choose All.")
+                    Text(String(localized: "No entries found. Try another word or choose All."))
                         .font(.title3.weight(.bold))
                         .foregroundStyle(Theme.textPrimary)
                         .padding(.vertical, 24)
@@ -53,10 +53,10 @@ struct RadioGuideView: View {
             .padding(16)
         }
         .background(Theme.background.ignoresSafeArea())
-        .navigationTitle("Radio")
+        .navigationTitle(String(localized: "Radio"))
         .navigationBarTitleDisplayMode(.large)
         .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always),
-                    prompt: "Search the radio guide")
+                    prompt: String(localized: "Search the radio guide"))
         .autocorrectionDisabled()
     }
 
@@ -73,8 +73,8 @@ struct RadioGuideView: View {
                                           lineWidth: Theme.borderWidth))
         }
         .buttonStyle(.plain)
-        .accessibilityLabel("\(title) filter")
-        .accessibilityValue("\(count) \(count == 1 ? "entry" : "entries")")
+        .accessibilityLabel(String(localized: "\(title) filter"))
+        .accessibilityValue(count == 1 ? String(localized: "\(count) entry") : String(localized: "\(count) entries"))
         .accessibilityAddTraits(selected ? .isSelected : [])
     }
 }

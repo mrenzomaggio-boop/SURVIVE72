@@ -6,11 +6,11 @@ enum ConnectDemoContent {
     static let sosConversationID = "sos"
 
     static let conversations: [ConnectConversation] = [
-        ConnectConversation(id: sosConversationID, title: "SOS (local)",
-                            subtitle: "Priority messages · never transmitted"),
-        ConnectConversation(id: "family", title: "Family (demo)", subtitle: "Demo group"),
-        ConnectConversation(id: "neighbours", title: "Neighbours (demo)", subtitle: "Demo group"),
-        ConnectConversation(id: "team", title: "Team leader (demo)", subtitle: "Demo contact")
+        ConnectConversation(id: sosConversationID, title: String(localized: "SOS (local)"),
+                            subtitle: String(localized: "Priority messages · never transmitted")),
+        ConnectConversation(id: "family", title: String(localized: "Family (demo)"), subtitle: String(localized: "Demo group")),
+        ConnectConversation(id: "neighbours", title: String(localized: "Neighbours (demo)"), subtitle: String(localized: "Demo group")),
+        ConnectConversation(id: "team", title: String(localized: "Team leader (demo)"), subtitle: String(localized: "Demo contact"))
     ]
 
     /// Fixed reference date so the demo looks the same everywhere.
@@ -18,12 +18,12 @@ enum ConnectDemoContent {
 
     static func initialData() -> ConnectData {
         let seed: [(String, String, Bool, MessageDeliveryState)] = [
-            ("family", "Demo: Everyone ok? Reply when you can.", false, .delivered),
-            ("family", "Demo: All fine here. Water and food ready.", true, .delivered),
-            ("family", "Demo: Meet at the usual place if needed.", false, .delivered),
-            ("neighbours", "Demo: Power is out on our street.", false, .delivered),
-            ("neighbours", "Demo: We have spare blankets if anyone needs them.", true, .failed),
-            ("team", "Demo: Check-in at the agreed time.", false, .delivered)
+            ("family", String(localized: "Demo: Everyone ok? Reply when you can."), false, .delivered),
+            ("family", String(localized: "Demo: All fine here. Water and food ready."), true, .delivered),
+            ("family", String(localized: "Demo: Meet at the usual place if needed."), false, .delivered),
+            ("neighbours", String(localized: "Demo: Power is out on our street."), false, .delivered),
+            ("neighbours", String(localized: "Demo: We have spare blankets if anyone needs them."), true, .failed),
+            ("team", String(localized: "Demo: Check-in at the agreed time."), false, .delivered)
         ]
         var messages: [ConnectMessage] = []
         for (index, entry) in seed.enumerated() {

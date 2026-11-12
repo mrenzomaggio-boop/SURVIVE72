@@ -9,8 +9,8 @@ enum UnitSystem: String, CaseIterable, Identifiable, Codable {
 
     var title: String {
         switch self {
-        case .metric: "Metric"
-        case .imperial: "Imperial"
+        case .metric: String(localized: "Metric")
+        case .imperial: String(localized: "Imperial")
         }
     }
 }
