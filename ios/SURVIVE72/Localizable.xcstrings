@@ -531,16 +531,6 @@
         }
       }
     },
-    "Bolder text across the app, on top of the dark high-contrast theme.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Testo più marcato in tutta l'app, oltre al tema scuro ad alto contrasto."
-          }
-        }
-      }
-    },
     "Bookmark": {
       "localizations": {
         "it": {
@@ -557,6 +547,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nei preferiti"
+          }
+        }
+      }
+    },
+    "Brighter secondary text and thicker, lighter borders across the app.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Testi secondari più chiari e bordi più spessi e luminosi in tutta l'app."
           }
         }
       }
@@ -1477,16 +1477,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "In caso di pericolo immediato, contatta i servizi di emergenza locali quando possibile."
-          }
-        }
-      }
-    },
-    "For light now, use the SOS screen signal or the iPhone Control Center.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Per fare luce adesso, usa il segnale SOS sullo schermo o il Centro di Controllo dell'iPhone."
           }
         }
       }
@@ -2451,16 +2441,6 @@
         }
       }
     },
-    "Not available until tested on a physical device.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Non disponibile finché non è stata provata su un dispositivo reale."
-          }
-        }
-      }
-    },
     "Not packed": {
       "localizations": {
         "it": {
@@ -3291,16 +3271,6 @@
         }
       }
     },
-    "Requires physical-device test": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Richiede test su dispositivo reale"
-          }
-        }
-      }
-    },
     "Reset": {
       "localizations": {
         "it": {
@@ -4011,6 +3981,26 @@
         }
       }
     },
+    "TORCH OFF": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TORCIA SPENTA"
+          }
+        }
+      }
+    },
+    "TORCH ON": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "TORCIA ACCESA"
+          }
+        }
+      }
+    },
     "Tablets or a portable filter": {
       "localizations": {
         "it": {
@@ -4061,12 +4051,12 @@
         }
       }
     },
-    "The torch uses the camera flash. It will be enabled after it has been tested on a real iPhone. This version does not use the camera, the flash or any permission.": {
+    "The torch could not be switched. Close other apps using the camera and try again.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "La torcia usa il flash della fotocamera. Verrà attivata dopo essere stata provata su un iPhone reale. Questa versione non usa la fotocamera, il flash né alcun permesso."
+            "value": "Non è stato possibile accendere o spegnere la torcia. Chiudi le altre app che usano la fotocamera e riprova."
           }
         }
       }
@@ -4087,6 +4077,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Questa app non trasmette mai e non accede mai a hardware radio."
+          }
+        }
+      }
+    },
+    "This device has no flash, or it cannot be used right now.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Questo dispositivo non ha il flash, oppure al momento non si può usare."
           }
         }
       }
@@ -4131,22 +4131,12 @@
         }
       }
     },
-    "Torch disabled": {
+    "Torch not available": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Torcia disattivata"
-          }
-        }
-      }
-    },
-    "Torch not available yet": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Torcia non ancora disponibile"
+            "value": "Torcia non disponibile"
           }
         }
       }
@@ -4177,6 +4167,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Prova vicino a una finestra o all'aperto."
+          }
+        }
+      }
+    },
+    "Turn torch off": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Spegni torcia"
+          }
+        }
+      }
+    },
+    "Turn torch on": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accendi torcia"
           }
         }
       }
@@ -4217,6 +4227,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Usa una busta o una scatola sigillata."
+          }
+        }
+      }
+    },
+    "Uses the iPhone flash": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa il flash dell'iPhone"
+          }
+        }
+      }
+    },
+    "Uses the iPhone flash only: no camera access, no permission. The torch switches off when you leave the app. It uses a lot of battery.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usa solo il flash dell'iPhone: nessun accesso alla fotocamera, nessun permesso. La torcia si spegne quando esci dall'app. Consuma molta batteria."
           }
         }
       }

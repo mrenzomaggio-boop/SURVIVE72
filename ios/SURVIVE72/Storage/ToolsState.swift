@@ -7,4 +7,5 @@ import Observation
 final class ToolsState {
     var stopwatch = Stopwatch()
     var sosSignal = SOSSignal()
+    let torch = Torch()
 }
