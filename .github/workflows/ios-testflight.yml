@@ -1,0 +1,210 @@
+name: iOS TestFlight
+
+# Manual only: archives a signed Release build and uploads it to TestFlight.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-testflight
+  cancel-in-progress: false
+
+jobs:
+  testflight:
+    name: Archive and upload SURVIVE72 to TestFlight
+    runs-on: macos-15-intel
+    timeout-minutes: 60
+
+    env:
+      PROJECT_PATH: ios/SURVIVE72.xcodeproj
+      SCHEME: SURVIVE72
+      CONFIGURATION: Release
+      BUNDLE_ID: com.survive72.app
+      BUILD_NUMBER: ${{ github.run_number }}
+
+    steps:
+      - name: Verify required secrets (values are never printed)
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          missing=0
+          for name in APPLE_TEAM_ID ASC_KEY_ID ASC_ISSUER_ID ASC_KEY_P8; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Missing repository secret: $name"
+              missing=1
+            else
+              echo "Secret $name is set"
+            fi
+          done
+          exit "$missing"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Show Xcode version
+        run: |
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+
+      - name: Rebuild App Store Connect API key in runner temp
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          set -euo pipefail
+          umask 077
+          KEY_DIR="$RUNNER_TEMP/asc_private_keys"
+          KEY_PATH="$KEY_DIR/AuthKey_${ASC_KEY_ID}.p8"
+          mkdir -p "$KEY_DIR"
+          chmod 700 "$KEY_DIR"
+          # Accept either the raw .p8 (PEM) content or its base64 encoding.
+          if printf '%s' "$ASC_KEY_P8" | grep -q 'BEGIN PRIVATE KEY'; then
+            printf '%s\n' "$ASC_KEY_P8" > "$KEY_PATH"
+          else
+            printf '%s' "$ASC_KEY_P8" | base64 --decode > "$KEY_PATH"
+          fi
+          chmod 600 "$KEY_PATH"
+          if ! grep -q 'BEGIN PRIVATE KEY' "$KEY_PATH"; then
+            echo "::error::ASC_KEY_P8 is not a valid .p8 private key (raw PEM or base64 expected)"
+            exit 1
+          fi
+          echo "API key written to runner temp (permissions 600)"
+          echo "ASC_KEY_PATH=$KEY_PATH" >> "$GITHUB_ENV"
+          echo "API_PRIVATE_KEYS_DIR=$KEY_DIR" >> "$GITHUB_ENV"
+
+      - name: Archive (Release, automatic signing)
+        id: archive
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        run: |
+          set -euo pipefail
+          ARCHIVE_PATH="$RUNNER_TEMP/build/SURVIVE72.xcarchive"
+          xcodebuild archive \
+            -project "$PROJECT_PATH" \
+            -scheme "$SCHEME" \
+            -configuration "$CONFIGURATION" \
+            -destination 'generic/platform=iOS' \
+            -archivePath "$ARCHIVE_PATH" \
+            -derivedDataPath "$RUNNER_TEMP/build/DerivedData" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$ASC_KEY_PATH" \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID" \
+            CODE_SIGN_STYLE=Automatic \
+            DEVELOPMENT_TEAM="$APPLE_TEAM_ID" \
+            CURRENT_PROJECT_VERSION="$BUILD_NUMBER"
+
+          INFO_PLIST="$ARCHIVE_PATH/Info.plist"
+          ARCHIVED_BUNDLE_ID="$(/usr/libexec/PlistBuddy -c 'Print :ApplicationProperties:CFBundleIdentifier' "$INFO_PLIST")"
+          ARCHIVED_BUILD="$(/usr/libexec/PlistBuddy -c 'Print :ApplicationProperties:CFBundleVersion' "$INFO_PLIST")"
+          ARCHIVED_VERSION="$(/usr/libexec/PlistBuddy -c 'Print :ApplicationProperties:CFBundleShortVersionString' "$INFO_PLIST")"
+          if [ "$ARCHIVED_BUNDLE_ID" != "$BUNDLE_ID" ]; then
+            echo "::error::Archived bundle id is $ARCHIVED_BUNDLE_ID, expected $BUNDLE_ID"
+            exit 1
+          fi
+          if [ "$ARCHIVED_BUILD" != "$BUILD_NUMBER" ]; then
+            echo "::error::Archived build number is $ARCHIVED_BUILD, expected $BUILD_NUMBER"
+            exit 1
+          fi
+          echo "Archived $ARCHIVED_BUNDLE_ID $ARCHIVED_VERSION ($ARCHIVED_BUILD)"
+          echo "archive_path=$ARCHIVE_PATH" >> "$GITHUB_OUTPUT"
+          echo "version=$ARCHIVED_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Export IPA for App Store Connect
+        id: export
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        run: |
+          set -euo pipefail
+          EXPORT_PATH="$RUNNER_TEMP/build/export"
+          EXPORT_OPTIONS="$RUNNER_TEMP/build/ExportOptions.plist"
+          cat > "$EXPORT_OPTIONS" <<EOF
+          <?xml version="1.0" encoding="UTF-8"?>
+          <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+          <plist version="1.0">
+          <dict>
+            <key>method</key>
+            <string>app-store-connect</string>
+            <key>destination</key>
+            <string>export</string>
+            <key>signingStyle</key>
+            <string>automatic</string>
+            <key>teamID</key>
+            <string>${APPLE_TEAM_ID}</string>
+            <key>uploadSymbols</key>
+            <true/>
+            <key>manageAppVersionAndBuildNumber</key>
+            <false/>
+          </dict>
+          </plist>
+          EOF
+          xcodebuild -exportArchive \
+            -archivePath "${{ steps.archive.outputs.archive_path }}" \
+            -exportPath "$EXPORT_PATH" \
+            -exportOptionsPlist "$EXPORT_OPTIONS" \
+            -allowProvisioningUpdates \
+            -authenticationKeyPath "$ASC_KEY_PATH" \
+            -authenticationKeyID "$ASC_KEY_ID" \
+            -authenticationKeyIssuerID "$ASC_ISSUER_ID"
+
+          IPA_PATH="$(find "$EXPORT_PATH" -maxdepth 1 -name '*.ipa' | head -n 1)"
+          if [ -z "$IPA_PATH" ]; then
+            echo "::error::No IPA found in $EXPORT_PATH"
+            ls -la "$EXPORT_PATH" || true
+            exit 1
+          fi
+          echo "Exported $IPA_PATH"
+          echo "ipa_path=$IPA_PATH" >> "$GITHUB_OUTPUT"
+          echo "ipa_name=$(basename "$IPA_PATH")" >> "$GITHUB_OUTPUT"
+          echo "ipa_size=$(du -h "$IPA_PATH" | cut -f1)" >> "$GITHUB_OUTPUT"
+          echo "ipa_sha256=$(shasum -a 256 "$IPA_PATH" | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+
+      - name: Upload to TestFlight
+        id: upload
+        env:
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+        run: |
+          set -euo pipefail
+          # altool reads AuthKey_<ASC_KEY_ID>.p8 from API_PRIVATE_KEYS_DIR.
+          xcrun altool --upload-app \
+            --type ios \
+            --file "${{ steps.export.outputs.ipa_path }}" \
+            --apiKey "$ASC_KEY_ID" \
+            --apiIssuer "$ASC_ISSUER_ID"
+
+      - name: Remove API key
+        if: always()
+        run: |
+          rm -rf "$RUNNER_TEMP/asc_private_keys"
+          if [ -e "$RUNNER_TEMP/asc_private_keys" ]; then
+            echo "::error::API key directory could not be removed"
+            exit 1
+          fi
+          echo "API key removed from runner temp"
+
+      - name: Summary
+        if: always()
+        run: |
+          {
+            echo "### SURVIVE72 TestFlight build"
+            echo
+            echo "| | |"
+            echo "|---|---|"
+            echo "| Bundle | \`$BUNDLE_ID\` |"
+            echo "| Version | ${{ steps.archive.outputs.version || 'n/a' }} |"
+            echo "| Build number | **$BUILD_NUMBER** |"
+            echo "| IPA exported | ${{ steps.export.outputs.ipa_name && format('{0} ({1})', steps.export.outputs.ipa_name, steps.export.outputs.ipa_size) || 'not exported' }} |"
+            echo "| IPA SHA-256 | ${{ steps.export.outputs.ipa_sha256 || 'n/a' }} |"
+            echo
+            echo "Archive: **${{ steps.archive.outcome }}** · Export: **${{ steps.export.outcome }}** · TestFlight upload: **${{ steps.upload.outcome }}**"
+          } >> "$GITHUB_STEP_SUMMARY"
