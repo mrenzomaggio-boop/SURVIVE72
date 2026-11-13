@@ -1,5 +1,5 @@
 {
-  "comment": "Downloadable offline map areas. bbox = [west, south, east, north]. estimatedMB is a planning estimate; the map workflow measures the real files. Countries use maxzoom 14 to stay under 2 GB.",
+  "comment": "Downloadable offline map areas. bbox = [west, south, east, north]. estimatedMB: measured for built areas, estimate otherwise. Big countries use a lower maxzoom to stay under the 2 GB GitHub release file limit.",
   "regions": [
     {
       "id": "it-piemonte",
@@ -11,7 +11,7 @@
         46.47
       ],
       "maxzoom": 15,
-      "estimatedMB": 350
+      "estimatedMB": 591
     },
     {
       "id": "it-valle-d-aosta",
@@ -23,7 +23,7 @@
         45.99
       ],
       "maxzoom": 15,
-      "estimatedMB": 40
+      "estimatedMB": 41
     },
     {
       "id": "it-lombardia",
@@ -35,7 +35,7 @@
         46.64
       ],
       "maxzoom": 15,
-      "estimatedMB": 500
+      "estimatedMB": 596
     },
     {
       "id": "it-trentino-alto-adige",
@@ -47,7 +47,7 @@
         47.1
       ],
       "maxzoom": 15,
-      "estimatedMB": 180
+      "estimatedMB": 267
     },
     {
       "id": "it-veneto",
@@ -59,7 +59,7 @@
         46.68
       ],
       "maxzoom": 15,
-      "estimatedMB": 400
+      "estimatedMB": 440
     },
     {
       "id": "it-friuli-venezia-giulia",
@@ -71,7 +71,7 @@
         46.65
       ],
       "maxzoom": 15,
-      "estimatedMB": 130
+      "estimatedMB": 196
     },
     {
       "id": "it-liguria",
@@ -83,7 +83,7 @@
         44.68
       ],
       "maxzoom": 15,
-      "estimatedMB": 110
+      "estimatedMB": 150
     },
     {
       "id": "it-emilia-romagna",
@@ -95,7 +95,7 @@
         45.14
       ],
       "maxzoom": 15,
-      "estimatedMB": 380
+      "estimatedMB": 397
     },
     {
       "id": "it-toscana",
@@ -107,7 +107,7 @@
         44.47
       ],
       "maxzoom": 15,
-      "estimatedMB": 350
+      "estimatedMB": 356
     },
     {
       "id": "it-umbria",
@@ -119,7 +119,7 @@
         43.62
       ],
       "maxzoom": 15,
-      "estimatedMB": 110
+      "estimatedMB": 113
     },
     {
       "id": "it-marche",
@@ -131,7 +131,7 @@
         43.97
       ],
       "maxzoom": 15,
-      "estimatedMB": 140
+      "estimatedMB": 130
     },
     {
       "id": "it-lazio",
@@ -143,7 +143,7 @@
         42.84
       ],
       "maxzoom": 15,
-      "estimatedMB": 350
+      "estimatedMB": 266
     },
     {
       "id": "it-abruzzo",
@@ -155,7 +155,7 @@
         42.9
       ],
       "maxzoom": 15,
-      "estimatedMB": 120
+      "estimatedMB": 185
     },
     {
       "id": "it-molise",
@@ -167,7 +167,7 @@
         42.07
       ],
       "maxzoom": 15,
-      "estimatedMB": 40
+      "estimatedMB": 54
     },
     {
       "id": "it-campania",
@@ -179,7 +179,7 @@
         41.51
       ],
       "maxzoom": 15,
-      "estimatedMB": 300
+      "estimatedMB": 142
     },
     {
       "id": "it-puglia",
@@ -191,7 +191,7 @@
         42.23
       ],
       "maxzoom": 15,
-      "estimatedMB": 300
+      "estimatedMB": 219
     },
     {
       "id": "it-basilicata",
@@ -203,7 +203,7 @@
         41.14
       ],
       "maxzoom": 15,
-      "estimatedMB": 70
+      "estimatedMB": 89
     },
     {
       "id": "it-calabria",
@@ -215,7 +215,7 @@
         40.15
       ],
       "maxzoom": 15,
-      "estimatedMB": 170
+      "estimatedMB": 84
     },
     {
       "id": "it-sicilia",
@@ -227,7 +227,7 @@
         38.82
       ],
       "maxzoom": 15,
-      "estimatedMB": 350
+      "estimatedMB": 151
     },
     {
       "id": "it-sardegna",
@@ -239,7 +239,7 @@
         41.31
       ],
       "maxzoom": 15,
-      "estimatedMB": 170
+      "estimatedMB": 117
     },
     {
       "id": "country-it",
@@ -250,8 +250,8 @@
         18.53,
         47.1
       ],
-      "maxzoom": 14,
-      "estimatedMB": 1600
+      "maxzoom": 13,
+      "estimatedMB": 1200
     },
     {
       "id": "country-ch",
@@ -263,7 +263,7 @@
         47.81
       ],
       "maxzoom": 14,
-      "estimatedMB": 400
+      "estimatedMB": 900
     },
     {
       "id": "country-at",
@@ -275,7 +275,7 @@
         49.02
       ],
       "maxzoom": 14,
-      "estimatedMB": 500
+      "estimatedMB": 900
     },
     {
       "id": "country-si",
@@ -287,7 +287,7 @@
         46.88
       ],
       "maxzoom": 14,
-      "estimatedMB": 150
+      "estimatedMB": 250
     },
     {
       "id": "country-hr",
@@ -299,7 +299,7 @@
         46.56
       ],
       "maxzoom": 14,
-      "estimatedMB": 250
+      "estimatedMB": 350
     },
     {
       "id": "country-mt",
@@ -311,7 +311,7 @@
         36.09
       ],
       "maxzoom": 14,
-      "estimatedMB": 20
+      "estimatedMB": 4
     },
     {
       "id": "country-fr",
@@ -322,8 +322,8 @@
         9.57,
         51.09
       ],
-      "maxzoom": 14,
-      "estimatedMB": 1900
+      "maxzoom": 12,
+      "estimatedMB": 1400
     },
     {
       "id": "country-de",
@@ -334,8 +334,8 @@
         15.04,
         55.06
       ],
-      "maxzoom": 14,
-      "estimatedMB": 1900
+      "maxzoom": 12,
+      "estimatedMB": 1600
     },
     {
       "id": "country-es",
@@ -346,8 +346,8 @@
         4.33,
         43.79
       ],
-      "maxzoom": 14,
-      "estimatedMB": 1300
+      "maxzoom": 13,
+      "estimatedMB": 1200
     },
     {
       "id": "country-pt",
@@ -359,7 +359,7 @@
         42.15
       ],
       "maxzoom": 14,
-      "estimatedMB": 350
+      "estimatedMB": 500
     },
     {
       "id": "country-gr",
@@ -371,7 +371,7 @@
         41.75
       ],
       "maxzoom": 14,
-      "estimatedMB": 400
+      "estimatedMB": 600
     }
   ]
 }
