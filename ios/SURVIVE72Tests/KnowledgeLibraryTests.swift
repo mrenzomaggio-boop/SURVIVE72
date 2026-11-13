@@ -1,3 +1,4 @@
+import UIKit
 import XCTest
 @testable import SURVIVE72
 
@@ -6,7 +7,8 @@ final class KnowledgeLibraryTests: XCTestCase {
     private static func article(_ id: String, _ category: KnowledgeCategory, _ title: String,
                                 _ summary: String, _ point: String) -> KnowledgeArticle {
         KnowledgeArticle(id: id, category: category, title: title, summary: summary,
-                         sections: [KnowledgeSection(heading: "Before", points: [point])])
+                         sections: [KnowledgeSection(heading: "Before", symbol: "calendar",
+                                                    points: [KnowledgePoint(symbol: "circle", text: point)])])
     }
 
     private let sample = [
@@ -119,6 +121,18 @@ final class KnowledgeLibraryTests: XCTestCase {
         XCTAssertTrue(source.licence.contains("CC BY 4.0"))
         XCTAssertTrue(source.licence.contains("Not written by SURVIVE 72"))
         XCTAssertEqual(source.url.host, "iononrischio.protezionecivile.gov.it")
+    }
+
+    func testEverySymbolExistsOnThisSystem() {
+        for article in KnowledgeLibraryContent.articles {
+            XCTAssertNotNil(UIImage(systemName: article.category.systemImage), article.category.systemImage)
+            for section in article.sections {
+                XCTAssertNotNil(UIImage(systemName: section.symbol), "\(article.id): \(section.symbol)")
+                for point in section.points {
+                    XCTAssertNotNil(UIImage(systemName: point.symbol), "\(article.id): \(point.symbol)")
+                }
+            }
+        }
     }
 
     func testBundledContentIsSearchable() {

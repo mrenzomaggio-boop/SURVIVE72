@@ -1,3 +1,4 @@
+import UIKit
 import XCTest
 @testable import SURVIVE72
 
@@ -7,11 +8,11 @@ final class MedicalLibraryTests: XCTestCase {
 
     private let sample = MedicalLibrary(entries: [
         MedicalEntry(id: "a", category: .injuries, title: "Brûlures", summary: "Card one.",
-                     steps: ["Press firmly."], keywords: ["alpha"]),
+                     steps: [MedicalStep(symbol: "circle", text: "Press firmly.")], keywords: ["alpha"]),
         MedicalEntry(id: "b", category: .environment, title: "Heat", summary: "Card two.",
-                     steps: ["Move to shade."], keywords: ["Café", "beta"]),
+                     steps: [MedicalStep(symbol: "circle", text: "Move to shade.")], keywords: ["Café", "beta"]),
         MedicalEntry(id: "c", category: .injuries, title: "Wounds", summary: "Card three.",
-                     steps: ["Cover the wound."], keywords: ["beta"])
+                     steps: [MedicalStep(symbol: "circle", text: "Cover the wound.")], keywords: ["beta"])
     ])
 
     // MARK: Search
@@ -104,8 +105,23 @@ final class MedicalLibraryTests: XCTestCase {
     func testEveryEntryHasStepsAndPointsTo112() {
         for entry in MedicalLibraryContent.entries {
             XCTAssertFalse(entry.steps.isEmpty, entry.id)
-            XCTAssertTrue(entry.steps.contains { $0.contains("112") }, "\(entry.id) never mentions 112")
+            XCTAssertTrue(entry.steps.contains { $0.text.contains("112") }, "\(entry.id) never mentions 112")
         }
+    }
+
+    func testEverySymbolExistsOnThisSystem() {
+        for entry in MedicalLibraryContent.entries {
+            XCTAssertNotNil(UIImage(systemName: entry.category.systemImage), entry.category.systemImage)
+            for step in entry.steps {
+                XCTAssertNotNil(UIImage(systemName: step.symbol), "\(entry.id): \(step.symbol)")
+            }
+        }
+    }
+
+    func testOnlyCardiacArrestShowsTheCompressionRhythm() {
+        let withRhythm = MedicalLibraryContent.entries.filter(\.showsCompressionRhythm).map(\.id)
+        XCTAssertEqual(withRhythm, ["medical.cardiac-arrest"])
+        XCTAssertTrue((100...120).contains(CompressionRhythmView.beatsPerMinute))
     }
 
     func testEntryIDsAreUnique() {
