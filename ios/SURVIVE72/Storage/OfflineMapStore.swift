@@ -33,7 +33,7 @@ final class OfflineMapStore {
     private var tasks: [String: URLSessionDownloadTask] = [:]
     private var observations: [String: NSKeyValueObservation] = [:]
 
-    static var defaultDirectory: URL {
+    nonisolated static var defaultDirectory: URL {
         FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
             .appendingPathComponent("OfflineMaps", isDirectory: true)
     }
