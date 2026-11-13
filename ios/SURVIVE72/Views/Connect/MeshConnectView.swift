@@ -66,37 +66,38 @@ struct MeshConnectView: View {
         }
     }
 
-    // MARK: Search by phone number
+    // MARK: Search by nickname or phone number
 
     private var searchSection: some View {
         VStack(alignment: .leading, spacing: 12) {
-            MeshSectionHeader(title: String(localized: "Find by phone number"), systemImage: "magnifyingglass")
-            TextField(String(localized: "Phone number"), text: $searchNumber)
-                .keyboardType(.phonePad)
-                .textContentType(.telephoneNumber)
+            MeshSectionHeader(title: String(localized: "Find a person"), systemImage: "magnifyingglass")
+            TextField(String(localized: "Nickname or phone number"), text: $searchNumber)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled()
+                .submitLabel(.search)
+                .onSubmit(search)
                 .font(.title3.weight(.semibold))
                 .foregroundStyle(Theme.textPrimary)
                 .padding(12)
                 .frame(minHeight: 52)
                 .meshCardBackground()
-                .accessibilityLabel(String(localized: "Phone number to find"))
+                .accessibilityLabel(String(localized: "Nickname or phone number to find"))
                 .onChange(of: searchNumber) { didSearch = false }
 
-            BigButton(title: String(localized: "Search"), systemImage: "magnifyingglass", color: Theme.accent) {
-                searchResults = mesh.people(withPhone: searchNumber)
-                didSearch = true
-            }
-            .disabled(MeshPhone.normalized(searchNumber) == nil)
-            .opacity(MeshPhone.normalized(searchNumber) == nil ? 0.5 : 1)
+            BigButton(title: String(localized: "Search"), systemImage: "magnifyingglass", color: Theme.accent,
+                      action: search)
+            .disabled(searchNumber.trimmed.isEmpty)
+            .opacity(searchNumber.trimmed.isEmpty ? 0.5 : 1)
 
             if didSearch {
                 if searchResults.isEmpty {
-                    Text(String(localized: "Nobody with this number has been seen on the network yet. They must have the app, a profile with this number, and have been in range of the network at least once."))
+                    Text(String(localized: "Nobody with this nickname or number has been seen on the network yet. They must have the app and have been in range of the network at least once."))
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Theme.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 } else {
-                    if searchResults.count > 1 {
+                    if let tag = MeshPhone.tag(for: searchNumber),
+                       searchResults.filter({ $0.phoneTag == tag }).count > 1 {
                         Label(String(localized: "More than one person declares this number. Numbers are not verified: check the security code with the person."),
                               systemImage: "exclamationmark.triangle.fill")
                             .font(.subheadline.weight(.heavy))
@@ -109,6 +110,12 @@ struct MeshConnectView: View {
                 }
             }
         }
+    }
+
+    private func search() {
+        guard !searchNumber.trimmed.isEmpty else { return }
+        searchResults = mesh.people(matching: searchNumber)
+        didSearch = true
     }
 
     // MARK: Conversations
@@ -143,7 +150,7 @@ struct MeshConnectView: View {
             MeshSectionHeader(title: String(localized: "People seen on the network"),
                               systemImage: "person.2.fill")
             if people.isEmpty {
-                Text(String(localized: "Nobody yet. People appear here when their alerts or messages reach this phone."))
+                Text(String(localized: "Nobody yet. People appear here when their phone is near yours, or when their alerts or messages reach this phone."))
                     .font(.body)
                     .foregroundStyle(Theme.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -158,7 +165,9 @@ struct MeshConnectView: View {
         NavigationLink {
             MeshConversationView(code: card.code)
         } label: {
-            MeshPersonRow(name: card.name, code: card.code, detail: nil)
+            MeshPersonRow(name: card.name, code: card.code,
+                          detail: mesh.nearbyPeopleCodes.contains(card.code)
+                              ? String(localized: "Near you now · \(card.code)") : nil)
         }
         .buttonStyle(.plain)
     }

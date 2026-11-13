@@ -2221,12 +2221,12 @@
         }
       }
     },
-    "Find by phone number": {
+    "Find a person": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Cerca per numero di telefono"
+            "value": "Cerca una persona"
           }
         }
       }
@@ -3641,6 +3641,16 @@
         }
       }
     },
+    "Near you now · %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vicino a te ora · %@"
+          }
+        }
+      }
+    },
     "Neighbours (demo)": {
       "localizations": {
         "it": {
@@ -3677,6 +3687,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nickname"
+          }
+        }
+      }
+    },
+    "Nickname or phone number": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nickname o numero di telefono"
+          }
+        }
+      }
+    },
+    "Nickname or phone number to find": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nickname o numero di telefono da cercare"
           }
         }
       }
@@ -3821,22 +3851,22 @@
         }
       }
     },
-    "Nobody with this number has been seen on the network yet. They must have the app, a profile with this number, and have been in range of the network at least once.": {
+    "Nobody with this nickname or number has been seen on the network yet. They must have the app and have been in range of the network at least once.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nessuno con questo numero è ancora comparso nella rete. La persona deve avere l'app, un profilo con questo numero, ed essere stata nel raggio della rete almeno una volta."
+            "value": "Nessuno con questo nickname o numero è ancora passato dalla rete. Deve avere l'app ed essere stato almeno una volta nel raggio della rete."
           }
         }
       }
     },
-    "Nobody yet. People appear here when their alerts or messages reach this phone.": {
+    "Nobody yet. People appear here when their phone is near yours, or when their alerts or messages reach this phone.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ancora nessuno. Le persone compaiono qui quando le loro allerte o i loro messaggi raggiungono questo telefono."
+            "value": "Ancora nessuno. Le persone compaiono qui quando il loro telefono è vicino al tuo, o quando le loro allerte o i loro messaggi arrivano a questo telefono."
           }
         }
       }
@@ -4297,16 +4327,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Numero di telefono (facoltativo)"
-          }
-        }
-      }
-    },
-    "Phone number to find": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Numero di telefono da cercare"
           }
         }
       }
