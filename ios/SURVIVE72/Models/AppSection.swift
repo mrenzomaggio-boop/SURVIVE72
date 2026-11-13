@@ -34,14 +34,14 @@ enum AppSection: String, CaseIterable, Identifiable, Hashable {
     var subtitle: String {
         switch self {
         case .connect: String(localized: "Phone-to-phone messages")
-        case .maps: String(localized: "Places, offline areas")
+        case .maps: String(localized: "Offline map, places")
         case .knowledge: String(localized: "Offline library")
         case .medical: String(localized: "First aid cards")
         case .kit: String(localized: "72-hour checklist")
         case .radio: String(localized: "Frequencies, guide")
         case .alert: String(localized: "Alert board, SOS plan")
         case .tools: String(localized: "Stopwatch, SOS light")
-        case .downloads: String(localized: "Offline packs")
+        case .downloads: String(localized: "Maps and packs")
         case .settings: String(localized: "Preferences")
         }
     }

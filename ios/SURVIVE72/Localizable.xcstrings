@@ -71,6 +71,16 @@
         }
       }
     },
+    "%@ will be removed from this iPhone. You can download it again later.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ verrà eliminata da questo iPhone. Potrai scaricarla di nuovo in seguito."
+          }
+        }
+      }
+    },
     "%@ · on its way, delivery not confirmed": {
       "localizations": {
         "it": {
@@ -681,6 +691,16 @@
         }
       }
     },
+    "Areas on this iPhone: %lld": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zone su questo iPhone: %lld"
+          }
+        }
+      }
+    },
     "Arm: one arm is weak or cannot be lifted.": {
       "localizations": {
         "it": {
@@ -1011,6 +1031,16 @@
         }
       }
     },
+    "Choose areas to download": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scegli le zone da scaricare"
+          }
+        }
+      }
+    },
     "Choosing a receiver": {
       "localizations": {
         "it": {
@@ -1097,6 +1127,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Connetti"
+          }
+        }
+      }
+    },
+    "Content packs below are simulated: marking a pack only records it on this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I pacchetti qui sotto sono simulati: segnarne uno lo registra solo su questo telefono."
           }
         }
       }
@@ -1291,6 +1331,16 @@
         }
       }
     },
+    "Delete map area?": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eliminare la zona della mappa?"
+          }
+        }
+      }
+    },
     "Delete place?": {
       "localizations": {
         "it": {
@@ -1307,16 +1357,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Consegnato (simulato)"
-          }
-        }
-      }
-    },
-    "Demo areas. Nothing is downloaded: marking an area only records it on this device.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Aree demo. Non viene scaricato nulla: segnare un'area la registra solo su questo dispositivo."
           }
         }
       }
@@ -1577,6 +1617,66 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tocca due volte per segnare come pronto."
+          }
+        }
+      }
+    },
+    "Download": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scarica"
+          }
+        }
+      }
+    },
+    "Download %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scarica %@"
+          }
+        }
+      }
+    },
+    "Download failed. Check the connection and try again.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download non riuscito. Controlla la connessione e riprova."
+          }
+        }
+      }
+    },
+    "Download your area once, on Wi-Fi. Then the map works without internet, with your position from GPS.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scarica la tua zona una volta sola, col Wi-Fi. Poi la mappa funziona senza internet, con la tua posizione dal GPS."
+          }
+        }
+      }
+    },
+    "Downloaded · Delete": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scaricata · Elimina"
+          }
+        }
+      }
+    },
+    "Downloading %lld percent": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download al %lld per cento"
           }
         }
       }
@@ -2661,6 +2761,16 @@
         }
       }
     },
+    "Italian regions": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regioni italiane"
+          }
+        }
+      }
+    },
     "Keep checking that they are breathing until help arrives.": {
       "localizations": {
         "it": {
@@ -3051,12 +3161,62 @@
         }
       }
     },
+    "Map": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mappa"
+          }
+        }
+      }
+    },
+    "Map areas": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zone della mappa"
+          }
+        }
+      }
+    },
+    "Map data © OpenStreetMap contributors, ODbL licence. Map style by Protomaps.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dati della mappa © contributori OpenStreetMap, licenza ODbL. Stile della mappa di Protomaps."
+          }
+        }
+      }
+    },
+    "Map files are not online yet: downloads will be switched on in a next version.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I file delle mappe non sono ancora online: i download saranno attivati in una prossima versione."
+          }
+        }
+      }
+    },
     "Maps": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Mappe"
+          }
+        }
+      }
+    },
+    "Maps and packs": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mappe e pacchetti"
           }
         }
       }
@@ -3077,16 +3237,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Segna %@ come pronto"
-          }
-        }
-      }
-    },
-    "Mark not prepared": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Segna come non pronta"
           }
         }
       }
@@ -3481,12 +3631,12 @@
         }
       }
     },
-    "No map, no GPS: coordinates are typed in by hand and stay on this device.": {
+    "No map on this iPhone yet": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Niente mappa, niente GPS: le coordinate si inseriscono a mano e restano su questo dispositivo."
+            "value": "Ancora nessuna mappa su questo iPhone"
           }
         }
       }
@@ -3761,12 +3911,22 @@
         }
       }
     },
-    "Offline packs": {
+    "Offline map, places": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Pacchetti offline"
+            "value": "Mappa offline, luoghi"
+          }
+        }
+      }
+    },
+    "Offline maps": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mappe offline"
           }
         }
       }
@@ -3787,6 +3947,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "In barca ascolta sempre la radio. Se sei in mare, allontanati verso il largo. Se sei in porto, lascia la barca e raggiungi un luogo elevato."
+          }
+        }
+      }
+    },
+    "On this iPhone: %lld areas · %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Su questo iPhone: %1$lld zone · %2$@"
           }
         }
       }
@@ -3817,6 +3987,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Solo questa persona può leggere i tuoi messaggi. L'identità non è verificata: nel dubbio, confrontate di persona il codice di sicurezza."
+          }
+        }
+      }
+    },
+    "Open the map": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apri la mappa"
           }
         }
       }
@@ -4087,16 +4267,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Segnaposto per guide approfondite verificate."
-          }
-        }
-      }
-    },
-    "Places, offline areas": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Luoghi, aree offline"
           }
         }
       }
@@ -5041,6 +5211,16 @@
         }
       }
     },
+    "Show my position": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostra la mia posizione"
+          }
+        }
+      }
+    },
     "Shows ... --- ... on the screen in white and black. Slow pattern: at most one flash per second, never starts by itself.": {
       "localizations": {
         "it": {
@@ -5117,26 +5297,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Simula non riuscito"
-          }
-        }
-      }
-    },
-    "Simulated. Nothing is downloaded.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulazione. Non viene scaricato nulla."
-          }
-        }
-      }
-    },
-    "Simulated: no data is downloaded. Marking a pack only records it on this device.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Simulazione: non viene scaricato nulla. Segnare un pacchetto lo registra solo su questo dispositivo."
           }
         }
       }
@@ -5327,6 +5487,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Passo passo, a schermo intero"
+          }
+        }
+      }
+    },
+    "Stop": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ferma"
           }
         }
       }
@@ -5557,6 +5727,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "La bussola usa il magnetometro. Verrà attivata dopo essere stata provata su un iPhone reale. Questa versione non legge alcun sensore."
+          }
+        }
+      }
+    },
+    "The map could not be opened.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non è stato possibile aprire la mappa."
           }
         }
       }
@@ -6121,6 +6301,16 @@
         }
       }
     },
+    "Whole countries": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paesi interi"
+          }
+        }
+      }
+    },
     "Why a radio matters": {
       "localizations": {
         "it": {
@@ -6147,6 +6337,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Funziona senza internet"
+          }
+        }
+      }
+    },
+    "Works without internet once an area is downloaded": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Funziona senza internet dopo aver scaricato una zona"
           }
         }
       }
@@ -6247,6 +6447,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Il tuo profilo"
+          }
+        }
+      }
+    },
+    "about %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "circa %@"
           }
         }
       }

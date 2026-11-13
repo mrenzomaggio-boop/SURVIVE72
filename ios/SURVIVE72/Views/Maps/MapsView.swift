@@ -1,7 +1,7 @@
 import SwiftUI
 
-/// SURVIVE MAPS: saved places typed by hand, demo offline areas, and
-/// compass/position placeholders. No MapKit, GPS, network or permissions.
+/// SURVIVE MAPS: the offline map, saved places typed by hand, and
+/// compass/position placeholders.
 struct MapsView: View {
     @Environment(MapsStore.self) private var store
 
@@ -12,18 +12,9 @@ struct MapsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                Label(String(localized: "No map, no GPS: coordinates are typed in by hand and stay on this device."),
-                      systemImage: "location.slash.fill")
-                    .font(.subheadline.weight(.bold))
-                    .foregroundStyle(Theme.textPrimary)
-                    .padding(12)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
-                    .overlay(RoundedRectangle(cornerRadius: Theme.cornerRadius)
-                        .stroke(Theme.accent, lineWidth: Theme.borderWidth))
+                OpenMapCard()
 
                 placesSection
-                areasSection
                 sensorsSection
             }
             .padding(16)
@@ -88,25 +79,6 @@ struct MapsView: View {
         }
     }
 
-    // MARK: Areas
-
-    private var areasSection: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            MapsHeader(title: String(localized: "Offline areas"), systemImage: "square.dashed",
-                       trailing: "\(store.preparedCount)/\(store.areas.count)")
-
-            Text(String(localized: "Demo areas. Nothing is downloaded: marking an area only records it on this device."))
-                .font(.subheadline)
-                .foregroundStyle(Theme.textSecondary)
-
-            ForEach(store.areas) { area in
-                AreaRow(area: area, status: store.status(of: area)) { prepared in
-                    store.setPrepared(prepared, for: area)
-                }
-            }
-        }
-    }
-
     // MARK: Sensors
 
     private var sensorsSection: some View {
@@ -129,6 +101,45 @@ struct MapsView: View {
 }
 
 // MARK: - Building blocks
+
+/// Big entry to the offline map, with how many areas are on the device.
+private struct OpenMapCard: View {
+    @Environment(OfflineMapStore.self) private var mapStore
+
+    var body: some View {
+        NavigationLink {
+            OfflineMapScreen()
+        } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "map.fill")
+                    .font(.system(size: 34, weight: .bold))
+                    .foregroundStyle(Theme.onAccent)
+                    .frame(width: 64, height: 64)
+                    .background(Theme.onAccent.opacity(0.18), in: RoundedRectangle(cornerRadius: 14))
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(String(localized: "Open the map"))
+                        .font(.title2.weight(.heavy))
+                    Text(mapStore.downloadedRegions.isEmpty
+                         ? String(localized: "Works without internet once an area is downloaded")
+                         : String(localized: "Areas on this iPhone: \(mapStore.downloadedRegions.count)"))
+                        .font(.subheadline.weight(.semibold))
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+                .foregroundStyle(Theme.onAccent)
+                Spacer(minLength: 8)
+                Image(systemName: "chevron.right")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(Theme.onAccent)
+                    .accessibilityHidden(true)
+            }
+            .padding(16)
+            .frame(maxWidth: .infinity, minHeight: 96, alignment: .leading)
+            .background(Theme.accent, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
+        }
+        .buttonStyle(.plain)
+    }
+}
 
 private struct MapsHeader: View {
     let title: String
@@ -212,58 +223,6 @@ private struct PlaceRow: View {
     }
 }
 
-private struct AreaRow: View {
-    let area: OfflineArea
-    let status: OfflineAreaStatus
-    let onChange: (Bool) -> Void
-
-    private var isPrepared: Bool { status == .prepared }
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            HStack(alignment: .firstTextBaseline) {
-                Text(area.title)
-                    .font(.title3.weight(.heavy))
-                    .foregroundStyle(Theme.textPrimary)
-                Spacer()
-                Text(status.label.uppercased())
-                    .font(.caption.weight(.black))
-                    .foregroundStyle(Theme.onAccent)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(isPrepared ? Theme.ok : Theme.accent, in: Capsule())
-            }
-            Text(area.summary)
-                .font(.subheadline)
-                .foregroundStyle(Theme.textSecondary)
-            Text(String(localized: "About \(SizeFormat.megabytes(area.sizeMB)) · estimate"))
-                .font(.subheadline.monospacedDigit())
-                .foregroundStyle(Theme.textSecondary)
-            Button {
-                onChange(!isPrepared)
-            } label: {
-                Label(isPrepared ? String(localized: "Mark not prepared") : String(localized: "Mark prepared"),
-                      systemImage: isPrepared ? "xmark.circle" : "checkmark.circle.fill")
-                    .font(.headline.weight(.heavy))
-                    .foregroundStyle(isPrepared ? Theme.textPrimary : Theme.accent)
-                    .frame(maxWidth: .infinity, minHeight: 52)
-                    .background(Theme.background, in: RoundedRectangle(cornerRadius: 10))
-                    .overlay(RoundedRectangle(cornerRadius: 10)
-                        .stroke(isPrepared ? Theme.surfaceBorder : Theme.accent, lineWidth: Theme.borderWidth))
-            }
-            .buttonStyle(.plain)
-            .accessibilityHint(String(localized: "Simulated. Nothing is downloaded."))
-        }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
-        .overlay(
-            RoundedRectangle(cornerRadius: Theme.cornerRadius)
-                .stroke(isPrepared ? Theme.ok : Theme.surfaceBorder, lineWidth: Theme.borderWidth)
-        )
-    }
-}
-
 private struct SensorRow: View {
     let kind: SensorPlaceholderView.Kind
 
@@ -304,5 +263,5 @@ private struct SensorRow: View {
         MapsView()
     }
     .environment(MapsStore(defaults: UserDefaults(suiteName: "preview.maps")!))
-    .preferredColorScheme(.dark)
+    .environment(OfflineMapStore())
 }

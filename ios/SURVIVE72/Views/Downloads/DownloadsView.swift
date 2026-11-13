@@ -11,9 +11,11 @@ struct DownloadsView: View {
 
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
+                MapAreasLink()
+
                 SummaryCard(summary: summary, freeBytes: freeBytes)
 
-                Label(String(localized: "Simulated: no data is downloaded. Marking a pack only records it on this device."),
+                Label(String(localized: "Content packs below are simulated: marking a pack only records it on this device."),
                       systemImage: "wifi.slash")
                     .font(.subheadline.weight(.bold))
                     .foregroundStyle(Theme.textPrimary)
@@ -35,6 +37,45 @@ struct DownloadsView: View {
         .navigationTitle(String(localized: "Downloads"))
         .navigationBarTitleDisplayMode(.large)
         .onAppear { freeBytes = DownloadsStore.deviceFreeBytes() }
+    }
+}
+
+/// Real downloads: the offline map areas.
+private struct MapAreasLink: View {
+    @Environment(OfflineMapStore.self) private var mapStore
+
+    var body: some View {
+        NavigationLink {
+            MapDownloadsView()
+        } label: {
+            HStack(spacing: 14) {
+                Image(systemName: "map.fill")
+                    .font(.system(size: 30, weight: .bold))
+                    .foregroundStyle(Theme.onAccent)
+                    .frame(width: 56, height: 56)
+                    .background(Theme.accent, in: RoundedRectangle(cornerRadius: 14))
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(String(localized: "Offline maps"))
+                        .font(.title3.weight(.heavy))
+                        .foregroundStyle(Theme.textPrimary)
+                    Text(String(localized: "On this iPhone: \(mapStore.downloadedRegions.count) areas · \(SizeFormat.bytes(mapStore.usedBytes))"))
+                        .font(.subheadline.weight(.semibold).monospacedDigit())
+                        .foregroundStyle(Theme.textSecondary)
+                }
+                Spacer(minLength: 8)
+                Image(systemName: "chevron.right")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(Theme.textSecondary)
+                    .accessibilityHidden(true)
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
+            .overlay(RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                .stroke(Theme.accent, lineWidth: Theme.borderWidth))
+        }
+        .buttonStyle(.plain)
     }
 }
 

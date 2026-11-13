@@ -9,7 +9,7 @@ import SwiftUI
 /// places typed by hand; MEDICAL ships placeholder topics and saves only bookmarks and the
 /// last category. ALERT (board) and CONNECT use a phone-to-phone mesh over
 /// Bluetooth and peer-to-peer Wi-Fi, off until the user switches it on.
-/// No internet, server, location or maps are used.
+/// MAPS also shows offline map areas downloaded once (OpenStreetMap) and the GPS position.
 @main
 struct SURVIVE72App: App {
     @State private var kitStore = KitChecklistStore()
@@ -19,6 +19,7 @@ struct SURVIVE72App: App {
     @State private var downloadsStore = DownloadsStore()
     @State private var connectStore = ConnectStore()
     @State private var mapsStore = MapsStore()
+    @State private var offlineMapStore = OfflineMapStore()
     @State private var medicalStore = MedicalStore()
     @State private var meshService = MeshService()
     @Environment(\.scenePhase) private var scenePhase
@@ -33,6 +34,7 @@ struct SURVIVE72App: App {
                 .environment(downloadsStore)
                 .environment(connectStore)
                 .environment(mapsStore)
+                .environment(offlineMapStore)
                 .environment(medicalStore)
                 .environment(meshService)
                 // iOS closes the phone-to-phone link in the background: reopen it.
