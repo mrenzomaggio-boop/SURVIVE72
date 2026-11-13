@@ -331,6 +331,26 @@
         }
       }
     },
+    "A burnt forearm under cool running tap water, with a timer.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un avambraccio ustionato sotto l'acqua fresca corrente del rubinetto, con un timer."
+          }
+        }
+      }
+    },
+    "A face with one corner of the mouth drooping, next to a phone showing 112.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un viso con un angolo della bocca che scende, accanto a un telefono con il numero 112."
+          }
+        }
+      }
+    },
     "A first aid kit and your personal medicines.": {
       "localizations": {
         "it": {
@@ -341,12 +361,62 @@
         }
       }
     },
+    "A person lying in the shade of a tree with legs raised, while a rescuer pours cool water on the neck.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una persona sdraiata all'ombra di un albero con le gambe sollevate, mentre un soccorritore le versa acqua fresca sul collo."
+          }
+        }
+      }
+    },
+    "A person lying on their side, head tilted back, hand under the cheek, upper knee bent.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una persona sdraiata sul fianco, testa indietro, mano sotto la guancia, ginocchio di sopra piegato."
+          }
+        }
+      }
+    },
+    "A person sitting in shelter, wrapped in a blanket, holding a warm drink.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una persona seduta al riparo, avvolta in una coperta, con una bevanda calda tra le mani."
+          }
+        }
+      }
+    },
+    "A person sitting on the floor; the auto-injector is pressed against the outer side of the thigh.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Una persona seduta a terra; l'autoiniettore è premuto sul lato esterno della coscia."
+          }
+        }
+      }
+    },
     "A receiver only listens: it does not need a network or an account.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Un ricevitore si limita ad ascoltare: non servono rete né account."
+          }
+        }
+      }
+    },
+    "A rescuer kneels next to a person lying on their back, arms straight, hands in the centre of the chest, pushing down.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un soccorritore è in ginocchio accanto a una persona sdraiata sulla schiena, braccia dritte, mani al centro del petto, e spinge verso il basso."
           }
         }
       }
@@ -377,6 +447,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Torcia e radio a pile."
+          }
+        }
+      }
+    },
+    "A wave comes in from the sea while a person runs up the hill to high ground.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un'onda arriva dal mare mentre una persona corre su per la collina, verso l'alto."
           }
         }
       }
@@ -641,12 +721,32 @@
         }
       }
     },
+    "An arm with a wound; the tourniquet is tightened above the wound and a clock reminds you to write down the time.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Un braccio con una ferita; il laccio è stretto sopra la ferita e un orologio ricorda di scrivere l'ora."
+          }
+        }
+      }
+    },
     "An earphone socket helps you listen quietly.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Una presa per auricolari ti permette di ascoltare senza disturbare."
+          }
+        }
+      }
+    },
+    "An emergency backpack with water, a torch, a first aid kit, a battery radio and documents.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uno zaino di emergenza con acqua, torcia, cassetta di pronto soccorso, radio a pile e documenti."
           }
         }
       }
@@ -1251,6 +1351,16 @@
         }
       }
     },
+    "Cross-section of a house: the ground floor is flooded and the person has gone up to the floor above.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sezione di una casa: il piano terra è allagato e la persona è salita al piano di sopra."
+          }
+        }
+      }
+    },
     "Current position": {
       "localizations": {
         "it": {
@@ -1727,6 +1837,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Durante l'alluvione: all'aperto"
+          }
+        }
+      }
+    },
+    "During the shaking, a person kneels under a sturdy table, one arm protecting the head and neck, the other hand holding a table leg.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durante la scossa, una persona è in ginocchio sotto un tavolo robusto: un braccio protegge testa e collo, l'altra mano tiene una gamba del tavolo."
           }
         }
       }
@@ -5377,6 +5497,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Sintomi nel parlare: parole biascicate o confuse."
+          }
+        }
+      }
+    },
+    "Standing behind a person who is bent forward, the rescuer supports the chest with one hand and gives back blows between the shoulder blades with the other.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dietro una persona piegata in avanti, il soccorritore le sostiene il petto con una mano e con l'altra dà colpi tra le scapole."
           }
         }
       }

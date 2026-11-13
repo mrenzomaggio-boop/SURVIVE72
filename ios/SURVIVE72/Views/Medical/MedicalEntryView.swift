@@ -38,6 +38,10 @@ struct MedicalEntryView: View {
                     .foregroundStyle(Theme.textPrimary)
                     .fixedSize(horizontal: false, vertical: true)
 
+                if let illustration = IllustrationCatalog.forID(entry.id) {
+                    IllustrationView(illustration: illustration)
+                }
+
                 Button {
                     showStepByStep = true
                 } label: {

@@ -135,3 +135,26 @@ final class MedicalLibraryTests: XCTestCase {
         XCTAssertTrue(MedicalLibrary.disclaimer.contains("accepts no liability"))
     }
 }
+
+/// Every first aid card and Knowledge article has a drawing that ships in
+/// the app, in both the day and night look.
+final class IllustrationTests: XCTestCase {
+    func testEveryCardAndArticleHasADrawing() {
+        let ids = MedicalLibraryContent.entries.map(\.id) + KnowledgeLibraryContent.articles.map(\.id)
+        for id in ids {
+            XCTAssertNotNil(IllustrationCatalog.forID(id), id)
+        }
+        XCTAssertEqual(Set(IllustrationCatalog.byID.keys), Set(ids), "No drawing for an unknown id")
+    }
+
+    func testDrawingsExistInLightAndDark() {
+        for illustration in IllustrationCatalog.byID.values {
+            XCTAssertFalse(illustration.description.isEmpty, illustration.assetName)
+            for style in [UIUserInterfaceStyle.light, .dark] {
+                let traits = UITraitCollection(userInterfaceStyle: style)
+                XCTAssertNotNil(UIImage(named: illustration.assetName, in: .main, compatibleWith: traits),
+                                "\(illustration.assetName) \(style == .dark ? "dark" : "light")")
+            }
+        }
+    }
+}

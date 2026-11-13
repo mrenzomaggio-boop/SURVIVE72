@@ -33,6 +33,10 @@ struct KnowledgeArticleView: View {
                     .foregroundStyle(Theme.textPrimary)
                     .fixedSize(horizontal: false, vertical: true)
 
+                if let illustration = IllustrationCatalog.forID(article.id) {
+                    IllustrationView(illustration: illustration)
+                }
+
                 ForEach(Array(article.sections.enumerated()), id: \.offset) { _, section in
                     VStack(alignment: .leading, spacing: 10) {
                         Label {
@@ -66,6 +70,23 @@ struct KnowledgeArticleView: View {
 
 /// Returns the symbol name if it exists on this system, otherwise a neutral
 /// circle, so a wrong name never leaves an empty space.
+/// A large drawing of the key action, full width, with rounded corners.
+struct IllustrationView: View {
+    let illustration: Illustration
+
+    var body: some View {
+        Image(illustration.assetName)
+            .resizable()
+            .scaledToFit()
+            .frame(maxWidth: .infinity)
+            .clipShape(RoundedRectangle(cornerRadius: Theme.cornerRadius))
+            .overlay(RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                .stroke(Theme.surfaceBorder, lineWidth: Theme.borderWidth))
+            .accessibilityLabel(illustration.description)
+            .accessibilityAddTraits(.isImage)
+    }
+}
+
 enum SymbolCheck {
     static func safe(_ name: String) -> String {
         UIImage(systemName: name) == nil ? "circle.fill" : name
