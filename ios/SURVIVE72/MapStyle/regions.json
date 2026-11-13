@@ -1,5 +1,5 @@
 {
-  "comment": "Downloadable offline map areas. bbox = [west, south, east, north]. estimatedMB: measured for built areas, estimate otherwise. Big countries use a lower maxzoom to stay under the 2 GB GitHub release file limit.",
+  "comment": "Downloadable offline map areas. bbox = [west, south, east, north]. estimatedMB is the size measured by the survive72-maps workflow (Nov 2026). Big countries use a lower maxzoom to stay under the 2 GB GitHub release file limit.",
   "regions": [
     {
       "id": "it-piemonte",
@@ -251,7 +251,7 @@
         47.1
       ],
       "maxzoom": 13,
-      "estimatedMB": 1200
+      "estimatedMB": 1203
     },
     {
       "id": "country-ch",
@@ -263,7 +263,7 @@
         47.81
       ],
       "maxzoom": 14,
-      "estimatedMB": 900
+      "estimatedMB": 498
     },
     {
       "id": "country-at",
@@ -275,7 +275,7 @@
         49.02
       ],
       "maxzoom": 14,
-      "estimatedMB": 900
+      "estimatedMB": 1061
     },
     {
       "id": "country-si",
@@ -287,7 +287,7 @@
         46.88
       ],
       "maxzoom": 14,
-      "estimatedMB": 250
+      "estimatedMB": 348
     },
     {
       "id": "country-hr",
@@ -299,7 +299,7 @@
         46.56
       ],
       "maxzoom": 14,
-      "estimatedMB": 350
+      "estimatedMB": 689
     },
     {
       "id": "country-mt",
@@ -323,7 +323,7 @@
         51.09
       ],
       "maxzoom": 12,
-      "estimatedMB": 1400
+      "estimatedMB": 1116
     },
     {
       "id": "country-de",
@@ -335,7 +335,7 @@
         55.06
       ],
       "maxzoom": 12,
-      "estimatedMB": 1600
+      "estimatedMB": 873
     },
     {
       "id": "country-es",
@@ -347,7 +347,7 @@
         43.79
       ],
       "maxzoom": 13,
-      "estimatedMB": 1200
+      "estimatedMB": 871
     },
     {
       "id": "country-pt",
@@ -359,7 +359,7 @@
         42.15
       ],
       "maxzoom": 14,
-      "estimatedMB": 500
+      "estimatedMB": 335
     },
     {
       "id": "country-gr",
@@ -371,7 +371,7 @@
         41.75
       ],
       "maxzoom": 14,
-      "estimatedMB": 600
+      "estimatedMB": 433
     }
   ]
 }
