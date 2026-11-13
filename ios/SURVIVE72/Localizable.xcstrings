@@ -161,6 +161,16 @@
         }
       }
     },
+    "%lld countries": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld Paesi"
+          }
+        }
+      }
+    },
     "%lld entries": {
       "localizations": {
         "it": {
@@ -247,6 +257,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "%1$lld di %2$lld pronti"
+          }
+        }
+      }
+    },
+    "%lld regions": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%lld regioni"
           }
         }
       }
@@ -531,6 +551,16 @@
         }
       }
     },
+    "Africa": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Africa"
+          }
+        }
+      }
+    },
     "After": {
       "localizations": {
         "it": {
@@ -667,6 +697,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Tutti gli oggetti verranno segnati come non pronti. L'operazione non si può annullare."
+          }
+        }
+      }
+    },
+    "All the world": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tutto il mondo"
           }
         }
       }
@@ -817,6 +857,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Articoli adattati da Io non rischio, la campagna del Dipartimento della Protezione Civile. Non sono stati scritti da SURVIVE 72. Segui sempre le indicazioni delle autorità."
+          }
+        }
+      }
+    },
+    "Asia": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Asia"
           }
         }
       }
@@ -1341,6 +1391,16 @@
         }
       }
     },
+    "Country or region": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paese o regione"
+          }
+        }
+      }
+    },
     "Cover with cling film or a clean cloth. Do not apply creams, oil or butter.": {
       "localizations": {
         "it": {
@@ -1771,6 +1831,16 @@
         }
       }
     },
+    "Downloaded: %lld": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scaricate: %lld"
+          }
+        }
+      }
+    },
     "Downloading %lld percent": {
       "localizations": {
         "it": {
@@ -2087,6 +2157,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cancellare tutti i dati locali?"
+          }
+        }
+      }
+    },
+    "Europe": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Europa"
           }
         }
       }
@@ -2867,16 +2947,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Resta su questo dispositivo e non viene mai trasmesso."
-          }
-        }
-      }
-    },
-    "Italian regions": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Regioni italiane"
           }
         }
       }
@@ -3721,6 +3791,16 @@
         }
       }
     },
+    "No country or region with this name.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun Paese o regione con questo nome."
+          }
+        }
+      }
+    },
     "No entries found. Try another word or choose All.": {
       "localizations": {
         "it": {
@@ -3851,6 +3931,16 @@
         }
       }
     },
+    "North and Central America": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "America del Nord e centrale"
+          }
+        }
+      }
+    },
     "Not packed": {
       "localizations": {
         "it": {
@@ -3867,6 +3957,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Non preparata"
+          }
+        }
+      }
+    },
+    "Not ready yet: this area will be online with the next map update.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non ancora pronta: questa zona sarà online con il prossimo aggiornamento delle mappe."
           }
         }
       }
@@ -3971,6 +4071,16 @@
         }
       }
     },
+    "Oceania": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Oceania"
+          }
+        }
+      }
+    },
     "Official information comes first.": {
       "localizations": {
         "it": {
@@ -4047,6 +4157,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "In barca ascolta sempre la radio. Se sei in mare, allontanati verso il largo. Se sei in porto, lascia la barca e raggiungi un luogo elevato."
+          }
+        }
+      }
+    },
+    "On this iPhone": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Su questo iPhone"
           }
         }
       }
@@ -4851,6 +4971,16 @@
         }
       }
     },
+    "Regions": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Regioni"
+          }
+        }
+      }
+    },
     "Relationship": {
       "localizations": {
         "it": {
@@ -4957,6 +5087,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Ripristina testo predefinito"
+          }
+        }
+      }
+    },
+    "Results": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Risultati"
           }
         }
       }
@@ -5471,6 +5611,16 @@
         }
       }
     },
+    "South America": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "America del Sud"
+          }
+        }
+      }
+    },
     "Spare batteries": {
       "localizations": {
         "it": {
@@ -5927,6 +6077,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "I segnali di un maremoto e come mettersi al sicuro sulla costa o in mare."
+          }
+        }
+      }
+    },
+    "The whole country takes a lot of space: you can download only the regions you need.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il Paese intero occupa molto spazio: puoi scaricare solo le regioni che ti servono."
           }
         }
       }
@@ -6421,12 +6581,12 @@
         }
       }
     },
-    "Whole countries": {
+    "Whole country": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Paesi interi"
+            "value": "Paese intero"
           }
         }
       }
@@ -6527,6 +6687,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Il tuo SOS comparirà per primo su ogni telefono che raggiunge. Non chiama i servizi di emergenza. Usalo solo per un'emergenza vera."
+          }
+        }
+      }
+    },
+    "Your country": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il tuo Paese"
           }
         }
       }

@@ -30,6 +30,9 @@ final class OfflineMapStore {
     private let baseURL: URL?
 
     private(set) var states: [String: MapDownloadState] = [:]
+    /// Real sizes of the published files, by area id. Empty until the list
+    /// has been read once from the internet (then it is kept on the device).
+    private(set) var publishedSizes: [String: Int64] = [:]
     private var tasks: [String: URLSessionDownloadTask] = [:]
     private var observations: [String: NSKeyValueObservation] = [:]
 
@@ -44,7 +47,40 @@ final class OfflineMapStore {
         self.regions = regions
         self.directory = directory
         self.baseURL = baseURL
+        if let data = try? Data(contentsOf: catalogFileURL), let catalog = MapSizeCatalog.decode(data) {
+            publishedSizes = catalog.bytesByID
+        }
         refresh()
+    }
+
+    private var catalogFileURL: URL { directory.appendingPathComponent("catalog.json") }
+
+    /// Size of the file to download: the real one when known, otherwise the
+    /// estimate. Nil when nothing is known yet.
+    func expectedBytes(of region: MapRegion) -> Int64? {
+        if let bytes = publishedSizes[region.id] { return bytes }
+        return region.estimatedMB > 0 ? Int64(region.estimatedMB) * 1_000_000 : nil
+    }
+
+    /// False when the published list is known and this area is not in it yet.
+    func isPublished(_ region: MapRegion) -> Bool {
+        publishedSizes.isEmpty || publishedSizes[region.id] != nil
+    }
+
+    /// Reads the list of published files with their sizes. Without internet
+    /// it keeps the last list it read.
+    func loadCatalog() async {
+        guard let url = MapRegionCatalog.catalogURL(base: baseURL),
+              let (data, response) = try? await URLSession.shared.data(from: url),
+              let status = (response as? HTTPURLResponse)?.statusCode, (200..<300).contains(status),
+              let catalog = MapSizeCatalog.decode(data) else { return }
+        applyCatalog(catalog)
+        prepareDirectory()
+        try? data.write(to: catalogFileURL, options: .atomic)
+    }
+
+    func applyCatalog(_ catalog: MapSizeCatalog) {
+        publishedSizes = catalog.bytesByID
     }
 
     /// True when the map files are published and can be downloaded.

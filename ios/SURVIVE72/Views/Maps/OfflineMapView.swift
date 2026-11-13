@@ -205,51 +205,34 @@ private struct MapLibreMapView: UIViewRepresentable {
 
 // MARK: - Downloads
 
-/// List of the areas that can be downloaded, with their state.
+/// Areas that can be downloaded: search, what is on this iPhone, the user's
+/// country, then every country of the world by continent.
 struct MapDownloadsView: View {
     @Environment(OfflineMapStore.self) private var store
-    @State private var regionPendingDeletion: MapRegion?
+    @State private var query = ""
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
+            VStack(alignment: .leading, spacing: 22) {
                 summary
-                if !store.canDownload {
-                    Label(String(localized: "Map files are not online yet: downloads will be switched on in a next version."),
-                          systemImage: "clock.fill")
-                        .font(.subheadline.weight(.bold))
-                        .foregroundStyle(Theme.textPrimary)
-                        .padding(12)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
-                        .overlay(RoundedRectangle(cornerRadius: Theme.cornerRadius)
-                            .stroke(Theme.accent, lineWidth: Theme.borderWidth))
+                if !store.canDownload { notOnlineNotice }
+                if query.trimmed.isEmpty {
+                    onThisPhone
+                    homeCountry
+                    continents
+                } else {
+                    searchResults
                 }
-                group(String(localized: "Italian regions"), regions: store.regions.filter { !$0.isCountry })
-                group(String(localized: "Whole countries"), regions: store.regions.filter(\.isCountry))
-                Text(String(localized: "Map data © OpenStreetMap contributors, ODbL licence. Map style by Protomaps."))
-                    .font(.footnote)
-                    .foregroundStyle(Theme.textSecondary)
+                MapAttributionNote()
             }
             .padding(16)
         }
         .background(Theme.background.ignoresSafeArea())
         .navigationTitle(String(localized: "Map areas"))
         .navigationBarTitleDisplayMode(.large)
+        .searchable(text: $query, prompt: String(localized: "Country or region"))
         .onAppear { store.refresh() }
-        .alert(
-            String(localized: "Delete map area?"),
-            isPresented: Binding(
-                get: { regionPendingDeletion != nil },
-                set: { if !$0 { regionPendingDeletion = nil } }
-            ),
-            presenting: regionPendingDeletion
-        ) { region in
-            Button(String(localized: "Delete"), role: .destructive) { store.delete(region) }
-            Button(String(localized: "Cancel"), role: .cancel) {}
-        } message: { region in
-            Text(String(localized: "\(region.title) will be removed from this iPhone. You can download it again later."))
-        }
+        .task { await store.loadCatalog() }
     }
 
     private var summary: some View {
@@ -263,36 +246,260 @@ struct MapDownloadsView: View {
         }
     }
 
-    private func group(_ title: String, regions: [MapRegion]) -> some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text(title.uppercased())
-                .font(.title3.weight(.heavy))
-                .foregroundStyle(Theme.textPrimary)
-                .accessibilityAddTraits(.isHeader)
-            ForEach(regions.sorted { $0.title.localizedCompare($1.title) == .orderedAscending }) { region in
-                MapRegionRow(region: region, state: store.state(of: region), canDownload: store.canDownload,
-                             onDownload: { store.download(region) },
-                             onCancel: { store.cancel(region) },
-                             onDelete: { regionPendingDeletion = region })
+    private var notOnlineNotice: some View {
+        Label(String(localized: "Map files are not online yet: downloads will be switched on in a next version."),
+              systemImage: "clock.fill")
+            .font(.subheadline.weight(.bold))
+            .foregroundStyle(Theme.textPrimary)
+            .padding(12)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
+            .overlay(RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                .stroke(Theme.accent, lineWidth: Theme.borderWidth))
+    }
+
+    /// Downloaded areas and the ones downloading now.
+    @ViewBuilder
+    private var onThisPhone: some View {
+        let local = MapRegionIndex.sortedByTitle(store.regions.filter {
+            let state = store.state(of: $0)
+            return state.isDownloaded || state.isDownloading
+        })
+        if !local.isEmpty {
+            MapListSection(title: String(localized: "On this iPhone")) {
+                ForEach(local) { MapAreaRow(region: $0, showsCountry: true) }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var homeCountry: some View {
+        if let code = Locale.current.region?.identifier,
+           let country = store.regions.first(where: { $0.iso == code }) {
+            MapListSection(title: String(localized: "Your country")) {
+                MapCountryLink(country: country)
+            }
+        }
+    }
+
+    private var continents: some View {
+        MapListSection(title: String(localized: "All the world")) {
+            ForEach(MapContinent.allCases) { continent in
+                NavigationLink {
+                    MapContinentView(continent: continent)
+                } label: {
+                    MapLinkLabel(title: continent.title,
+                                 detail: String(localized: "\(MapRegionIndex.countries(in: continent, of: store.regions).count) countries"),
+                                 systemImage: continent.systemImage)
+                }
+                .buttonStyle(.plain)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var searchResults: some View {
+        let found = MapRegionIndex.search(query, in: store.regions)
+        if found.isEmpty {
+            Text(String(localized: "No country or region with this name."))
+                .font(.headline)
+                .foregroundStyle(Theme.textSecondary)
+        } else {
+            MapListSection(title: String(localized: "Results")) {
+                ForEach(found.prefix(60)) { region in
+                    if region.isCountry {
+                        MapCountryLink(country: region)
+                    } else {
+                        MapAreaRow(region: region, showsCountry: true)
+                    }
+                }
             }
         }
     }
 }
 
-private struct MapRegionRow: View {
+/// The countries of one continent.
+struct MapContinentView: View {
+    @Environment(OfflineMapStore.self) private var store
+    let continent: MapContinent
+
+    var body: some View {
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 10) {
+                ForEach(MapRegionIndex.countries(in: continent, of: store.regions)) { country in
+                    MapCountryLink(country: country)
+                }
+            }
+            .padding(16)
+        }
+        .background(Theme.background.ignoresSafeArea())
+        .navigationTitle(continent.title)
+        .navigationBarTitleDisplayMode(.large)
+    }
+}
+
+/// One country: the whole country, and its regions or states when it has them.
+struct MapCountryView: View {
+    @Environment(OfflineMapStore.self) private var store
+    let country: MapRegion
+
+    var body: some View {
+        let parts = country.iso.map { MapRegionIndex.parts(of: $0, in: store.regions) } ?? []
+        ScrollView {
+            LazyVStack(alignment: .leading, spacing: 22) {
+                if !parts.isEmpty {
+                    Text(String(localized: "The whole country takes a lot of space: you can download only the regions you need."))
+                        .font(.body)
+                        .foregroundStyle(Theme.textPrimary)
+                }
+                MapListSection(title: String(localized: "Whole country")) {
+                    MapAreaRow(region: country, showsCountry: false)
+                }
+                if !parts.isEmpty {
+                    MapListSection(title: String(localized: "Regions")) {
+                        ForEach(parts) { MapAreaRow(region: $0, showsCountry: false) }
+                    }
+                }
+                MapAttributionNote()
+            }
+            .padding(16)
+        }
+        .background(Theme.background.ignoresSafeArea())
+        .navigationTitle(country.title)
+        .navigationBarTitleDisplayMode(.large)
+    }
+}
+
+private struct MapListSection<Content: View>: View {
+    let title: String
+    @ViewBuilder let content: Content
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text(title.uppercased())
+                .font(.title3.weight(.heavy))
+                .foregroundStyle(Theme.textPrimary)
+                .accessibilityAddTraits(.isHeader)
+            content
+        }
+    }
+}
+
+private struct MapAttributionNote: View {
+    var body: some View {
+        Text(String(localized: "Map data © OpenStreetMap contributors, ODbL licence. Map style by Protomaps."))
+            .font(.footnote)
+            .foregroundStyle(Theme.textSecondary)
+    }
+}
+
+/// A row that opens a country.
+private struct MapCountryLink: View {
+    @Environment(OfflineMapStore.self) private var store
+    let country: MapRegion
+
+    var body: some View {
+        NavigationLink {
+            MapCountryView(country: country)
+        } label: {
+            MapLinkLabel(title: country.title, detail: detail,
+                         systemImage: downloadedCount > 0 ? "checkmark.circle.fill" : "map.fill",
+                         highlighted: downloadedCount > 0)
+        }
+        .buttonStyle(.plain)
+    }
+
+    private var parts: [MapRegion] {
+        country.iso.map { MapRegionIndex.parts(of: $0, in: store.regions) } ?? []
+    }
+
+    private var downloadedCount: Int {
+        ([country] + parts).filter { store.state(of: $0).isDownloaded }.count
+    }
+
+    private var detail: String {
+        var pieces: [String] = []
+        if downloadedCount > 0 {
+            pieces.append(String(localized: "Downloaded: \(downloadedCount)"))
+        }
+        if !parts.isEmpty {
+            pieces.append(String(localized: "\(parts.count) regions"))
+        } else if let bytes = store.expectedBytes(of: country) {
+            pieces.append(SizeFormat.bytes(bytes))
+        }
+        return pieces.joined(separator: " · ")
+    }
+}
+
+private struct MapLinkLabel: View {
+    let title: String
+    let detail: String
+    let systemImage: String
+    var highlighted = false
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(systemName: systemImage)
+                .font(.title2.weight(.bold))
+                .foregroundStyle(highlighted ? Theme.ok : Theme.accent)
+                .frame(width: 32)
+                .accessibilityHidden(true)
+            VStack(alignment: .leading, spacing: 3) {
+                Text(title)
+                    .font(.headline.weight(.heavy))
+                    .foregroundStyle(Theme.textPrimary)
+                if !detail.isEmpty {
+                    Text(detail)
+                        .font(.subheadline.weight(.semibold).monospacedDigit())
+                        .foregroundStyle(Theme.textSecondary)
+                }
+            }
+            Spacer(minLength: 8)
+            Image(systemName: "chevron.right")
+                .font(.headline.weight(.bold))
+                .foregroundStyle(Theme.textSecondary)
+                .accessibilityHidden(true)
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, minHeight: 60, alignment: .leading)
+        .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
+        .overlay(RoundedRectangle(cornerRadius: Theme.cornerRadius)
+            .stroke(highlighted ? Theme.ok : Theme.surfaceBorder, lineWidth: Theme.borderWidth))
+        .contentShape(Rectangle())
+        .accessibilityElement(children: .combine)
+    }
+}
+
+/// One downloadable area with its state and button.
+private struct MapAreaRow: View {
+    @Environment(OfflineMapStore.self) private var store
     let region: MapRegion
-    let state: MapDownloadState
-    let canDownload: Bool
-    let onDownload: () -> Void
-    let onCancel: () -> Void
-    let onDelete: () -> Void
+    /// Shows the country under the name of a region (in search and lists
+    /// that mix countries).
+    let showsCountry: Bool
+
+    @State private var isConfirmingDelete = false
+
+    private var state: MapDownloadState { store.state(of: region) }
+    private var canDownload: Bool { store.canDownload && store.isPublished(region) }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .firstTextBaseline) {
-                Text(region.title)
-                    .font(.headline.weight(.heavy))
-                    .foregroundStyle(Theme.textPrimary)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(region.title)
+                        .font(.headline.weight(.heavy))
+                        .foregroundStyle(Theme.textPrimary)
+                    if showsCountry, let country = region.parentTitle {
+                        Text(country)
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Theme.textSecondary)
+                    } else if showsCountry, region.isCountry {
+                        Text(String(localized: "Whole country"))
+                            .font(.subheadline.weight(.semibold))
+                            .foregroundStyle(Theme.textSecondary)
+                    }
+                }
                 Spacer(minLength: 8)
                 Text(sizeText)
                     .font(.subheadline.weight(.semibold).monospacedDigit())
@@ -308,6 +515,11 @@ private struct MapRegionRow: View {
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(Theme.danger)
             }
+            if !store.isPublished(region), !state.isDownloaded {
+                Text(String(localized: "Not ready yet: this area will be online with the next map update."))
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(Theme.textSecondary)
+            }
             actionButton
         }
         .padding(14)
@@ -315,11 +527,18 @@ private struct MapRegionRow: View {
         .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
         .overlay(RoundedRectangle(cornerRadius: Theme.cornerRadius)
             .stroke(state.isDownloaded ? Theme.ok : Theme.surfaceBorder, lineWidth: Theme.borderWidth))
+        .alert(String(localized: "Delete map area?"), isPresented: $isConfirmingDelete) {
+            Button(String(localized: "Delete"), role: .destructive) { store.delete(region) }
+            Button(String(localized: "Cancel"), role: .cancel) {}
+        } message: {
+            Text(String(localized: "\(region.title) will be removed from this iPhone. You can download it again later."))
+        }
     }
 
     private var sizeText: String {
         if case .downloaded(let bytes) = state { return SizeFormat.bytes(bytes) }
-        return String(localized: "about \(SizeFormat.megabytes(region.estimatedMB))")
+        guard let bytes = store.expectedBytes(of: region) else { return "" }
+        return String(localized: "about \(SizeFormat.bytes(bytes))")
     }
 
     @ViewBuilder
@@ -327,13 +546,15 @@ private struct MapRegionRow: View {
         switch state {
         case .downloaded:
             rowButton(String(localized: "Downloaded · Delete"), systemImage: "checkmark.circle.fill",
-                      color: Theme.ok, action: onDelete)
+                      color: Theme.ok) { isConfirmingDelete = true }
                 .accessibilityLabel(String(localized: "Delete \(region.title)"))
         case .downloading:
-            rowButton(String(localized: "Stop"), systemImage: "xmark.circle.fill", color: Theme.danger, action: onCancel)
+            rowButton(String(localized: "Stop"), systemImage: "xmark.circle.fill", color: Theme.danger) {
+                store.cancel(region)
+            }
         case .notDownloaded, .failed:
             rowButton(String(localized: "Download"), systemImage: "arrow.down.circle.fill",
-                      color: canDownload ? Theme.accent : Theme.textSecondary, action: onDownload)
+                      color: canDownload ? Theme.accent : Theme.textSecondary) { store.download(region) }
                 .disabled(!canDownload)
                 .accessibilityLabel(String(localized: "Download \(region.title)"))
         }
