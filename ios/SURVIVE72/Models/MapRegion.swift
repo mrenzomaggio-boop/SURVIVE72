@@ -10,12 +10,26 @@ struct MapRegion: Identifiable, Hashable, Decodable {
     let name: String?
     /// ISO 3166 country code, for whole countries.
     let iso: String?
+    /// For a part of a country (Italian region, US state…): the country code.
+    let parent: String?
+    /// One of `MapContinent`'s raw values.
+    let continent: String?
     /// [west, south, east, north] in degrees.
     let bbox: [Double]
     let maxzoom: Int
     let estimatedMB: Int
 
     var isCountry: Bool { iso != nil }
+
+    /// The country this area is, or belongs to.
+    var countryCode: String? { iso ?? parent }
+
+    var mapContinent: MapContinent? { continent.flatMap(MapContinent.init(rawValue:)) }
+
+    /// Name of the country this area belongs to, for parts of a country.
+    var parentTitle: String? {
+        parent.map { Locale.current.localizedString(forRegionCode: $0) ?? $0 }
+    }
 
     var title: String {
         if let iso {
@@ -42,11 +56,86 @@ struct MapRegion: Identifiable, Hashable, Decodable {
         bbox.count == 4 && west < east && south < north
             && (-180...180).contains(west) && (-180...180).contains(east)
             && (-90...90).contains(south) && (-90...90).contains(north)
-            && (0...15).contains(maxzoom) && estimatedMB > 0
+            && (0...15).contains(maxzoom) && estimatedMB >= 0
     }
 
     /// Name of the file, both online and on the device.
     var fileName: String { "\(id).pmtiles" }
+}
+
+/// Continents used to group the countries in the list.
+enum MapContinent: String, CaseIterable, Identifiable {
+    case europe, asia, africa, northAmerica = "north-america", southAmerica = "south-america", oceania
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .europe: String(localized: "Europe")
+        case .asia: String(localized: "Asia")
+        case .africa: String(localized: "Africa")
+        case .northAmerica: String(localized: "North and Central America")
+        case .southAmerica: String(localized: "South America")
+        case .oceania: String(localized: "Oceania")
+        }
+    }
+
+    var systemImage: String {
+        switch self {
+        case .europe, .africa: "globe.europe.africa.fill"
+        case .asia, .oceania: "globe.asia.australia.fill"
+        case .northAmerica, .southAmerica: "globe.americas.fill"
+        }
+    }
+}
+
+/// Real file sizes published next to the map files (`catalog.json`).
+struct MapSizeCatalog: Decodable, Equatable {
+    struct Area: Decodable, Equatable {
+        let id: String
+        let bytes: Int64
+    }
+
+    let areas: [Area]
+
+    var bytesByID: [String: Int64] {
+        Dictionary(areas.map { ($0.id, $0.bytes) }, uniquingKeysWith: { first, _ in first })
+    }
+
+    static func decode(_ data: Data) -> MapSizeCatalog? {
+        try? JSONDecoder().decode(MapSizeCatalog.self, from: data)
+    }
+}
+
+/// Search and grouping of the areas, kept out of the views so it can be tested.
+enum MapRegionIndex {
+    static func sortedByTitle(_ regions: [MapRegion]) -> [MapRegion] {
+        regions.sorted { $0.title.localizedStandardCompare($1.title) == .orderedAscending }
+    }
+
+    /// Whole countries of a continent.
+    static func countries(in continent: MapContinent, of regions: [MapRegion]) -> [MapRegion] {
+        sortedByTitle(regions.filter { $0.isCountry && $0.mapContinent == continent })
+    }
+
+    /// Parts (regions, states) of a country.
+    static func parts(of countryCode: String, in regions: [MapRegion]) -> [MapRegion] {
+        sortedByTitle(regions.filter { !$0.isCountry && $0.parent == countryCode })
+    }
+
+    /// Areas whose name, or country name, contains the text. Ignores case and accents.
+    static func search(_ text: String, in regions: [MapRegion]) -> [MapRegion] {
+        let query = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !query.isEmpty else { return [] }
+        let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]
+        let found = regions.filter { region in
+            region.title.range(of: query, options: options) != nil
+                || (region.parentTitle?.range(of: query, options: options) != nil)
+                || (region.countryCode?.caseInsensitiveCompare(query) == .orderedSame)
+        }
+        // Whole countries first, then their parts.
+        return sortedByTitle(found.filter(\.isCountry)) + sortedByTitle(found.filter { !$0.isCountry })
+    }
 }
 
 private struct MapRegionFile: Decodable {
@@ -69,6 +158,10 @@ enum MapRegionCatalog {
     static func decode(_ data: Data) -> [MapRegion] {
         guard let file = try? JSONDecoder().decode(MapRegionFile.self, from: data) else { return [] }
         return file.regions.filter(\.isValid)
+    }
+
+    static func catalogURL(base: URL? = downloadBaseURL) -> URL? {
+        base?.appendingPathComponent("catalog.json")
     }
 
     static func downloadURL(for region: MapRegion, base: URL? = downloadBaseURL) -> URL? {

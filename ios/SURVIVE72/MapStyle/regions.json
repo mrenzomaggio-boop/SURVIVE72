@@ -1,377 +1,7469 @@
 {
-  "comment": "Downloadable offline map areas. bbox = [west, south, east, north]. estimatedMB is the size measured by the survive72-maps workflow (Nov 2026). Big countries use a lower maxzoom to stay under the 2 GB GitHub release file limit.",
-  "regions": [
-    {
-      "id": "it-piemonte",
-      "name": "Piemonte",
-      "bbox": [
-        6.6,
-        44.05,
-        9.25,
-        46.47
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 591
-    },
-    {
-      "id": "it-valle-d-aosta",
-      "name": "Valle d'Aosta",
-      "bbox": [
-        6.8,
-        45.46,
-        7.95,
-        45.99
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 41
-    },
-    {
-      "id": "it-lombardia",
-      "name": "Lombardia",
-      "bbox": [
-        8.49,
-        44.67,
-        11.43,
-        46.64
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 596
-    },
-    {
-      "id": "it-trentino-alto-adige",
-      "name": "Trentino-Alto Adige",
-      "bbox": [
-        10.38,
-        45.67,
-        12.48,
-        47.1
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 267
-    },
-    {
-      "id": "it-veneto",
-      "name": "Veneto",
-      "bbox": [
-        10.62,
-        44.79,
-        13.1,
-        46.68
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 440
-    },
-    {
-      "id": "it-friuli-venezia-giulia",
-      "name": "Friuli-Venezia Giulia",
-      "bbox": [
-        12.32,
-        45.58,
-        13.92,
-        46.65
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 196
-    },
-    {
-      "id": "it-liguria",
-      "name": "Liguria",
-      "bbox": [
-        7.49,
-        43.77,
-        10.07,
-        44.68
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 150
-    },
-    {
-      "id": "it-emilia-romagna",
-      "name": "Emilia-Romagna",
-      "bbox": [
-        9.19,
-        43.73,
-        12.76,
-        45.14
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 397
-    },
-    {
-      "id": "it-toscana",
-      "name": "Toscana",
-      "bbox": [
-        9.68,
-        42.24,
-        12.37,
-        44.47
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 356
-    },
-    {
-      "id": "it-umbria",
-      "name": "Umbria",
-      "bbox": [
-        11.89,
-        42.36,
-        13.27,
-        43.62
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 113
-    },
-    {
-      "id": "it-marche",
-      "name": "Marche",
-      "bbox": [
-        12.18,
-        42.69,
-        13.92,
-        43.97
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 130
-    },
-    {
-      "id": "it-lazio",
-      "name": "Lazio",
-      "bbox": [
-        11.44,
-        40.78,
-        14.03,
-        42.84
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 266
-    },
-    {
-      "id": "it-abruzzo",
-      "name": "Abruzzo",
-      "bbox": [
-        13.01,
-        41.68,
-        14.79,
-        42.9
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 185
-    },
-    {
-      "id": "it-molise",
-      "name": "Molise",
-      "bbox": [
-        13.94,
-        41.36,
-        15.16,
-        42.07
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 54
-    },
-    {
-      "id": "it-campania",
-      "name": "Campania",
-      "bbox": [
-        13.75,
-        39.99,
-        15.81,
-        41.51
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 142
-    },
-    {
-      "id": "it-puglia",
-      "name": "Puglia",
-      "bbox": [
-        14.93,
-        39.79,
-        18.52,
-        42.23
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 219
-    },
-    {
-      "id": "it-basilicata",
-      "name": "Basilicata",
-      "bbox": [
-        15.33,
-        39.89,
-        16.87,
-        41.14
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 89
-    },
-    {
-      "id": "it-calabria",
-      "name": "Calabria",
-      "bbox": [
-        15.63,
-        37.91,
-        17.21,
-        40.15
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 84
-    },
-    {
-      "id": "it-sicilia",
-      "name": "Sicilia",
-      "bbox": [
-        11.92,
-        35.49,
-        15.66,
-        38.82
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 151
-    },
-    {
-      "id": "it-sardegna",
-      "name": "Sardegna",
-      "bbox": [
-        8.13,
-        38.86,
-        9.83,
-        41.31
-      ],
-      "maxzoom": 15,
-      "estimatedMB": 117
-    },
-    {
-      "id": "country-it",
-      "iso": "IT",
-      "bbox": [
-        6.6,
-        35.49,
-        18.53,
-        47.1
-      ],
-      "maxzoom": 13,
-      "estimatedMB": 1203
-    },
-    {
-      "id": "country-ch",
-      "iso": "CH",
-      "bbox": [
-        5.95,
-        45.82,
-        10.49,
-        47.81
-      ],
-      "maxzoom": 14,
-      "estimatedMB": 498
-    },
-    {
-      "id": "country-at",
-      "iso": "AT",
-      "bbox": [
-        9.53,
-        46.37,
-        17.16,
-        49.02
-      ],
-      "maxzoom": 14,
-      "estimatedMB": 1061
-    },
-    {
-      "id": "country-si",
-      "iso": "SI",
-      "bbox": [
-        13.37,
-        45.42,
-        16.61,
-        46.88
-      ],
-      "maxzoom": 14,
-      "estimatedMB": 348
-    },
-    {
-      "id": "country-hr",
-      "iso": "HR",
-      "bbox": [
-        13.49,
-        42.39,
-        19.45,
-        46.56
-      ],
-      "maxzoom": 14,
-      "estimatedMB": 689
-    },
-    {
-      "id": "country-mt",
-      "iso": "MT",
-      "bbox": [
-        14.18,
-        35.78,
-        14.58,
-        36.09
-      ],
-      "maxzoom": 14,
-      "estimatedMB": 4
-    },
-    {
-      "id": "country-fr",
-      "iso": "FR",
-      "bbox": [
-        -5.15,
-        41.33,
-        9.57,
-        51.09
-      ],
-      "maxzoom": 12,
-      "estimatedMB": 1116
-    },
-    {
-      "id": "country-de",
-      "iso": "DE",
-      "bbox": [
-        5.87,
-        47.27,
-        15.04,
-        55.06
-      ],
-      "maxzoom": 12,
-      "estimatedMB": 873
-    },
-    {
-      "id": "country-es",
-      "iso": "ES",
-      "bbox": [
-        -9.3,
-        35.95,
-        4.33,
-        43.79
-      ],
-      "maxzoom": 13,
-      "estimatedMB": 871
-    },
-    {
-      "id": "country-pt",
-      "iso": "PT",
-      "bbox": [
-        -9.53,
-        36.96,
-        -6.19,
-        42.15
-      ],
-      "maxzoom": 14,
-      "estimatedMB": 335
-    },
-    {
-      "id": "country-gr",
-      "iso": "GR",
-      "bbox": [
-        19.37,
-        34.8,
-        28.25,
-        41.75
-      ],
-      "maxzoom": 14,
-      "estimatedMB": 433
-    }
-  ]
+ "comment": "Downloadable offline map areas. bbox = [west, south, east, north]. 'parent' = ISO code of the country an area belongs to. maxzoom is the most detail wanted; the workflow lowers it when a file would exceed 2 GB. estimatedMB: measured size, 0 = not measured yet (the app then reads catalog.json). Countries and states from Natural Earth (public domain).",
+ "regions": [
+  {
+   "id": "it-piemonte",
+   "name": "Piemonte",
+   "bbox": [
+    6.6,
+    44.05,
+    9.25,
+    46.47
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 591,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-valle-d-aosta",
+   "name": "Valle d'Aosta",
+   "bbox": [
+    6.8,
+    45.46,
+    7.95,
+    45.99
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 41,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-lombardia",
+   "name": "Lombardia",
+   "bbox": [
+    8.49,
+    44.67,
+    11.43,
+    46.64
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 596,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-trentino-alto-adige",
+   "name": "Trentino-Alto Adige",
+   "bbox": [
+    10.38,
+    45.67,
+    12.48,
+    47.1
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 267,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-veneto",
+   "name": "Veneto",
+   "bbox": [
+    10.62,
+    44.79,
+    13.1,
+    46.68
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 440,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-friuli-venezia-giulia",
+   "name": "Friuli-Venezia Giulia",
+   "bbox": [
+    12.32,
+    45.58,
+    13.92,
+    46.65
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 196,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-liguria",
+   "name": "Liguria",
+   "bbox": [
+    7.49,
+    43.77,
+    10.07,
+    44.68
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 150,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-emilia-romagna",
+   "name": "Emilia-Romagna",
+   "bbox": [
+    9.19,
+    43.73,
+    12.76,
+    45.14
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 397,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-toscana",
+   "name": "Toscana",
+   "bbox": [
+    9.68,
+    42.24,
+    12.37,
+    44.47
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 356,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-umbria",
+   "name": "Umbria",
+   "bbox": [
+    11.89,
+    42.36,
+    13.27,
+    43.62
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 113,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-marche",
+   "name": "Marche",
+   "bbox": [
+    12.18,
+    42.69,
+    13.92,
+    43.97
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 130,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-lazio",
+   "name": "Lazio",
+   "bbox": [
+    11.44,
+    40.78,
+    14.03,
+    42.84
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 266,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-abruzzo",
+   "name": "Abruzzo",
+   "bbox": [
+    13.01,
+    41.68,
+    14.79,
+    42.9
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 185,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-molise",
+   "name": "Molise",
+   "bbox": [
+    13.94,
+    41.36,
+    15.16,
+    42.07
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 54,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-campania",
+   "name": "Campania",
+   "bbox": [
+    13.75,
+    39.99,
+    15.81,
+    41.51
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 142,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-puglia",
+   "name": "Puglia",
+   "bbox": [
+    14.93,
+    39.79,
+    18.52,
+    42.23
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 219,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-basilicata",
+   "name": "Basilicata",
+   "bbox": [
+    15.33,
+    39.89,
+    16.87,
+    41.14
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 89,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-calabria",
+   "name": "Calabria",
+   "bbox": [
+    15.63,
+    37.91,
+    17.21,
+    40.15
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 84,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-sicilia",
+   "name": "Sicilia",
+   "bbox": [
+    11.92,
+    35.49,
+    15.66,
+    38.82
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 151,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "it-sardegna",
+   "name": "Sardegna",
+   "bbox": [
+    8.13,
+    38.86,
+    9.83,
+    41.31
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 117,
+   "parent": "IT",
+   "continent": "europe"
+  },
+  {
+   "id": "country-zw",
+   "iso": "ZW",
+   "continent": "africa",
+   "bbox": [
+    25.174,
+    -22.452,
+    33.057,
+    -15.593
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-zm",
+   "iso": "ZM",
+   "continent": "africa",
+   "bbox": [
+    21.929,
+    -18.092,
+    33.712,
+    -8.144
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ye",
+   "iso": "YE",
+   "continent": "asia",
+   "bbox": [
+    42.499,
+    12.269,
+    54.561,
+    19.046
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-vn",
+   "iso": "VN",
+   "continent": "asia",
+   "bbox": [
+    102.077,
+    8.533,
+    109.495,
+    23.395
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ve",
+   "iso": "VE",
+   "continent": "south-america",
+   "bbox": [
+    -73.416,
+    0.638,
+    -59.779,
+    12.228
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-va",
+   "iso": "VA",
+   "continent": "europe",
+   "bbox": [
+    12.378,
+    41.848,
+    12.489,
+    41.956
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-vu",
+   "iso": "VU",
+   "continent": "oceania",
+   "bbox": [
+    166.476,
+    -20.292,
+    169.946,
+    -13.659
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-uz",
+   "iso": "UZ",
+   "continent": "asia",
+   "bbox": [
+    55.926,
+    37.122,
+    73.187,
+    45.605
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-uy",
+   "iso": "UY",
+   "continent": "south-america",
+   "bbox": [
+    -58.488,
+    -34.983,
+    -53.076,
+    -30.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-fm",
+   "iso": "FM",
+   "continent": "oceania",
+   "bbox": [
+    138.012,
+    5.227,
+    163.043,
+    9.643
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mh",
+   "iso": "MH",
+   "continent": "oceania",
+   "bbox": [
+    166.795,
+    5.75,
+    171.807,
+    11.219
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mp",
+   "iso": "MP",
+   "continent": "oceania",
+   "bbox": [
+    145.102,
+    14.061,
+    145.885,
+    18.857
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-vi",
+   "iso": "VI",
+   "continent": "north-america",
+   "bbox": [
+    -65.074,
+    17.652,
+    -64.53,
+    18.435
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gu",
+   "iso": "GU",
+   "continent": "oceania",
+   "bbox": [
+    144.599,
+    13.208,
+    144.991,
+    13.672
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-as",
+   "iso": "AS",
+   "continent": "oceania",
+   "bbox": [
+    -170.871,
+    -14.41,
+    -170.518,
+    -14.207
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-pr",
+   "iso": "PR",
+   "continent": "north-america",
+   "bbox": [
+    -67.987,
+    17.897,
+    -65.245,
+    18.572
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-us",
+   "iso": "US",
+   "continent": "north-america",
+   "bbox": [
+    -124.76,
+    24.492,
+    -66.937,
+    49.42
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gs",
+   "iso": "GS",
+   "continent": "oceania",
+   "bbox": [
+    -38.067,
+    -58.542,
+    -26.21,
+    -53.934
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-io",
+   "iso": "IO",
+   "continent": "oceania",
+   "bbox": [
+    72.3,
+    -7.485,
+    72.549,
+    -7.17
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sh",
+   "iso": "SH",
+   "continent": "oceania",
+   "bbox": [
+    -14.465,
+    -16.054,
+    -5.61,
+    -7.833
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-pn",
+   "iso": "PN",
+   "continent": "oceania",
+   "bbox": [
+    -128.4,
+    -24.463,
+    -128.24,
+    -24.273
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ai",
+   "iso": "AI",
+   "continent": "north-america",
+   "bbox": [
+    -63.21,
+    18.121,
+    -62.93,
+    18.32
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-fk",
+   "iso": "FK",
+   "continent": "south-america",
+   "bbox": [
+    -61.195,
+    -52.358,
+    -57.742,
+    -51.22
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ky",
+   "iso": "KY",
+   "continent": "north-america",
+   "bbox": [
+    -81.469,
+    19.222,
+    -79.692,
+    19.816
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bm",
+   "iso": "BM",
+   "continent": "north-america",
+   "bbox": [
+    -64.913,
+    32.21,
+    -64.618,
+    32.437
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-vg",
+   "iso": "VG",
+   "continent": "north-america",
+   "bbox": [
+    -64.745,
+    18.349,
+    -64.224,
+    18.803
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tc",
+   "iso": "TC",
+   "continent": "north-america",
+   "bbox": [
+    -72.392,
+    21.702,
+    -71.587,
+    22.002
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ms",
+   "iso": "MS",
+   "continent": "north-america",
+   "bbox": [
+    -62.273,
+    16.631,
+    -62.098,
+    16.86
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-je",
+   "iso": "JE",
+   "continent": "europe",
+   "bbox": [
+    -2.286,
+    49.12,
+    -1.96,
+    49.316
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gg",
+   "iso": "GG",
+   "continent": "europe",
+   "bbox": [
+    -2.696,
+    49.379,
+    -2.462,
+    49.557
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-im",
+   "iso": "IM",
+   "continent": "europe",
+   "bbox": [
+    -4.835,
+    54.009,
+    -4.288,
+    54.457
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gb",
+   "iso": "GB",
+   "continent": "europe",
+   "bbox": [
+    -8.195,
+    49.971,
+    1.797,
+    60.882
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ae",
+   "iso": "AE",
+   "continent": "asia",
+   "bbox": [
+    51.518,
+    22.571,
+    56.438,
+    26.118
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ua",
+   "iso": "UA",
+   "continent": "europe",
+   "bbox": [
+    22.082,
+    45.184,
+    40.178,
+    52.404
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ug",
+   "iso": "UG",
+   "continent": "africa",
+   "bbox": [
+    29.512,
+    -1.52,
+    35.028,
+    4.27
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tm",
+   "iso": "TM",
+   "continent": "asia",
+   "bbox": [
+    52.444,
+    35.121,
+    66.679,
+    42.828
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tr",
+   "iso": "TR",
+   "continent": "asia",
+   "bbox": [
+    25.619,
+    35.781,
+    44.867,
+    42.143
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tn",
+   "iso": "TN",
+   "continent": "africa",
+   "bbox": [
+    7.446,
+    30.179,
+    11.586,
+    37.39
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tt",
+   "iso": "TT",
+   "continent": "north-america",
+   "bbox": [
+    -61.956,
+    10.015,
+    -60.475,
+    11.375
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-to",
+   "iso": "TO",
+   "continent": "oceania",
+   "bbox": [
+    -175.412,
+    -21.501,
+    -173.872,
+    -18.515
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tg",
+   "iso": "TG",
+   "continent": "africa",
+   "bbox": [
+    -0.14,
+    6.039,
+    1.828,
+    11.166
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tl",
+   "iso": "TL",
+   "continent": "asia",
+   "bbox": [
+    123.986,
+    -9.562,
+    127.346,
+    -8.09
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-th",
+   "iso": "TH",
+   "continent": "asia",
+   "bbox": [
+    97.324,
+    5.587,
+    105.691,
+    20.474
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tz",
+   "iso": "TZ",
+   "continent": "africa",
+   "bbox": [
+    29.273,
+    -11.766,
+    40.514,
+    -0.945
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tj",
+   "iso": "TJ",
+   "continent": "asia",
+   "bbox": [
+    67.3,
+    36.634,
+    75.169,
+    41.085
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tw",
+   "iso": "TW",
+   "continent": "asia",
+   "bbox": [
+    118.237,
+    21.875,
+    121.979,
+    25.327
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sy",
+   "iso": "SY",
+   "continent": "asia",
+   "bbox": [
+    35.714,
+    32.267,
+    42.409,
+    37.347
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ch",
+   "iso": "CH",
+   "continent": "europe",
+   "bbox": [
+    5.95,
+    45.82,
+    10.49,
+    47.81
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 498
+  },
+  {
+   "id": "country-se",
+   "iso": "SE",
+   "continent": "europe",
+   "bbox": [
+    11.097,
+    55.296,
+    24.205,
+    69.087
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sz",
+   "iso": "SZ",
+   "continent": "africa",
+   "bbox": [
+    30.738,
+    -27.36,
+    32.163,
+    -25.693
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sr",
+   "iso": "SR",
+   "continent": "south-america",
+   "bbox": [
+    -58.104,
+    1.792,
+    -53.94,
+    6.043
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ss",
+   "iso": "SS",
+   "continent": "africa",
+   "bbox": [
+    24.097,
+    3.441,
+    35.318,
+    12.273
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sd",
+   "iso": "SD",
+   "continent": "africa",
+   "bbox": [
+    21.775,
+    8.616,
+    38.659,
+    22.252
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-lk",
+   "iso": "LK",
+   "continent": "asia",
+   "bbox": [
+    79.658,
+    5.899,
+    81.927,
+    9.863
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-es",
+   "iso": "ES",
+   "continent": "europe",
+   "bbox": [
+    -9.3,
+    35.95,
+    4.33,
+    43.79
+   ],
+   "maxzoom": 13,
+   "estimatedMB": 871
+  },
+  {
+   "id": "country-kr",
+   "iso": "KR",
+   "continent": "asia",
+   "bbox": [
+    125.958,
+    33.152,
+    130.984,
+    38.673
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-za",
+   "iso": "ZA",
+   "continent": "africa",
+   "bbox": [
+    16.398,
+    -47.013,
+    37.938,
+    -22.096
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-so",
+   "iso": "SO",
+   "continent": "africa",
+   "bbox": [
+    40.914,
+    -1.745,
+    51.44,
+    12.034
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sb",
+   "iso": "SB",
+   "continent": "oceania",
+   "bbox": [
+    155.628,
+    -11.882,
+    166.979,
+    -6.559
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sk",
+   "iso": "SK",
+   "continent": "europe",
+   "bbox": [
+    16.813,
+    47.713,
+    22.589,
+    49.648
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-si",
+   "iso": "SI",
+   "continent": "europe",
+   "bbox": [
+    13.37,
+    45.42,
+    16.61,
+    46.88
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 348
+  },
+  {
+   "id": "country-sg",
+   "iso": "SG",
+   "continent": "asia",
+   "bbox": [
+    103.6,
+    1.215,
+    104.046,
+    1.497
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sl",
+   "iso": "SL",
+   "continent": "africa",
+   "bbox": [
+    -13.343,
+    6.857,
+    -10.233,
+    10.047
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sc",
+   "iso": "SC",
+   "continent": "oceania",
+   "bbox": [
+    55.333,
+    -4.836,
+    55.593,
+    -4.509
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-rs",
+   "iso": "RS",
+   "continent": "europe",
+   "bbox": [
+    18.789,
+    42.192,
+    23.027,
+    46.219
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sn",
+   "iso": "SN",
+   "continent": "africa",
+   "bbox": [
+    -17.586,
+    12.278,
+    -11.332,
+    16.729
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sa",
+   "iso": "SA",
+   "continent": "asia",
+   "bbox": [
+    34.566,
+    16.322,
+    55.691,
+    32.175
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-st",
+   "iso": "ST",
+   "continent": "africa",
+   "bbox": [
+    6.418,
+    -0.003,
+    7.502,
+    1.749
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sm",
+   "iso": "SM",
+   "continent": "europe",
+   "bbox": [
+    12.347,
+    43.844,
+    12.565,
+    44.04
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ws",
+   "iso": "WS",
+   "continent": "oceania",
+   "bbox": [
+    -172.829,
+    -14.097,
+    -171.4,
+    -13.415
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-vc",
+   "iso": "VC",
+   "continent": "north-america",
+   "bbox": [
+    -61.404,
+    12.645,
+    -61.074,
+    13.409
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-lc",
+   "iso": "LC",
+   "continent": "north-america",
+   "bbox": [
+    -61.123,
+    13.668,
+    -60.837,
+    14.143
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-kn",
+   "iso": "KN",
+   "continent": "north-america",
+   "bbox": [
+    -62.89,
+    17.051,
+    -62.482,
+    17.453
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-rw",
+   "iso": "RW",
+   "continent": "africa",
+   "bbox": [
+    28.808,
+    -2.859,
+    30.927,
+    -1.013
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ru",
+   "iso": "RU",
+   "continent": "europe",
+   "bbox": [
+    27.302,
+    41.149,
+    180,
+    81.33
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ro",
+   "iso": "RO",
+   "continent": "europe",
+   "bbox": [
+    20.192,
+    43.621,
+    29.756,
+    48.313
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-qa",
+   "iso": "QA",
+   "continent": "asia",
+   "bbox": [
+    50.705,
+    24.515,
+    51.659,
+    26.203
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-pt",
+   "iso": "PT",
+   "continent": "europe",
+   "bbox": [
+    -9.53,
+    36.96,
+    -6.19,
+    42.15
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 335
+  },
+  {
+   "id": "country-pl",
+   "iso": "PL",
+   "continent": "europe",
+   "bbox": [
+    14.079,
+    48.971,
+    24.156,
+    54.888
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ph",
+   "iso": "PH",
+   "continent": "asia",
+   "bbox": [
+    116.92,
+    5.01,
+    126.643,
+    20.891
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-pe",
+   "iso": "PE",
+   "continent": "south-america",
+   "bbox": [
+    -81.387,
+    -18.396,
+    -68.635,
+    0.008
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-py",
+   "iso": "PY",
+   "continent": "south-america",
+   "bbox": [
+    -62.701,
+    -27.604,
+    -54.192,
+    -19.236
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-pg",
+   "iso": "PG",
+   "continent": "oceania",
+   "bbox": [
+    140.812,
+    -11.681,
+    156.008,
+    -1.303
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-pa",
+   "iso": "PA",
+   "continent": "north-america",
+   "bbox": [
+    -83.077,
+    7.17,
+    -77.146,
+    9.648
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-pw",
+   "iso": "PW",
+   "continent": "oceania",
+   "bbox": [
+    131.085,
+    2.972,
+    134.71,
+    7.762
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-pk",
+   "iso": "PK",
+   "continent": "asia",
+   "bbox": [
+    60.793,
+    23.703,
+    77.099,
+    37.087
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-om",
+   "iso": "OM",
+   "continent": "asia",
+   "bbox": [
+    51.928,
+    16.598,
+    59.887,
+    26.406
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-no",
+   "iso": "NO",
+   "continent": "europe",
+   "bbox": [
+    -9.149,
+    57.971,
+    33.679,
+    80.528
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-kp",
+   "iso": "KP",
+   "continent": "asia",
+   "bbox": [
+    124.299,
+    37.669,
+    130.737,
+    43.048
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ng",
+   "iso": "NG",
+   "continent": "africa",
+   "bbox": [
+    2.636,
+    4.227,
+    14.677,
+    13.923
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ne",
+   "iso": "NE",
+   "continent": "africa",
+   "bbox": [
+    0.114,
+    11.646,
+    16.013,
+    23.568
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ni",
+   "iso": "NI",
+   "continent": "north-america",
+   "bbox": [
+    -87.72,
+    10.685,
+    -83.108,
+    15.058
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-nz",
+   "iso": "NZ",
+   "continent": "oceania",
+   "bbox": [
+    165.839,
+    -52.62,
+    178.586,
+    -34.379
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-nu",
+   "iso": "NU",
+   "continent": "oceania",
+   "bbox": [
+    -169.998,
+    -19.188,
+    -169.743,
+    -18.916
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ck",
+   "iso": "CK",
+   "continent": "oceania",
+   "bbox": [
+    -159.892,
+    -21.3,
+    -159.687,
+    -21.136
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-nl",
+   "iso": "NL",
+   "continent": "europe",
+   "bbox": [
+    3.3,
+    50.7,
+    7.247,
+    53.675
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-aw",
+   "iso": "AW",
+   "continent": "north-america",
+   "bbox": [
+    -70.116,
+    12.373,
+    -69.846,
+    12.664
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cw",
+   "iso": "CW",
+   "continent": "north-america",
+   "bbox": [
+    -69.209,
+    11.995,
+    -68.701,
+    12.43
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-np",
+   "iso": "NP",
+   "continent": "asia",
+   "bbox": [
+    80.002,
+    26.31,
+    88.212,
+    30.438
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-nr",
+   "iso": "NR",
+   "continent": "oceania",
+   "bbox": [
+    166.857,
+    -0.601,
+    167.008,
+    -0.439
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-na",
+   "iso": "NA",
+   "continent": "africa",
+   "bbox": [
+    11.672,
+    -28.989,
+    25.309,
+    -16.918
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mz",
+   "iso": "MZ",
+   "continent": "africa",
+   "bbox": [
+    30.172,
+    -26.912,
+    40.895,
+    -10.414
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ma",
+   "iso": "MA",
+   "continent": "africa",
+   "bbox": [
+    -17.053,
+    21.371,
+    -1.016,
+    35.98
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-eh",
+   "iso": "EH",
+   "continent": "africa",
+   "bbox": [
+    -17.149,
+    20.756,
+    -8.632,
+    27.706
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-me",
+   "iso": "ME",
+   "continent": "europe",
+   "bbox": [
+    18.386,
+    41.819,
+    20.398,
+    43.592
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mn",
+   "iso": "MN",
+   "continent": "asia",
+   "bbox": [
+    87.693,
+    41.546,
+    119.948,
+    52.167
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-md",
+   "iso": "MD",
+   "continent": "europe",
+   "bbox": [
+    26.569,
+    45.4,
+    30.181,
+    48.528
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mc",
+   "iso": "MC",
+   "continent": "europe",
+   "bbox": [
+    7.328,
+    43.682,
+    7.489,
+    43.821
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mx",
+   "iso": "MX",
+   "continent": "north-america",
+   "bbox": [
+    -118.451,
+    14.495,
+    -86.646,
+    32.765
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mu",
+   "iso": "MU",
+   "continent": "oceania",
+   "bbox": [
+    57.268,
+    -20.563,
+    57.842,
+    -19.94
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mr",
+   "iso": "MR",
+   "continent": "africa",
+   "bbox": [
+    -17.114,
+    14.695,
+    -4.773,
+    27.336
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mt",
+   "iso": "MT",
+   "continent": "europe",
+   "bbox": [
+    14.18,
+    35.78,
+    14.58,
+    36.09
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 4
+  },
+  {
+   "id": "country-ml",
+   "iso": "ML",
+   "continent": "africa",
+   "bbox": [
+    -12.331,
+    10.093,
+    4.285,
+    25.046
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mv",
+   "iso": "MV",
+   "continent": "oceania",
+   "bbox": [
+    73.332,
+    3.179,
+    73.578,
+    4.298
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-my",
+   "iso": "MY",
+   "continent": "asia",
+   "bbox": [
+    99.596,
+    0.812,
+    119.316,
+    7.402
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mw",
+   "iso": "MW",
+   "continent": "africa",
+   "bbox": [
+    32.62,
+    -17.181,
+    35.943,
+    -9.345
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mg",
+   "iso": "MG",
+   "continent": "africa",
+   "bbox": [
+    43.207,
+    -25.621,
+    50.533,
+    -12.03
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mk",
+   "iso": "MK",
+   "continent": "europe",
+   "bbox": [
+    20.399,
+    40.8,
+    23.056,
+    42.408
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-lu",
+   "iso": "LU",
+   "continent": "europe",
+   "bbox": [
+    5.675,
+    49.395,
+    6.544,
+    50.217
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-lt",
+   "iso": "LT",
+   "continent": "europe",
+   "bbox": [
+    20.85,
+    53.843,
+    26.826,
+    56.461
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-li",
+   "iso": "LI",
+   "continent": "europe",
+   "bbox": [
+    9.429,
+    47.007,
+    9.661,
+    47.321
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ly",
+   "iso": "LY",
+   "continent": "africa",
+   "bbox": [
+    9.26,
+    19.447,
+    25.2,
+    33.232
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-lr",
+   "iso": "LR",
+   "continent": "africa",
+   "bbox": [
+    -11.558,
+    4.301,
+    -7.35,
+    8.588
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ls",
+   "iso": "LS",
+   "continent": "africa",
+   "bbox": [
+    27.002,
+    -30.692,
+    29.441,
+    -28.532
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-lb",
+   "iso": "LB",
+   "continent": "asia",
+   "bbox": [
+    35.059,
+    33.026,
+    36.635,
+    34.729
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-lv",
+   "iso": "LV",
+   "continent": "europe",
+   "bbox": [
+    20.965,
+    55.618,
+    28.252,
+    58.113
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-la",
+   "iso": "LA",
+   "continent": "asia",
+   "bbox": [
+    100.065,
+    13.871,
+    107.703,
+    22.545
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-kg",
+   "iso": "KG",
+   "continent": "asia",
+   "bbox": [
+    69.179,
+    39.158,
+    80.296,
+    43.29
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-kw",
+   "iso": "KW",
+   "continent": "asia",
+   "bbox": [
+    46.481,
+    28.483,
+    48.492,
+    30.147
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-xk",
+   "iso": "XK",
+   "continent": "europe",
+   "bbox": [
+    19.979,
+    41.804,
+    21.803,
+    43.311
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ki",
+   "iso": "KI",
+   "continent": "oceania",
+   "bbox": [
+    -174.591,
+    -11.507,
+    -151.733,
+    3.974
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ke",
+   "iso": "KE",
+   "continent": "africa",
+   "bbox": [
+    33.85,
+    -4.742,
+    41.934,
+    5.542
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-kz",
+   "iso": "KZ",
+   "continent": "asia",
+   "bbox": [
+    46.559,
+    40.559,
+    87.373,
+    55.44
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-jo",
+   "iso": "JO",
+   "continent": "asia",
+   "bbox": [
+    34.901,
+    29.14,
+    39.343,
+    33.422
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-jp",
+   "iso": "JP",
+   "continent": "asia",
+   "bbox": [
+    123.63,
+    24.216,
+    145.883,
+    45.56
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-jm",
+   "iso": "JM",
+   "continent": "north-america",
+   "bbox": [
+    -78.39,
+    17.665,
+    -76.161,
+    18.572
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-it",
+   "iso": "IT",
+   "continent": "europe",
+   "bbox": [
+    6.6,
+    35.49,
+    18.53,
+    47.1
+   ],
+   "maxzoom": 13,
+   "estimatedMB": 1203
+  },
+  {
+   "id": "country-il",
+   "iso": "IL",
+   "continent": "asia",
+   "bbox": [
+    34.195,
+    29.427,
+    35.938,
+    33.466
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ps",
+   "iso": "PS",
+   "continent": "asia",
+   "bbox": [
+    34.148,
+    31.158,
+    35.622,
+    32.584
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ie",
+   "iso": "IE",
+   "continent": "europe",
+   "bbox": [
+    -10.44,
+    51.424,
+    -5.977,
+    55.416
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-iq",
+   "iso": "IQ",
+   "continent": "asia",
+   "bbox": [
+    38.724,
+    29.014,
+    48.596,
+    37.422
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ir",
+   "iso": "IR",
+   "continent": "asia",
+   "bbox": [
+    43.973,
+    25.052,
+    63.355,
+    39.819
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-id",
+   "iso": "ID",
+   "continent": "asia",
+   "bbox": [
+    95.157,
+    -10.96,
+    141.026,
+    5.957
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-in",
+   "iso": "IN",
+   "continent": "asia",
+   "bbox": [
+    68.115,
+    6.699,
+    97.394,
+    35.546
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-is",
+   "iso": "IS",
+   "continent": "europe",
+   "bbox": [
+    -24.526,
+    63.357,
+    -13.506,
+    66.576
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-hu",
+   "iso": "HU",
+   "continent": "europe",
+   "bbox": [
+    16.043,
+    45.703,
+    22.927,
+    48.603
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-hn",
+   "iso": "HN",
+   "continent": "north-america",
+   "bbox": [
+    -89.413,
+    12.929,
+    -83.108,
+    16.564
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ht",
+   "iso": "HT",
+   "continent": "north-america",
+   "bbox": [
+    -74.528,
+    17.989,
+    -71.595,
+    20.144
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gy",
+   "iso": "GY",
+   "continent": "south-america",
+   "bbox": [
+    -61.441,
+    1.151,
+    -56.433,
+    8.599
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gw",
+   "iso": "GW",
+   "continent": "africa",
+   "bbox": [
+    -16.762,
+    10.89,
+    -13.624,
+    12.73
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gn",
+   "iso": "GN",
+   "continent": "africa",
+   "bbox": [
+    -15.101,
+    7.166,
+    -7.631,
+    12.724
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gt",
+   "iso": "GT",
+   "continent": "north-america",
+   "bbox": [
+    -92.285,
+    13.687,
+    -88.178,
+    17.866
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gd",
+   "iso": "GD",
+   "continent": "north-america",
+   "bbox": [
+    -61.832,
+    11.958,
+    -61.557,
+    12.287
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gr",
+   "iso": "GR",
+   "continent": "europe",
+   "bbox": [
+    19.37,
+    34.8,
+    28.25,
+    41.75
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 433
+  },
+  {
+   "id": "country-gh",
+   "iso": "GH",
+   "continent": "africa",
+   "bbox": [
+    -3.294,
+    4.712,
+    1.237,
+    11.217
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-de",
+   "iso": "DE",
+   "continent": "europe",
+   "bbox": [
+    5.87,
+    47.27,
+    15.04,
+    55.06
+   ],
+   "maxzoom": 12,
+   "estimatedMB": 873
+  },
+  {
+   "id": "country-ge",
+   "iso": "GE",
+   "continent": "asia",
+   "bbox": [
+    39.928,
+    41.02,
+    46.723,
+    43.62
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gm",
+   "iso": "GM",
+   "continent": "africa",
+   "bbox": [
+    -16.875,
+    13.014,
+    -13.777,
+    13.862
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ga",
+   "iso": "GA",
+   "continent": "africa",
+   "bbox": [
+    8.653,
+    -3.966,
+    14.531,
+    2.352
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-fr",
+   "iso": "FR",
+   "continent": "europe",
+   "bbox": [
+    -5.15,
+    41.33,
+    9.57,
+    51.09
+   ],
+   "maxzoom": 12,
+   "estimatedMB": 1116
+  },
+  {
+   "id": "country-pm",
+   "iso": "PM",
+   "continent": "north-america",
+   "bbox": [
+    -56.437,
+    46.703,
+    -56.087,
+    47.149
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-wf",
+   "iso": "WF",
+   "continent": "oceania",
+   "bbox": [
+    -178.244,
+    -14.375,
+    -176.078,
+    -13.172
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mf",
+   "iso": "MF",
+   "continent": "north-america",
+   "bbox": [
+    -63.173,
+    18.019,
+    -62.959,
+    18.165
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bl",
+   "iso": "BL",
+   "continent": "north-america",
+   "bbox": [
+    -62.925,
+    17.825,
+    -62.75,
+    17.972
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-pf",
+   "iso": "PF",
+   "continent": "oceania",
+   "bbox": [
+    -151.562,
+    -20.926,
+    -136.244,
+    -8.732
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-nc",
+   "iso": "NC",
+   "continent": "oceania",
+   "bbox": [
+    159.878,
+    -22.711,
+    168.189,
+    -19.065
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tf",
+   "iso": "TF",
+   "continent": "oceania",
+   "bbox": [
+    51.609,
+    -49.76,
+    70.605,
+    -46.277
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ax",
+   "iso": "AX",
+   "continent": "europe",
+   "bbox": [
+    19.469,
+    59.962,
+    20.661,
+    60.456
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-fi",
+   "iso": "FI",
+   "continent": "europe",
+   "bbox": [
+    20.572,
+    59.766,
+    31.587,
+    70.115
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-fj",
+   "iso": "FJ",
+   "continent": "oceania",
+   "bbox": [
+    174.537,
+    -21.756,
+    180,
+    -12.427
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-et",
+   "iso": "ET",
+   "continent": "africa",
+   "bbox": [
+    32.949,
+    3.406,
+    48.028,
+    14.902
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ee",
+   "iso": "EE",
+   "continent": "europe",
+   "bbox": [
+    21.804,
+    57.475,
+    28.201,
+    59.689
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-er",
+   "iso": "ER",
+   "continent": "africa",
+   "bbox": [
+    36.377,
+    12.327,
+    43.167,
+    18.055
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gq",
+   "iso": "GQ",
+   "continent": "africa",
+   "bbox": [
+    8.384,
+    0.91,
+    11.385,
+    3.808
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sv",
+   "iso": "SV",
+   "continent": "north-america",
+   "bbox": [
+    -90.156,
+    13.114,
+    -87.665,
+    14.481
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-eg",
+   "iso": "EG",
+   "continent": "africa",
+   "bbox": [
+    24.653,
+    21.945,
+    36.921,
+    31.705
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ec",
+   "iso": "EC",
+   "continent": "south-america",
+   "bbox": [
+    -91.704,
+    -5.041,
+    -75.2,
+    1.505
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-do",
+   "iso": "DO",
+   "continent": "north-america",
+   "bbox": [
+    -72.05,
+    17.586,
+    -68.289,
+    19.964
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-dm",
+   "iso": "DM",
+   "continent": "north-america",
+   "bbox": [
+    -61.531,
+    15.177,
+    -61.201,
+    15.683
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-dj",
+   "iso": "DJ",
+   "continent": "africa",
+   "bbox": [
+    41.715,
+    10.891,
+    43.46,
+    12.759
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-gl",
+   "iso": "GL",
+   "continent": "north-america",
+   "bbox": [
+    -72.868,
+    59.765,
+    -11.376,
+    83.65
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-fo",
+   "iso": "FO",
+   "continent": "europe",
+   "bbox": [
+    -7.473,
+    61.364,
+    -6.356,
+    62.406
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-dk",
+   "iso": "DK",
+   "continent": "europe",
+   "bbox": [
+    8.071,
+    54.579,
+    15.187,
+    57.787
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cz",
+   "iso": "CZ",
+   "continent": "europe",
+   "bbox": [
+    12.04,
+    48.526,
+    18.882,
+    51.088
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cy",
+   "iso": "CY",
+   "continent": "asia",
+   "bbox": [
+    32.251,
+    34.52,
+    34.1,
+    35.233
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cu",
+   "iso": "CU",
+   "continent": "north-america",
+   "bbox": [
+    -84.937,
+    19.805,
+    -74.087,
+    23.24
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-hr",
+   "iso": "HR",
+   "continent": "europe",
+   "bbox": [
+    13.49,
+    42.39,
+    19.45,
+    46.56
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 689
+  },
+  {
+   "id": "country-ci",
+   "iso": "CI",
+   "continent": "africa",
+   "bbox": [
+    -8.654,
+    4.301,
+    -2.456,
+    10.774
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cr",
+   "iso": "CR",
+   "continent": "north-america",
+   "bbox": [
+    -85.958,
+    8.021,
+    -82.514,
+    11.239
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cd",
+   "iso": "CD",
+   "continent": "africa",
+   "bbox": [
+    12.164,
+    -13.504,
+    31.324,
+    5.362
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cg",
+   "iso": "CG",
+   "continent": "africa",
+   "bbox": [
+    11.08,
+    -5.054,
+    18.672,
+    3.737
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-km",
+   "iso": "KM",
+   "continent": "africa",
+   "bbox": [
+    43.177,
+    -12.418,
+    44.577,
+    -11.318
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-co",
+   "iso": "CO",
+   "continent": "south-america",
+   "bbox": [
+    -79.075,
+    -4.286,
+    -66.826,
+    12.484
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cn",
+   "iso": "CN",
+   "continent": "asia",
+   "bbox": [
+    73.557,
+    18.168,
+    134.802,
+    53.606
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mo",
+   "iso": "MO",
+   "continent": "asia",
+   "bbox": [
+    113.429,
+    22.146,
+    113.598,
+    22.296
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-hk",
+   "iso": "HK",
+   "continent": "asia",
+   "bbox": [
+    113.789,
+    22.145,
+    114.385,
+    22.615
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cl",
+   "iso": "CL",
+   "continent": "south-america",
+   "bbox": [
+    -79.039,
+    -55.942,
+    -66.386,
+    -17.456
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-td",
+   "iso": "TD",
+   "continent": "africa",
+   "bbox": [
+    13.398,
+    7.425,
+    24.033,
+    23.495
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cf",
+   "iso": "CF",
+   "continent": "africa",
+   "bbox": [
+    14.381,
+    2.22,
+    27.453,
+    11.046
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cv",
+   "iso": "CV",
+   "continent": "africa",
+   "bbox": [
+    -25.392,
+    14.768,
+    -22.632,
+    17.244
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ca",
+   "iso": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -141.052,
+    41.625,
+    -55.623,
+    83.166
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-cm",
+   "iso": "CM",
+   "continent": "africa",
+   "bbox": [
+    8.483,
+    1.626,
+    16.233,
+    13.129
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-kh",
+   "iso": "KH",
+   "continent": "asia",
+   "bbox": [
+    102.27,
+    10.361,
+    107.655,
+    14.755
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-mm",
+   "iso": "MM",
+   "continent": "asia",
+   "bbox": [
+    92.13,
+    9.825,
+    101.197,
+    28.567
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bi",
+   "iso": "BI",
+   "continent": "africa",
+   "bbox": [
+    28.964,
+    -4.506,
+    30.861,
+    -2.263
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bf",
+   "iso": "BF",
+   "continent": "africa",
+   "bbox": [
+    -5.574,
+    9.375,
+    2.439,
+    15.128
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bg",
+   "iso": "BG",
+   "continent": "europe",
+   "bbox": [
+    22.294,
+    41.194,
+    28.635,
+    44.288
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bn",
+   "iso": "BN",
+   "continent": "asia",
+   "bbox": [
+    114.014,
+    3.974,
+    115.377,
+    5.072
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-br",
+   "iso": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -74.052,
+    -33.792,
+    -34.755,
+    5.308
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bw",
+   "iso": "BW",
+   "continent": "africa",
+   "bbox": [
+    19.927,
+    -26.904,
+    29.415,
+    -17.738
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ba",
+   "iso": "BA",
+   "continent": "europe",
+   "bbox": [
+    15.687,
+    42.51,
+    19.634,
+    45.327
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bo",
+   "iso": "BO",
+   "continent": "south-america",
+   "bbox": [
+    -69.696,
+    -22.942,
+    -57.446,
+    -9.66
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bt",
+   "iso": "BT",
+   "continent": "asia",
+   "bbox": [
+    88.689,
+    26.652,
+    92.133,
+    28.361
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bj",
+   "iso": "BJ",
+   "continent": "africa",
+   "bbox": [
+    0.713,
+    6.167,
+    3.884,
+    12.434
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bz",
+   "iso": "BZ",
+   "continent": "north-america",
+   "bbox": [
+    -89.287,
+    15.839,
+    -87.739,
+    18.532
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-be",
+   "iso": "BE",
+   "continent": "europe",
+   "bbox": [
+    2.475,
+    49.461,
+    6.414,
+    51.541
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-by",
+   "iso": "BY",
+   "continent": "europe",
+   "bbox": [
+    23.125,
+    51.215,
+    32.76,
+    56.196
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bb",
+   "iso": "BB",
+   "continent": "north-america",
+   "bbox": [
+    -59.697,
+    13.012,
+    -59.378,
+    13.368
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bd",
+   "iso": "BD",
+   "continent": "asia",
+   "bbox": [
+    87.973,
+    20.74,
+    92.682,
+    26.622
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bh",
+   "iso": "BH",
+   "continent": "asia",
+   "bbox": [
+    50.402,
+    25.757,
+    50.667,
+    26.296
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-bs",
+   "iso": "BS",
+   "continent": "north-america",
+   "bbox": [
+    -79.036,
+    20.887,
+    -72.697,
+    26.99
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-az",
+   "iso": "AZ",
+   "continent": "asia",
+   "bbox": [
+    44.718,
+    38.349,
+    50.416,
+    41.941
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-at",
+   "iso": "AT",
+   "continent": "europe",
+   "bbox": [
+    9.53,
+    46.37,
+    17.16,
+    49.02
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 1061
+  },
+  {
+   "id": "country-au",
+   "iso": "AU",
+   "continent": "oceania",
+   "bbox": [
+    112.858,
+    -43.669,
+    153.667,
+    -10.002
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-hm",
+   "iso": "HM",
+   "continent": "oceania",
+   "bbox": [
+    73.201,
+    -53.235,
+    73.888,
+    -52.916
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-nf",
+   "iso": "NF",
+   "continent": "oceania",
+   "bbox": [
+    167.856,
+    -29.146,
+    168.04,
+    -28.964
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-am",
+   "iso": "AM",
+   "continent": "asia",
+   "bbox": [
+    43.389,
+    38.819,
+    46.635,
+    41.341
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ar",
+   "iso": "AR",
+   "continent": "south-america",
+   "bbox": [
+    -73.626,
+    -55.082,
+    -53.619,
+    -21.753
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ag",
+   "iso": "AG",
+   "continent": "north-america",
+   "bbox": [
+    -61.937,
+    16.947,
+    -61.636,
+    17.764
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ao",
+   "iso": "AO",
+   "continent": "africa",
+   "bbox": [
+    11.693,
+    -18.07,
+    24.097,
+    -4.379
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-ad",
+   "iso": "AD",
+   "continent": "europe",
+   "bbox": [
+    1.365,
+    42.384,
+    1.79,
+    42.693
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-dz",
+   "iso": "DZ",
+   "continent": "africa",
+   "bbox": [
+    -8.733,
+    18.937,
+    12.018,
+    37.142
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-al",
+   "iso": "AL",
+   "continent": "europe",
+   "bbox": [
+    19.231,
+    39.604,
+    21.081,
+    42.698
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-af",
+   "iso": "AF",
+   "continent": "asia",
+   "bbox": [
+    60.436,
+    29.342,
+    74.941,
+    38.506
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-sx",
+   "iso": "SX",
+   "continent": "north-america",
+   "bbox": [
+    -63.175,
+    17.969,
+    -62.961,
+    18.119
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "country-tv",
+   "iso": "TV",
+   "continent": "oceania",
+   "bbox": [
+    179.146,
+    -8.585,
+    179.267,
+    -8.416
+   ],
+   "maxzoom": 15,
+   "estimatedMB": 0
+  },
+  {
+   "id": "au-western-australia",
+   "name": "Western Australia",
+   "parent": "AU",
+   "continent": "oceania",
+   "bbox": [
+    112.858,
+    -35.148,
+    129.052,
+    -13.694
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "au-northern-territory",
+   "name": "Northern Territory",
+   "parent": "AU",
+   "continent": "oceania",
+   "bbox": [
+    128.952,
+    -26.049,
+    138.052,
+    -10.919
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "au-south-australia",
+   "name": "South Australia",
+   "parent": "AU",
+   "continent": "oceania",
+   "bbox": [
+    128.952,
+    -38.121,
+    141.076,
+    -25.949
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "au-queensland",
+   "name": "Queensland",
+   "parent": "AU",
+   "continent": "oceania",
+   "bbox": [
+    137.952,
+    -29.189,
+    153.589,
+    -10.002
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "au-tasmania",
+   "name": "Tasmania",
+   "parent": "AU",
+   "continent": "oceania",
+   "bbox": [
+    143.789,
+    -43.669,
+    148.524,
+    -39.53
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "au-victoria",
+   "name": "Victoria",
+   "parent": "AU",
+   "continent": "oceania",
+   "bbox": [
+    140.916,
+    -39.196,
+    149.992,
+    -33.955
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "au-australian-capital-territory",
+   "name": "Australian Capital Territory",
+   "parent": "AU",
+   "continent": "oceania",
+   "bbox": [
+    148.72,
+    -35.964,
+    149.454,
+    -35.096
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "au-jervis-bay-territory",
+   "name": "Jervis Bay Territory",
+   "parent": "AU",
+   "continent": "oceania",
+   "bbox": [
+    150.562,
+    -35.24,
+    150.772,
+    -35.07
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "au-new-south-wales",
+   "name": "New South Wales",
+   "parent": "AU",
+   "continent": "oceania",
+   "bbox": [
+    140.952,
+    -37.551,
+    153.667,
+    -28.094
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-acre",
+   "name": "Acre",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -74.052,
+    -11.172,
+    -66.578,
+    -7.067
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-rondonia",
+   "name": "Rondônia",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -66.879,
+    -13.713,
+    -59.774,
+    -7.949
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-roraima",
+   "name": "Roraima",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -64.868,
+    -1.499,
+    -58.819,
+    5.308
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-amazonas",
+   "name": "Amazonas",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -73.855,
+    -9.888,
+    -56.341,
+    2.274
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-para",
+   "name": "Pará",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -59.016,
+    -9.893,
+    -45.957,
+    2.648
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-mato-grosso-do-sul",
+   "name": "Mato Grosso do Sul",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -58.21,
+    -24.097,
+    -50.914,
+    -17.136
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-amapa",
+   "name": "Amapá",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -54.843,
+    -1.227,
+    -49.832,
+    4.364
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-mato-grosso",
+   "name": "Mato Grosso",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -61.66,
+    -18.08,
+    -50.185,
+    -7.288
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-parana",
+   "name": "Paraná",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -54.666,
+    -26.75,
+    -48.028,
+    -22.471
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-distrito-federal",
+   "name": "Distrito Federal",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -48.33,
+    -16.094,
+    -47.252,
+    -15.44
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-goias",
+   "name": "Goiás",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -53.261,
+    -19.561,
+    -45.863,
+    -12.338
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-tocantins",
+   "name": "Tocantins",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -50.767,
+    -13.433,
+    -45.707,
+    -5.119
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-sao-paulo",
+   "name": "São Paulo",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -53.166,
+    -25.34,
+    -44.118,
+    -19.741
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-maranhao",
+   "name": "Maranhão",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -48.78,
+    -10.366,
+    -41.765,
+    -1.097
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-rio-de-janeiro",
+   "name": "Rio de Janeiro",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -44.914,
+    -23.404,
+    -40.918,
+    -20.726
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-piaui",
+   "name": "Piauí",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -46.031,
+    -10.946,
+    -40.368,
+    -2.709
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-minas-gerais",
+   "name": "Minas Gerais",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -51.048,
+    -22.942,
+    -39.814,
+    -14.19
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-espirito-santo",
+   "name": "Espírito Santo",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -41.932,
+    -21.326,
+    -39.618,
+    -17.842
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-bahia",
+   "name": "Bahia",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -46.62,
+    -18.376,
+    -37.362,
+    -8.509
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-ceara",
+   "name": "Ceará",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -41.499,
+    -7.906,
+    -37.181,
+    -2.746
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-sergipe",
+   "name": "Sergipe",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -38.294,
+    -11.607,
+    -36.365,
+    -9.462
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-alagoas",
+   "name": "Alagoas",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -38.271,
+    -10.541,
+    -35.102,
+    -8.784
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-rio-grande-do-norte",
+   "name": "Rio Grande do Norte",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -38.655,
+    -7.027,
+    -34.922,
+    -4.774
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-pernambuco",
+   "name": "Pernambuco",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -41.419,
+    -9.522,
+    -34.785,
+    -7.221
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-paraiba",
+   "name": "Paraíba",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -38.78,
+    -8.335,
+    -34.755,
+    -5.976
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-santa-catarina",
+   "name": "Santa Catarina",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -53.985,
+    -29.406,
+    -48.328,
+    -25.922
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "br-rio-grande-do-sul",
+   "name": "Rio Grande do Sul",
+   "parent": "BR",
+   "continent": "south-america",
+   "bbox": [
+    -57.659,
+    -33.792,
+    -49.649,
+    -27.031
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-alberta",
+   "name": "Alberta",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -120.051,
+    48.943,
+    -109.949,
+    60.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-british-columbia",
+   "name": "British Columbia",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -139.107,
+    48.273,
+    -114.001,
+    60.052
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-manitoba",
+   "name": "Manitoba",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -102.052,
+    48.942,
+    -88.898,
+    60.052
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-new-brunswick",
+   "name": "New Brunswick",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -69.104,
+    44.579,
+    -63.782,
+    48.117
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-newfoundland-and-labrador",
+   "name": "Newfoundland and Labrador",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -67.811,
+    46.578,
+    -52.604,
+    60.356
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-nova-scotia",
+   "name": "Nova Scotia",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -66.374,
+    43.468,
+    -59.677,
+    47.06
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-northwest-territories",
+   "name": "Northwest Territories",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -136.495,
+    59.951,
+    -101.937,
+    78.808
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-nunavut",
+   "name": "Nunavut",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -120.732,
+    51.895,
+    -61.157,
+    83.166
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-ontario",
+   "name": "Ontario",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -95.21,
+    41.625,
+    -74.29,
+    56.901
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-prince-edward-island",
+   "name": "Prince Edward Island",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -64.453,
+    45.917,
+    -61.974,
+    47.112
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-quebec",
+   "name": "Québec",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -79.764,
+    44.954,
+    -57.05,
+    62.623
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-saskatchewan",
+   "name": "Saskatchewan",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -110.05,
+    48.943,
+    -101.317,
+    60.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ca-yukon",
+   "name": "Yukon",
+   "parent": "CA",
+   "continent": "north-america",
+   "bbox": [
+    -141.052,
+    59.951,
+    -123.769,
+    69.701
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-alaska",
+   "name": "Alaska",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -177.012,
+    51.554,
+    -129.964,
+    71.458
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-alabama",
+   "name": "Alabama",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -88.536,
+    30.181,
+    -84.872,
+    35.075
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-arkansas",
+   "name": "Arkansas",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -94.668,
+    32.962,
+    -89.639,
+    36.551
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-arizona",
+   "name": "Arizona",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -114.886,
+    31.274,
+    -108.997,
+    37.054
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-california",
+   "name": "California",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -124.422,
+    32.483,
+    -114.075,
+    42.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-colorado",
+   "name": "Colorado",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -109.097,
+    36.951,
+    -101.963,
+    41.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-connecticut",
+   "name": "Connecticut",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -73.773,
+    40.942,
+    -71.746,
+    42.106
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-district-of-columbia",
+   "name": "District of Columbia",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -77.172,
+    38.757,
+    -76.881,
+    39.062
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-delaware",
+   "name": "Delaware",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -75.835,
+    38.405,
+    -74.986,
+    39.893
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-florida",
+   "name": "Florida",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -87.657,
+    24.492,
+    -79.991,
+    31.052
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-georgia",
+   "name": "Georgia",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -85.674,
+    30.321,
+    -80.822,
+    35.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-hawaii",
+   "name": "Hawaii",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -177.44,
+    18.914,
+    -154.754,
+    28.271
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-iowa",
+   "name": "Iowa",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -96.677,
+    40.329,
+    -90.099,
+    43.552
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-idaho",
+   "name": "Idaho",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -117.252,
+    41.951,
+    -111.0,
+    49.043
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-illinois",
+   "name": "Illinois",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -91.552,
+    36.942,
+    -86.989,
+    42.563
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-indiana",
+   "name": "Indiana",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -88.145,
+    37.738,
+    -84.74,
+    41.811
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-kansas",
+   "name": "Kansas",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -102.074,
+    36.951,
+    -94.568,
+    40.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-kentucky",
+   "name": "Kentucky",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -89.61,
+    36.45,
+    -81.915,
+    39.179
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-louisiana",
+   "name": "Louisiana",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -94.093,
+    28.931,
+    -88.763,
+    33.066
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-massachusetts",
+   "name": "Massachusetts",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -73.557,
+    41.199,
+    -69.884,
+    42.932
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-maryland",
+   "name": "Maryland",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -79.538,
+    37.904,
+    -74.988,
+    39.773
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-maine",
+   "name": "Maine",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -71.135,
+    43.02,
+    -66.937,
+    47.513
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-michigan",
+   "name": "Michigan",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -90.463,
+    41.651,
+    -82.088,
+    48.353
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-minnesota",
+   "name": "Minnesota",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -97.276,
+    43.451,
+    -89.448,
+    49.42
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-missouri",
+   "name": "Missouri",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -95.815,
+    35.943,
+    -89.072,
+    40.675
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-mississippi",
+   "name": "Mississippi",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -91.706,
+    30.143,
+    -88.035,
+    35.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-montana",
+   "name": "Montana",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -116.099,
+    44.347,
+    -103.955,
+    49.043
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-north-carolina",
+   "name": "North Carolina",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -84.375,
+    33.827,
+    -75.406,
+    36.661
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-north-dakota",
+   "name": "North Dakota",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -104.084,
+    45.893,
+    -96.506,
+    49.043
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-nebraska",
+   "name": "Nebraska",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -104.079,
+    39.951,
+    -95.297,
+    43.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-new-hampshire",
+   "name": "New Hampshire",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -72.603,
+    42.652,
+    -70.683,
+    45.344
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-new-jersey",
+   "name": "New Jersey",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -75.574,
+    38.891,
+    -73.86,
+    41.407
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-new-mexico",
+   "name": "New Mexico",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -109.098,
+    31.278,
+    -102.95,
+    37.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-nevada",
+   "name": "Nevada",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -120.051,
+    34.941,
+    -113.99,
+    42.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-new-york",
+   "name": "New York",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -79.813,
+    40.469,
+    -71.853,
+    45.055
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-ohio",
+   "name": "Ohio",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -84.872,
+    38.365,
+    -80.469,
+    42.374
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-oklahoma",
+   "name": "Oklahoma",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -103.051,
+    33.598,
+    -94.389,
+    37.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-oregon",
+   "name": "Oregon",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -124.59,
+    41.951,
+    -116.427,
+    46.275
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-pennsylvania",
+   "name": "Pennsylvania",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -80.571,
+    39.672,
+    -74.649,
+    42.589
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-rhode-island",
+   "name": "Rhode Island",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -71.892,
+    41.281,
+    -71.182,
+    42.067
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-south-carolina",
+   "name": "South Carolina",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -83.406,
+    31.98,
+    -78.514,
+    35.261
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-south-dakota",
+   "name": "South Dakota",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -104.087,
+    42.461,
+    -96.404,
+    45.993
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-tennessee",
+   "name": "Tennessee",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -90.344,
+    34.938,
+    -81.609,
+    36.743
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-texas",
+   "name": "Texas",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -106.718,
+    25.821,
+    -93.481,
+    36.551
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-utah",
+   "name": "Utah",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -114.093,
+    36.951,
+    -108.996,
+    42.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-virginia",
+   "name": "Virginia",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -83.718,
+    36.501,
+    -75.176,
+    39.502
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-vermont",
+   "name": "Vermont",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -73.476,
+    42.68,
+    -71.46,
+    45.058
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-washington",
+   "name": "Washington",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -124.76,
+    45.541,
+    -116.846,
+    49.043
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-wisconsin",
+   "name": "Wisconsin",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -92.947,
+    42.443,
+    -86.215,
+    47.359
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-west-virginia",
+   "name": "West Virginia",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -82.67,
+    37.158,
+    -77.677,
+    40.697
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "us-wyoming",
+   "name": "Wyoming",
+   "parent": "US",
+   "continent": "north-america",
+   "bbox": [
+    -111.101,
+    40.951,
+    -103.972,
+    45.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-gansu",
+   "name": "Gansu",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    92.722,
+    32.558,
+    108.754,
+    42.84
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-qinghai",
+   "name": "Qinghai",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    89.385,
+    31.498,
+    103.09,
+    39.372
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-guangxi",
+   "name": "Guangxi",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    104.445,
+    21.376,
+    112.097,
+    26.432
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-guizhou",
+   "name": "Guizhou",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    103.546,
+    24.581,
+    109.557,
+    29.296
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-chongqing",
+   "name": "Chongqing",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    105.241,
+    28.15,
+    110.225,
+    32.248
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-beijing",
+   "name": "Beijing",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    115.377,
+    39.392,
+    117.479,
+    41.081
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-fujian",
+   "name": "Fujian",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    115.793,
+    23.539,
+    120.474,
+    28.376
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-anhui",
+   "name": "Anhui",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    114.83,
+    29.358,
+    119.68,
+    34.69
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-guangdong",
+   "name": "Guangdong",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    109.613,
+    20.214,
+    117.225,
+    25.556
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-xizang",
+   "name": "Xizang",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    78.34,
+    27.266,
+    99.159,
+    36.499
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-sikkim",
+   "name": "Sikkim",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    87.951,
+    27.035,
+    88.941,
+    28.143
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-xinjiang",
+   "name": "Xinjiang",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    73.557,
+    34.286,
+    96.423,
+    49.216
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-hainan",
+   "name": "Hainan",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    108.586,
+    18.168,
+    111.064,
+    20.188
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-ningxia",
+   "name": "Ningxia",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    104.309,
+    35.211,
+    107.708,
+    39.411
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-shaanxi",
+   "name": "Shaanxi",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    105.449,
+    31.655,
+    111.275,
+    39.615
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-shanxi",
+   "name": "Shanxi",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    110.187,
+    34.534,
+    114.591,
+    40.793
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-hubei",
+   "name": "Hubei",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    108.331,
+    29.016,
+    116.197,
+    33.316
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-hunan",
+   "name": "Hunan",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    108.741,
+    24.593,
+    114.277,
+    30.146
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-sichuan",
+   "name": "Sichuan",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    97.311,
+    25.985,
+    108.568,
+    34.346
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-yunnan",
+   "name": "Yunnan",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    97.479,
+    21.1,
+    106.244,
+    29.274
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-hebei",
+   "name": "Hebei",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    113.404,
+    36.007,
+    119.899,
+    42.641
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-henan",
+   "name": "Henan",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    110.278,
+    31.345,
+    116.691,
+    36.409
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-liaoning",
+   "name": "Liaoning",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    118.805,
+    38.682,
+    125.816,
+    43.522
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-shandong",
+   "name": "Shandong",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    114.784,
+    34.349,
+    122.717,
+    38.324
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-tianjin",
+   "name": "Tianjin",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    116.631,
+    38.509,
+    118.06,
+    40.307
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-jiangxi",
+   "name": "Jiangxi",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    113.512,
+    24.45,
+    118.526,
+    30.101
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-jiangsu",
+   "name": "Jiangsu",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    116.327,
+    30.714,
+    121.916,
+    35.156
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-shanghai",
+   "name": "Shanghai",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    120.833,
+    30.635,
+    121.928,
+    31.855
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-zhejiang",
+   "name": "Zhejiang",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    117.951,
+    27.153,
+    122.454,
+    31.226
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-jilin",
+   "name": "Jilin",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    121.616,
+    40.803,
+    131.312,
+    46.322
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-inner-mongol",
+   "name": "Inner Mongol",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    97.156,
+    37.34,
+    126.106,
+    53.367
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "cn-heilongjiang",
+   "name": "Heilongjiang",
+   "parent": "CN",
+   "continent": "asia",
+   "bbox": [
+    121.124,
+    43.386,
+    134.802,
+    53.606
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-aceh",
+   "name": "Aceh",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    95.157,
+    2.003,
+    98.323,
+    5.957
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-kalimantan-timur",
+   "name": "Kalimantan Timur",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    113.726,
+    -2.409,
+    119.035,
+    4.421
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-jawa-barat",
+   "name": "Jawa Barat",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    106.351,
+    -7.847,
+    108.949,
+    -5.854
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-jawa-tengah",
+   "name": "Jawa Tengah",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    108.497,
+    -8.271,
+    111.726,
+    -6.374
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-bengkulu",
+   "name": "Bengkulu",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    100.986,
+    -5.533,
+    103.815,
+    -2.186
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-banten",
+   "name": "Banten",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    105.071,
+    -7.057,
+    106.813,
+    -5.864
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-jakarta-raya",
+   "name": "Jakarta Raya",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    106.634,
+    -6.432,
+    107.039,
+    -5.977
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-kalimantan-barat",
+   "name": "Kalimantan Barat",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    108.754,
+    -3.071,
+    114.261,
+    2.078
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-lampung",
+   "name": "Lampung",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    103.542,
+    -5.958,
+    105.941,
+    -3.706
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-sumatera-selatan",
+   "name": "Sumatera Selatan",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    102.017,
+    -4.997,
+    106.108,
+    -1.644
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-bangka-belitung",
+   "name": "Bangka-Belitung",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    105.083,
+    -3.277,
+    108.341,
+    -1.455
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-bali",
+   "name": "Bali",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    114.418,
+    -8.899,
+    115.754,
+    -8.016
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-jawa-timur",
+   "name": "Jawa Timur",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    110.895,
+    -8.82,
+    114.649,
+    -5.676
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-kalimantan-selatan",
+   "name": "Kalimantan Selatan",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    114.266,
+    -4.22,
+    116.607,
+    -1.311
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-nusa-tenggara-timur",
+   "name": "Nusa Tenggara Timur",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    118.909,
+    -10.96,
+    125.199,
+    -8.043
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-sulawesi-selatan",
+   "name": "Sulawesi Selatan",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    119.31,
+    -7.175,
+    121.837,
+    -1.81
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-sulawesi-barat",
+   "name": "Sulawesi Barat",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    118.733,
+    -3.588,
+    119.923,
+    -0.785
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-kepulauan-riau",
+   "name": "Kepulauan Riau",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    103.265,
+    -0.709,
+    108.938,
+    4.267
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-gorontalo",
+   "name": "Gorontalo",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    121.11,
+    0.256,
+    123.55,
+    1.078
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-jambi",
+   "name": "Jambi",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    101.064,
+    -2.832,
+    104.569,
+    -0.689
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-kalimantan-tengah",
+   "name": "Kalimantan Tengah",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    110.78,
+    -3.603,
+    115.855,
+    0.785
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-papua-barat",
+   "name": "Papua Barat",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    129.688,
+    -4.349,
+    135.315,
+    0.046
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-sumatera-utara",
+   "name": "Sumatera Utara",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    97.029,
+    -0.627,
+    100.491,
+    4.345
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-riau",
+   "name": "Riau",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    100.021,
+    -1.135,
+    103.837,
+    2.524
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-sulawesi-utara",
+   "name": "Sulawesi Utara",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    123.025,
+    0.247,
+    126.971,
+    4.598
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-maluku-utara",
+   "name": "Maluku Utara",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    124.28,
+    -2.519,
+    129.599,
+    2.648
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-sumatera-barat",
+   "name": "Sumatera Barat",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    98.552,
+    -3.379,
+    101.891,
+    0.918
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-yogyakarta",
+   "name": "Yogyakarta",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    109.989,
+    -8.254,
+    110.893,
+    -7.519
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-maluku",
+   "name": "Maluku",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    125.748,
+    -8.4,
+    134.936,
+    -2.736
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-nusa-tenggara-barat",
+   "name": "Nusa Tenggara Barat",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    115.807,
+    -9.149,
+    119.185,
+    -8.039
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-sulawesi-tenggara",
+   "name": "Sulawesi Tenggara",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    120.841,
+    -6.072,
+    124.101,
+    -2.823
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-sulawesi-tengah",
+   "name": "Sulawesi Tengah",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    119.444,
+    -3.296,
+    123.916,
+    1.378
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "id-papua",
+   "name": "Papua",
+   "parent": "ID",
+   "continent": "asia",
+   "bbox": [
+    134.205,
+    -9.169,
+    141.026,
+    -0.601
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-telangana",
+   "name": "Telangana",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    77.207,
+    15.783,
+    81.826,
+    19.916
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-ladakh",
+   "name": "Ladakh",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    75.298,
+    32.308,
+    79.549,
+    35.546
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-chandigarh",
+   "name": "Chandigarh",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    76.654,
+    30.627,
+    76.877,
+    30.839
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-delhi",
+   "name": "Delhi",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    76.787,
+    28.383,
+    77.388,
+    28.932
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-himachal-pradesh",
+   "name": "Himachal Pradesh",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    75.552,
+    30.333,
+    79.043,
+    33.281
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-haryana",
+   "name": "Haryana",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    74.416,
+    27.629,
+    77.635,
+    30.958
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-jammu-and-kashmir",
+   "name": "Jammu and Kashmir",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    73.744,
+    32.251,
+    76.79,
+    34.815
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-andhra-pradesh",
+   "name": "Andhra Pradesh",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    76.669,
+    12.583,
+    84.82,
+    19.211
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-kerala",
+   "name": "Kerala",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    74.844,
+    8.234,
+    77.449,
+    12.801
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-lakshadweep",
+   "name": "Lakshadweep",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    72.722,
+    8.202,
+    73.134,
+    11.313
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-odisha",
+   "name": "Odisha",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    81.344,
+    17.747,
+    87.529,
+    22.607
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-dadra-and-nagar-haveli-and-daman-and-diu",
+   "name": "Dadra and Nagar Haveli and Daman and Diu",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    72.847,
+    19.99,
+    73.216,
+    20.38
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-karnataka",
+   "name": "Karnataka",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    74.047,
+    11.576,
+    78.618,
+    18.51
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-goa",
+   "name": "Goa",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    73.629,
+    14.84,
+    74.354,
+    15.825
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-andaman-and-nicobar",
+   "name": "Andaman and Nicobar",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    92.303,
+    6.699,
+    93.98,
+    13.595
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-assam",
+   "name": "Assam",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    89.638,
+    24.083,
+    96.057,
+    28.043
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-manipur",
+   "name": "Manipur",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    92.945,
+    23.822,
+    94.758,
+    25.734
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-nagaland",
+   "name": "Nagaland",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    93.286,
+    25.156,
+    95.296,
+    27.083
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-meghalaya",
+   "name": "Meghalaya",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    89.746,
+    24.956,
+    92.856,
+    26.139
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-punjab",
+   "name": "Punjab",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    73.833,
+    29.512,
+    76.955,
+    32.567
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-rajasthan",
+   "name": "Rajasthan",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    69.42,
+    22.986,
+    78.273,
+    30.272
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-uttar-pradesh",
+   "name": "Uttar Pradesh",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    77.015,
+    23.861,
+    84.656,
+    30.445
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-uttarakhand",
+   "name": "Uttarakhand",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    77.535,
+    28.687,
+    81.06,
+    31.476
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-jharkhand",
+   "name": "Jharkhand",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    83.287,
+    21.936,
+    87.945,
+    25.374
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-west-bengal",
+   "name": "West Bengal",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    85.779,
+    21.534,
+    89.938,
+    27.298
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-bihar",
+   "name": "Bihar",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    83.273,
+    24.257,
+    88.347,
+    27.541
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-chhattisgarh",
+   "name": "Chhattisgarh",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    80.22,
+    17.726,
+    84.402,
+    24.19
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-madhya-pradesh",
+   "name": "Madhya Pradesh",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    73.976,
+    21.025,
+    82.858,
+    26.901
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-puducherry",
+   "name": "Puducherry",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    79.636,
+    10.719,
+    79.9,
+    12.05
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-tamil-nadu",
+   "name": "Tamil Nadu",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    76.191,
+    8.028,
+    80.392,
+    13.518
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-gujarat",
+   "name": "Gujarat",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    68.115,
+    20.028,
+    74.508,
+    24.758
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-arunachal-pradesh",
+   "name": "Arunachal Pradesh",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    91.529,
+    26.605,
+    97.394,
+    29.497
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-mizoram",
+   "name": "Mizoram",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    92.196,
+    21.928,
+    93.465,
+    24.521
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-tripura",
+   "name": "Tripura",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    91.11,
+    22.93,
+    92.375,
+    24.595
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-tomsk",
+   "name": "Tomsk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    75.03,
+    55.642,
+    89.441,
+    61.097
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-adygey",
+   "name": "Adygey",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    38.678,
+    43.701,
+    40.675,
+    45.243
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-karachay-cherkess",
+   "name": "Karachay-Cherkess",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    40.639,
+    43.14,
+    42.733,
+    44.545
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-ingush",
+   "name": "Ingush",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    44.449,
+    42.567,
+    45.222,
+    43.67
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-kabardin-balkar",
+   "name": "Kabardin-Balkar",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    42.312,
+    42.837,
+    44.483,
+    44.044
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-north-ossetia",
+   "name": "North Ossetia",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    43.336,
+    42.517,
+    44.987,
+    43.88
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-stavropol",
+   "name": "Stavropol'",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    40.791,
+    43.611,
+    45.762,
+    46.29
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-chukchi-autonomous-okrug",
+   "name": "Chukchi Autonomous Okrug",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    157.642,
+    61.772,
+    180,
+    71.588
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-kaliningrad",
+   "name": "Kaliningrad",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    19.554,
+    54.3,
+    22.881,
+    55.337
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-murmansk",
+   "name": "Murmansk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    28.364,
+    60.596,
+    41.409,
+    70.004
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-novgorod",
+   "name": "Novgorod",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    29.608,
+    56.881,
+    36.223,
+    59.472
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-pskov",
+   "name": "Pskov",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    27.302,
+    55.524,
+    31.548,
+    59.064
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-leningrad",
+   "name": "Leningrad",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    27.619,
+    58.39,
+    35.736,
+    61.37
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-city-of-st-petersburg",
+   "name": "City of St. Petersburg",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    29.409,
+    59.56,
+    30.806,
+    60.316
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-bryansk",
+   "name": "Bryansk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    31.209,
+    51.73,
+    35.364,
+    54.076
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-smolensk",
+   "name": "Smolensk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    30.741,
+    53.37,
+    35.447,
+    56.125
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-karelia",
+   "name": "Karelia",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    35.479,
+    64.927,
+    35.908,
+    65.248
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-arkhangel-sk",
+   "name": "Arkhangel'sk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    35.832,
+    60.6,
+    68.992,
+    81.904
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-ivanovo",
+   "name": "Ivanovo",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    39.337,
+    56.318,
+    43.777,
+    57.8
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-vologda",
+   "name": "Vologda",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    34.68,
+    58.44,
+    47.164,
+    61.644
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-kostroma",
+   "name": "Kostroma",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    40.335,
+    57.226,
+    47.652,
+    59.683
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-nizhegorod",
+   "name": "Nizhegorod",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    41.733,
+    54.426,
+    47.812,
+    58.13
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-tver",
+   "name": "Tver'",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    30.767,
+    55.582,
+    38.356,
+    58.916
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-yaroslavl",
+   "name": "Yaroslavl'",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    37.3,
+    56.488,
+    41.214,
+    59.004
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-kaluga",
+   "name": "Kaluga",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    33.451,
+    53.222,
+    37.309,
+    55.369
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-kursk",
+   "name": "Kursk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    34.065,
+    50.856,
+    38.46,
+    52.464
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-lipetsk",
+   "name": "Lipetsk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    37.677,
+    51.829,
+    40.747,
+    53.638
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-moskovskaya",
+   "name": "Moskovskaya",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    35.124,
+    54.195,
+    40.256,
+    56.994
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-moskva",
+   "name": "Moskva",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    36.854,
+    54.941,
+    37.893,
+    55.954
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-orel",
+   "name": "Orel",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    34.755,
+    51.886,
+    38.088,
+    53.694
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-rostov",
+   "name": "Rostov",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    38.151,
+    45.897,
+    44.384,
+    50.276
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-tula",
+   "name": "Tula",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    35.881,
+    52.924,
+    38.959,
+    54.886
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-volgograd",
+   "name": "Volgograd",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    41.118,
+    47.4,
+    47.497,
+    51.289
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-belgorod",
+   "name": "Belgorod",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    35.263,
+    49.768,
+    39.284,
+    51.47
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-krasnodar",
+   "name": "Krasnodar",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    36.569,
+    43.37,
+    41.779,
+    46.93
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-mordovia",
+   "name": "Mordovia",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    42.156,
+    53.614,
+    46.784,
+    55.227
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-penza",
+   "name": "Penza",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    42.044,
+    52.266,
+    47.033,
+    54.067
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-ryazan",
+   "name": "Ryazan'",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    38.622,
+    53.292,
+    42.749,
+    55.39
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-tambov",
+   "name": "Tambov",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    39.903,
+    51.55,
+    43.287,
+    53.873
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-vladimir",
+   "name": "Vladimir",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    38.28,
+    55.059,
+    42.956,
+    56.872
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-voronezh",
+   "name": "Voronezh",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    38.157,
+    49.518,
+    42.923,
+    52.148
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-bashkortostan",
+   "name": "Bashkortostan",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    53.091,
+    51.525,
+    60.025,
+    56.565
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-chelyabinsk",
+   "name": "Chelyabinsk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    57.087,
+    51.925,
+    63.369,
+    56.426
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-kurgan",
+   "name": "Kurgan",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    61.93,
+    54.123,
+    68.822,
+    56.891
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-nenets",
+   "name": "Nenets",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    43.283,
+    65.758,
+    65.704,
+    70.515
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-yamal-nenets",
+   "name": "Yamal-Nenets",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    61.968,
+    62.128,
+    86.078,
+    73.624
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-komi",
+   "name": "Komi",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    45.392,
+    59.158,
+    66.256,
+    68.48
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-kirov",
+   "name": "Kirov",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    46.291,
+    56.05,
+    53.972,
+    61.109
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-mariy-el",
+   "name": "Mariy-El",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    45.601,
+    55.779,
+    50.23,
+    57.341
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-sverdlovsk",
+   "name": "Sverdlovsk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    57.169,
+    56.013,
+    66.247,
+    62.043
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-udmurt",
+   "name": "Udmurt",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    51.07,
+    55.808,
+    54.402,
+    58.587
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-astrakhan",
+   "name": "Astrakhan'",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    44.937,
+    45.42,
+    49.296,
+    48.919
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-chuvash",
+   "name": "Chuvash",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    45.87,
+    54.582,
+    48.462,
+    56.385
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-kalmyk",
+   "name": "Kalmyk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    41.606,
+    44.696,
+    47.579,
+    48.305
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-samara",
+   "name": "Samara",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    47.899,
+    51.679,
+    52.589,
+    54.692
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-orenburg",
+   "name": "Orenburg",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    50.744,
+    50.443,
+    61.635,
+    54.427
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-saratov",
+   "name": "Saratov",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    42.439,
+    49.779,
+    50.844,
+    52.86
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-tatarstan",
+   "name": "Tatarstan",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    47.192,
+    53.924,
+    54.227,
+    56.72
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-ul-yanovsk",
+   "name": "Ul'yanovsk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    45.742,
+    52.52,
+    50.306,
+    54.934
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-khanty-mansiy",
+   "name": "Khanty-Mansiy",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    59.182,
+    58.539,
+    86.006,
+    65.767
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-omsk",
+   "name": "Omsk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    70.38,
+    53.398,
+    76.359,
+    58.631
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-tyumen",
+   "name": "Tyumen'",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    64.789,
+    55.112,
+    75.209,
+    60.039
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-altay",
+   "name": "Altay",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    77.734,
+    50.579,
+    87.225,
+    54.537
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-gorno-altay",
+   "name": "Gorno-Altay",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    83.964,
+    49.027,
+    89.919,
+    52.718
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-kemerovo",
+   "name": "Kemerovo",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    84.36,
+    52.118,
+    89.493,
+    56.883
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-khakass",
+   "name": "Khakass",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    87.789,
+    51.266,
+    91.896,
+    55.496
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-novosibirsk",
+   "name": "Novosibirsk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    75.047,
+    53.277,
+    85.129,
+    57.3
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-chechnya",
+   "name": "Chechnya",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    44.789,
+    42.424,
+    46.636,
+    44.065
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-dagestan",
+   "name": "Dagestan",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    45.074,
+    41.149,
+    48.623,
+    45.051
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-irkutsk",
+   "name": "Irkutsk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    95.603,
+    51.082,
+    119.182,
+    64.332
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-krasnoyarsk",
+   "name": "Krasnoyarsk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    76.002,
+    51.731,
+    113.921,
+    81.33
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-tuva",
+   "name": "Tuva",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    88.686,
+    49.681,
+    99.3,
+    53.779
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-buryat",
+   "name": "Buryat",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    98.584,
+    49.916,
+    116.977,
+    57.29
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-amur",
+   "name": "Amur",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    119.62,
+    48.811,
+    135.006,
+    57.082
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-chita",
+   "name": "Chita",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    107.694,
+    49.088,
+    122.177,
+    58.448
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-primor-ye",
+   "name": "Primor'ye",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    130.37,
+    42.253,
+    139.06,
+    48.495
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-sakha-yakutia",
+   "name": "Sakha (Yakutia)",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    105.49,
+    55.416,
+    162.897,
+    76.832
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-yevrey",
+   "name": "Yevrey",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    130.502,
+    47.631,
+    135.037,
+    49.536
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-khabarovsk",
+   "name": "Khabarovsk",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    130.36,
+    46.587,
+    147.209,
+    62.623
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-maga-buryatdan",
+   "name": "Maga Buryatdan",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    144.669,
+    58.817,
+    163.484,
+    66.409
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-sakhalin",
+   "name": "Sakhalin",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    141.611,
+    43.357,
+    156.538,
+    54.466
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-crimea",
+   "name": "Crimea",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    32.458,
+    44.338,
+    36.625,
+    46.27
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-perm",
+   "name": "Perm'",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    51.724,
+    56.058,
+    59.518,
+    61.732
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-kamchatka",
+   "name": "Kamchatka",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    155.505,
+    50.919,
+    174.518,
+    64.981
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "ru-sevastopol",
+   "name": "Sevastopol",
+   "parent": "RU",
+   "continent": "europe",
+   "bbox": [
+    33.401,
+    44.352,
+    33.902,
+    44.892
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "za-northern-cape",
+   "name": "Northern Cape",
+   "parent": "ZA",
+   "continent": "africa",
+   "bbox": [
+    16.398,
+    -32.987,
+    25.572,
+    -24.727
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "za-western-cape",
+   "name": "Western Cape",
+   "parent": "ZA",
+   "continent": "africa",
+   "bbox": [
+    17.721,
+    -47.013,
+    37.938,
+    -30.421
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "za-north-west",
+   "name": "North West",
+   "parent": "ZA",
+   "continent": "africa",
+   "bbox": [
+    22.565,
+    -28.15,
+    28.344,
+    -24.564
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "za-free-state",
+   "name": "Free State",
+   "parent": "ZA",
+   "continent": "africa",
+   "bbox": [
+    24.291,
+    -30.731,
+    29.821,
+    -26.621
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "za-gauteng",
+   "name": "Gauteng",
+   "parent": "ZA",
+   "continent": "africa",
+   "bbox": [
+    27.141,
+    -26.944,
+    29.026,
+    -25.065
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "za-mpumalanga",
+   "name": "Mpumalanga",
+   "parent": "ZA",
+   "continent": "africa",
+   "bbox": [
+    28.206,
+    -27.552,
+    32.037,
+    -23.914
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "za-limpopo",
+   "name": "Limpopo",
+   "parent": "ZA",
+   "continent": "africa",
+   "bbox": [
+    26.347,
+    -25.461,
+    31.878,
+    -22.096
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "za-kwazulu-natal",
+   "name": "KwaZulu-Natal",
+   "parent": "ZA",
+   "continent": "africa",
+   "bbox": [
+    28.806,
+    -31.125,
+    32.936,
+    -26.761
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "za-eastern-cape",
+   "name": "Eastern Cape",
+   "parent": "ZA",
+   "continent": "africa",
+   "bbox": [
+    22.695,
+    -34.225,
+    30.244,
+    -29.926
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  },
+  {
+   "id": "in-maharashtra",
+   "name": "Maharashtra",
+   "parent": "IN",
+   "continent": "asia",
+   "bbox": [
+    72.618,
+    15.561,
+    80.944,
+    22.073
+   ],
+   "maxzoom": 14,
+   "estimatedMB": 0
+  }
+ ]
 }
