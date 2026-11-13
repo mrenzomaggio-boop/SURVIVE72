@@ -55,9 +55,10 @@ private struct MapRegionFile: Decodable {
 
 /// The downloadable areas bundled with the app.
 enum MapRegionCatalog {
-    /// Where the map files are published. Nil until the hosting is decided:
-    /// the app then shows the areas but cannot download them yet.
-    static let downloadBaseURL: URL? = nil
+    /// Where the map files are published: the "maps" release of the public
+    /// survive72-maps repository, rebuilt every month by its workflow.
+    /// Nil would show the areas without letting them be downloaded.
+    static let downloadBaseURL: URL? = URL(string: "https://github.com/mrenzomaggio-boop/survive72-maps/releases/download/maps")
 
     static func load(bundle: Bundle = .main) -> [MapRegion] {
         guard let url = bundle.url(forResource: "regions", withExtension: "json", subdirectory: "MapStyle"),

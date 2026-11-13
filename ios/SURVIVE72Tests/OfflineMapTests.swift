@@ -36,6 +36,12 @@ final class OfflineMapTests: XCTestCase {
         XCTAssertTrue(MapRegionCatalog.decode(Data("not json".utf8)).isEmpty)
     }
 
+    func testDownloadsPointToTheMapsRelease() throws {
+        let region = try XCTUnwrap(MapRegionCatalog.load().first)
+        XCTAssertEqual(MapRegionCatalog.downloadURL(for: region)?.absoluteString,
+                       "https://github.com/mrenzomaggio-boop/survive72-maps/releases/download/maps/\(region.id).pmtiles")
+    }
+
     func testDownloadURLNeedsBase() throws {
         let region = try XCTUnwrap(MapRegionCatalog.load().first)
         XCTAssertNil(MapRegionCatalog.downloadURL(for: region, base: nil))
