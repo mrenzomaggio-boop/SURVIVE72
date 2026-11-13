@@ -21,7 +21,9 @@ protocol MeshTransportDelegate: AnyObject {
 /// What two phones say to each other when they meet.
 enum MeshWire: Codable, Equatable {
     /// "These are the packets I already have": the other phone sends the rest.
-    case hello(known: [UUID])
+    /// It also carries who is on this phone, signed, so phones next to each
+    /// other see each other at once. Older versions send no card.
+    case hello(known: [UUID], card: MeshCard? = nil, signature: Data? = nil)
     case packets([MeshPacket])
 
     /// Packets per message, to keep each transfer small.

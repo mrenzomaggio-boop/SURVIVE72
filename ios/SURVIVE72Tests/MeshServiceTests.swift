@@ -191,6 +191,72 @@ final class MeshServiceTests: XCTestCase {
         XCTAssertEqual(written.first?.isOutgoing, true)
     }
 
+    // MARK: People nearby and search
+
+    func testPhonesNextToEachOtherSeeEachOtherAtOnce() {
+        let ada = makePhone(name: "Ada")
+        let bob = makePhone(name: "Bob")
+        XCTAssertTrue(ada.service.reachablePeople.isEmpty)
+
+        FakeTransport.link(ada.radio, bob.radio)
+        XCTAssertEqual(ada.service.reachablePeople.map(\.name), ["Bob"])
+        XCTAssertEqual(bob.service.reachablePeople.map(\.name), ["Ada"])
+        XCTAssertEqual(ada.service.nearbyPeopleCodes, [bob.service.myCode])
+
+        // A new nickname reaches the phone next to it straight away.
+        bob.service.updateProfile(name: "Roberto", phone: "")
+        XCTAssertEqual(ada.service.reachablePeople.map(\.name), ["Roberto"])
+        XCTAssertEqual(ada.service.card(for: bob.service.myCode)?.name, "Roberto")
+
+        // Out of range: no longer "near", still known, and still known after a relaunch.
+        FakeTransport.unlink(ada.radio, bob.radio)
+        XCTAssertTrue(ada.service.nearbyPeopleCodes.isEmpty)
+        XCTAssertEqual(ada.service.reachablePeople.map(\.name), ["Roberto"])
+        XCTAssertEqual(relaunch(ada).service.reachablePeople.map(\.name), ["Roberto"])
+    }
+
+    func testPeopleNearbyComeFirst() {
+        let ada = makePhone(name: "Ada")
+        let zoe = makePhone(name: "Zoe")
+        let bob = makePhone(name: "Bob")
+        FakeTransport.link(ada.radio, bob.radio)
+        FakeTransport.unlink(ada.radio, bob.radio)
+        FakeTransport.link(ada.radio, zoe.radio)
+        XCTAssertEqual(ada.service.reachablePeople.map(\.name), ["Zoe", "Bob"])
+    }
+
+    func testCardWithSomeoneElsesCodeIsRefused() throws {
+        let ada = makePhone(name: "Ada")
+        let victim = MeshIdentity(name: "Bob")
+        let thief = MeshIdentity(name: "Bob")
+        // The thief hands out Bob's code with its own encryption key.
+        let forged = MeshCard(name: "Bob", signingKey: victim.card.signingKey,
+                              agreementKey: thief.card.agreementKey)
+        let hello = MeshWire.hello(known: [], card: forged, signature: try thief.sign(forged.signedBytes))
+        ada.service.meshTransport(didReceive: try XCTUnwrap(hello.encoded()), from: "peer")
+        XCTAssertTrue(ada.service.reachablePeople.isEmpty)
+        XCTAssertTrue(ada.service.nearbyPeopleCodes.isEmpty)
+
+        let honest = MeshWire.hello(known: [], card: victim.card, signature: try victim.sign(victim.card.signedBytes))
+        ada.service.meshTransport(didReceive: try XCTUnwrap(honest.encoded()), from: "peer")
+        XCTAssertEqual(ada.service.reachablePeople.map(\.code), [victim.code])
+    }
+
+    func testSearchByNickname() {
+        let ada = makePhone(name: "Ada")
+        let mario = makePhone(name: "Mario Rossi")
+        let nicolo = makePhone(name: "Nicolò")
+        FakeTransport.link(ada.radio, mario.radio)
+        FakeTransport.link(ada.radio, nicolo.radio)
+
+        XCTAssertEqual(ada.service.people(matching: "mario").map(\.name), ["Mario Rossi"])
+        XCTAssertEqual(ada.service.people(matching: "ROSSI ").map(\.name), ["Mario Rossi"])
+        XCTAssertEqual(ada.service.people(matching: "nicolo").map(\.name), ["Nicolò"])
+        XCTAssertTrue(ada.service.people(matching: "luigi").isEmpty)
+        XCTAssertTrue(ada.service.people(matching: "Ada").isEmpty)   // not herself
+        XCTAssertTrue(ada.service.people(matching: "  ").isEmpty)
+    }
+
     func testUnknownPhoneNumberFindsNobody() {
         let ada = makePhone(name: "Ada", phone: "333 123 4567")
         XCTAssertTrue(ada.service.people(withPhone: "333 999 0000").isEmpty)
@@ -257,6 +323,12 @@ final class MeshServiceTests: XCTestCase {
 
         let hello = MeshWire.hello(known: [UUID(), UUID()])
         XCTAssertEqual(MeshWire.decoded(try XCTUnwrap(hello.encoded())), hello)
+        let signed = MeshWire.hello(known: [], card: identity.card, signature: try identity.sign(identity.card.signedBytes))
+        XCTAssertEqual(MeshWire.decoded(try XCTUnwrap(signed.encoded())), signed)
+        // A hello from the previous version, without a card, is still understood.
+        let id = UUID()
+        let legacy = Data(#"{"hello":{"known":["\#(id.uuidString)"]}}"#.utf8)
+        XCTAssertEqual(MeshWire.decoded(legacy), .hello(known: [id]))
         XCTAssertNil(MeshWire.decoded(Data(count: 600 * 1024)))
     }
 }

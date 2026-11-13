@@ -25,6 +25,27 @@ struct MeshCard: Codable, Hashable {
     }
 }
 
+extension MeshCard {
+    /// Bytes signed by the owner when the card is handed to a nearby phone.
+    var signedBytes: Data {
+        var data = Data("survive72.mesh.card.v1".utf8)
+        data.append(Data(name.utf8))
+        data.append(0)
+        data.append(signingKey)
+        data.append(agreementKey)
+        data.append(Data((phoneTag ?? "").utf8))
+        return data
+    }
+
+    /// True when `signature` was made by the owner of this card's signing key,
+    /// so nobody can hand out a card with someone else's code.
+    func isSigned(by signature: Data) -> Bool {
+        guard isWellFormed,
+              let key = try? Curve25519.Signing.PublicKey(rawRepresentation: signingKey) else { return false }
+        return key.isValidSignature(signature, for: signedBytes)
+    }
+}
+
 /// Phone numbers as a way to find people on the mesh.
 ///
 /// Only a fingerprint of the number is shared, so someone who already knows a

@@ -83,6 +83,8 @@ final class MeshService: MeshTransportDelegate {
     private(set) var contacts: [String: MeshCard]
     /// Phones connected right now.
     private(set) var nearbyCount = 0
+    /// Who is on each connected phone (from its signed hello), by peer token.
+    private(set) var nearbyCodes: [String: String] = [:]
 
     private let transport: MeshTransport
     private let keyStore: MeshKeyStore
@@ -140,6 +142,8 @@ final class MeshService: MeshTransportDelegate {
         identity.name = profile.name
         identity.phoneTag = MeshPhone.tag(for: profile.phone)
         saveProfile()
+        // Nearby phones learn the new nickname at once.
+        for peer in transport.connectedPeers { sendHello(to: peer) }
     }
 
     /// Switches the link to nearby phones on or off.
@@ -152,6 +156,7 @@ final class MeshService: MeshTransportDelegate {
         } else {
             transport.stop()
             nearbyCount = 0
+            nearbyCodes = [:]
         }
     }
 
@@ -161,6 +166,7 @@ final class MeshService: MeshTransportDelegate {
         transport.stop()
         transport.start()
         nearbyCount = transport.connectedPeers.count
+        nearbyCodes = nearbyCodes.filter { transport.connectedPeers.contains($0.key) }
     }
 
     // MARK: Write
@@ -202,19 +208,34 @@ final class MeshService: MeshTransportDelegate {
         return found
     }
 
-    /// Everyone this phone could write to, by nickname.
+    /// People whose nickname contains the text, ignoring case and accents.
+    func people(matching text: String) -> [MeshCard] {
+        let query = text.trimmed
+        guard !query.isEmpty else { return [] }
+        let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]
+        return reachablePeople.filter { $0.name.range(of: query, options: options) != nil }
+    }
+
+    /// Codes of the people on the phones connected right now.
+    var nearbyPeopleCodes: Set<String> { Set(nearbyCodes.values) }
+
+    /// Everyone this phone could write to: people next to it first, then by nickname.
     var reachablePeople: [MeshCard] {
-        var all = contacts
-        for (code, card) in router.knownCards { all[code] = card }
+        var all = router.knownCards
+        // A card received directly is the newest one (e.g. after a nickname change).
+        for (code, card) in contacts { all[code] = card }
         all[myCode] = nil
+        let nearby = nearbyPeopleCodes
         return all.values.sorted {
-            $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending
-                || ($0.name == $1.name && $0.code < $1.code)
+            let aNear = nearby.contains($0.code), bNear = nearby.contains($1.code)
+            if aNear != bNear { return aNear }
+            let order = $0.name.localizedCaseInsensitiveCompare($1.name)
+            return order != .orderedSame ? order == .orderedAscending : $0.code < $1.code
         }
     }
 
     func card(for code: String) -> MeshCard? {
-        router.knownCards[code] ?? contacts[code]
+        contacts[code] ?? router.knownCards[code]
     }
 
     /// Codes of the people with a private conversation, most recent first.
@@ -249,6 +270,7 @@ final class MeshService: MeshTransportDelegate {
     func reset() {
         transport.stop()
         nearbyCount = 0
+        nearbyCodes = [:]
         keyStore.delete()
         LocalStorage.remove(key: MeshService.profileKey, from: defaults)
         if let stateURL { try? FileManager.default.removeItem(at: stateURL) }
@@ -263,20 +285,25 @@ final class MeshService: MeshTransportDelegate {
 
     func meshTransport(peerConnected peer: String) {
         nearbyCount = transport.connectedPeers.count
-        let known = Array(router.knownIDs(now: now()))
-        if let data = MeshWire.hello(known: known).encoded() {
-            transport.send(data, to: peer)
-        }
+        sendHello(to: peer)
     }
 
     func meshTransport(peerDisconnected peer: String) {
         nearbyCount = transport.connectedPeers.count
+        nearbyCodes[peer] = nil
     }
 
     func meshTransport(didReceive data: Data, from peer: String) {
         guard let message = MeshWire.decoded(data) else { return }
         switch message {
-        case .hello(let known):
+        case .hello(let known, let card, let signature):
+            if let card, let signature, card.isSigned(by: signature), card.code != myCode {
+                nearbyCodes[peer] = card.code
+                if contacts[card.code] != card {
+                    contacts[card.code] = card
+                    saveState()
+                }
+            }
             let missing = router.packetsToSend(excluding: Set(known), now: now())
             for batch in MeshWire.batches(missing) {
                 if let data = batch.encoded() { transport.send(data, to: peer) }
@@ -289,6 +316,15 @@ final class MeshService: MeshTransportDelegate {
     }
 
     // MARK: Private
+
+    private func sendHello(to peer: String) {
+        let card = identity.card
+        let known = Array(router.knownIDs(now: now()))
+        let hello = MeshWire.hello(known: known, card: card, signature: try? identity.sign(card.signedBytes))
+        if let data = hello.encoded() {
+            transport.send(data, to: peer)
+        }
+    }
 
     /// Stores a new packet and passes it on to every other connected phone.
     private func accept(_ packet: MeshPacket, from source: String?) {
