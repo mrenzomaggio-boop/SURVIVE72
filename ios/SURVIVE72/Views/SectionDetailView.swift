@@ -20,7 +20,7 @@ struct SectionDetailView: View {
                             .foregroundStyle(Theme.textSecondary)
                         Text(String(localized: "DEMO · NOT YET IMPLEMENTED"))
                             .font(.caption.weight(.heavy))
-                            .foregroundStyle(Theme.background)
+                            .foregroundStyle(Theme.onAccent)
                             .padding(.horizontal, 8)
                             .padding(.vertical, 3)
                             .background(Theme.accent, in: Capsule())

@@ -14,7 +14,7 @@ struct KitProgressCard: View {
                 Spacer()
                 Text(progress.isComplete ? String(localized: "READY") : String(localized: "IN PROGRESS"))
                     .font(.caption.weight(.heavy))
-                    .foregroundStyle(Theme.background)
+                    .foregroundStyle(Theme.onAccent)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 3)
                     .background(progress.isComplete ? Theme.ok : Theme.accent, in: Capsule())
@@ -53,7 +53,7 @@ struct KitProgressBar: View {
     var body: some View {
         GeometryReader { proxy in
             ZStack(alignment: .leading) {
-                Capsule().fill(Color(white: 0.25))
+                Capsule().fill(Theme.surfaceBorder.opacity(0.5))
                 Capsule()
                     .fill(isComplete ? Theme.ok : Theme.accent)
                     .frame(width: proxy.size.width * min(max(fraction, 0), 1))

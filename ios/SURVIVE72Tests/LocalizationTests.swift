@@ -58,3 +58,21 @@ final class LocalizationTests: XCTestCase {
         XCTAssertEqual(AppSection.settings.title, "Settings")
     }
 }
+
+/// Home layout: Alert has its own banner and every other section is in the
+/// grid exactly once, so no section can disappear from Home.
+final class HomeLayoutTests: XCTestCase {
+    func testEverySectionIsReachableFromHomeOnce() {
+        let shown = [AppSection.alert] + HomeView.gridSections
+        XCTAssertEqual(shown.count, Set(shown).count)
+        XCTAssertEqual(Set(shown), Set(AppSection.allCases))
+    }
+
+    func testHomeTextsAreTranslated() throws {
+        let path = try XCTUnwrap(Bundle.main.path(forResource: "it", ofType: "lproj"))
+        let bundle = try XCTUnwrap(Bundle(path: path))
+        XCTAssertEqual(bundle.localizedString(forKey: "Ready for the first 72 hours", value: nil, table: nil),
+                       "Pronto per le prime 72 ore")
+        XCTAssertEqual(bundle.localizedString(forKey: "Alert and SOS", value: nil, table: nil), "Allerta e SOS")
+    }
+}

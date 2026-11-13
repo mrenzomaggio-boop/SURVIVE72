@@ -128,6 +128,16 @@ Use any installed iPhone simulator name. The same build and tests run on
 GitHub Actions through `.github/workflows/ios-build.yml`, which picks an
 available simulator automatically.
 
+## Look
+
+"Civic" theme chosen by the user (12 Nov 2026): day look with a light
+blue-grey background, white cards, navy text and civil-protection orange;
+night look with a navy background and dark-blue cards. The app follows the
+iPhone's light/dark setting. Colors live in `Theme.swift`; each Home section
+has its own icon color (`AppSection.tint`). Home shows the brand, a readiness
+line (kit progress, phones nearby), a large orange Alert banner and the other
+sections in a three-column grid. Rounded system font throughout.
+
 ## Not implemented yet
 
 Maps, GPS, downloads, and review of the medical cards by a doctor.

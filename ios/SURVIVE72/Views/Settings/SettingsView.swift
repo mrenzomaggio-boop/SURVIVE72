@@ -58,7 +58,7 @@ struct SettingsView: View {
                     } label: {
                         Text(system.title)
                             .font(.title3.weight(.heavy))
-                            .foregroundStyle(isSelected ? Theme.background : Theme.textPrimary)
+                            .foregroundStyle(isSelected ? Theme.onAccent : Theme.textPrimary)
                             .frame(maxWidth: .infinity, minHeight: 56)
                             .background(isSelected ? Theme.accent : Theme.surface,
                                         in: RoundedRectangle(cornerRadius: Theme.cornerRadius))

@@ -43,7 +43,7 @@ struct MedicalEntryView: View {
                 } label: {
                     Label(String(localized: "Step by step, full screen"), systemImage: "rectangle.portrait.on.rectangle.portrait.angled.fill")
                         .font(.title3.weight(.heavy))
-                        .foregroundStyle(Theme.background)
+                        .foregroundStyle(Theme.onAccent)
                         .frame(maxWidth: .infinity, minHeight: 60)
                         .background(Theme.accent, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
                 }
@@ -81,7 +81,7 @@ struct MedicalEntryView: View {
             Label(isFavorite ? String(localized: "Bookmarked") : String(localized: "Bookmark"),
                   systemImage: isFavorite ? "star.fill" : "star")
                 .font(.title3.weight(.heavy))
-                .foregroundStyle(isFavorite ? Theme.background : Theme.textPrimary)
+                .foregroundStyle(isFavorite ? Theme.onAccent : Theme.textPrimary)
                 .frame(maxWidth: .infinity, minHeight: 56)
                 .background(isFavorite ? Theme.accent : Theme.surface,
                             in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
@@ -126,7 +126,7 @@ struct MedicalStepByStepView: View {
                         Spacer(minLength: 0)
                         Image(systemName: SymbolCheck.safe(step.symbol))
                             .font(.system(size: 110, weight: .bold))
-                            .foregroundStyle(Theme.background)
+                            .foregroundStyle(Theme.onAccent)
                             .frame(width: 200, height: 200)
                             .background(Theme.accent, in: RoundedRectangle(cornerRadius: 32))
                             .accessibilityHidden(true)
@@ -290,7 +290,7 @@ struct MedicalVerificationBadge: View {
     var body: some View {
         Label(status.label, systemImage: "exclamationmark.triangle.fill")
             .font(large ? .headline.weight(.black) : .caption.weight(.heavy))
-            .foregroundStyle(Theme.background)
+            .foregroundStyle(Theme.onAccent)
             .padding(.horizontal, large ? 12 : 8)
             .padding(.vertical, large ? 8 : 3)
             .background(Theme.accent, in: Capsule())

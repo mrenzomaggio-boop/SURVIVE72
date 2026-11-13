@@ -228,7 +228,7 @@ private struct AreaRow: View {
                 Spacer()
                 Text(status.label.uppercased())
                     .font(.caption.weight(.black))
-                    .foregroundStyle(Theme.background)
+                    .foregroundStyle(Theme.onAccent)
                     .padding(.horizontal, 8)
                     .padding(.vertical, 4)
                     .background(isPrepared ? Theme.ok : Theme.accent, in: Capsule())

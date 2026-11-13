@@ -45,8 +45,8 @@ struct SURVIVE72App: App {
                     ThemeOptions.shared.highContrast = isOn
                 }
                 .environment(\.batterySaverEnabled, settingsStore.settings.batterySaver)
-                // High-contrast dark UI: readable at night, saves battery on OLED.
-                .preferredColorScheme(.dark)
+                // Day (light) and night (dark) looks follow the iPhone setting.
+                .fontDesign(.rounded)
                 .tint(Theme.accent)
         }
     }

@@ -205,7 +205,7 @@ struct MeshNoticeBanner: View {
                 .minimumScaleFactor(0.7)
                 .lineLimit(2)
         }
-        .foregroundStyle(Theme.background)
+        .foregroundStyle(Theme.onAccent)
         .padding(.horizontal, 16)
         .padding(.vertical, 10)
         .frame(maxWidth: .infinity, alignment: .leading)
