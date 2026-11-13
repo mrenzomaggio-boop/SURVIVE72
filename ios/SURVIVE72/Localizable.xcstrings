@@ -1131,16 +1131,6 @@
         }
       }
     },
-    "Content packs below are simulated: marking a pack only records it on this device.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "I pacchetti qui sotto sono simulati: segnarne uno lo registra solo su questo telefono."
-          }
-        }
-      }
-    },
     "Conversation": {
       "localizations": {
         "it": {
@@ -3211,16 +3201,6 @@
         }
       }
     },
-    "Maps and packs": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Mappe e pacchetti"
-          }
-        }
-      }
-    },
     "Marine VHF channel 16": {
       "localizations": {
         "it": {
@@ -3921,12 +3901,12 @@
         }
       }
     },
-    "Offline maps": {
+    "Offline packs": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mappe offline"
+            "value": "Pacchetti offline"
           }
         }
       }
@@ -5297,6 +5277,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Simula non riuscito"
+          }
+        }
+      }
+    },
+    "Simulated: no data is downloaded. Marking a pack only records it on this device.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulazione: non viene scaricato nulla. Segnare un pacchetto lo registra solo su questo dispositivo."
           }
         }
       }

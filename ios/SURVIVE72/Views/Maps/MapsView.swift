@@ -12,7 +12,10 @@ struct MapsView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 24) {
-                OpenMapCard()
+                VStack(spacing: 10) {
+                    OpenMapCard()
+                    MapAreasRow()
+                }
 
                 placesSection
                 sensorsSection
@@ -101,6 +104,43 @@ struct MapsView: View {
 }
 
 // MARK: - Building blocks
+
+/// Entry to the list of map areas to download or delete.
+private struct MapAreasRow: View {
+    @Environment(OfflineMapStore.self) private var mapStore
+
+    var body: some View {
+        NavigationLink {
+            MapDownloadsView()
+        } label: {
+            HStack(spacing: 12) {
+                Image(systemName: "arrow.down.circle.fill")
+                    .font(.title.weight(.bold))
+                    .foregroundStyle(Theme.accent)
+                    .accessibilityHidden(true)
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(String(localized: "Map areas"))
+                        .font(.title3.weight(.heavy))
+                        .foregroundStyle(Theme.textPrimary)
+                    Text(String(localized: "On this iPhone: \(mapStore.downloadedRegions.count) areas · \(SizeFormat.bytes(mapStore.usedBytes))"))
+                        .font(.subheadline.weight(.semibold).monospacedDigit())
+                        .foregroundStyle(Theme.textSecondary)
+                }
+                Spacer(minLength: 8)
+                Image(systemName: "chevron.right")
+                    .font(.headline.weight(.bold))
+                    .foregroundStyle(Theme.textSecondary)
+                    .accessibilityHidden(true)
+            }
+            .padding(14)
+            .frame(maxWidth: .infinity, minHeight: 72, alignment: .leading)
+            .background(Theme.surface, in: RoundedRectangle(cornerRadius: Theme.cornerRadius))
+            .overlay(RoundedRectangle(cornerRadius: Theme.cornerRadius)
+                .stroke(Theme.surfaceBorder, lineWidth: Theme.borderWidth))
+        }
+        .buttonStyle(.plain)
+    }
+}
 
 /// Big entry to the offline map, with how many areas are on the device.
 private struct OpenMapCard: View {

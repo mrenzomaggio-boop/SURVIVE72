@@ -41,7 +41,7 @@ enum AppSection: String, CaseIterable, Identifiable, Hashable {
         case .radio: String(localized: "Frequencies, guide")
         case .alert: String(localized: "Alert board, SOS plan")
         case .tools: String(localized: "Stopwatch, SOS light")
-        case .downloads: String(localized: "Maps and packs")
+        case .downloads: String(localized: "Offline packs")
         case .settings: String(localized: "Preferences")
         }
     }

@@ -14,7 +14,15 @@ struct HomeView: View {
 
     /// Most used first; Alert has its own banner above the grid.
     static let gridSections: [AppSection] = [
-        .medical, .knowledge, .connect, .radio, .maps, .kit, .tools, .downloads, .settings
+        .medical, .knowledge, .connect, .radio, .maps, .kit
+    ]
+
+    /// Last row, two wider tiles. Offline map downloads live inside Maps.
+    static let bottomSections: [AppSection] = [.tools, .settings]
+
+    private let bottomColumns = [
+        GridItem(.flexible(), spacing: 10),
+        GridItem(.flexible(), spacing: 10)
     ]
 
     var body: some View {
@@ -36,6 +44,16 @@ struct HomeView: View {
                             .buttonStyle(.plain)
                         }
                     }
+
+                    LazyVGrid(columns: bottomColumns, spacing: 10) {
+                        ForEach(Self.bottomSections) { section in
+                            NavigationLink(value: section) {
+                                SectionTile(section: section)
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    }
+                    .padding(.top, -6)
 
                     OfflineBanner()
                 }
