@@ -1131,6 +1131,16 @@
         }
       }
     },
+    "Choose a nickname your family and friends will recognise. Nicknames are not unique: the security code tells people apart.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scegli un nickname che familiari e amici riconoscano. I nickname possono ripetersi: il codice di sicurezza distingue le persone."
+          }
+        }
+      }
+    },
     "Choose areas to download": {
       "localizations": {
         "it": {
@@ -2237,16 +2247,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Individua i punti sicuri della casa e leggi il Piano di protezione civile del tuo Comune."
-          }
-        }
-      }
-    },
-    "Findable by number: %@": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Trovabile con il numero: %@"
           }
         }
       }
@@ -3451,16 +3451,6 @@
         }
       }
     },
-    "More than one person declares this number. Numbers are not verified: check the security code with the person.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Più persone dichiarano questo numero. I numeri non sono verificati: controlla il codice di sicurezza con la persona."
-          }
-        }
-      }
-    },
     "Move away from buildings, trees, street lights and power lines.": {
       "localizations": {
         "it": {
@@ -3691,22 +3681,22 @@
         }
       }
     },
-    "Nickname or phone number": {
+    "Nickname to find": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nickname o numero di telefono"
+            "value": "Nickname da cercare"
           }
         }
       }
     },
-    "Nickname or phone number to find": {
+    "Nicknames are not unique: check the security code with the person.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nickname o numero di telefono da cercare"
+            "value": "I nickname possono ripetersi: controlla il codice di sicurezza con la persona."
           }
         }
       }
@@ -3811,16 +3801,6 @@
         }
       }
     },
-    "No phone number: people cannot find you by number.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nessun numero di telefono: gli altri non possono trovarti tramite il numero."
-          }
-        }
-      }
-    },
     "No places yet. Add a meeting point, shelter or water source with its coordinates.": {
       "localizations": {
         "it": {
@@ -3851,12 +3831,12 @@
         }
       }
     },
-    "Nobody with this nickname or number has been seen on the network yet. They must have the app and have been in range of the network at least once.": {
+    "Nobody with this nickname has been seen on the network yet. They must have the app and have been in range of the network at least once.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nessuno con questo nickname o numero è ancora passato dalla rete. Deve avere l'app ed essere stato almeno una volta nel raggio della rete."
+            "value": "Nessuno con questo nickname è ancora passato dalla rete. Deve avere l'app ed essere stato almeno una volta nel raggio della rete."
           }
         }
       }
@@ -4161,6 +4141,16 @@
         }
       }
     },
+    "Others find you by nickname. Compare the security code to be sure it is you.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gli altri ti trovano con il nickname. Confrontate il codice di sicurezza per essere sicuri che sei tu."
+          }
+        }
+      }
+    },
     "Overall kit progress": {
       "localizations": {
         "it": {
@@ -4317,16 +4307,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Numero di telefono"
-          }
-        }
-      }
-    },
-    "Phone number (optional)": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Numero di telefono (facoltativo)"
           }
         }
       }
@@ -5991,16 +5971,6 @@
         }
       }
     },
-    "This does not look like a phone number.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Non sembra un numero di telefono."
-          }
-        }
-      }
-    },
     "Time: call 112 at once and note the time the symptoms started.": {
       "localizations": {
         "it": {
@@ -6461,16 +6431,6 @@
         }
       }
     },
-    "With a number, people who already know it can find you on the network. The number itself is not sent: only a fingerprint of it travels. It is not verified, and someone with technical skills could work it out. Leave it empty if you prefer.": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Con il numero, chi lo conosce già può trovarti nella rete. Il numero in sé non viene inviato: viaggia solo una sua impronta. Non è verificato, e chi ha competenze tecniche potrebbe risalire al numero. Lascialo vuoto se preferisci."
-          }
-        }
-      }
-    },
     "Works without internet": {
       "localizations": {
         "it": {
@@ -6687,16 +6647,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "freddo"
-          }
-        }
-      }
-    },
-    "e.g. 333 123 4567": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "es. 333 123 4567"
           }
         }
       }

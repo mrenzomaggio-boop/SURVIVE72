@@ -242,9 +242,9 @@ final class MeshServiceTests: XCTestCase {
         XCTAssertEqual(ada.service.reachablePeople.map(\.code), [victim.code])
     }
 
-    func testSearchByNicknameOrPhoneNumber() {
+    func testSearchByNickname() {
         let ada = makePhone(name: "Ada")
-        let mario = makePhone(name: "Mario Rossi", phone: "333 123 4567")
+        let mario = makePhone(name: "Mario Rossi")
         let nicolo = makePhone(name: "Nicolò")
         FakeTransport.link(ada.radio, mario.radio)
         FakeTransport.link(ada.radio, nicolo.radio)
@@ -252,8 +252,7 @@ final class MeshServiceTests: XCTestCase {
         XCTAssertEqual(ada.service.people(matching: "mario").map(\.name), ["Mario Rossi"])
         XCTAssertEqual(ada.service.people(matching: "ROSSI ").map(\.name), ["Mario Rossi"])
         XCTAssertEqual(ada.service.people(matching: "nicolo").map(\.name), ["Nicolò"])
-        XCTAssertEqual(ada.service.people(matching: "+39 333 1234567").map(\.name), ["Mario Rossi"])
-        XCTAssertTrue(ada.service.people(matching: "333 000 0000").isEmpty)
+        XCTAssertTrue(ada.service.people(matching: "luigi").isEmpty)
         XCTAssertTrue(ada.service.people(matching: "Ada").isEmpty)   // not herself
         XCTAssertTrue(ada.service.people(matching: "  ").isEmpty)
     }

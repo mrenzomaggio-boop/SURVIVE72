@@ -208,19 +208,12 @@ final class MeshService: MeshTransportDelegate {
         return found
     }
 
-    /// People whose nickname contains the text (ignoring case and accents)
-    /// and, when the text is a phone number, people who declared that number.
+    /// People whose nickname contains the text, ignoring case and accents.
     func people(matching text: String) -> [MeshCard] {
         let query = text.trimmed
         guard !query.isEmpty else { return [] }
-        var found = MeshPhone.normalized(query) == nil || query.contains(where: \.isLetter)
-            ? [] : people(withPhone: query)
-        let codes = Set(found.map(\.code))
         let options: String.CompareOptions = [.caseInsensitive, .diacriticInsensitive]
-        found += reachablePeople.filter {
-            !codes.contains($0.code) && $0.name.range(of: query, options: options) != nil
-        }
-        return found
+        return reachablePeople.filter { $0.name.range(of: query, options: options) != nil }
     }
 
     /// Codes of the people on the phones connected right now.

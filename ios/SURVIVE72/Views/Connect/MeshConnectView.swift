@@ -2,7 +2,7 @@ import SwiftUI
 import UIKit
 
 /// SURVIVE CONNECT: private messages that travel from phone to phone until
-/// they reach the recipient. People are found by phone number.
+/// they reach the recipient. People are found by nickname.
 struct MeshConnectView: View {
     @Environment(MeshService.self) private var mesh
 
@@ -30,8 +30,9 @@ struct MeshConnectView: View {
         .toolbarBackground(Theme.background, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
         .sheet(isPresented: $isEditingProfile) {
-            MeshProfileEditor(name: mesh.profile.name, phone: mesh.profile.phone) { name, phone in
-                mesh.updateProfile(name: name, phone: phone)
+            MeshProfileEditor(name: mesh.profile.name) { name in
+                // For now people are found only by nickname: no phone number is kept.
+                mesh.updateProfile(name: name, phone: "")
             }
         }
     }
@@ -45,9 +46,7 @@ struct MeshConnectView: View {
                 Text(mesh.profile.name.isEmpty ? String(localized: "No nickname yet") : mesh.profile.name)
                     .font(.title2.weight(.heavy))
                     .foregroundStyle(Theme.textPrimary)
-                Text(mesh.profile.phone.isEmpty
-                     ? String(localized: "No phone number: people cannot find you by number.")
-                     : String(localized: "Findable by number: \(mesh.profile.phone)"))
+                Text(String(localized: "Others find you by nickname. Compare the security code to be sure it is you."))
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(Theme.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -66,12 +65,12 @@ struct MeshConnectView: View {
         }
     }
 
-    // MARK: Search by nickname or phone number
+    // MARK: Search by nickname
 
     private var searchSection: some View {
         VStack(alignment: .leading, spacing: 12) {
             MeshSectionHeader(title: String(localized: "Find a person"), systemImage: "magnifyingglass")
-            TextField(String(localized: "Nickname or phone number"), text: $searchNumber)
+            TextField(String(localized: "Nickname"), text: $searchNumber)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
                 .submitLabel(.search)
@@ -81,7 +80,7 @@ struct MeshConnectView: View {
                 .padding(12)
                 .frame(minHeight: 52)
                 .meshCardBackground()
-                .accessibilityLabel(String(localized: "Nickname or phone number to find"))
+                .accessibilityLabel(String(localized: "Nickname to find"))
                 .onChange(of: searchNumber) { didSearch = false }
 
             BigButton(title: String(localized: "Search"), systemImage: "magnifyingglass", color: Theme.accent,
@@ -91,14 +90,13 @@ struct MeshConnectView: View {
 
             if didSearch {
                 if searchResults.isEmpty {
-                    Text(String(localized: "Nobody with this nickname or number has been seen on the network yet. They must have the app and have been in range of the network at least once."))
+                    Text(String(localized: "Nobody with this nickname has been seen on the network yet. They must have the app and have been in range of the network at least once."))
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Theme.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
                 } else {
-                    if let tag = MeshPhone.tag(for: searchNumber),
-                       searchResults.filter({ $0.phoneTag == tag }).count > 1 {
-                        Label(String(localized: "More than one person declares this number. Numbers are not verified: check the security code with the person."),
+                    if searchResults.count > 1 {
+                        Label(String(localized: "Nicknames are not unique: check the security code with the person."),
                               systemImage: "exclamationmark.triangle.fill")
                             .font(.subheadline.weight(.heavy))
                             .foregroundStyle(Theme.danger)
@@ -318,22 +316,16 @@ struct MeshPersonRow: View {
     }
 }
 
-/// Sheet to edit nickname and phone number.
+/// Sheet to edit the nickname.
 struct MeshProfileEditor: View {
     @Environment(\.dismiss) private var dismiss
 
     @State private var name: String
-    @State private var phone: String
-    private let onSave: (String, String) -> Void
+    private let onSave: (String) -> Void
 
-    init(name: String, phone: String, onSave: @escaping (String, String) -> Void) {
+    init(name: String, onSave: @escaping (String) -> Void) {
         _name = State(initialValue: name)
-        _phone = State(initialValue: phone)
         self.onSave = onSave
-    }
-
-    private var phoneIsValid: Bool {
-        phone.trimmed.isEmpty || MeshPhone.normalized(phone) != nil
     }
 
     var body: some View {
@@ -342,16 +334,7 @@ struct MeshProfileEditor: View {
                 VStack(alignment: .leading, spacing: 16) {
                     field(String(localized: "Nickname"), text: $name,
                           prompt: String(localized: "How others see you"), keyboard: .default)
-                    field(String(localized: "Phone number (optional)"), text: $phone,
-                          prompt: String(localized: "e.g. 333 123 4567"), keyboard: .phonePad)
-
-                    if !phoneIsValid {
-                        Text(String(localized: "This does not look like a phone number."))
-                            .font(.subheadline.weight(.heavy))
-                            .foregroundStyle(Theme.danger)
-                    }
-
-                    Text(String(localized: "With a number, people who already know it can find you on the network. The number itself is not sent: only a fingerprint of it travels. It is not verified, and someone with technical skills could work it out. Leave it empty if you prefer."))
+                    Text(String(localized: "Choose a nickname your family and friends will recognise. Nicknames are not unique: the security code tells people apart."))
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Theme.textSecondary)
                         .fixedSize(horizontal: false, vertical: true)
@@ -367,10 +350,9 @@ struct MeshProfileEditor: View {
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button(String(localized: "Save")) {
-                        onSave(name, phone)
+                        onSave(name)
                         dismiss()
                     }
-                    .disabled(!phoneIsValid)
                 }
             }
         }
