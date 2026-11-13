@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A72000000000000000001F1 /* MapRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001F0 /* MapRegion.swift */; };
+		5A72000000000000000001F3 /* OfflineMapStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001F2 /* OfflineMapStore.swift */; };
+		5A72000000000000000001F5 /* OfflineMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001F4 /* OfflineMapView.swift */; };
+		5A72000000000000000001F7 /* MapStyle in Resources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001F6 /* MapStyle */; };
+		5A72000000000000000001F8 /* MapLibre in Frameworks */ = {isa = PBXBuildFile; productRef = 5A72000000000000000001FA /* MapLibre */; };
+		5A72000000000000000001FC /* OfflineMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001FB /* OfflineMapTests.swift */; };
 		5A7200000000000000000102 /* SURVIVE72App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000101 /* SURVIVE72App.swift */; };
 		5A7200000000000000000104 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000103 /* Theme.swift */; };
 		5A7200000000000000000106 /* AppSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000105 /* AppSection.swift */; };
@@ -111,6 +117,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A72000000000000000001F0 /* MapRegion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRegion.swift; sourceTree = "<group>"; };
+		5A72000000000000000001F2 /* OfflineMapStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMapStore.swift; sourceTree = "<group>"; };
+		5A72000000000000000001F4 /* OfflineMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMapView.swift; sourceTree = "<group>"; };
+		5A72000000000000000001F6 /* MapStyle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MapStyle; sourceTree = "<group>"; };
+		5A72000000000000000001FB /* OfflineMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMapTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000101 /* SURVIVE72App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SURVIVE72App.swift; sourceTree = "<group>"; };
 		5A7200000000000000000103 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		5A7200000000000000000105 /* AppSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSection.swift; sourceTree = "<group>"; };
@@ -211,6 +222,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A72000000000000000001F8 /* MapLibre in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +255,7 @@
 				5A720000000000000000012F /* Storage */,
 				5A7200000000000000000119 /* Views */,
 				5A720000000000000000010F /* Assets.xcassets */,
+				5A72000000000000000001F6 /* MapStyle */,
 				5A72000000000000000001C4 /* Localizable.xcstrings */,
 			);
 			path = SURVIVE72;
@@ -276,6 +289,7 @@
 		5A7200000000000000000117 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5A72000000000000000001F0 /* MapRegion.swift */,
 				5A7200000000000000000105 /* AppSection.swift */,
 				5A7200000000000000000123 /* KitChecklist.swift */,
 				5A720000000000000000013F /* KnowledgeArticle.swift */,
@@ -316,6 +330,7 @@
 		5A720000000000000000012F /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				5A72000000000000000001F2 /* OfflineMapStore.swift */,
 				5A7200000000000000000127 /* KitChecklistStore.swift */,
 				5A7200000000000000000150 /* AlertPlanStore.swift */,
 				5A720000000000000000015F /* ToolsState.swift */,
@@ -432,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				5A72000000000000000001A0 /* MapsView.swift */,
+				5A72000000000000000001F4 /* OfflineMapView.swift */,
 				5A72000000000000000001A2 /* PlaceEditorView.swift */,
 				5A72000000000000000001A4 /* SensorPlaceholderView.swift */,
 			);
@@ -468,6 +484,7 @@
 				5A7200000000000000000198 /* MessageQueueTests.swift */,
 				5A72000000000000000001A7 /* CoordinateTests.swift */,
 				5A72000000000000000001A9 /* MapsStoreTests.swift */,
+				5A72000000000000000001FB /* OfflineMapTests.swift */,
 				5A72000000000000000001B8 /* MedicalLibraryTests.swift */,
 				5A72000000000000000001BA /* MedicalStoreTests.swift */,
 				5A72000000000000000001C2 /* PersistenceSafetyTests.swift */,
@@ -491,6 +508,9 @@
 			dependencies = (
 			);
 			name = SURVIVE72;
+			packageProductDependencies = (
+				5A72000000000000000001FA /* MapLibre */,
+			);
 			productName = SURVIVE72;
 			productReference = 5A7200000000000000000111 /* SURVIVE72.app */;
 			productType = "com.apple.product-type.application";
@@ -542,6 +562,9 @@
 				Base,
 			);
 			mainGroup = 5A7200000000000000000112;
+			packageReferences = (
+				5A72000000000000000001F9 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */,
+			);
 			productRefGroup = 5A7200000000000000000114 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -559,6 +582,7 @@
 			files = (
 				5A7200000000000000000110 /* Assets.xcassets in Resources */,
 				5A72000000000000000001C5 /* Localizable.xcstrings in Resources */,
+				5A72000000000000000001F7 /* MapStyle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -635,6 +659,9 @@
 				5A720000000000000000019D /* OfflineArea.swift in Sources */,
 				5A720000000000000000019F /* MapsStore.swift in Sources */,
 				5A72000000000000000001A1 /* MapsView.swift in Sources */,
+				5A72000000000000000001F1 /* MapRegion.swift in Sources */,
+				5A72000000000000000001F3 /* OfflineMapStore.swift in Sources */,
+				5A72000000000000000001F5 /* OfflineMapView.swift in Sources */,
 				5A72000000000000000001A3 /* PlaceEditorView.swift in Sources */,
 				5A72000000000000000001A5 /* SensorPlaceholderView.swift in Sources */,
 				5A72000000000000000001AC /* MedicalEntry.swift in Sources */,
@@ -669,6 +696,7 @@
 				5A7200000000000000000199 /* MessageQueueTests.swift in Sources */,
 				5A72000000000000000001A8 /* CoordinateTests.swift in Sources */,
 				5A72000000000000000001AA /* MapsStoreTests.swift in Sources */,
+				5A72000000000000000001FC /* OfflineMapTests.swift in Sources */,
 				5A72000000000000000001B9 /* MedicalLibraryTests.swift in Sources */,
 				5A72000000000000000001BB /* MedicalStoreTests.swift in Sources */,
 				5A72000000000000000001C3 /* PersistenceSafetyTests.swift in Sources */,
@@ -762,6 +790,7 @@
 				INFOPLIST_FILE = SURVIVE72/Info.plist;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "SURVIVE 72 scambia allerte e messaggi con i telefoni vicini, senza internet. / SURVIVE 72 exchanges alerts and messages with nearby phones, without internet.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SURVIVE 72 mostra la tua posizione sulla mappa offline. La posizione resta sul telefono. / SURVIVE 72 shows your position on the offline map. Your position stays on the phone.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "SURVIVE 72 scambia allerte e messaggi con i telefoni vicini, senza internet. / SURVIVE 72 exchanges alerts and messages with nearby phones, without internet.";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -797,6 +826,7 @@
 				INFOPLIST_FILE = SURVIVE72/Info.plist;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "SURVIVE 72 scambia allerte e messaggi con i telefoni vicini, senza internet. / SURVIVE 72 exchanges alerts and messages with nearby phones, without internet.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "SURVIVE 72 mostra la tua posizione sulla mappa offline. La posizione resta sul telefono. / SURVIVE 72 shows your position on the offline map. Your position stays on the phone.";
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "SURVIVE 72 scambia allerte e messaggi con i telefoni vicini, senza internet. / SURVIVE 72 exchanges alerts and messages with nearby phones, without internet.";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -886,6 +916,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5A72000000000000000001F9 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maplibre/maplibre-gl-native-distribution";
+			requirement = {
+				kind = exactVersion;
+				version = 6.31.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5A72000000000000000001FA /* MapLibre */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5A72000000000000000001F9 /* XCRemoteSwiftPackageReference "maplibre-gl-native-distribution" */;
+			productName = MapLibre;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5A72000000000000000000A0 /* Project object */;
 }

@@ -34,7 +34,7 @@ enum AppSection: String, CaseIterable, Identifiable, Hashable {
     var subtitle: String {
         switch self {
         case .connect: String(localized: "Phone-to-phone messages")
-        case .maps: String(localized: "Places, offline areas")
+        case .maps: String(localized: "Offline map, places")
         case .knowledge: String(localized: "Offline library")
         case .medical: String(localized: "First aid cards")
         case .kit: String(localized: "72-hour checklist")

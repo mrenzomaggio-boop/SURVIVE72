@@ -60,12 +60,13 @@ final class LocalizationTests: XCTestCase {
 }
 
 /// Home layout: Alert has its own banner and every other section is in the
-/// grid exactly once, so no section can disappear from Home.
+/// grid exactly once, so no section can disappear from Home. Downloads was
+/// removed from Home on purpose: offline map areas are downloaded in Maps.
 final class HomeLayoutTests: XCTestCase {
     func testEverySectionIsReachableFromHomeOnce() {
-        let shown = [AppSection.alert] + HomeView.gridSections
+        let shown = [AppSection.alert] + HomeView.gridSections + HomeView.bottomSections
         XCTAssertEqual(shown.count, Set(shown).count)
-        XCTAssertEqual(Set(shown), Set(AppSection.allCases))
+        XCTAssertEqual(Set(shown), Set(AppSection.allCases).subtracting([.downloads]))
     }
 
     func testHomeTextsAreTranslated() throws {

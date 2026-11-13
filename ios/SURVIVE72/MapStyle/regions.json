@@ -1,0 +1,377 @@
+{
+  "comment": "Downloadable offline map areas. bbox = [west, south, east, north]. estimatedMB is a planning estimate; the map workflow measures the real files. Countries use maxzoom 14 to stay under 2 GB.",
+  "regions": [
+    {
+      "id": "it-piemonte",
+      "name": "Piemonte",
+      "bbox": [
+        6.6,
+        44.05,
+        9.25,
+        46.47
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 350
+    },
+    {
+      "id": "it-valle-d-aosta",
+      "name": "Valle d'Aosta",
+      "bbox": [
+        6.8,
+        45.46,
+        7.95,
+        45.99
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 40
+    },
+    {
+      "id": "it-lombardia",
+      "name": "Lombardia",
+      "bbox": [
+        8.49,
+        44.67,
+        11.43,
+        46.64
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 500
+    },
+    {
+      "id": "it-trentino-alto-adige",
+      "name": "Trentino-Alto Adige",
+      "bbox": [
+        10.38,
+        45.67,
+        12.48,
+        47.1
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 180
+    },
+    {
+      "id": "it-veneto",
+      "name": "Veneto",
+      "bbox": [
+        10.62,
+        44.79,
+        13.1,
+        46.68
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 400
+    },
+    {
+      "id": "it-friuli-venezia-giulia",
+      "name": "Friuli-Venezia Giulia",
+      "bbox": [
+        12.32,
+        45.58,
+        13.92,
+        46.65
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 130
+    },
+    {
+      "id": "it-liguria",
+      "name": "Liguria",
+      "bbox": [
+        7.49,
+        43.77,
+        10.07,
+        44.68
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 110
+    },
+    {
+      "id": "it-emilia-romagna",
+      "name": "Emilia-Romagna",
+      "bbox": [
+        9.19,
+        43.73,
+        12.76,
+        45.14
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 380
+    },
+    {
+      "id": "it-toscana",
+      "name": "Toscana",
+      "bbox": [
+        9.68,
+        42.24,
+        12.37,
+        44.47
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 350
+    },
+    {
+      "id": "it-umbria",
+      "name": "Umbria",
+      "bbox": [
+        11.89,
+        42.36,
+        13.27,
+        43.62
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 110
+    },
+    {
+      "id": "it-marche",
+      "name": "Marche",
+      "bbox": [
+        12.18,
+        42.69,
+        13.92,
+        43.97
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 140
+    },
+    {
+      "id": "it-lazio",
+      "name": "Lazio",
+      "bbox": [
+        11.44,
+        40.78,
+        14.03,
+        42.84
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 350
+    },
+    {
+      "id": "it-abruzzo",
+      "name": "Abruzzo",
+      "bbox": [
+        13.01,
+        41.68,
+        14.79,
+        42.9
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 120
+    },
+    {
+      "id": "it-molise",
+      "name": "Molise",
+      "bbox": [
+        13.94,
+        41.36,
+        15.16,
+        42.07
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 40
+    },
+    {
+      "id": "it-campania",
+      "name": "Campania",
+      "bbox": [
+        13.75,
+        39.99,
+        15.81,
+        41.51
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 300
+    },
+    {
+      "id": "it-puglia",
+      "name": "Puglia",
+      "bbox": [
+        14.93,
+        39.79,
+        18.52,
+        42.23
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 300
+    },
+    {
+      "id": "it-basilicata",
+      "name": "Basilicata",
+      "bbox": [
+        15.33,
+        39.89,
+        16.87,
+        41.14
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 70
+    },
+    {
+      "id": "it-calabria",
+      "name": "Calabria",
+      "bbox": [
+        15.63,
+        37.91,
+        17.21,
+        40.15
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 170
+    },
+    {
+      "id": "it-sicilia",
+      "name": "Sicilia",
+      "bbox": [
+        11.92,
+        35.49,
+        15.66,
+        38.82
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 350
+    },
+    {
+      "id": "it-sardegna",
+      "name": "Sardegna",
+      "bbox": [
+        8.13,
+        38.86,
+        9.83,
+        41.31
+      ],
+      "maxzoom": 15,
+      "estimatedMB": 170
+    },
+    {
+      "id": "country-it",
+      "iso": "IT",
+      "bbox": [
+        6.6,
+        35.49,
+        18.53,
+        47.1
+      ],
+      "maxzoom": 14,
+      "estimatedMB": 1600
+    },
+    {
+      "id": "country-ch",
+      "iso": "CH",
+      "bbox": [
+        5.95,
+        45.82,
+        10.49,
+        47.81
+      ],
+      "maxzoom": 14,
+      "estimatedMB": 400
+    },
+    {
+      "id": "country-at",
+      "iso": "AT",
+      "bbox": [
+        9.53,
+        46.37,
+        17.16,
+        49.02
+      ],
+      "maxzoom": 14,
+      "estimatedMB": 500
+    },
+    {
+      "id": "country-si",
+      "iso": "SI",
+      "bbox": [
+        13.37,
+        45.42,
+        16.61,
+        46.88
+      ],
+      "maxzoom": 14,
+      "estimatedMB": 150
+    },
+    {
+      "id": "country-hr",
+      "iso": "HR",
+      "bbox": [
+        13.49,
+        42.39,
+        19.45,
+        46.56
+      ],
+      "maxzoom": 14,
+      "estimatedMB": 250
+    },
+    {
+      "id": "country-mt",
+      "iso": "MT",
+      "bbox": [
+        14.18,
+        35.78,
+        14.58,
+        36.09
+      ],
+      "maxzoom": 14,
+      "estimatedMB": 20
+    },
+    {
+      "id": "country-fr",
+      "iso": "FR",
+      "bbox": [
+        -5.15,
+        41.33,
+        9.57,
+        51.09
+      ],
+      "maxzoom": 14,
+      "estimatedMB": 1900
+    },
+    {
+      "id": "country-de",
+      "iso": "DE",
+      "bbox": [
+        5.87,
+        47.27,
+        15.04,
+        55.06
+      ],
+      "maxzoom": 14,
+      "estimatedMB": 1900
+    },
+    {
+      "id": "country-es",
+      "iso": "ES",
+      "bbox": [
+        -9.3,
+        35.95,
+        4.33,
+        43.79
+      ],
+      "maxzoom": 14,
+      "estimatedMB": 1300
+    },
+    {
+      "id": "country-pt",
+      "iso": "PT",
+      "bbox": [
+        -9.53,
+        36.96,
+        -6.19,
+        42.15
+      ],
+      "maxzoom": 14,
+      "estimatedMB": 350
+    },
+    {
+      "id": "country-gr",
+      "iso": "GR",
+      "bbox": [
+        19.37,
+        34.8,
+        28.25,
+        41.75
+      ],
+      "maxzoom": 14,
+      "estimatedMB": 400
+    }
+  ]
+}
