@@ -45,9 +45,7 @@ struct MeshConnectView: View {
                 Text(mesh.profile.name.isEmpty ? String(localized: "No nickname yet") : mesh.profile.name)
                     .font(.title2.weight(.heavy))
                     .foregroundStyle(Theme.textPrimary)
-                Text(mesh.profile.phone.isEmpty
-                     ? String(localized: "No phone number: people cannot find you by number.")
-                     : String(localized: "Findable by number: \(mesh.profile.phone)"))
+                Text(phoneStatus)
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(Theme.textSecondary)
                     .fixedSize(horizontal: false, vertical: true)
@@ -64,6 +62,16 @@ struct MeshConnectView: View {
                 isEditingProfile = true
             }
         }
+    }
+
+    private var phoneStatus: String {
+        if mesh.profile.phone.isEmpty {
+            return String(localized: "No phone number: people find you by nickname.")
+        }
+        if mesh.isPhoneVerified {
+            return String(localized: "Verified number: people can also find you by \(mesh.profile.phone)")
+        }
+        return String(localized: "Number not verified: people find you only by nickname.")
     }
 
     // MARK: Search by nickname or phone number

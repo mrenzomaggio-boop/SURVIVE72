@@ -89,6 +89,7 @@
 		5A720000000000000000016B /* StopwatchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000016A /* StopwatchTests.swift */; };
 		5A72000000000000000001CB /* TorchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001CA /* TorchTests.swift */; };
 		5A72000000000000000001D3 /* MeshTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001D2 /* MeshTests.swift */; };
+		5A72000000000000000001FE /* MeshPhoneProofTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001FD /* MeshPhoneProofTests.swift */; };
 		5A72000000000000000001DB /* MeshServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001DA /* MeshServiceTests.swift */; };
 		5A720000000000000000016D /* SOSSignalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000016C /* SOSSignalTests.swift */; };
 		5A7200000000000000000182 /* SettingsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000181 /* SettingsStoreTests.swift */; };
@@ -198,6 +199,7 @@
 		5A720000000000000000016A /* StopwatchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchTests.swift; sourceTree = "<group>"; };
 		5A72000000000000000001CA /* TorchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TorchTests.swift; sourceTree = "<group>"; };
 		5A72000000000000000001D2 /* MeshTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshTests.swift; sourceTree = "<group>"; };
+		5A72000000000000000001FD /* MeshPhoneProofTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshPhoneProofTests.swift; sourceTree = "<group>"; };
 		5A72000000000000000001DA /* MeshServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshServiceTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000016C /* SOSSignalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSignalTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000181 /* SettingsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreTests.swift; sourceTree = "<group>"; };
@@ -475,6 +477,7 @@
 				5A720000000000000000016A /* StopwatchTests.swift */,
 				5A72000000000000000001CA /* TorchTests.swift */,
 				5A72000000000000000001D2 /* MeshTests.swift */,
+				5A72000000000000000001FD /* MeshPhoneProofTests.swift */,
 				5A72000000000000000001DA /* MeshServiceTests.swift */,
 				5A720000000000000000016C /* SOSSignalTests.swift */,
 				5A7200000000000000000181 /* SettingsStoreTests.swift */,
@@ -687,6 +690,7 @@
 				5A720000000000000000016B /* StopwatchTests.swift in Sources */,
 				5A72000000000000000001CB /* TorchTests.swift in Sources */,
 				5A72000000000000000001D3 /* MeshTests.swift in Sources */,
+				5A72000000000000000001FE /* MeshPhoneProofTests.swift in Sources */,
 				5A72000000000000000001DB /* MeshServiceTests.swift in Sources */,
 				5A720000000000000000016D /* SOSSignalTests.swift in Sources */,
 				5A7200000000000000000182 /* SettingsStoreTests.swift in Sources */,

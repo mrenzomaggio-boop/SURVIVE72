@@ -13,6 +13,9 @@ struct MeshCard: Codable, Hashable {
     /// Fingerprint of the user's phone number, if they chose to be findable by
     /// it. The number itself never travels. It is declared, not verified.
     var phoneTag: String? = nil
+    /// Proof from the SURVIVE 72 server that the owner received an SMS on
+    /// that number. Only cards with a valid proof can be found by number.
+    var phoneProof: MeshPhoneProof? = nil
 
     /// Short code derived from the signing key, e.g. "7K4P-2QXM".
     /// Two people compare it to be sure they are talking to each other.
@@ -43,6 +46,58 @@ extension MeshCard {
         guard isWellFormed,
               let key = try? Curve25519.Signing.PublicKey(rawRepresentation: signingKey) else { return false }
         return key.isValidSignature(signature, for: signedBytes)
+    }
+}
+
+extension MeshCard {
+    /// True when the phone number on this card was verified by SMS: the
+    /// server signed this number together with this card's key.
+    func hasVerifiedPhone(now: Date, serverKey: Data? = MeshPhoneProof.serverKey) -> Bool {
+        guard let phoneTag, let phoneProof, phoneProof.phoneTag == phoneTag else { return false }
+        return phoneProof.isValid(for: signingKey, now: now, serverKey: serverKey)
+    }
+}
+
+/// "The owner of this mesh key received an SMS on this number", signed once
+/// by the SURVIVE 72 server when the number is verified. Any phone can check
+/// it without internet, with the server's public key built into the app.
+struct MeshPhoneProof: Codable, Hashable {
+    /// Fingerprint of the verified number (see `MeshPhone.tag`).
+    let phoneTag: String
+    /// Seconds since 1970 when the server signed it.
+    let issuedAt: Int64
+    /// Ed25519 signature by the server over `signedBytes`.
+    let signature: Data
+
+    /// A verification is valid for one year, then the number must be verified again.
+    static let lifetime: TimeInterval = 365 * 24 * 60 * 60
+
+    /// Public key of the server that signs verified numbers. Nil until the
+    /// server is online: until then nobody can be found by number.
+    static let serverKey: Data? = nil
+
+    /// Fixed, length-prefixed layout, the same one the server signs.
+    static func signedBytes(phoneTag: String, signingKey: Data, issuedAt: Int64) -> Data {
+        var data = Data("survive72.mesh.phone-proof.v1".utf8)
+        func append(_ field: Data) {
+            var length = UInt32(field.count).bigEndian
+            withUnsafeBytes(of: &length) { data.append(contentsOf: $0) }
+            data.append(field)
+        }
+        append(Data(phoneTag.utf8))
+        append(signingKey)
+        append(Data(String(issuedAt).utf8))
+        return data
+    }
+
+    func isValid(for signingKey: Data, now: Date, serverKey: Data?) -> Bool {
+        guard let serverKey, MeshPhone.isWellFormedTag(phoneTag),
+              let key = try? Curve25519.Signing.PublicKey(rawRepresentation: serverKey) else { return false }
+        let issued = Date(timeIntervalSince1970: TimeInterval(issuedAt))
+        guard issued <= now.addingTimeInterval(MeshPacket.clockTolerance),
+              now.timeIntervalSince(issued) <= MeshPhoneProof.lifetime else { return false }
+        return key.isValidSignature(signature, for: MeshPhoneProof.signedBytes(
+            phoneTag: phoneTag, signingKey: signingKey, issuedAt: issuedAt))
     }
 }
 
@@ -117,6 +172,8 @@ struct MeshIdentity {
     var name: String
     /// Set when the user chooses to be findable by phone number.
     var phoneTag: String?
+    /// Set once the number has been verified by SMS.
+    var phoneProof: MeshPhoneProof?
     private let signing: Curve25519.Signing.PrivateKey
     private let agreement: Curve25519.KeyAgreement.PrivateKey
 
@@ -147,7 +204,8 @@ struct MeshIdentity {
         MeshCard(name: name,
                  signingKey: signing.publicKey.rawRepresentation,
                  agreementKey: agreement.publicKey.rawRepresentation,
-                 phoneTag: phoneTag)
+                 phoneTag: phoneTag,
+                 phoneProof: phoneProof?.phoneTag == phoneTag ? phoneProof : nil)
     }
 
     var code: String { card.code }

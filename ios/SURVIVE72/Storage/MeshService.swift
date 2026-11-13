@@ -10,6 +10,8 @@ struct MeshProfile: Codable, Equatable {
     var phone: String = ""
     /// The radio link is off until the user switches it on.
     var isEnabled: Bool = false
+    /// Server proof that `phone` was verified by SMS on this phone.
+    var phoneProof: MeshPhoneProof?
 
     init(name: String = "", phone: String = "", isEnabled: Bool = false) {
         self.name = name
@@ -22,6 +24,7 @@ struct MeshProfile: Codable, Equatable {
         name = c.value(String.self, forKey: .name, default: "")
         phone = c.value(String.self, forKey: .phone, default: "")
         isEnabled = c.value(Bool.self, forKey: .isEnabled, default: false)
+        phoneProof = try? c.decodeIfPresent(MeshPhoneProof.self, forKey: .phoneProof)
     }
 }
 
@@ -91,17 +94,21 @@ final class MeshService: MeshTransportDelegate {
     private let defaults: UserDefaults
     private let stateURL: URL?
     private let now: () -> Date
+    /// Key that signs verified phone numbers (see `MeshPhoneProof`).
+    let phoneServerKey: Data?
 
     init(transport: MeshTransport = MultipeerTransport(),
          keyStore: MeshKeyStore = KeychainMeshKeyStore(),
          defaults: UserDefaults = .standard,
          stateURL: URL? = MeshService.defaultStateURL(),
-         now: @escaping () -> Date = Date.init) {
+         now: @escaping () -> Date = Date.init,
+         phoneServerKey: Data? = MeshPhoneProof.serverKey) {
         self.transport = transport
         self.keyStore = keyStore
         self.defaults = defaults
         self.stateURL = stateURL
         self.now = now
+        self.phoneServerKey = phoneServerKey
 
         let profile = LocalStorage.load(MeshProfile.self, key: MeshService.profileKey, from: defaults)
             ?? MeshProfile()
@@ -138,12 +145,37 @@ final class MeshService: MeshTransportDelegate {
     /// Saves nickname and phone number. The keys, and so the code, stay the same.
     func updateProfile(name: String, phone: String) {
         profile.name = String(name.trimmed.prefix(40))
-        profile.phone = MeshPhone.normalized(phone) == nil ? "" : phone.trimmed
+        let newPhone = MeshPhone.normalized(phone) == nil ? "" : phone.trimmed
+        if MeshPhone.tag(for: newPhone) != MeshPhone.tag(for: profile.phone) {
+            // Another number must be verified again.
+            profile.phoneProof = nil
+            identity.phoneProof = nil
+        }
+        profile.phone = newPhone
         identity.name = profile.name
         identity.phoneTag = MeshPhone.tag(for: profile.phone)
         saveProfile()
         // Nearby phones learn the new nickname at once.
         for peer in transport.connectedPeers { sendHello(to: peer) }
+    }
+
+    /// True when the number in the profile was verified by SMS and the proof is still valid.
+    var isPhoneVerified: Bool {
+        identity.card.hasVerifiedPhone(now: now(), serverKey: phoneServerKey)
+    }
+
+    /// Stores the server's proof for the number in the profile. Returns false
+    /// (and keeps nothing) if the proof is not for this number and this phone.
+    @discardableResult
+    func applyPhoneProof(_ proof: MeshPhoneProof) -> Bool {
+        guard let tag = MeshPhone.tag(for: profile.phone), proof.phoneTag == tag,
+              proof.isValid(for: identity.card.signingKey, now: now(), serverKey: phoneServerKey)
+        else { return false }
+        profile.phoneProof = proof
+        identity.phoneProof = proof
+        saveProfile()
+        for peer in transport.connectedPeers { sendHello(to: peer) }
+        return true
     }
 
     /// Switches the link to nearby phones on or off.
@@ -196,16 +228,18 @@ final class MeshService: MeshTransportDelegate {
     /// The alert board: SOS first, then newest first.
     var alerts: [MeshPacket] { router.alerts(now: now()) }
 
-    /// People who declared this phone number, among everyone seen so far.
+    /// People who verified this phone number by SMS, among everyone seen so far.
+    /// A number that was only typed in, not verified, finds nobody.
     func people(withPhone number: String) -> [MeshCard] {
         guard let tag = MeshPhone.tag(for: number) else { return [] }
-        var found = router.cards(forPhone: number)
-        let known = Set(found.map(\.code))
-        let saved = contacts.values
-            .filter { $0.phoneTag == tag && !known.contains($0.code) && $0.code != myCode }
-            .sorted { $0.code < $1.code }
-        found.append(contentsOf: saved)
-        return found
+        let current = now()
+        var byCode: [String: MeshCard] = [:]
+        let candidates = router.cards(forPhone: number) + contacts.values.filter { $0.phoneTag == tag }
+        for card in candidates where card.code != myCode
+            && card.hasVerifiedPhone(now: current, serverKey: phoneServerKey) {
+            byCode[card.code] = card
+        }
+        return byCode.values.sorted { $0.code < $1.code }
     }
 
     /// People whose nickname contains the text (ignoring case and accents)
@@ -350,8 +384,9 @@ final class MeshService: MeshTransportDelegate {
     private static func loadOrCreateIdentity(profile: MeshProfile, keyStore: MeshKeyStore) -> MeshIdentity {
         let phone = profile.phone.isEmpty ? nil : profile.phone
         if let keys = keyStore.load(),
-           let identity = MeshIdentity(name: profile.name, phone: phone,
+           var identity = MeshIdentity(name: profile.name, phone: phone,
                                        signingKey: keys.signing, agreementKey: keys.agreement) {
+            identity.phoneProof = profile.phoneProof
             return identity
         }
         let identity = MeshIdentity(name: profile.name, phone: phone)

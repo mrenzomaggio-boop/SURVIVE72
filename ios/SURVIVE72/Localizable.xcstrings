@@ -2241,16 +2241,6 @@
         }
       }
     },
-    "Findable by number: %@": {
-      "localizations": {
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Trovabile con il numero: %@"
-          }
-        }
-      }
-    },
     "First aid cards": {
       "localizations": {
         "it": {
@@ -3811,12 +3801,12 @@
         }
       }
     },
-    "No phone number: people cannot find you by number.": {
+    "No phone number: people find you by nickname.": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Nessun numero di telefono: gli altri non possono trovarti tramite il numero."
+            "value": "Nessun numero: ti trovano con il nickname."
           }
         }
       }
@@ -3947,6 +3937,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nota: %@"
+          }
+        }
+      }
+    },
+    "Number not verified: people find you only by nickname.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Numero non verificato: ti trovano solo con il nickname."
           }
         }
       }
@@ -6277,6 +6277,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Usa solo lo schermo. Niente torcia, niente suoni, non viene inviato nulla."
+          }
+        }
+      }
+    },
+    "Verified number: people can also find you by %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Numero verificato: ti trovano anche con %@"
           }
         }
       }

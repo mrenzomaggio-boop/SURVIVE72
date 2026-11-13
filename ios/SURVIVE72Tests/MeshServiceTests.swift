@@ -1,3 +1,4 @@
+import CryptoKit
 import XCTest
 @testable import SURVIVE72
 
@@ -52,6 +53,17 @@ final class MeshServiceTests: XCTestCase {
     private var suites: [String] = []
     private var files: [URL] = []
     private var clock = Date(timeIntervalSince1970: 1_800_000_000)
+    /// Stands in for the SURVIVE 72 server that signs verified numbers.
+    private let server = Curve25519.Signing.PrivateKey()
+    private var serverKey: Data { server.publicKey.rawRepresentation }
+
+    /// What the server returns after the SMS sign-in.
+    private func proof(for phone: String, key: Data, issuedAt: Date? = nil) throws -> MeshPhoneProof {
+        let tag = try XCTUnwrap(MeshPhone.tag(for: phone))
+        let seconds = Int64((issuedAt ?? clock).timeIntervalSince1970)
+        let bytes = MeshPhoneProof.signedBytes(phoneTag: tag, signingKey: key, issuedAt: seconds)
+        return MeshPhoneProof(phoneTag: tag, issuedAt: seconds, signature: try server.signature(for: bytes))
+    }
 
     override func tearDown() {
         for suite in suites { UserDefaults(suiteName: suite)?.removePersistentDomain(forName: suite) }
@@ -61,7 +73,8 @@ final class MeshServiceTests: XCTestCase {
         super.tearDown()
     }
 
-    private func makePhone(name: String, phone: String = "", enabled: Bool = true) -> Phone {
+    private func makePhone(name: String, phone: String = "", verified: Bool = false,
+                           enabled: Bool = true) -> Phone {
         let suite = "SURVIVE72Tests.mesh.\(UUID().uuidString)"
         suites.append(suite)
         let defaults = UserDefaults(suiteName: suite)!
@@ -70,8 +83,13 @@ final class MeshServiceTests: XCTestCase {
         let radio = FakeTransport()
         let keys = InMemoryMeshKeyStore()
         let service = MeshService(transport: radio, keyStore: keys, defaults: defaults,
-                                  stateURL: url, now: { [unowned self] in self.clock })
+                                  stateURL: url, now: { [unowned self] in self.clock },
+                                  phoneServerKey: serverKey)
         service.updateProfile(name: name, phone: phone)
+        if verified {
+            let signed = try! proof(for: phone, key: service.identity.card.signingKey)
+            XCTAssertTrue(service.applyPhoneProof(signed))
+        }
         service.setEnabled(enabled)
         return Phone(service: service, radio: radio, keys: keys, defaults: defaults, stateURL: url)
     }
@@ -80,7 +98,8 @@ final class MeshServiceTests: XCTestCase {
     private func relaunch(_ phone: Phone) -> Phone {
         let radio = FakeTransport()
         let service = MeshService(transport: radio, keyStore: phone.keys, defaults: phone.defaults,
-                                  stateURL: phone.stateURL, now: { [unowned self] in self.clock })
+                                  stateURL: phone.stateURL, now: { [unowned self] in self.clock },
+                                  phoneServerKey: serverKey)
         return Phone(service: service, radio: radio, keys: phone.keys, defaults: phone.defaults,
                      stateURL: phone.stateURL)
     }
@@ -163,7 +182,7 @@ final class MeshServiceTests: XCTestCase {
     func testPrivateMessageFindsItsRecipientByPhoneNumberThroughACarrier() throws {
         let ada = makePhone(name: "Ada")
         let bob = makePhone(name: "Bob")                       // carrier
-        let dana = makePhone(name: "Dana", phone: "333 123 4567")
+        let dana = makePhone(name: "Dana", phone: "333 123 4567", verified: true)
 
         // Dana showed up on the mesh once; Bob carried her alert to Ada.
         try dana.service.postAlert("Dana is here", isSOS: false)
@@ -244,7 +263,7 @@ final class MeshServiceTests: XCTestCase {
 
     func testSearchByNicknameOrPhoneNumber() {
         let ada = makePhone(name: "Ada")
-        let mario = makePhone(name: "Mario Rossi", phone: "333 123 4567")
+        let mario = makePhone(name: "Mario Rossi", phone: "333 123 4567", verified: true)
         let nicolo = makePhone(name: "Nicolò")
         FakeTransport.link(ada.radio, mario.radio)
         FakeTransport.link(ada.radio, nicolo.radio)
@@ -258,6 +277,49 @@ final class MeshServiceTests: XCTestCase {
         XCTAssertTrue(ada.service.people(matching: "  ").isEmpty)
     }
 
+    // MARK: Verified phone numbers
+
+    func testOnlyVerifiedNumbersCanBeFound() throws {
+        let ada = makePhone(name: "Ada")
+        let liar = makePhone(name: "Liar", phone: "333 123 4567")             // typed, not verified
+        let dana = makePhone(name: "Dana", phone: "333 123 4567", verified: true)
+        FakeTransport.link(ada.radio, liar.radio)
+        FakeTransport.link(ada.radio, dana.radio)
+
+        XCTAssertFalse(liar.service.isPhoneVerified)
+        XCTAssertTrue(dana.service.isPhoneVerified)
+        XCTAssertEqual(ada.service.people(withPhone: "3331234567").map(\.name), ["Dana"])
+        // Both can still be found by nickname.
+        XCTAssertEqual(ada.service.people(matching: "liar").map(\.name), ["Liar"])
+    }
+
+    func testProofForAnotherNumberOrPhoneIsRefused() throws {
+        let ada = makePhone(name: "Ada", phone: "333 123 4567")
+        let other = MeshIdentity(name: "Other")
+        XCTAssertFalse(ada.service.applyPhoneProof(try proof(for: "333 999 0000", key: ada.service.identity.card.signingKey)))
+        XCTAssertFalse(ada.service.applyPhoneProof(try proof(for: "333 123 4567", key: other.card.signingKey)))
+        // Not signed by the server.
+        let tag = try XCTUnwrap(MeshPhone.tag(for: "333 123 4567"))
+        let fake = MeshPhoneProof(phoneTag: tag, issuedAt: Int64(clock.timeIntervalSince1970), signature: Data(count: 64))
+        XCTAssertFalse(ada.service.applyPhoneProof(fake))
+        XCTAssertFalse(ada.service.isPhoneVerified)
+    }
+
+    func testVerificationSurvivesARelaunchAndEndsWithANewNumberOrAfterAYear() throws {
+        let dana = makePhone(name: "Dana", phone: "333 123 4567", verified: true)
+        XCTAssertTrue(relaunch(dana).service.isPhoneVerified)
+
+        clock = clock.addingTimeInterval(MeshPhoneProof.lifetime + 60)
+        XCTAssertFalse(dana.service.isPhoneVerified)
+
+        let bea = makePhone(name: "Bea", phone: "333 123 4567", verified: true)
+        bea.service.updateProfile(name: "Bea", phone: "333 123 4567")   // same number: kept
+        XCTAssertTrue(bea.service.isPhoneVerified)
+        bea.service.updateProfile(name: "Bea", phone: "333 999 0000")   // new number: verify again
+        XCTAssertFalse(bea.service.isPhoneVerified)
+        XCTAssertNil(bea.service.profile.phoneProof)
+    }
+
     func testUnknownPhoneNumberFindsNobody() {
         let ada = makePhone(name: "Ada", phone: "333 123 4567")
         XCTAssertTrue(ada.service.people(withPhone: "333 999 0000").isEmpty)
@@ -269,7 +331,7 @@ final class MeshServiceTests: XCTestCase {
 
     func testAlertsMessagesAndContactsSurviveARelaunch() throws {
         let ada = makePhone(name: "Ada")
-        let bob = makePhone(name: "Bob", phone: "3331234567")
+        let bob = makePhone(name: "Bob", phone: "3331234567", verified: true)
         FakeTransport.link(ada.radio, bob.radio)
         try bob.service.postAlert("Water at the school", isSOS: false)
         let bobCard = try XCTUnwrap(ada.service.people(withPhone: "3331234567").first)
