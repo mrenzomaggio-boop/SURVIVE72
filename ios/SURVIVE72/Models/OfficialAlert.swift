@@ -24,7 +24,7 @@ struct OfficialAlert: Codable, Hashable, Identifiable {
     }
 
     /// Public key of the feed (Ed25519, raw 32 bytes).
-    static let publicKey = Data(base64Encoded: "7efz9pDxEwe0TLydBB17zANiUiYqvlAR2/bsniEDWTY=")!
+    static let publicKey = Data(base64Encoded: "ClFHF5jd/xxZGPyGQhzEx0LoGNAoqHaeHERL1vnOGnQ=")!
     /// Country value for disasters outside the followed countries.
     static let world = "WORLD"
     /// Small tolerance for phones whose clocks are not set exactly.
