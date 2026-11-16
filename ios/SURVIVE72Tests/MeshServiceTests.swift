@@ -49,6 +49,7 @@ final class MeshServiceTests: XCTestCase {
 
     private struct Phone {
         let service: MeshService
+        let notifier: RecordingMeshNotifier
         let radio: FakeTransport
         let keys: InMemoryMeshKeyStore
         let defaults: UserDefaults
@@ -75,19 +76,21 @@ final class MeshServiceTests: XCTestCase {
         files.append(url)
         let radio = FakeTransport()
         let keys = InMemoryMeshKeyStore()
+        let notifier = RecordingMeshNotifier()
         let service = MeshService(transport: radio, keyStore: keys, defaults: defaults,
-                                  stateURL: url, now: { [unowned self] in self.clock })
+                                  stateURL: url, now: { [unowned self] in self.clock }, notifier: notifier)
         service.updateProfile(name: name, phone: phone)
         service.setEnabled(enabled)
-        return Phone(service: service, radio: radio, keys: keys, defaults: defaults, stateURL: url)
+        return Phone(service: service, notifier: notifier, radio: radio, keys: keys, defaults: defaults, stateURL: url)
     }
 
     /// A second launch of the same phone: same keys, same saved files.
     private func relaunch(_ phone: Phone) -> Phone {
         let radio = FakeTransport()
+        let notifier = RecordingMeshNotifier()
         let service = MeshService(transport: radio, keyStore: phone.keys, defaults: phone.defaults,
-                                  stateURL: phone.stateURL, now: { [unowned self] in self.clock })
-        return Phone(service: service, radio: radio, keys: phone.keys, defaults: phone.defaults,
+                                  stateURL: phone.stateURL, now: { [unowned self] in self.clock }, notifier: notifier)
+        return Phone(service: service, notifier: notifier, radio: radio, keys: phone.keys, defaults: phone.defaults,
                      stateURL: phone.stateURL)
     }
 
@@ -296,6 +299,33 @@ final class MeshServiceTests: XCTestCase {
         try ada.service.send("Hi", to: bobCard)
         XCTAssertEqual(bob.service.messages(with: ada.service.myCode).map(\.text), ["Hi"])
         XCTAssertEqual(bob.service.conversationCodes, [ada.service.myCode])
+    }
+
+    // MARK: Notifications
+
+    func testArrivingMessagesAndAlertsAreNotified() throws {
+        let ada = makePhone(name: "Ada")
+        let bob = makePhone(name: "Bob")
+        let cy = makePhone(name: "Cy")
+        XCTAssertEqual(ada.notifier.permissionRequests, 1)   // asked when the network is switched on
+        FakeTransport.link(ada.radio, bob.radio)
+        FakeTransport.link(bob.radio, cy.radio)
+        let bobCard = try XCTUnwrap(ada.service.card(for: bob.service.myCode))
+
+        try ada.service.send("Are you safe?", to: bobCard)
+        XCTAssertEqual(bob.notifier.notices.map(\.title), [String(localized: "Message from \("Ada")")])
+        XCTAssertEqual(bob.notifier.notices.map(\.body), ["Are you safe?"])
+        XCTAssertTrue(cy.notifier.notices.isEmpty, "Not for Cy: no notice")
+        XCTAssertTrue(ada.notifier.notices.isEmpty, "Own messages: no notice")
+
+        try ada.service.postAlert("Need water", isSOS: true)
+        XCTAssertEqual(bob.notifier.notices.last?.title, String(localized: "SOS from \("Ada")"))
+        XCTAssertEqual(bob.notifier.notices.last?.isSOS, true)
+        XCTAssertEqual(cy.notifier.notices.map(\.body), ["Need water"])   // passed on by Bob
+
+        // The same packet again: no second notice.
+        bob.service.greetConnectedPeers()
+        XCTAssertEqual(bob.notifier.notices.count, 2)
     }
 
     func testUnknownPhoneNumberFindsNobody() {

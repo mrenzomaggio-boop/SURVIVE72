@@ -102,13 +102,16 @@ final class MeshService: MeshTransportDelegate {
     private let defaults: UserDefaults
     private let stateURL: URL?
     private let now: () -> Date
+    private let notifier: MeshNotifier
 
     init(transport: MeshTransport = MultipeerTransport(),
          keyStore: MeshKeyStore = KeychainMeshKeyStore(),
          defaults: UserDefaults = .standard,
          stateURL: URL? = MeshService.defaultStateURL(),
-         now: @escaping () -> Date = Date.init) {
+         now: @escaping () -> Date = Date.init,
+         notifier: MeshNotifier = LocalMeshNotifier()) {
         self.transport = transport
+        self.notifier = notifier
         self.keyStore = keyStore
         self.defaults = defaults
         self.stateURL = stateURL
@@ -131,7 +134,10 @@ final class MeshService: MeshTransportDelegate {
         self.contacts = contacts
 
         transport.delegate = self
-        if profile.isEnabled { transport.start() }
+        if profile.isEnabled {
+            notifier.requestPermission()
+            transport.start()
+        }
     }
 
     static func defaultStateURL() -> URL? {
@@ -163,6 +169,8 @@ final class MeshService: MeshTransportDelegate {
         profile.isEnabled = enabled
         saveProfile()
         if enabled {
+            // Asked when the network is switched on: that is when notices can arrive.
+            notifier.requestPermission()
             transport.start()
         } else {
             transport.stop()
@@ -359,8 +367,9 @@ final class MeshService: MeshTransportDelegate {
             if source != nil { rejectedPacketCount += 1 }
             lastProblem = (source == nil ? "own " : "") + (packet.invalidReason(at: current) ?? "expired")
         }
-        guard case .accepted(_, let willRelay) = result else { return }
+        guard case .accepted(let isForMe, let willRelay) = result else { return }
         if source != nil { receivedPacketCount += 1 }
+        if source != nil, isForMe, packet.sender.code != myCode { notify(about: packet) }
         if packet.sender.code != myCode {
             contacts[packet.sender.code] = packet.sender
         }
@@ -369,6 +378,23 @@ final class MeshService: MeshTransportDelegate {
         for peer in transport.connectedPeers where peer != source {
             transport.send(data, to: peer)
             sentPacketCount += 1
+        }
+    }
+
+    /// A notification for a new alert or a private message for this phone.
+    private func notify(about packet: MeshPacket) {
+        let name = MeshDisplay.name(packet.sender.name)
+        switch packet.kind {
+        case .alert:
+            guard let text = packet.alertText else { return }
+            let title = packet.isSOS
+                ? String(localized: "SOS from \(name)")
+                : String(localized: "Alert from \(name)")
+            notifier.post(MeshNotice(id: packet.id, title: title, body: text, isSOS: packet.isSOS))
+        case .direct:
+            guard let text = packet.directText(for: identity) else { return }
+            notifier.post(MeshNotice(id: packet.id, title: String(localized: "Message from \(name)"),
+                                     body: text, isSOS: packet.isSOS))
         }
     }
 

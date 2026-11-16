@@ -641,6 +641,16 @@
         }
       }
     },
+    "Alert from %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allerta da %@"
+          }
+        }
+      }
+    },
     "Alert published.": {
       "localizations": {
         "it": {
@@ -3511,6 +3521,16 @@
         }
       }
     },
+    "Message from %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Messaggio da %@"
+          }
+        }
+      }
+    },
     "Message queue": {
       "localizations": {
         "it": {
@@ -5197,6 +5217,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "SOS - Ho bisogno di aiuto. Venite al nostro punto di ritrovo."
+          }
+        }
+      }
+    },
+    "SOS from %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "SOS da %@"
           }
         }
       }

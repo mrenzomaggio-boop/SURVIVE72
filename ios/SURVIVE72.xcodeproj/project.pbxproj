@@ -46,6 +46,7 @@
 		5A7200000000000000000160 /* ToolsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000015F /* ToolsState.swift */; };
 		5A72000000000000000001D5 /* MeshTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001D4 /* MeshTransport.swift */; };
 		5A72000000000000000001D7 /* MeshKeyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001D6 /* MeshKeyStore.swift */; };
+		5A7200000000000000000201 /* MeshNotifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000200 /* MeshNotifier.swift */; };
 		5A72000000000000000001D9 /* MeshService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001D8 /* MeshService.swift */; };
 		5A7200000000000000000162 /* ToolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000161 /* ToolsView.swift */; };
 		5A7200000000000000000164 /* StopwatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000163 /* StopwatchView.swift */; };
@@ -155,6 +156,7 @@
 		5A720000000000000000015F /* ToolsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsState.swift; sourceTree = "<group>"; };
 		5A72000000000000000001D4 /* MeshTransport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshTransport.swift; sourceTree = "<group>"; };
 		5A72000000000000000001D6 /* MeshKeyStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshKeyStore.swift; sourceTree = "<group>"; };
+		5A7200000000000000000200 /* MeshNotifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshNotifier.swift; sourceTree = "<group>"; };
 		5A72000000000000000001D8 /* MeshService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeshService.swift; sourceTree = "<group>"; };
 		5A7200000000000000000161 /* ToolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolsView.swift; sourceTree = "<group>"; };
 		5A7200000000000000000163 /* StopwatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchView.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				5A720000000000000000015F /* ToolsState.swift */,
 				5A72000000000000000001D4 /* MeshTransport.swift */,
 				5A72000000000000000001D6 /* MeshKeyStore.swift */,
+				5A7200000000000000000200 /* MeshNotifier.swift */,
 				5A72000000000000000001D8 /* MeshService.swift */,
 				5A7200000000000000000174 /* SettingsStore.swift */,
 				5A7200000000000000000176 /* DownloadsStore.swift */,
@@ -633,6 +636,7 @@
 				5A7200000000000000000160 /* ToolsState.swift in Sources */,
 				5A72000000000000000001D5 /* MeshTransport.swift in Sources */,
 				5A72000000000000000001D7 /* MeshKeyStore.swift in Sources */,
+				5A7200000000000000000201 /* MeshNotifier.swift in Sources */,
 				5A72000000000000000001D9 /* MeshService.swift in Sources */,
 				5A7200000000000000000162 /* ToolsView.swift in Sources */,
 				5A7200000000000000000164 /* StopwatchView.swift in Sources */,
