@@ -83,6 +83,13 @@ final class MeshService: MeshTransportDelegate {
     private(set) var contacts: [String: MeshCard]
     /// Phones connected right now.
     private(set) var nearbyCount = 0
+    /// Since the app started: packets handed to the radio, and new packets
+    /// received from other phones. Shown so a test can tell if data moves.
+    private(set) var sentPacketCount = 0
+    private(set) var receivedPacketCount = 0
+
+    /// Seconds between two greetings to the phones already connected.
+    static let helloInterval: Double = 5
     /// Who is on each connected phone (from its signed hello), by peer token.
     private(set) var nearbyCodes: [String: String] = [:]
 
@@ -306,13 +313,24 @@ final class MeshService: MeshTransportDelegate {
             }
             let missing = router.packetsToSend(excluding: Set(known), now: now())
             for batch in MeshWire.batches(missing) {
-                if let data = batch.encoded() { transport.send(data, to: peer) }
+                if case .packets(let packets) = batch, let data = batch.encoded() {
+                    transport.send(data, to: peer)
+                    sentPacketCount += packets.count
+                }
             }
         case .packets(let packets):
             for packet in packets.prefix(MeshWire.batchSize * 2) {
                 accept(packet, from: peer)
             }
         }
+    }
+
+    /// Greets every connected phone again ("these are the packets I have").
+    /// The answer brings only what is missing, so repeating it is cheap and
+    /// recovers a greeting lost while a link was being set up.
+    func greetConnectedPeers() {
+        guard profile.isEnabled else { return }
+        for peer in transport.connectedPeers { sendHello(to: peer) }
     }
 
     // MARK: Private
@@ -330,6 +348,7 @@ final class MeshService: MeshTransportDelegate {
     private func accept(_ packet: MeshPacket, from source: String?) {
         let current = now()
         guard case .accepted(_, let willRelay) = router.receive(packet, now: current) else { return }
+        if source != nil { receivedPacketCount += 1 }
         if packet.sender.code != myCode {
             contacts[packet.sender.code] = packet.sender
         }
@@ -337,6 +356,7 @@ final class MeshService: MeshTransportDelegate {
         guard willRelay, let data = MeshWire.packets([packet.relayed()]).encoded() else { return }
         for peer in transport.connectedPeers where peer != source {
             transport.send(data, to: peer)
+            sentPacketCount += 1
         }
     }
 

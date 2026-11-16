@@ -260,6 +260,12 @@ struct MeshStatusCard: View {
                 .font(.headline.weight(.heavy))
                 .foregroundStyle(mesh.isEnabled && mesh.nearbyCount > 0 ? Theme.ok : Theme.textSecondary)
 
+            if mesh.isEnabled {
+                Text(String(localized: "Data: \(mesh.sentPacketCount) sent · \(mesh.receivedPacketCount) received"))
+                    .font(.footnote.weight(.bold).monospacedDigit())
+                    .foregroundStyle(Theme.textSecondary)
+            }
+
             Text(String(localized: "Uses Bluetooth and Wi-Fi between phones, without internet. It works while the app is open, with phones a few tens of metres away. iOS will ask for permission the first time."))
                 .font(.footnote.weight(.semibold))
                 .foregroundStyle(Theme.textSecondary)
