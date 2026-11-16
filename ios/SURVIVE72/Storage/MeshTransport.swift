@@ -96,7 +96,10 @@ final class MultipeerTransport: NSObject, MeshTransport {
     }
 
     func send(_ data: Data, to peer: String) {
-        guard let session, let target = peers[peer] else { return }
+        guard let session, let target = peers[peer],
+              session.connectedPeers.contains(target) else { return }
+        // A failure is not retried here: the next greeting (every few seconds)
+        // asks again for whatever is missing.
         try? session.send(data, toPeers: [target], with: .reliable)
     }
 }

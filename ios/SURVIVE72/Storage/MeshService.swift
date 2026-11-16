@@ -83,6 +83,17 @@ final class MeshService: MeshTransportDelegate {
     private(set) var contacts: [String: MeshCard]
     /// Phones connected right now.
     private(set) var nearbyCount = 0
+    /// Since the app started: packets handed to the radio, and new packets
+    /// received from other phones. Shown so a test can tell if data moves.
+    private(set) var sentPacketCount = 0
+    private(set) var receivedPacketCount = 0
+    /// Packets from other phones dropped as broken, tampered with or expired.
+    private(set) var rejectedPacketCount = 0
+    /// Why the last packet was not taken, for the diagnostics line (e.g. "signature").
+    private(set) var lastProblem: String?
+
+    /// Seconds between two greetings to the phones already connected.
+    static let helloInterval: Double = 5
     /// Who is on each connected phone (from its signed hello), by peer token.
     private(set) var nearbyCodes: [String: String] = [:]
 
@@ -294,7 +305,10 @@ final class MeshService: MeshTransportDelegate {
     }
 
     func meshTransport(didReceive data: Data, from peer: String) {
-        guard let message = MeshWire.decoded(data) else { return }
+        guard let message = MeshWire.decoded(data) else {
+            lastProblem = "unreadable \(data.count) B"
+            return
+        }
         switch message {
         case .hello(let known, let card, let signature):
             if let card, let signature, card.isSigned(by: signature), card.code != myCode {
@@ -306,13 +320,24 @@ final class MeshService: MeshTransportDelegate {
             }
             let missing = router.packetsToSend(excluding: Set(known), now: now())
             for batch in MeshWire.batches(missing) {
-                if let data = batch.encoded() { transport.send(data, to: peer) }
+                if case .packets(let packets) = batch, let data = batch.encoded() {
+                    transport.send(data, to: peer)
+                    sentPacketCount += packets.count
+                }
             }
         case .packets(let packets):
             for packet in packets.prefix(MeshWire.batchSize * 2) {
                 accept(packet, from: peer)
             }
         }
+    }
+
+    /// Greets every connected phone again ("these are the packets I have").
+    /// The answer brings only what is missing, so repeating it is cheap and
+    /// recovers a greeting lost while a link was being set up.
+    func greetConnectedPeers() {
+        guard profile.isEnabled else { return }
+        for peer in transport.connectedPeers { sendHello(to: peer) }
     }
 
     // MARK: Private
@@ -329,7 +354,13 @@ final class MeshService: MeshTransportDelegate {
     /// Stores a new packet and passes it on to every other connected phone.
     private func accept(_ packet: MeshPacket, from source: String?) {
         let current = now()
-        guard case .accepted(_, let willRelay) = router.receive(packet, now: current) else { return }
+        let result = router.receive(packet, now: current)
+        if result == .rejected {
+            if source != nil { rejectedPacketCount += 1 }
+            lastProblem = (source == nil ? "own " : "") + (packet.invalidReason(at: current) ?? "expired")
+        }
+        guard case .accepted(_, let willRelay) = result else { return }
+        if source != nil { receivedPacketCount += 1 }
         if packet.sender.code != myCode {
             contacts[packet.sender.code] = packet.sender
         }
@@ -337,6 +368,7 @@ final class MeshService: MeshTransportDelegate {
         guard willRelay, let data = MeshWire.packets([packet.relayed()]).encoded() else { return }
         for peer in transport.connectedPeers where peer != source {
             transport.send(data, to: peer)
+            sentPacketCount += 1
         }
     }
 

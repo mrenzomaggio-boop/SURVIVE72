@@ -104,6 +104,8 @@ final class MeshTests: XCTestCase {
                                  hopLimit: packet.hopLimit, payload: packet.payload,
                                  signature: packet.signature, hops: 0)
         XCTAssertFalse(altered.isValid(at: t0))
+        XCTAssertEqual(altered.invalidReason(at: t0), "signature")
+        XCTAssertNil(packet.invalidReason(at: t0))
     }
 
     // MARK: Packets

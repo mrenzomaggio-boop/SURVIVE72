@@ -1461,6 +1461,16 @@
         }
       }
     },
+    "Data: %lld sent · %lld received · %lld discarded": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dati: %1$lld inviati · %2$lld ricevuti · %3$lld scartati"
+          }
+        }
+      }
+    },
     "Decimal: ": {
       "localizations": {
         "it": {
@@ -3067,6 +3077,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "DEMO LOCALE · NON TRASMESSO"
+          }
+        }
+      }
+    },
+    "Last problem: %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ultimo problema: %@"
           }
         }
       }

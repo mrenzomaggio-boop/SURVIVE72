@@ -111,28 +111,32 @@ struct MeshPacket: Codable, Hashable, Identifiable {
     // MARK: Validate
 
     /// Checks shape, limits and signature. A packet that fails is dropped and never relayed.
-    func isValid(at now: Date) -> Bool {
-        guard sender.isWellFormed,
-              sender.name.utf8.count <= 80,
-              payload.count <= MeshPacket.maxTextBytes + 64, !payload.isEmpty,
-              (0...MeshPacket.defaultHopLimit * 2).contains(hopLimit),
-              (0...hopLimit).contains(hops),
-              expiresAt > createdAt,
-              expiresAt.timeIntervalSince(createdAt) <= MeshPacket.defaultLifetime * 7,
-              createdAt <= now.addingTimeInterval(MeshPacket.clockTolerance)
-        else { return false }
+    func isValid(at now: Date) -> Bool { invalidReason(at: now) == nil }
+
+    /// Why the packet is not valid, in a few words for the diagnostics line,
+    /// or nil when it is valid.
+    func invalidReason(at now: Date) -> String? {
+        guard sender.isWellFormed else { return "sender" }
+        guard sender.name.utf8.count <= 80 else { return "name" }
+        guard payload.count <= MeshPacket.maxTextBytes + 64, !payload.isEmpty else { return "size" }
+        guard (0...MeshPacket.defaultHopLimit * 2).contains(hopLimit),
+              (0...hopLimit).contains(hops) else { return "hops" }
+        guard expiresAt > createdAt,
+              expiresAt.timeIntervalSince(createdAt) <= MeshPacket.defaultLifetime * 7 else { return "lifetime" }
+        guard createdAt <= now.addingTimeInterval(MeshPacket.clockTolerance) else { return "clock" }
         switch kind {
         case .alert:
-            guard recipientCode == nil, String(data: payload, encoding: .utf8) != nil else { return false }
+            guard recipientCode == nil, String(data: payload, encoding: .utf8) != nil else { return "alert" }
         case .direct:
-            guard let code = recipientCode, MeshCode.normalized(code) == code else { return false }
+            guard let code = recipientCode, MeshCode.normalized(code) == code else { return "recipient" }
         }
         guard let key = try? Curve25519.Signing.PublicKey(rawRepresentation: sender.signingKey) else {
-            return false
+            return "key"
         }
-        return key.isValidSignature(signature, for: MeshPacket.signedBytes(
+        let signed = key.isValidSignature(signature, for: MeshPacket.signedBytes(
             id: id, kind: kind, sender: sender, recipientCode: recipientCode, isSOS: isSOS,
             createdAt: createdAt, expiresAt: expiresAt, hopLimit: hopLimit, payload: payload))
+        return signed ? nil : "signature"
     }
 
     // MARK: Signed bytes

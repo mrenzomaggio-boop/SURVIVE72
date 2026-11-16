@@ -10,6 +10,8 @@ final class MeshServiceTests: XCTestCase {
         let token = UUID().uuidString
         private(set) var isStarted = false
         private var links: [String: FakeTransport] = [:]
+        /// Number of next sends that get lost on the way, like a link not ready yet.
+        var sendsToLose = 0
 
         var connectedPeers: [String] { Array(links.keys) }
 
@@ -22,6 +24,10 @@ final class MeshServiceTests: XCTestCase {
 
         func send(_ data: Data, to peer: String) {
             guard let other = links[peer] else { return }
+            if sendsToLose > 0 {
+                sendsToLose -= 1
+                return
+            }
             other.delegate?.meshTransport(didReceive: data, from: token)
         }
 
@@ -255,6 +261,41 @@ final class MeshServiceTests: XCTestCase {
         XCTAssertTrue(ada.service.people(matching: "luigi").isEmpty)
         XCTAssertTrue(ada.service.people(matching: "Ada").isEmpty)   // not herself
         XCTAssertTrue(ada.service.people(matching: "  ").isEmpty)
+    }
+
+    // MARK: Delivery
+
+    func testWaitingMessageArrivesEvenIfTheFirstGreetingIsLost() throws {
+        let ada = makePhone(name: "Ada")
+        let bob = makePhone(name: "Bob")
+        FakeTransport.link(ada.radio, bob.radio)
+        let bobCard = try XCTUnwrap(ada.service.card(for: bob.service.myCode))
+        FakeTransport.unlink(ada.radio, bob.radio)
+
+        // Written while apart: it waits on Ada's phone.
+        try ada.service.send("Where are you?", to: bobCard)
+        XCTAssertTrue(bob.service.messages(with: ada.service.myCode).isEmpty)
+
+        // They meet again, but Bob's greeting is lost: nothing moves yet.
+        bob.radio.sendsToLose = 1
+        FakeTransport.link(ada.radio, bob.radio)
+        XCTAssertTrue(bob.service.messages(with: ada.service.myCode).isEmpty)
+
+        // The next greeting brings the message.
+        bob.service.greetConnectedPeers()
+        XCTAssertEqual(bob.service.messages(with: ada.service.myCode).map(\.text), ["Where are you?"])
+        XCTAssertEqual(ada.service.sentPacketCount, 1)
+        XCTAssertEqual(bob.service.receivedPacketCount, 1)
+    }
+
+    func testMessageWrittenWhileConnectedArrivesAtOnce() throws {
+        let ada = makePhone(name: "Ada")
+        let bob = makePhone(name: "Bob")
+        FakeTransport.link(ada.radio, bob.radio)
+        let bobCard = try XCTUnwrap(ada.service.card(for: bob.service.myCode))
+        try ada.service.send("Hi", to: bobCard)
+        XCTAssertEqual(bob.service.messages(with: ada.service.myCode).map(\.text), ["Hi"])
+        XCTAssertEqual(bob.service.conversationCodes, [ada.service.myCode])
     }
 
     func testUnknownPhoneNumberFindsNobody() {

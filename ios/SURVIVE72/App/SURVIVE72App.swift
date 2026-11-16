@@ -23,6 +23,7 @@ struct SURVIVE72App: App {
     @State private var medicalStore = MedicalStore()
     @State private var meshService = MeshService()
     @Environment(\.scenePhase) private var scenePhase
+    @State private var wasInBackground = false
 
     var body: some Scene {
         WindowGroup {
@@ -38,8 +39,23 @@ struct SURVIVE72App: App {
                 .environment(medicalStore)
                 .environment(meshService)
                 // iOS closes the phone-to-phone link in the background: reopen it.
+                // Only after a real trip to the background: a permission alert
+                // also makes the app inactive for a moment, and restarting then
+                // would drop a link that is just being set up.
                 .onChange(of: scenePhase) { _, phase in
-                    if phase == .active { meshService.appBecameActive() }
+                    if phase == .background { wasInBackground = true }
+                    if phase == .active, wasInBackground {
+                        wasInBackground = false
+                        meshService.appBecameActive()
+                    }
+                }
+                // A greeting lost while a link is being set up is sent again,
+                // so waiting messages always find their way.
+                .task {
+                    while !Task.isCancelled {
+                        try? await Task.sleep(for: .seconds(MeshService.helloInterval))
+                        meshService.greetConnectedPeers()
+                    }
                 }
                 // Settings: brighter text and stronger borders in high-contrast mode, fewer refreshes in battery saver.
                 .environment(\.legibilityWeight, settingsStore.settings.highContrast ? .bold : .regular)
