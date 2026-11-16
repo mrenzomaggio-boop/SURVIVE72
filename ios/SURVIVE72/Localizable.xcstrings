@@ -3081,6 +3081,16 @@
         }
       }
     },
+    "Last problem: %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ultimo problema: %@"
+          }
+        }
+      }
+    },
     "Latitude (-90 to 90)": {
       "localizations": {
         "it": {

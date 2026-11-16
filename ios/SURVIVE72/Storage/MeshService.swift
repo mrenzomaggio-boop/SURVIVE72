@@ -89,6 +89,8 @@ final class MeshService: MeshTransportDelegate {
     private(set) var receivedPacketCount = 0
     /// Packets from other phones dropped as broken, tampered with or expired.
     private(set) var rejectedPacketCount = 0
+    /// Why the last packet was not taken, for the diagnostics line (e.g. "signature").
+    private(set) var lastProblem: String?
 
     /// Seconds between two greetings to the phones already connected.
     static let helloInterval: Double = 5
@@ -303,7 +305,10 @@ final class MeshService: MeshTransportDelegate {
     }
 
     func meshTransport(didReceive data: Data, from peer: String) {
-        guard let message = MeshWire.decoded(data) else { return }
+        guard let message = MeshWire.decoded(data) else {
+            lastProblem = "unreadable \(data.count) B"
+            return
+        }
         switch message {
         case .hello(let known, let card, let signature):
             if let card, let signature, card.isSigned(by: signature), card.code != myCode {
@@ -350,7 +355,10 @@ final class MeshService: MeshTransportDelegate {
     private func accept(_ packet: MeshPacket, from source: String?) {
         let current = now()
         let result = router.receive(packet, now: current)
-        if source != nil, result == .rejected { rejectedPacketCount += 1 }
+        if result == .rejected {
+            if source != nil { rejectedPacketCount += 1 }
+            lastProblem = (source == nil ? "own " : "") + (packet.invalidReason(at: current) ?? "expired")
+        }
         guard case .accepted(_, let willRelay) = result else { return }
         if source != nil { receivedPacketCount += 1 }
         if packet.sender.code != myCode {
