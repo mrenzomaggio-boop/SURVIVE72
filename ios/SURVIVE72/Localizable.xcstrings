@@ -231,6 +231,16 @@
         }
       }
     },
+    "%lld more new alerts on the board.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Altri %lld nuovi avvisi in bacheca."
+          }
+        }
+      }
+    },
     "%lld of %lld item packed, %lld percent": {
       "localizations": {
         "it": {
@@ -1151,6 +1161,16 @@
         }
       }
     },
+    "Change": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cambia"
+          }
+        }
+      }
+    },
     "Check contents and expiry dates": {
       "localizations": {
         "it": {
@@ -1411,6 +1431,26 @@
         }
       }
     },
+    "Countries": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paesi"
+          }
+        }
+      }
+    },
+    "Countries you follow": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Paesi che segui"
+          }
+        }
+      }
+    },
     "Country or region": {
       "localizations": {
         "it": {
@@ -1641,6 +1681,16 @@
         }
       }
     },
+    "Details": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dettagli"
+          }
+        }
+      }
+    },
     "Display and battery": {
       "localizations": {
         "it": {
@@ -1787,6 +1837,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Documenti"
+          }
+        }
+      }
+    },
+    "Done": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fine"
           }
         }
       }
@@ -2401,6 +2461,16 @@
         }
       }
     },
+    "Floods, cyclones, strong earthquakes and eruptions anywhere in the world (GDACS).": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alluvioni, cicloni, terremoti forti ed eruzioni in tutto il mondo (GDACS)."
+          }
+        }
+      }
+    },
     "Follow instructions from local authorities.": {
       "localizations": {
         "it": {
@@ -2497,6 +2567,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Frequenze, guida"
+          }
+        }
+      }
+    },
+    "From %@ to %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dal %1$@ al %2$@"
           }
         }
       }
@@ -3091,6 +3171,16 @@
         }
       }
     },
+    "Large disasters worldwide": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Grandi disastri nel mondo"
+          }
+        }
+      }
+    },
     "Last problem: %@": {
       "localizations": {
         "it": {
@@ -3137,6 +3227,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Impara dove si trovano e come si chiudono i rubinetti di gas e acqua e l'interruttore generale della luce."
+          }
+        }
+      }
+    },
+    "Less": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Meno"
           }
         }
       }
@@ -3771,6 +3871,16 @@
         }
       }
     },
+    "Never updated": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mai aggiornati"
+          }
+        }
+      }
+    },
     "Next": {
       "localizations": {
         "it": {
@@ -3831,6 +3941,16 @@
         }
       }
     },
+    "No alerts on this phone yet. Connect to the internet once, or stay near a phone with the app and the network on.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ancora nessun avviso su questo telefono. Collegati a internet una volta, oppure stai vicino a un telefono con l'app e la rete accesa."
+          }
+        }
+      }
+    },
     "No articles found": {
       "localizations": {
         "it": {
@@ -3867,6 +3987,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nessuna voce trovata. Prova un'altra parola o scegli Tutti."
+          }
+        }
+      }
+    },
+    "No internet. Switch on the network between nearby phones to receive alerts from them.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niente internet. Accendi la rete tra telefoni vicini per ricevere gli avvisi da loro."
+          }
+        }
+      }
+    },
+    "No internet: new alerts can still arrive from nearby phones.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niente internet: i nuovi avvisi possono comunque arrivare dai telefoni vicini."
           }
         }
       }
@@ -3917,6 +4057,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Nessun nickname"
+          }
+        }
+      }
+    },
+    "No official alerts right now for the places you follow.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessun avviso ufficiale in questo momento per i luoghi che segui."
           }
         }
       }
@@ -3977,6 +4127,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Cibo a lunga conservazione"
+          }
+        }
+      }
+    },
+    "None": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuno"
           }
         }
       }
@@ -4121,12 +4281,52 @@
         }
       }
     },
+    "ORANGE": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ARANCIONE"
+          }
+        }
+      }
+    },
     "Oceania": {
       "localizations": {
         "it": {
           "stringUnit": {
             "state": "translated",
             "value": "Oceania"
+          }
+        }
+      }
+    },
+    "Official alert · %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avviso ufficiale · %@"
+          }
+        }
+      }
+    },
+    "Official alerts": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avvisi ufficiali"
+          }
+        }
+      }
+    },
+    "Official alerts, also without internet": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avvisi ufficiali, anche senza internet"
           }
         }
       }
@@ -4247,6 +4447,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Una a persona, se possibile"
+          }
+        }
+      }
+    },
+    "Only official alerts appear here: weather warnings of the national weather services (Meteoalarm), earthquakes (INGV) and large disasters (GDACS). Nobody can write on this board, and every alert is checked with a digital signature.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qui compaiono solo avvisi ufficiali: allerte dei servizi meteo nazionali (Meteoalarm), terremoti (INGV) e grandi disastri (GDACS). Nessuno può scrivere su questa bacheca e ogni avviso è controllato con una firma digitale."
           }
         }
       }
@@ -4847,6 +5057,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "PRONTO"
+          }
+        }
+      }
+    },
+    "RED": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ROSSO"
           }
         }
       }
@@ -5651,6 +5871,16 @@
         }
       }
     },
+    "Source: %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fonte: %@"
+          }
+        }
+      }
+    },
     "Source: Io non rischio. Dipartimento della Protezione Civile - Presidenza del Consiglio dei Ministri.": {
       "localizations": {
         "it": {
@@ -6391,6 +6621,36 @@
         }
       }
     },
+    "Update now": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiorna ora"
+          }
+        }
+      }
+    },
+    "Updated %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiornati: %@"
+          }
+        }
+      }
+    },
+    "Updated %@, from a nearby phone": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiornati: %@, da un telefono vicino"
+          }
+        }
+      }
+    },
     "Use a sealed bag or box.": {
       "localizations": {
         "it": {
@@ -6671,6 +6931,16 @@
         }
       }
     },
+    "World": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mondo"
+          }
+        }
+      }
+    },
     "Write an alert": {
       "localizations": {
         "it": {
@@ -6707,6 +6977,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Scritti su carta"
+          }
+        }
+      }
+    },
+    "YELLOW": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GIALLO"
           }
         }
       }
@@ -6957,6 +7237,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "caldo"
+          }
+        }
+      }
+    },
+    "large disasters worldwide": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "grandi disastri nel mondo"
           }
         }
       }

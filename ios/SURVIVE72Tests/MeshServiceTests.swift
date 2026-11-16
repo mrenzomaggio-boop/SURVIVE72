@@ -1,3 +1,4 @@
+import CryptoKit
 import XCTest
 @testable import SURVIVE72
 
@@ -68,7 +69,8 @@ final class MeshServiceTests: XCTestCase {
         super.tearDown()
     }
 
-    private func makePhone(name: String, phone: String = "", enabled: Bool = true) -> Phone {
+    private func makePhone(name: String, phone: String = "", enabled: Bool = true,
+                           official: OfficialAlertStore? = nil) -> Phone {
         let suite = "SURVIVE72Tests.mesh.\(UUID().uuidString)"
         suites.append(suite)
         let defaults = UserDefaults(suiteName: suite)!
@@ -78,7 +80,8 @@ final class MeshServiceTests: XCTestCase {
         let keys = InMemoryMeshKeyStore()
         let notifier = RecordingMeshNotifier()
         let service = MeshService(transport: radio, keyStore: keys, defaults: defaults,
-                                  stateURL: url, now: { [unowned self] in self.clock }, notifier: notifier)
+                                  stateURL: url, now: { [unowned self] in self.clock }, notifier: notifier,
+                                  official: official)
         service.updateProfile(name: name, phone: phone)
         service.setEnabled(enabled)
         return Phone(service: service, notifier: notifier, radio: radio, keys: keys, defaults: defaults, stateURL: url)
@@ -303,7 +306,7 @@ final class MeshServiceTests: XCTestCase {
 
     // MARK: Notifications
 
-    func testArrivingMessagesAndAlertsAreNotified() throws {
+    func testArrivingMessagesAreNotified() throws {
         let ada = makePhone(name: "Ada")
         let bob = makePhone(name: "Bob")
         let cy = makePhone(name: "Cy")
@@ -318,14 +321,65 @@ final class MeshServiceTests: XCTestCase {
         XCTAssertTrue(cy.notifier.notices.isEmpty, "Not for Cy: no notice")
         XCTAssertTrue(ada.notifier.notices.isEmpty, "Own messages: no notice")
 
+        // Alerts written by people (older versions) are no longer shown: no notice.
         try ada.service.postAlert("Need water", isSOS: true)
-        XCTAssertEqual(bob.notifier.notices.last?.title, String(localized: "SOS from \("Ada")"))
-        XCTAssertEqual(bob.notifier.notices.last?.isSOS, true)
-        XCTAssertEqual(cy.notifier.notices.map(\.body), ["Need water"])   // passed on by Bob
+        XCTAssertEqual(bob.notifier.notices.count, 1)
+        XCTAssertTrue(cy.notifier.notices.isEmpty)
 
         // The same packet again: no second notice.
         bob.service.greetConnectedPeers()
-        XCTAssertEqual(bob.notifier.notices.count, 2)
+        XCTAssertEqual(bob.notifier.notices.count, 1)
+    }
+
+    // MARK: Official alerts
+
+    private func makeOfficialStore() -> OfficialAlertStore {
+        let suite = "SURVIVE72Tests.official.\(UUID().uuidString)"
+        suites.append(suite)
+        return OfficialAlertStore(fileURL: nil, defaults: UserDefaults(suiteName: suite)!,
+                                  now: { [unowned self] in self.clock }, notifier: nil,
+                                  key: OfficialAlertFixtures.publicKey, download: { _ in throw URLError(.notConnectedToInternet) })
+    }
+
+    func testOfficialAlertsSpreadToPhonesWithoutInternet() throws {
+        let adaAlerts = makeOfficialStore()
+        let bobAlerts = makeOfficialStore()
+        let cyAlerts = makeOfficialStore()
+        // Ada had internet earlier and downloaded two alerts.
+        try adaAlerts.receiveFeed(OfficialAlertFixtures.feed([
+            OfficialAlertFixtures.alert("one", issuedAt: clock),
+            OfficialAlertFixtures.alert("two", issuedAt: clock),
+        ], at: clock))
+        let ada = makePhone(name: "Ada", official: adaAlerts)
+        let bob = makePhone(name: "Bob", official: bobAlerts)
+        let cy = makePhone(name: "Cy", official: cyAlerts)
+
+        FakeTransport.link(ada.radio, bob.radio)
+        XCTAssertEqual(bobAlerts.alerts.keys.sorted(), ["one", "two"])
+        XCTAssertEqual(bobAlerts.lastOrigin, .nearbyPhone)
+
+        // Bob meets Cy later, without Ada: he passes them on.
+        FakeTransport.unlink(ada.radio, bob.radio)
+        FakeTransport.link(bob.radio, cy.radio)
+        XCTAssertEqual(cyAlerts.alerts.keys.sorted(), ["one", "two"])
+
+        // Greeting again sends nothing more.
+        let received = cy.service.receivedPacketCount
+        bob.service.greetConnectedPeers()
+        cy.service.greetConnectedPeers()
+        XCTAssertEqual(cy.service.receivedPacketCount, received)
+    }
+
+    func testForgedOfficialAlertsAreRefused() throws {
+        let bobAlerts = makeOfficialStore()
+        let bob = makePhone(name: "Bob", official: bobAlerts)
+        let thief = Curve25519.Signing.PrivateKey()
+        let forged = OfficialAlertFixtures.alert("fake", issuedAt: clock, key: thief)
+        let data = try XCTUnwrap(MeshWire.official([forged]).encoded())
+        bob.service.meshTransport(didReceive: data, from: "someone")
+        XCTAssertTrue(bobAlerts.alerts.isEmpty)
+        XCTAssertEqual(bob.service.rejectedPacketCount, 1)
+        XCTAssertEqual(bob.service.lastProblem, "official")
     }
 
     func testUnknownPhoneNumberFindsNobody() {
@@ -400,6 +454,8 @@ final class MeshServiceTests: XCTestCase {
         let id = UUID()
         let legacy = Data(#"{"hello":{"known":["\#(id.uuidString)"]}}"#.utf8)
         XCTAssertEqual(MeshWire.decoded(legacy), .hello(known: [id]))
+        let withOfficial = MeshWire.hello(known: [], officialKnown: ["abc"])
+        XCTAssertEqual(MeshWire.decoded(try XCTUnwrap(withOfficial.encoded())), withOfficial)
         XCTAssertNil(MeshWire.decoded(Data(count: 600 * 1024)))
     }
 }

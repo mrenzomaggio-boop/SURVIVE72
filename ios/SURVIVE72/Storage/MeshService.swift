@@ -92,6 +92,10 @@ final class MeshService: MeshTransportDelegate {
     /// Why the last packet was not taken, for the diagnostics line (e.g. "signature").
     private(set) var lastProblem: String?
 
+    /// The board shows only official alerts; alerts written by people (and
+    /// their SOS) are kept in the code for a later version.
+    static let showsPeopleAlerts = false
+
     /// Seconds between two greetings to the phones already connected.
     static let helloInterval: Double = 5
     /// Who is on each connected phone (from its signed hello), by peer token.
@@ -103,15 +107,19 @@ final class MeshService: MeshTransportDelegate {
     private let stateURL: URL?
     private let now: () -> Date
     private let notifier: MeshNotifier
+    /// Official alerts passed between phones; nil when not used (tests).
+    private let official: OfficialAlertStore?
 
     init(transport: MeshTransport = MultipeerTransport(),
          keyStore: MeshKeyStore = KeychainMeshKeyStore(),
          defaults: UserDefaults = .standard,
          stateURL: URL? = MeshService.defaultStateURL(),
          now: @escaping () -> Date = Date.init,
-         notifier: MeshNotifier = LocalMeshNotifier()) {
+         notifier: MeshNotifier = LocalMeshNotifier(),
+         official: OfficialAlertStore? = nil) {
         self.transport = transport
         self.notifier = notifier
+        self.official = official
         self.keyStore = keyStore
         self.defaults = defaults
         self.stateURL = stateURL
@@ -318,7 +326,7 @@ final class MeshService: MeshTransportDelegate {
             return
         }
         switch message {
-        case .hello(let known, let card, let signature):
+        case .hello(let known, let card, let signature, let officialKnown):
             if let card, let signature, card.isSigned(by: signature), card.code != myCode {
                 nearbyCodes[peer] = card.code
                 if contacts[card.code] != card {
@@ -333,9 +341,30 @@ final class MeshService: MeshTransportDelegate {
                     sentPacketCount += packets.count
                 }
             }
+            if let officialKnown, let official {
+                let missing = official.alertsMissing(from: Set(officialKnown))
+                for batch in MeshWire.officialBatches(missing) {
+                    if case .official(let alerts) = batch, let data = batch.encoded() {
+                        transport.send(data, to: peer)
+                        sentPacketCount += alerts.count
+                    }
+                }
+            }
         case .packets(let packets):
             for packet in packets.prefix(MeshWire.batchSize * 2) {
                 accept(packet, from: peer)
+            }
+        case .official(let alerts):
+            guard let official else { return }
+            let batch = Array(alerts.prefix(MeshWire.batchSize * 2))
+            let added = official.receiveFromNearby(batch)
+            receivedPacketCount += added
+            // Already known ones are normal; the rest failed the signature or expired.
+            let known = Set(official.alerts.keys)
+            let refused = batch.filter { !known.contains($0.id) }.count
+            if refused > 0 {
+                rejectedPacketCount += refused
+                lastProblem = "official"
             }
         }
     }
@@ -353,7 +382,8 @@ final class MeshService: MeshTransportDelegate {
     private func sendHello(to peer: String) {
         let card = identity.card
         let known = Array(router.knownIDs(now: now()))
-        let hello = MeshWire.hello(known: known, card: card, signature: try? identity.sign(card.signedBytes))
+        let hello = MeshWire.hello(known: known, card: card, signature: try? identity.sign(card.signedBytes),
+                                   officialKnown: official?.knownTags() ?? [])
         if let data = hello.encoded() {
             transport.send(data, to: peer)
         }
@@ -386,7 +416,9 @@ final class MeshService: MeshTransportDelegate {
         let name = MeshDisplay.name(packet.sender.name)
         switch packet.kind {
         case .alert:
-            guard let text = packet.alertText else { return }
+            // Alerts written by people are no longer shown (only official ones
+            // are): older versions can still send them, so no notice.
+            guard MeshService.showsPeopleAlerts, let text = packet.alertText else { return }
             let title = packet.isSOS
                 ? String(localized: "SOS from \(name)")
                 : String(localized: "Alert from \(name)")
