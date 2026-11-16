@@ -59,6 +59,10 @@ struct MedicalLibraryView: View {
         .navigationDestination(for: MedicalEntry.self) { entry in
             MedicalEntryView(entry: entry)
         }
+        // The cards are not reviewed by a doctor: say so before the first use.
+        .fullScreenCover(isPresented: Binding(get: { !store.hasAcceptedWarning }, set: { _ in })) {
+            MedicalWarningView { store.acceptWarning() }
+        }
     }
 
     private var resultsSummary: String {
@@ -199,4 +203,54 @@ private struct EmptyMedicalResults: View {
     }
     .environment(MedicalStore(defaults: UserDefaults(suiteName: "preview.medical")!))
     .preferredColorScheme(.dark)
+}
+
+/// Shown before the first use of Medical: the cards are not reviewed by a doctor.
+struct MedicalWarningView: View {
+    let onAccept: () -> Void
+
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 20) {
+                Image(systemName: "exclamationmark.triangle.fill")
+                    .font(.system(size: 56, weight: .bold))
+                    .foregroundStyle(Theme.danger)
+                    .accessibilityHidden(true)
+
+                Text(String(localized: "Before you use Medical"))
+                    .font(.largeTitle.weight(.heavy))
+                    .foregroundStyle(Theme.textPrimary)
+                    .accessibilityAddTraits(.isHeader)
+
+                VStack(alignment: .leading, spacing: 14) {
+                    warningLine(String(localized: "These cards have not been reviewed by a doctor. They may contain mistakes or leave out important steps."))
+                    warningLine(String(localized: "They do not replace a doctor, the emergency services or a first aid course."))
+                    warningLine(String(localized: "In an emergency, call 112 first and follow what the operator tells you."))
+                }
+
+                MedicalDisclaimer()
+
+                BigButton(title: String(localized: "I understand"), systemImage: "checkmark", color: Theme.accent) {
+                    onAccept()
+                }
+            }
+            .padding(20)
+        }
+        .background(Theme.background.ignoresSafeArea())
+        .interactiveDismissDisabled()
+    }
+
+    private func warningLine(_ text: String) -> some View {
+        HStack(alignment: .top, spacing: 10) {
+            Image(systemName: "circle.fill")
+                .font(.system(size: 8))
+                .padding(.top, 8)
+                .foregroundStyle(Theme.danger)
+                .accessibilityHidden(true)
+            Text(text)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(Theme.textPrimary)
+                .fixedSize(horizontal: false, vertical: true)
+        }
+    }
 }

@@ -28,6 +28,9 @@ final class MedicalStore {
     private let defaults: UserDefaults
     private let key: String
     private let validIDs: Set<String>
+    private let warningKey: String
+    /// Mirrors the saved flag so views update when it changes.
+    private(set) var warningAccepted = false
 
     init(
         defaults: UserDefaults = .standard,
@@ -37,6 +40,7 @@ final class MedicalStore {
         self.defaults = defaults
         self.key = key
         self.validIDs = validIDs
+        warningKey = key + ".warningAccepted"
         if let decoded = LocalStorage.load(MedicalPreferences.self, key: key, from: defaults) {
             // Drop anything that is no longer valid instead of crashing.
             var cleaned = MedicalPreferences()
@@ -49,6 +53,7 @@ final class MedicalStore {
         } else {
             preferences = MedicalPreferences()
         }
+        warningAccepted = defaults.bool(forKey: warningKey)
     }
 
     // MARK: Favorites
@@ -87,12 +92,25 @@ final class MedicalStore {
         save()
     }
 
+    // MARK: Warning
+
+    /// The cards are not reviewed by a doctor: the user reads a warning
+    /// before the first use.
+    var hasAcceptedWarning: Bool { warningAccepted }
+
+    func acceptWarning() {
+        defaults.set(true, forKey: warningKey)
+        warningAccepted = true
+    }
+
     // MARK: Reset
 
     /// Erases the Medical preferences from memory and from the device.
     func reset() {
         preferences = MedicalPreferences()
         LocalStorage.remove(key: key, from: defaults)
+        defaults.removeObject(forKey: warningKey)
+        warningAccepted = false
     }
 
     private func save() {
