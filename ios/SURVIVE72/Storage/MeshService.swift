@@ -87,6 +87,8 @@ final class MeshService: MeshTransportDelegate {
     /// received from other phones. Shown so a test can tell if data moves.
     private(set) var sentPacketCount = 0
     private(set) var receivedPacketCount = 0
+    /// Packets from other phones dropped as broken, tampered with or expired.
+    private(set) var rejectedPacketCount = 0
 
     /// Seconds between two greetings to the phones already connected.
     static let helloInterval: Double = 5
@@ -347,7 +349,9 @@ final class MeshService: MeshTransportDelegate {
     /// Stores a new packet and passes it on to every other connected phone.
     private func accept(_ packet: MeshPacket, from source: String?) {
         let current = now()
-        guard case .accepted(_, let willRelay) = router.receive(packet, now: current) else { return }
+        let result = router.receive(packet, now: current)
+        if source != nil, result == .rejected { rejectedPacketCount += 1 }
+        guard case .accepted(_, let willRelay) = result else { return }
         if source != nil { receivedPacketCount += 1 }
         if packet.sender.code != myCode {
             contacts[packet.sender.code] = packet.sender

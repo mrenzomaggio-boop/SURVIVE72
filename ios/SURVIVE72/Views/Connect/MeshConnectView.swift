@@ -261,7 +261,7 @@ struct MeshStatusCard: View {
                 .foregroundStyle(mesh.isEnabled && mesh.nearbyCount > 0 ? Theme.ok : Theme.textSecondary)
 
             if mesh.isEnabled {
-                Text(String(localized: "Data: \(mesh.sentPacketCount) sent · \(mesh.receivedPacketCount) received"))
+                Text(String(localized: "Data: \(mesh.sentPacketCount) sent · \(mesh.receivedPacketCount) received · \(mesh.rejectedPacketCount) discarded"))
                     .font(.footnote.weight(.bold).monospacedDigit())
                     .foregroundStyle(Theme.textSecondary)
             }
