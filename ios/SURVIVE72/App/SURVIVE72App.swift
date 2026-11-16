@@ -7,7 +7,8 @@ import SwiftUI
 /// app bundle; SURVIVE TOOLS keeps its stopwatch and SOS signal in memory and can switch the flash LED as a torch;
 /// CONNECT is a local demo chat whose queue is only simulated; MAPS stores
 /// places typed by hand; MEDICAL ships placeholder topics and saves only bookmarks and the
-/// last category. ALERT (board) and CONNECT use a phone-to-phone mesh over
+/// last category. ALERT shows official alerts (downloaded when online, passed
+/// from phone to phone otherwise); CONNECT uses a phone-to-phone mesh over
 /// Bluetooth and peer-to-peer Wi-Fi, off until the user switches it on.
 /// MAPS also shows offline map areas downloaded once (OpenStreetMap) and the GPS position.
 @main
@@ -21,9 +22,18 @@ struct SURVIVE72App: App {
     @State private var mapsStore = MapsStore()
     @State private var offlineMapStore = OfflineMapStore()
     @State private var medicalStore = MedicalStore()
-    @State private var meshService = MeshService()
+    @State private var officialAlerts: OfficialAlertStore
+    @State private var meshService: MeshService
     @Environment(\.scenePhase) private var scenePhase
     @State private var wasInBackground = false
+
+    init() {
+        // One notifier for both: iOS keeps a single notification delegate.
+        let notifier = LocalMeshNotifier()
+        let official = OfficialAlertStore(notifier: notifier)
+        _officialAlerts = State(initialValue: official)
+        _meshService = State(initialValue: MeshService(notifier: notifier, official: official))
+    }
 
     var body: some Scene {
         WindowGroup {
@@ -38,6 +48,7 @@ struct SURVIVE72App: App {
                 .environment(offlineMapStore)
                 .environment(medicalStore)
                 .environment(meshService)
+                .environment(officialAlerts)
                 // iOS closes the phone-to-phone link in the background: reopen it.
                 // Only after a real trip to the background: a permission alert
                 // also makes the app inactive for a moment, and restarting then
@@ -47,14 +58,19 @@ struct SURVIVE72App: App {
                     if phase == .active, wasInBackground {
                         wasInBackground = false
                         meshService.appBecameActive()
+                        Task { await officialAlerts.refresh() }
                     }
                 }
                 // A greeting lost while a link is being set up is sent again,
                 // so waiting messages always find their way.
+                // Official alerts are downloaded when there is internet (at most
+                // every 10 minutes) and otherwise come from nearby phones.
                 .task {
+                    await officialAlerts.refresh()
                     while !Task.isCancelled {
                         try? await Task.sleep(for: .seconds(MeshService.helloInterval))
                         meshService.greetConnectedPeers()
+                        await officialAlerts.refresh()
                     }
                 }
                 // Settings: brighter text and stronger borders in high-contrast mode, fewer refreshes in battery saver.

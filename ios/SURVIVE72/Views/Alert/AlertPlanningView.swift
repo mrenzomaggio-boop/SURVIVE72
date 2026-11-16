@@ -77,7 +77,7 @@ struct AlertPlanningView: View {
                     Text(String(localized: "Alert board"))
                         .font(.title3.weight(.heavy))
                         .foregroundStyle(Theme.textPrimary)
-                    Text(String(localized: "Read and publish alerts that spread from phone to phone"))
+                    Text(String(localized: "Official alerts, also without internet"))
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(Theme.textSecondary)
                         .multilineTextAlignment(.leading)

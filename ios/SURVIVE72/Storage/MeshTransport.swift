@@ -23,8 +23,13 @@ enum MeshWire: Codable, Equatable {
     /// "These are the packets I already have": the other phone sends the rest.
     /// It also carries who is on this phone, signed, so phones next to each
     /// other see each other at once. Older versions send no card.
-    case hello(known: [UUID], card: MeshCard? = nil, signature: Data? = nil)
+    /// `officialKnown` lists the official alerts this phone has (short tags);
+    /// older versions send none and are never sent official alerts.
+    case hello(known: [UUID], card: MeshCard? = nil, signature: Data? = nil, officialKnown: [String]? = nil)
     case packets([MeshPacket])
+    /// Official alerts, signed by the feed. Older versions cannot read this
+    /// message, so it goes only to phones that listed `officialKnown`.
+    case official([OfficialAlert])
 
     /// Packets per message, to keep each transfer small.
     static let batchSize = 20
@@ -40,6 +45,12 @@ enum MeshWire: Codable, Equatable {
     static func batches(_ packets: [MeshPacket]) -> [MeshWire] {
         stride(from: 0, to: packets.count, by: batchSize).map {
             .packets(Array(packets[$0..<min($0 + batchSize, packets.count)]))
+        }
+    }
+
+    static func officialBatches(_ alerts: [OfficialAlert]) -> [MeshWire] {
+        stride(from: 0, to: alerts.count, by: batchSize).map {
+            .official(Array(alerts[$0..<min($0 + batchSize, alerts.count)]))
         }
     }
 }

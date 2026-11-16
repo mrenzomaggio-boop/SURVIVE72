@@ -150,4 +150,5 @@ private struct OfflineBanner: View {
         .environment(MeshService(keyStore: InMemoryMeshKeyStore(),
                                  defaults: UserDefaults(suiteName: "preview.home")!, stateURL: nil,
                                  notifier: RecordingMeshNotifier()))
+        .environment(OfficialAlertStore(fileURL: nil, defaults: UserDefaults(suiteName: "preview.home")!))
 }
