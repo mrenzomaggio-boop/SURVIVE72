@@ -108,6 +108,7 @@
 		5A72000000000000000001C1 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001C0 /* LocalStorage.swift */; };
 		5A72000000000000000001C3 /* PersistenceSafetyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001C2 /* PersistenceSafetyTests.swift */; };
 		5A72000000000000000001C5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001C4 /* Localizable.xcstrings */; };
+		5A7200000000000000000209 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000208 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -219,6 +220,7 @@
 		5A72000000000000000001BA /* MedicalStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicalStoreTests.swift; sourceTree = "<group>"; };
 		5A720000000000000000010F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A72000000000000000001C4 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		5A7200000000000000000208 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		5A7200000000000000000111 /* SURVIVE72.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SURVIVE72.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A7200000000000000000136 /* SURVIVE72Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SURVIVE72Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A72000000000000000001C0 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				5A720000000000000000010F /* Assets.xcassets */,
 				5A72000000000000000001F6 /* MapStyle */,
 				5A72000000000000000001C4 /* Localizable.xcstrings */,
+				5A7200000000000000000208 /* PrivacyInfo.xcprivacy */,
 			);
 			path = SURVIVE72;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 			files = (
 				5A7200000000000000000110 /* Assets.xcassets in Resources */,
 				5A72000000000000000001C5 /* Localizable.xcstrings in Resources */,
+				5A7200000000000000000209 /* PrivacyInfo.xcprivacy in Resources */,
 				5A72000000000000000001F7 /* MapStyle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -820,12 +824,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.survive72.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -856,12 +860,12 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.survive72.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

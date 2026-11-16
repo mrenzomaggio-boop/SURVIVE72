@@ -1031,6 +1031,16 @@
         }
       }
     },
+    "Before you use Medical": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prima di usare Medico"
+          }
+        }
+      }
+    },
     "Bookmark": {
       "localizations": {
         "it": {
@@ -2851,6 +2861,16 @@
         }
       }
     },
+    "I understand": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ho capito"
+          }
+        }
+      }
+    },
     "ID copies": {
       "localizations": {
         "it": {
@@ -3001,6 +3021,16 @@
         }
       }
     },
+    "In an emergency, call 112 first and follow what the operator tells you.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In emergenza chiama prima il 112 e segui le indicazioni dell'operatore."
+          }
+        }
+      }
+    },
     "In an emergency, call 112 straight away.": {
       "localizations": {
         "it": {
@@ -3037,6 +3067,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Assicurazioni e documenti sanitari"
+          }
+        }
+      }
+    },
+    "Issued %@": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emesso: %@"
           }
         }
       }
@@ -5891,6 +5931,16 @@
         }
       }
     },
+    "Sources: EUMETNET – MeteoAlarm and the national weather services; INGV, Istituto Nazionale di Geofisica e Vulcanologia (CC BY 4.0); GDACS, European Commission and United Nations. Time delays between this app and the www.meteoalarm.org website are possible.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fonti: EUMETNET – MeteoAlarm e i servizi meteo nazionali; INGV, Istituto Nazionale di Geofisica e Vulcanologia (CC BY 4.0); GDACS, Commissione europea e Nazioni Unite. Sono possibili ritardi tra questa app e il sito www.meteoalarm.org."
+          }
+        }
+      }
+    },
     "South America": {
       "localizations": {
         "it": {
@@ -6387,6 +6437,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "Queste schede non sostituiscono un medico né un corso di primo soccorso. Sono scritte da SURVIVE 72 seguendo le Linee guida 2025 dell'European Resuscitation Council (edizione italiana a cura di Italian Resuscitation Council) e non sono state scritte né approvate da ERC o IRC. SURVIVE 72 non si assume alcuna responsabilità per l'uso di queste informazioni."
+          }
+        }
+      }
+    },
+    "These cards have not been reviewed by a doctor. They may contain mistakes or leave out important steps.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Queste schede non sono state riviste da un medico. Possono contenere errori o tralasciare passaggi importanti."
+          }
+        }
+      }
+    },
+    "They do not replace a doctor, the emergency services or a first aid course.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non sostituiscono un medico, i soccorsi o un corso di primo soccorso."
           }
         }
       }

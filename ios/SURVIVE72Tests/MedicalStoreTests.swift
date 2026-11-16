@@ -87,6 +87,17 @@ final class MedicalStoreTests: XCTestCase {
         XCTAssertNil(store.lastCategory)
     }
 
+    func testWarningIsShownUntilAcceptedAndAgainAfterReset() {
+        let store = makeStore()
+        XCTAssertFalse(store.hasAcceptedWarning)
+        store.acceptWarning()
+        XCTAssertTrue(store.hasAcceptedWarning)
+        XCTAssertTrue(makeStore().hasAcceptedWarning, "remembered after a relaunch")
+        store.reset()
+        XCTAssertFalse(store.hasAcceptedWarning)
+        XCTAssertFalse(makeStore().hasAcceptedWarning)
+    }
+
     func testResetClearsMemoryAndStorage() {
         let store = makeStore()
         store.setFavorite(true, for: burns)

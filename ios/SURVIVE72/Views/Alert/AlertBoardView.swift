@@ -62,6 +62,11 @@ struct AlertBoardView: View {
                 }
 
                 MeshStatusCard()
+
+                Text(String(localized: "Sources: EUMETNET – MeteoAlarm and the national weather services; INGV, Istituto Nazionale di Geofisica e Vulcanologia (CC BY 4.0); GDACS, European Commission and United Nations. Time delays between this app and the www.meteoalarm.org website are possible."))
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Theme.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
             .padding(16)
         }
@@ -252,7 +257,8 @@ private struct OfficialAlertRow: View {
     private var timeText: String {
         let start = alert.startDate.formatted(date: .abbreviated, time: .shortened)
         let end = alert.expiryDate.formatted(date: .abbreviated, time: .shortened)
-        return String(localized: "From \(start) to \(end)")
+        let issued = alert.issuedDate.formatted(date: .abbreviated, time: .shortened)
+        return String(localized: "From \(start) to \(end)") + "\n" + String(localized: "Issued \(issued)")
     }
 }
 
