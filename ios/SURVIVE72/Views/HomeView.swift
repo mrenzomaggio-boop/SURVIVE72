@@ -148,5 +148,6 @@ private struct OfflineBanner: View {
         .environment(MapsStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(MedicalStore(defaults: UserDefaults(suiteName: "preview.home")!))
         .environment(MeshService(keyStore: InMemoryMeshKeyStore(),
-                                 defaults: UserDefaults(suiteName: "preview.home")!, stateURL: nil))
+                                 defaults: UserDefaults(suiteName: "preview.home")!, stateURL: nil,
+                                 notifier: RecordingMeshNotifier()))
 }
