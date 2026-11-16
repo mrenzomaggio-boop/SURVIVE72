@@ -7,6 +7,9 @@ enum MeshPacketKind: String, Codable {
     case alert
     /// Private message: relayed by anyone, readable only by the recipient.
     case direct
+    /// "Confirm" or "false" about an alert, from a nearby person. Older app
+    /// versions cannot read it, so votes always travel in batches of their own.
+    case vote
 }
 
 /// One message travelling across the mesh, hop by hop.
@@ -58,6 +61,25 @@ struct MeshPacket: Codable, Hashable, Identifiable {
         let sealed = try identity.seal(plainText, for: recipient, context: contextData(id))
         return try make(id: id, kind: .direct, identity: identity, recipientCode: recipient.code,
                         isSOS: isSOS, now: now, lifetime: lifetime, hopLimit: hopLimit, payload: sealed)
+    }
+
+    /// A vote about an alert: the alert id and true for "confirm", false for "false".
+    static func vote(on alertID: UUID, confirms: Bool, from identity: MeshIdentity, now: Date,
+                     id: UUID = UUID(), hopLimit: Int = defaultHopLimit,
+                     lifetime: TimeInterval = defaultLifetime) throws -> MeshPacket {
+        var payload = Data(alertID.uuidString.utf8)
+        payload.append(confirms ? 1 : 0)
+        return try make(id: id, kind: .vote, identity: identity, recipientCode: nil, isSOS: false,
+                        now: now, lifetime: lifetime, hopLimit: hopLimit, payload: payload)
+    }
+
+    /// For a vote: the alert it is about and the verdict.
+    var vote: (alertID: UUID, confirms: Bool)? {
+        guard kind == .vote, payload.count == 37,
+              let text = String(data: payload.prefix(36), encoding: .utf8),
+              let alertID = UUID(uuidString: text), let verdict = payload.last, verdict <= 1
+        else { return nil }
+        return (alertID, verdict == 1)
     }
 
     private static func checkedText(_ text: String) throws -> Data {
@@ -129,6 +151,13 @@ struct MeshPacket: Codable, Hashable, Identifiable {
             guard recipientCode == nil, String(data: payload, encoding: .utf8) != nil else { return "alert" }
         case .direct:
             guard let code = recipientCode, MeshCode.normalized(code) == code else { return "recipient" }
+        case .vote:
+            guard recipientCode == nil, !isSOS, vote != nil else { return "vote" }
+        }
+        // Alerts and votes live at most one day: a longer life would let old
+        // ones slip past the limits per person.
+        if kind != .direct, expiresAt.timeIntervalSince(createdAt) > MeshPacket.defaultLifetime {
+            return "lifetime"
         }
         guard let key = try? Curve25519.Signing.PublicKey(rawRepresentation: sender.signingKey) else {
             return "key"

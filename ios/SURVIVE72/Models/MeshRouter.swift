@@ -6,6 +6,9 @@ enum MeshReceiveResult: Equatable {
     case duplicate
     /// Broken, tampered with, or expired: dropped and never relayed.
     case rejected
+    /// Valid, but the sender went over the limits for SOS, alerts or votes:
+    /// dropped and never relayed.
+    case limited
     /// New and valid. `isForMe` is true for alerts and for private messages
     /// addressed to this phone; `willRelay` is true if it will be passed on.
     case accepted(isForMe: Bool, willRelay: Bool)
@@ -30,6 +33,12 @@ struct MeshRouter {
     /// Ids seen recently, with their expiry, so dropped packets are not accepted again.
     private(set) var seen: [UUID: Date] = [:]
 
+    /// Limits per person, checked by every phone on its own, so a person
+    /// cannot flood the network with SOS or alerts.
+    /// At most one SOS and one alert per person per day.
+    static let limitWindow: TimeInterval = 24 * 60 * 60
+    static let votesPerHour = 30
+
     init(myCode: String, capacity: Int = MeshRouter.defaultCapacity) {
         self.myCode = myCode
         self.capacity = max(1, capacity)
@@ -51,6 +60,7 @@ struct MeshRouter {
         guard packet.isValid(at: now), !packet.isExpired(at: now) else { return .rejected }
 
         seen[packet.id] = packet.expiresAt
+        if exceedsLimit(packet) { return .limited }
         let isForMe = isAddressedToMe(packet)
         // A private message that reached its recipient stops here.
         let willRelay = packet.canRelay(at: now) && !(packet.kind == .direct && isForMe)
@@ -125,7 +135,35 @@ struct MeshRouter {
             .map { $0.sender }
     }
 
+    /// Votes about one alert: the latest vote of each person, by code.
+    func votes(on alertID: UUID, now: Date) -> [String: Bool] {
+        var latest: [String: MeshPacket] = [:]
+        for packet in packets.values where packet.kind == .vote && !packet.isExpired(at: now) {
+            guard let vote = packet.vote, vote.alertID == alertID else { continue }
+            let code = packet.sender.code
+            if let known = latest[code], known.createdAt >= packet.createdAt { continue }
+            latest[code] = packet
+        }
+        return latest.compactMapValues { $0.vote?.confirms }
+    }
+
+    /// True if a new packet like this one from `sender` would go over the limits.
+    /// Used before writing one, so the user is told instead of the network dropping it.
+    func wouldExceedLimit(kind: MeshPacketKind, isSOS: Bool, sender: String, at date: Date) -> Bool {
+        limitHit(kind: kind, isSOS: isSOS, sender: sender, createdAt: date, excluding: nil)
+    }
+
     // MARK: Housekeeping
+
+    /// Forgets every packet from a person. Used when the user hides someone.
+    mutating func drop(from code: String) {
+        packets = packets.filter { $0.value.sender.code != code }
+    }
+
+    /// Marks a packet as seen without keeping it, so it is not taken or offered again.
+    mutating func ignore(_ packet: MeshPacket) {
+        seen[packet.id] = packet.expiresAt
+    }
 
     /// Forgets expired packets and ids.
     mutating func prune(now: Date) {
@@ -145,6 +183,32 @@ struct MeshRouter {
         switch packet.kind {
         case .alert: true
         case .direct: packet.recipientCode == myCode
+        case .vote: true
+        }
+    }
+
+    private func exceedsLimit(_ packet: MeshPacket) -> Bool {
+        guard packet.kind != .direct else { return false }
+        return limitHit(kind: packet.kind, isSOS: packet.isSOS, sender: packet.sender.code,
+                        createdAt: packet.createdAt, excluding: packet.id)
+    }
+
+    /// Limits use the signed creation time, so every phone reaches the same verdict.
+    private func limitHit(kind: MeshPacketKind, isSOS: Bool, sender: String, createdAt: Date,
+                          excluding id: UUID?) -> Bool {
+        let others = packets.values.filter {
+            $0.sender.code == sender && $0.kind == kind && $0.id != id
+        }
+        func within(_ window: TimeInterval) -> [MeshPacket] {
+            others.filter { abs($0.createdAt.timeIntervalSince(createdAt)) < window }
+        }
+        switch kind {
+        case .direct:
+            return false
+        case .alert:
+            return within(MeshRouter.limitWindow).contains { $0.isSOS == isSOS }
+        case .vote:
+            return within(60 * 60).count >= MeshRouter.votesPerHour
         }
     }
 
@@ -158,10 +222,12 @@ struct MeshRouter {
         return a.id.uuidString < b.id.uuidString
     }
 
-    /// Drops the oldest packets when over capacity; SOS packets go last.
+    /// Drops the oldest packets when over capacity: votes first, SOS last.
     private mutating func enforceCapacity() {
         guard packets.count > capacity else { return }
         let dropOrder = packets.values.sorted {
+            let aVote = $0.kind == .vote, bVote = $1.kind == .vote
+            if aVote != bVote { return aVote }
             if $0.isSOS != $1.isSOS { return !$0.isSOS }
             if $0.createdAt != $1.createdAt { return $0.createdAt < $1.createdAt }
             return $0.id.uuidString < $1.id.uuidString
