@@ -1041,6 +1041,66 @@
         }
       }
     },
+    "Block": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blocca"
+          }
+        }
+      }
+    },
+    "Block and report": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blocca e segnala"
+          }
+        }
+      }
+    },
+    "Block or report": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blocca o segnala"
+          }
+        }
+      }
+    },
+    "Block this person": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Blocca questa persona"
+          }
+        }
+      }
+    },
+    "Block this person?": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bloccare questa persona?"
+          }
+        }
+      }
+    },
+    "Blocked people": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Persone bloccate"
+          }
+        }
+      }
+    },
     "Bookmark": {
       "localizations": {
         "it": {
@@ -5321,6 +5381,16 @@
         }
       }
     },
+    "Report": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Segnala"
+          }
+        }
+      }
+    },
     "Report blocked drains, abandoned waste and obstructed streams to your municipality.": {
       "localizations": {
         "it": {
@@ -5897,6 +5967,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "I pannelli solari caricano lentamente: lasciali alla luce diretta."
+          }
+        }
+      }
+    },
+    "Someone is bothering you? Open the conversation, tap the button at the top right and choose Block or Report.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Qualcuno ti dà fastidio? Apri la conversazione, tocca il pulsante in alto a destra e scegli Blocca o Segnala."
           }
         }
       }
@@ -6651,6 +6731,26 @@
         }
       }
     },
+    "Unblock": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sblocca"
+          }
+        }
+      }
+    },
+    "Unblock this person": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sblocca questa persona"
+          }
+        }
+      }
+    },
     "Unconscious but breathing": {
       "localizations": {
         "it": {
@@ -7057,6 +7157,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "GIALLO"
+          }
+        }
+      }
+    },
+    "You blocked this person.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai bloccato questa persona."
+          }
+        }
+      }
+    },
+    "You will no longer see their messages or get notifications from them. You can unblock them in Connect.": {
+      "localizations": {
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non vedrai più i suoi messaggi e non riceverai notifiche da questa persona. Puoi sbloccarla in Connetti."
           }
         }
       }
