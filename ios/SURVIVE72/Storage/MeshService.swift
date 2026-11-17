@@ -49,11 +49,15 @@ struct MeshSavedState: Codable, Equatable {
     var packets: [MeshPacket] = []
     var sent: [MeshSentMessage] = []
     var contacts: [MeshCard] = []
+    /// Codes of the people the user blocked.
+    var blocked: [String] = []
 
-    init(packets: [MeshPacket] = [], sent: [MeshSentMessage] = [], contacts: [MeshCard] = []) {
+    init(packets: [MeshPacket] = [], sent: [MeshSentMessage] = [], contacts: [MeshCard] = [],
+         blocked: [String] = []) {
         self.packets = packets
         self.sent = sent
         self.contacts = contacts
+        self.blocked = blocked
     }
 
     init(from decoder: Decoder) throws {
@@ -61,6 +65,7 @@ struct MeshSavedState: Codable, Equatable {
         packets = c.lossyArray(MeshPacket.self, forKey: .packets)
         sent = c.lossyArray(MeshSentMessage.self, forKey: .sent)
         contacts = c.lossyArray(MeshCard.self, forKey: .contacts)
+        blocked = c.lossyArray(String.self, forKey: .blocked)
     }
 }
 
@@ -81,6 +86,9 @@ final class MeshService: MeshTransportDelegate {
     private(set) var sent: [MeshSentMessage]
     /// People this phone has written to or heard from, by code.
     private(set) var contacts: [String: MeshCard]
+    /// People the user blocked: their messages are not shown or notified,
+    /// and they no longer appear among the people to write to.
+    private(set) var blockedCodes: Set<String>
     /// Phones connected right now.
     private(set) var nearbyCount = 0
     /// Since the app started: packets handed to the radio, and new packets
@@ -140,6 +148,7 @@ final class MeshService: MeshTransportDelegate {
         var contacts: [String: MeshCard] = [:]
         for card in saved.contacts where card.isWellFormed { contacts[card.code] = card }
         self.contacts = contacts
+        blockedCodes = Set(saved.blocked)
 
         transport.delegate = self
         if profile.isEnabled {
@@ -253,7 +262,7 @@ final class MeshService: MeshTransportDelegate {
         for (code, card) in contacts { all[code] = card }
         all[myCode] = nil
         let nearby = nearbyPeopleCodes
-        return all.values.sorted {
+        return all.values.filter { !blockedCodes.contains($0.code) }.sorted {
             let aNear = nearby.contains($0.code), bNear = nearby.contains($1.code)
             if aNear != bNear { return aNear }
             let order = $0.name.localizedCaseInsensitiveCompare($1.name)
@@ -275,7 +284,9 @@ final class MeshService: MeshTransportDelegate {
             let code = packet.sender.code
             latest[code] = max(latest[code] ?? .distantPast, packet.createdAt)
         }
-        return latest.sorted { $0.value != $1.value ? $0.value > $1.value : $0.key < $1.key }.map { $0.key }
+        return latest
+            .filter { !blockedCodes.contains($0.key) }
+            .sorted { $0.value != $1.value ? $0.value > $1.value : $0.key < $1.key }.map { $0.key }
     }
 
     /// The private conversation with one person, oldest first.
@@ -283,7 +294,8 @@ final class MeshService: MeshTransportDelegate {
         var result = sent.filter { $0.recipientCode == code }.map {
             MeshChatMessage(id: $0.id, text: $0.text, isOutgoing: true, date: $0.createdAt, hops: 0)
         }
-        for packet in router.inbox(now: now()) where packet.sender.code == code {
+        // Nothing from a blocked person is shown.
+        for packet in router.inbox(now: now()) where packet.sender.code == code && !blockedCodes.contains(code) {
             guard let text = packet.directText(for: identity) else { continue }
             result.append(MeshChatMessage(id: packet.id, text: text, isOutgoing: false,
                                           date: packet.createdAt, hops: packet.hops))
@@ -306,6 +318,50 @@ final class MeshService: MeshTransportDelegate {
         router = MeshRouter(myCode: identity.code)
         sent = []
         contacts = [:]
+        blockedCodes = []
+    }
+
+    // MARK: Block and report
+
+    func isBlocked(_ code: String) -> Bool { blockedCodes.contains(code) }
+
+    /// Hides this person: their messages are no longer shown or notified.
+    /// Their packets are still passed on for other people, unread.
+    func block(_ code: String) {
+        guard code != myCode else { return }
+        blockedCodes.insert(code)
+        saveState()
+    }
+
+    func unblock(_ code: String) {
+        blockedCodes.remove(code)
+        saveState()
+    }
+
+    /// Codes of the blocked people, by nickname (people never seen again keep their code).
+    var blockedPeople: [String] {
+        blockedCodes.sorted {
+            let a = card(for: $0)?.name ?? "", b = card(for: $1)?.name ?? ""
+            let order = a.localizedCaseInsensitiveCompare(b)
+            return order != .orderedSame ? order == .orderedAscending : $0 < $1
+        }
+    }
+
+    /// Page where the user can report abusive messages to the SURVIVE 72 team.
+    /// Nothing is sent by the app: the user writes and sends the report.
+    static func reportURL(for code: String, name: String) -> URL? {
+        var parts = URLComponents(string: "https://github.com/mrenzomaggio-boop/survive72-maps/issues/new")
+        parts?.queryItems = [
+            URLQueryItem(name: "title", value: "Segnalazione / Report: \(code)"),
+            URLQueryItem(name: "body", value: """
+                Persona segnalata / Reported person: \(name) (\(code))
+
+                Cosa è successo? / What happened?
+
+                (Non incollare dati personali / Do not paste personal data.)
+                """),
+        ]
+        return parts?.url
     }
 
     // MARK: Transport events
@@ -413,6 +469,7 @@ final class MeshService: MeshTransportDelegate {
 
     /// A notification for a new alert or a private message for this phone.
     private func notify(about packet: MeshPacket) {
+        guard !blockedCodes.contains(packet.sender.code) else { return }
         let name = MeshDisplay.name(packet.sender.name)
         switch packet.kind {
         case .alert:
@@ -456,7 +513,7 @@ final class MeshService: MeshTransportDelegate {
     private func saveState() {
         guard let stateURL else { return }
         let state = MeshSavedState(packets: Array(router.packets.values), sent: sent,
-                                   contacts: Array(contacts.values))
+                                   contacts: Array(contacts.values), blocked: blockedCodes.sorted())
         guard let data = try? JSONEncoder().encode(state) else { return }
         try? data.write(to: stateURL, options: [.atomic, .completeFileProtectionUntilFirstUserAuthentication])
     }

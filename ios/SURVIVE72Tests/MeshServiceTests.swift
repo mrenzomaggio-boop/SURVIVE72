@@ -382,6 +382,50 @@ final class MeshServiceTests: XCTestCase {
         XCTAssertEqual(bob.service.lastProblem, "official")
     }
 
+    // MARK: Block
+
+    func testBlockedPersonIsHiddenButStillRelayed() throws {
+        let ada = makePhone(name: "Ada")
+        let bob = makePhone(name: "Bob")
+        let cy = makePhone(name: "Cy")
+        FakeTransport.link(ada.radio, bob.radio)
+        FakeTransport.link(bob.radio, cy.radio)
+        let bobCard = try XCTUnwrap(ada.service.card(for: bob.service.myCode))
+        let adaCode = ada.service.myCode
+
+        try ada.service.send("Hi Bob", to: bobCard)
+        XCTAssertEqual(bob.notifier.notices.count, 1)
+        bob.service.block(adaCode)
+
+        XCTAssertTrue(bob.service.isBlocked(adaCode))
+        XCTAssertTrue(bob.service.messages(with: adaCode).isEmpty)
+        XCTAssertFalse(bob.service.conversationCodes.contains(adaCode))
+        XCTAssertFalse(bob.service.reachablePeople.map(\.code).contains(adaCode))
+        XCTAssertEqual(bob.service.blockedPeople, [adaCode])
+
+        try ada.service.send("Again", to: bobCard)
+        XCTAssertEqual(bob.notifier.notices.count, 1, "no notice from a blocked person")
+
+        // Ada's message to Cy still passes through Bob, unread.
+        let cyCard = try XCTUnwrap(bob.service.card(for: cy.service.myCode))
+        try ada.service.send("Hi Cy", to: cyCard)
+        XCTAssertEqual(cy.service.messages(with: adaCode).map(\.text), ["Hi Cy"])
+
+        // Remembered after a relaunch, and undone by unblocking.
+        let again = relaunch(bob)
+        XCTAssertTrue(again.service.isBlocked(adaCode))
+        again.service.unblock(adaCode)
+        XCTAssertEqual(Set(again.service.messages(with: adaCode).map(\.text)), ["Hi Bob", "Again"])
+    }
+
+    func testReportLinkCarriesCodeAndName() throws {
+        let url = try XCTUnwrap(MeshService.reportURL(for: "ABCD-1234", name: "Ada"))
+        let parts = try XCTUnwrap(URLComponents(url: url, resolvingAgainstBaseURL: false))
+        XCTAssertEqual(parts.host, "github.com")
+        XCTAssertTrue(parts.queryItems?.first { $0.name == "title" }?.value?.contains("ABCD-1234") == true)
+        XCTAssertTrue(parts.queryItems?.first { $0.name == "body" }?.value?.contains("Ada (ABCD-1234)") == true)
+    }
+
     func testUnknownPhoneNumberFindsNobody() {
         let ada = makePhone(name: "Ada", phone: "333 123 4567")
         XCTAssertTrue(ada.service.people(withPhone: "333 999 0000").isEmpty)

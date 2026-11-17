@@ -19,6 +19,11 @@ struct MeshConnectView: View {
                 searchSection
                 conversationsSection
                 peopleSection
+                if !mesh.blockedPeople.isEmpty { blockedSection }
+                Text(String(localized: "Someone is bothering you? Open the conversation, tap the button at the top right and choose Block or Report."))
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(Theme.textSecondary)
+                    .fixedSize(horizontal: false, vertical: true)
             }
             .padding(16)
         }
@@ -136,6 +141,33 @@ struct MeshConnectView: View {
                                   detail: mesh.messages(with: code).last?.text)
                 }
                 .buttonStyle(.plain)
+            }
+        }
+    }
+
+    // MARK: Blocked
+
+    private var blockedSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            MeshSectionHeader(title: String(localized: "Blocked people"), systemImage: "hand.raised.fill")
+            ForEach(mesh.blockedPeople, id: \.self) { code in
+                HStack(spacing: 12) {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(MeshDisplay.name(mesh.card(for: code)?.name ?? ""))
+                            .font(.headline.weight(.heavy))
+                            .foregroundStyle(Theme.textPrimary)
+                        Text(code)
+                            .font(.footnote.weight(.semibold).monospaced())
+                            .foregroundStyle(Theme.textSecondary)
+                    }
+                    Spacer(minLength: 0)
+                    Button(String(localized: "Unblock")) { mesh.unblock(code) }
+                        .font(.headline.weight(.heavy))
+                        .foregroundStyle(Theme.accent)
+                        .frame(minHeight: 44)
+                }
+                .padding(12)
+                .meshCardBackground()
             }
         }
     }

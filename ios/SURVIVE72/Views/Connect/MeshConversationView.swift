@@ -8,6 +8,8 @@ struct MeshConversationView: View {
 
     @State private var draft = ""
     @State private var didFail = false
+    @State private var isConfirmingBlock = false
+    @Environment(\.openURL) private var openURL
 
     private var card: MeshCard? { mesh.card(for: code) }
 
@@ -38,11 +40,67 @@ struct MeshConversationView: View {
             }
         }
         .background(Theme.background.ignoresSafeArea())
-        .safeAreaInset(edge: .bottom, spacing: 0) { composer }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            if mesh.isBlocked(code) { blockedBar } else { composer }
+        }
         .navigationTitle(MeshDisplay.name(card?.name ?? ""))
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(Theme.background, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Menu {
+                    if mesh.isBlocked(code) {
+                        Button(String(localized: "Unblock this person"), systemImage: "hand.raised.slash") {
+                            mesh.unblock(code)
+                        }
+                    } else {
+                        Button(String(localized: "Block this person"), systemImage: "hand.raised.fill", role: .destructive) {
+                            isConfirmingBlock = true
+                        }
+                    }
+                    Button(String(localized: "Report"), systemImage: "exclamationmark.bubble") {
+                        report()
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                        .font(.title3.weight(.bold))
+                }
+                .accessibilityLabel(String(localized: "Block or report"))
+            }
+        }
+        .confirmationDialog(String(localized: "Block this person?"), isPresented: $isConfirmingBlock,
+                            titleVisibility: .visible) {
+            Button(String(localized: "Block"), role: .destructive) { mesh.block(code) }
+            Button(String(localized: "Block and report"), role: .destructive) {
+                mesh.block(code)
+                report()
+            }
+            Button(String(localized: "Cancel"), role: .cancel) {}
+        } message: {
+            Text(String(localized: "You will no longer see their messages or get notifications from them. You can unblock them in Connect."))
+        }
+    }
+
+    private func report() {
+        if let url = MeshService.reportURL(for: code, name: MeshDisplay.name(card?.name ?? "")) {
+            openURL(url)
+        }
+    }
+
+    private var blockedBar: some View {
+        VStack(spacing: 8) {
+            Text(String(localized: "You blocked this person."))
+                .font(.headline.weight(.heavy))
+                .foregroundStyle(Theme.textPrimary)
+            Button(String(localized: "Unblock")) { mesh.unblock(code) }
+                .font(.headline.weight(.heavy))
+                .foregroundStyle(Theme.accent)
+                .frame(minHeight: 44)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 10)
+        .background(Theme.background)
     }
 
     private var header: some View {
