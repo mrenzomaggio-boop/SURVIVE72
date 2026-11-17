@@ -1,0 +1,106 @@
+name: Store screenshots
+
+# Takes the App Store screenshots (6.9", 1320 x 2868) in the iPhone simulator:
+# the app opens on each screen with `-screenshot <screen>` (Debug builds only),
+# in Italian, light and dark. The PNG files are in the run's "Artifacts".
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - feature/store-screenshots
+
+permissions:
+  contents: read
+
+concurrency:
+  group: store-screenshots-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  screenshots:
+    name: Take App Store screenshots (iPhone Pro Max simulator)
+    runs-on: macos-26-intel
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pick a 6.9-inch iPhone simulator
+        id: simulator
+        run: |
+          # Newest iOS runtime, an iPhone "Pro Max" (6.9": 1320 x 2868).
+          UDID="$(xcrun simctl list devices available --json | jq -r '
+            [.devices | to_entries[]
+              | select(.key | test("SimRuntime\\.iOS-"))
+              | {v: (.key | capture("iOS-(?<maj>[0-9]+)-(?<min>[0-9]+)") | [(.maj|tonumber), (.min|tonumber)]),
+                 d: [.value[] | select(.name | test("^iPhone 1[6-9] Pro Max$"))]}
+              | select(.d | length > 0)]
+            | sort_by(.v) | last | .d | sort_by(.name) | first | .udid')"
+          if [ -z "$UDID" ] || [ "$UDID" = "null" ]; then
+            echo "No iPhone Pro Max simulator found" >&2
+            xcrun simctl list devices available
+            exit 1
+          fi
+          xcrun simctl list devices available | grep "$UDID"
+          echo "udid=$UDID" >> "$GITHUB_OUTPUT"
+
+      - name: Build the app for the simulator (Debug, unsigned)
+        working-directory: ios
+        run: |
+          set -o pipefail
+          xcodebuild build \
+            -project SURVIVE72.xcodeproj \
+            -scheme SURVIVE72 \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -destination "platform=iOS Simulator,id=${{ steps.simulator.outputs.udid }}" \
+            -derivedDataPath build/DerivedData \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY='' | tail -n 40
+
+      - name: Take the screenshots
+        env:
+          UDID: ${{ steps.simulator.outputs.udid }}
+        run: |
+          set -euo pipefail
+          APP="ios/build/DerivedData/Build/Products/Debug-iphonesimulator/SURVIVE72.app"
+          BUNDLE="com.survive72.app"
+          OUT="$RUNNER_TEMP/screenshots"
+          mkdir -p "$OUT"
+
+          xcrun simctl boot "$UDID" || true
+          xcrun simctl bootstatus "$UDID" -b
+          xcrun simctl install "$UDID" "$APP"
+          xcrun simctl status_bar "$UDID" override --time "9:41" --dataNetwork wifi --wifiMode active \
+            --wifiBars 3 --cellularMode active --cellularBars 4 --operatorName "" \
+            --batteryState charged --batteryLevel 100
+
+          # Italian, region Italy; part of the kit ticked; medical warning already read.
+          ARGS=(-AppleLanguages "(it)" -AppleLocale it_IT
+                -survive72.medical.preferences.v1.warningAccepted YES
+                -survive72.kit.checkedItemIDs.v1 '("water.drinking","water.purification","water.bottle","food.nonperishable","food.canopener","health.firstaid","health.medications","lighting.flashlight","lighting.batteries","documents.id","documents.contacts","gear.radio","gear.powerbank","gear.whistle")')
+
+          # Order = order on the App Store page.
+          SCREENS=(home board connect medical maps knowledge kit tools)
+          for LOOK in dark light; do
+            xcrun simctl ui "$UDID" appearance "$LOOK"
+            N=1
+            for SCREEN in "${SCREENS[@]}"; do
+              xcrun simctl terminate "$UDID" "$BUNDLE" 2>/dev/null || true
+              xcrun simctl launch "$UDID" "$BUNDLE" -screenshot "$SCREEN" "${ARGS[@]}"
+              # The alert board downloads the live official alerts first.
+              if [ "$SCREEN" = "board" ]; then sleep 20; else sleep 8; fi
+              FILE="$OUT/$LOOK/$(printf '%02d' "$N")-$SCREEN.png"
+              mkdir -p "$OUT/$LOOK"
+              xcrun simctl io "$UDID" screenshot --type=png "$FILE"
+              sips -g pixelWidth -g pixelHeight "$FILE" | tail -n 2 | tr '\n' ' '; echo " $FILE"
+              N=$((N + 1))
+            done
+          done
+
+      - name: Upload the screenshots
+        uses: actions/upload-artifact@v4
+        with:
+          name: store-screenshots
+          path: ${{ runner.temp }}/screenshots
+          if-no-files-found: error

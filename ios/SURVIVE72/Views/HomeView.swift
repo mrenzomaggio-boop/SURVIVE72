@@ -20,13 +20,16 @@ struct HomeView: View {
     /// Last row, two wider tiles. Offline map downloads live inside Maps.
     static let bottomSections: [AppSection] = [.tools, .settings]
 
+    /// Opened sections. Empty at launch, except for the store screenshots.
+    @State private var path: [AppSection] = ScreenshotMode.initialPath
+
     private let bottomColumns = [
         GridItem(.flexible(), spacing: 10),
         GridItem(.flexible(), spacing: 10)
     ]
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
                     header
@@ -105,7 +108,11 @@ struct HomeView: View {
         case .knowledge:
             KnowledgeLibraryView()
         case .alert:
-            AlertPlanningView()
+            if ScreenshotMode.screen == "board" {
+                AlertBoardView()
+            } else {
+                AlertPlanningView()
+            }
         case .tools:
             ToolsView()
         case .radio:

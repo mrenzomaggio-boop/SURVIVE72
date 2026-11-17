@@ -28,6 +28,8 @@ final class LocalMeshNotifier: NSObject, MeshNotifier, UNUserNotificationCenterD
     }
 
     func requestPermission() {
+        // No permission prompt over the store screenshots.
+        guard !ScreenshotMode.isOn else { return }
         center.requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in }
     }
 

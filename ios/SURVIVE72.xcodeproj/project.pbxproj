@@ -14,6 +14,7 @@
 		5A72000000000000000001F8 /* MapLibre in Frameworks */ = {isa = PBXBuildFile; productRef = 5A72000000000000000001FA /* MapLibre */; };
 		5A72000000000000000001FC /* OfflineMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A72000000000000000001FB /* OfflineMapTests.swift */; };
 		5A7200000000000000000102 /* SURVIVE72App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000101 /* SURVIVE72App.swift */; };
+		5A720000000000000000020B /* ScreenshotMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A720000000000000000020A /* ScreenshotMode.swift */; };
 		5A7200000000000000000104 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000103 /* Theme.swift */; };
 		5A7200000000000000000106 /* AppSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000105 /* AppSection.swift */; };
 		5A7200000000000000000108 /* DemoContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7200000000000000000107 /* DemoContent.swift */; };
@@ -128,6 +129,7 @@
 		5A72000000000000000001F6 /* MapStyle */ = {isa = PBXFileReference; lastKnownFileType = folder; path = MapStyle; sourceTree = "<group>"; };
 		5A72000000000000000001FB /* OfflineMapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineMapTests.swift; sourceTree = "<group>"; };
 		5A7200000000000000000101 /* SURVIVE72App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SURVIVE72App.swift; sourceTree = "<group>"; };
+		5A720000000000000000020A /* ScreenshotMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotMode.swift; sourceTree = "<group>"; };
 		5A7200000000000000000103 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		5A7200000000000000000105 /* AppSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSection.swift; sourceTree = "<group>"; };
 		5A7200000000000000000107 /* DemoContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoContent.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 			isa = PBXGroup;
 			children = (
 				5A7200000000000000000101 /* SURVIVE72App.swift */,
+				5A720000000000000000020A /* ScreenshotMode.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5A7200000000000000000102 /* SURVIVE72App.swift in Sources */,
+				5A720000000000000000020B /* ScreenshotMode.swift in Sources */,
 				5A7200000000000000000104 /* Theme.swift in Sources */,
 				5A7200000000000000000106 /* AppSection.swift in Sources */,
 				5A7200000000000000000108 /* DemoContent.swift in Sources */,
